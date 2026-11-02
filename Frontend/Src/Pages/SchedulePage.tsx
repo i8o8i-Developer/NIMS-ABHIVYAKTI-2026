@@ -227,6 +227,26 @@ export const SchedulePage: React.FC = () => {
 
   const categories = ["All", "Dance", "Music", "Fine Arts", "Fashion", "Drama", "Digital Arts", "Creative Arts"];
 
+  const getCategoryBadgeClass = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return "bg-rose-950/70 border-rose-500/40 text-rose-300";
+      case "Music":
+        return "bg-amber-950/70 border-amber-500/40 text-amber-300";
+      case "Fashion":
+        return "bg-purple-950/70 border-purple-500/40 text-purple-300";
+      case "Fine Arts":
+      case "Creative Arts":
+        return "bg-yellow-950/70 border-yellow-500/40 text-yellow-300";
+      case "Digital Arts":
+        return "bg-cyan-950/70 border-cyan-500/40 text-cyan-300";
+      case "Drama":
+        return "bg-red-950/70 border-red-500/40 text-red-300";
+      default:
+        return "bg-amber-500/15 border-amber-500/30 text-amber-300";
+    }
+  };
+
   const openGuidelines = (item: ScheduleItem) => {
     setSelectedGuidelineEvent({
       id: item.id,
@@ -337,7 +357,7 @@ export const SchedulePage: React.FC = () => {
                 {/* Event Name & Category */}
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${getCategoryBadgeClass(item.category)}`}>
                       {item.category}
                     </span>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-950/60 text-rose-300 border border-rose-900/40">

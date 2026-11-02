@@ -224,3 +224,4 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
   );
 };
 export default EventGuidelineModal;
+

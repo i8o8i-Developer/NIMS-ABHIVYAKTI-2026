@@ -218,6 +218,27 @@ export const Home: React.FC = () => {
     fetchLeaderboard();
   }, []);
 
+  // Category Badge Styler For Visual Harmony
+  const getCategoryBadgeClass = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return "bg-rose-950/70 border-rose-500/40 text-rose-300";
+      case "Music":
+        return "bg-amber-950/70 border-amber-500/40 text-amber-300";
+      case "Fashion":
+        return "bg-purple-950/70 border-purple-500/40 text-purple-300";
+      case "Fine Arts":
+      case "Creative Arts":
+        return "bg-yellow-950/70 border-yellow-500/40 text-yellow-300";
+      case "Digital Arts":
+        return "bg-cyan-950/70 border-cyan-500/40 text-cyan-300";
+      case "Drama":
+        return "bg-red-950/70 border-red-500/40 text-red-300";
+      default:
+        return "bg-amber-500/10 border-amber-500/30 text-amber-300";
+    }
+  };
+
   const openEventGuidelines = (event: ScheduleEventItem) => {
     setSelectedGuidelineEvent({
       id: event.id,
@@ -335,10 +356,10 @@ export const Home: React.FC = () => {
               />
             </div>
 
-            {/* Symmetrical Regal Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 mb-5 drop-shadow-lg">
-              Celebrating Cultural <br className="hidden sm:inline" />
-              Majesty & Excellence
+            {/* Guaranteed Two-Liner Regal Headline Matching User Requirement */}
+            <h1 className="font-serif text-[1.85rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.14] text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 mb-5 drop-shadow-2xl">
+              <span className="block whitespace-nowrap">Celebrating Cultural</span>
+              <span className="block whitespace-nowrap">Majesty & Excellence</span>
             </h1>
 
             {/* Subtitle Description */}
@@ -436,32 +457,40 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Festival Key Metrics Bar With Deep Blackish Tone */}
-      <section className="border-y border-rose-950/80 bg-[#090103]/95 py-8 px-4 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <p className="text-3xl md:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-400">
+      {/* Festival Key Metrics Bar With Deep Blackish Tone & Golden Glow */}
+      <section className="border-y border-amber-500/20 bg-gradient-to-r from-[#050002] via-[#120206] to-[#050002] py-9 px-4 relative z-10 shadow-2xl">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-rose-950/60">
+          <div className="px-3">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
               12+
             </p>
-            <p className="text-xs sm:text-sm font-semibold text-rose-200/80 mt-1">Participating Institutes</p>
+            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+              Participating Institutes
+            </p>
           </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-400">
+          <div className="px-3">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
               15
             </p>
-            <p className="text-xs sm:text-sm font-semibold text-rose-200/80 mt-1">Official Competitions</p>
+            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+              Official Competitions
+            </p>
           </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-400">
+          <div className="px-3">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
               ₹5,00,000+
             </p>
-            <p className="text-xs sm:text-sm font-semibold text-rose-200/80 mt-1">Prize & Trophy Value</p>
+            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+              Prize & Trophy Value
+            </p>
           </div>
-          <div>
-            <p className="text-3xl md:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-400">
+          <div className="px-3">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
               5,000+
             </p>
-            <p className="text-xs sm:text-sm font-semibold text-rose-200/80 mt-1">Passionate Students</p>
+            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+              Passionate Students
+            </p>
           </div>
         </div>
       </section>
@@ -500,21 +529,21 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Schedule Cards Grid With Direct Guideline Buttons */}
+        {/* Schedule Cards Grid Matching Image 2 Reference With Attached Guidelines */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className="p-5 rounded-2xl bg-[#0e0205] border border-rose-950 hover:border-amber-500/50 hover:bg-[#150308] transition-all group shadow-xl flex flex-col justify-between"
+              className="p-5 rounded-2xl bg-[#0b0104]/90 border border-rose-950/70 hover:border-amber-500/50 hover:bg-[#140207] hover:shadow-[0_8px_30px_rgba(245,184,66,0.1)] transition-all duration-300 group shadow-xl flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${getCategoryBadgeClass(item.category)}`}>
                     {item.category}
                   </span>
-                  <div className="flex items-center gap-1.5 text-right">
-                    <span className="text-xs font-bold text-amber-100">{item.date}</span>
-                    <span className="text-[11px] text-amber-400 font-medium">({item.time})</span>
+                  <div className="text-right shrink-0">
+                    <span className="block text-xs font-bold text-amber-100">{item.date}</span>
+                    <span className="block text-[11px] text-amber-400 font-semibold">{item.time}</span>
                   </div>
                 </div>
 
@@ -535,7 +564,7 @@ export const Home: React.FC = () => {
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openEventGuidelines(item)}
-                  className="w-full py-2 px-3 rounded-xl bg-[#1c0409] hover:bg-amber-500 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-3 rounded-xl bg-[#180307] hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center justify-center gap-2 shadow-sm"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>Guidelines & Rules</span>
@@ -612,49 +641,67 @@ export const Home: React.FC = () => {
               desc: "Solo, Duet, And Group Dance Battles Showcasing Classical, Contemporary, And Folk Vibrancy.",
               icon: Flame,
               badge: "High Stakes",
+              iconStyle: "bg-rose-500/15 border-rose-500/40 text-rose-400",
+              badgeStyle: "bg-rose-950/70 text-rose-300 border-rose-700/50",
+              cardHover: "hover:border-rose-500/50 hover:shadow-rose-950/40",
             },
             {
               title: "Vocal Resonance & Melody",
               desc: "Acoustic Ballads, Duet Harmonies, And High-Energy Group Ensembles Competing Across Rounds.",
               icon: Sparkles,
               badge: "Crowd Favorite",
+              iconStyle: "bg-amber-500/15 border-amber-500/40 text-amber-400",
+              badgeStyle: "bg-amber-950/70 text-amber-300 border-amber-700/50",
+              cardHover: "hover:border-amber-500/50 hover:shadow-amber-950/40",
             },
             {
               title: "Couture & Fashion Upcycling",
               desc: "Eco-Friendly High Fashion And The Electric Kick Drip Sneaker Customization Challenge.",
               icon: Layers,
               badge: "Trendsetting",
+              iconStyle: "bg-purple-500/15 border-purple-500/40 text-purple-400",
+              badgeStyle: "bg-purple-950/70 text-purple-300 border-purple-700/50",
+              cardHover: "hover:border-purple-500/50 hover:shadow-purple-950/40",
             },
             {
               title: "Fine Arts & Visual Expression",
               desc: "Live Doodling, Intricate Calligraphy, Clay Sculpting, And Expressive Face Painting.",
               icon: BookOpen,
               badge: "Artisan Arena",
+              iconStyle: "bg-yellow-500/15 border-yellow-500/40 text-yellow-400",
+              badgeStyle: "bg-yellow-950/70 text-yellow-300 border-yellow-700/50",
+              cardHover: "hover:border-yellow-500/50 hover:shadow-yellow-950/40",
             },
             {
               title: "Digital Art & AI Generation",
               desc: "Harnessing Generative AI Prompts And Digital Workflows To Create Concept Art.",
               icon: Trophy,
               badge: "New For 2026",
+              iconStyle: "bg-cyan-500/15 border-cyan-500/40 text-cyan-400",
+              badgeStyle: "bg-cyan-950/70 text-cyan-300 border-cyan-700/50",
+              cardHover: "hover:border-cyan-500/50 hover:shadow-cyan-950/40",
             },
             {
               title: "Theatrical Drama & Mono Act",
               desc: "Solo Dramatic Enactments Commanding The Grand Rajeshwari Auditorium Stage.",
               icon: Users,
               badge: "Dramatic Arts",
+              iconStyle: "bg-red-500/15 border-red-500/40 text-red-400",
+              badgeStyle: "bg-red-950/70 text-red-300 border-red-700/50",
+              cardHover: "hover:border-red-500/50 hover:shadow-red-950/40",
             },
           ].map((arena, i) => {
             const Icon = arena.icon;
             return (
               <div
                 key={i}
-                className="p-6 rounded-2xl bg-[#0c0104] border border-rose-950 hover:border-amber-500/40 transition-all group"
+                className={`p-6 rounded-2xl bg-[#0c0104]/90 border border-rose-950/80 transition-all duration-300 group shadow-lg ${arena.cardHover}`}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 group-hover:scale-110 transition-transform">
+                  <div className={`p-3 rounded-xl border group-hover:scale-110 transition-transform ${arena.iconStyle}`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-rose-950/60 text-rose-300 border border-rose-900/50">
+                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${arena.badgeStyle}`}>
                     {arena.badge}
                   </span>
                 </div>
