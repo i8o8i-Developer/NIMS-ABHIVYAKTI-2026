@@ -71,8 +71,8 @@ export const AdminLogin: React.FC = () => {
 
         <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#120205] border border-amber-500/30 text-amber-200 text-xs font-semibold shadow-md">
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-          <span className="hidden sm:inline">NIMS UNIVERSITY •</span>
-          <span className="text-amber-300 font-bold uppercase">Directorate Portal</span>
+          <span className="hidden sm:inline">NIMS University •</span>
+          <span className="text-amber-300 font-bold">Directorate Portal</span>
         </div>
       </header>
 
@@ -106,14 +106,14 @@ export const AdminLogin: React.FC = () => {
               </div>
 
               {/* Title & Authority Narrative */}
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+              <span className="text-xs font-bold tracking-widest text-amber-400">
                 Central Administrative Suite
               </span>
               <h1 className="text-2xl sm:text-3xl font-serif font-black text-white mt-1 leading-tight">
                 Fest Directorate & Jury Portal
               </h1>
               <p className="text-xs sm:text-sm text-rose-200/80 mt-3 leading-relaxed">
-                Centralized scoring engine, jury verification terminal, and institutional contingent management for the 2026 Inter-College Championship.
+                Centralized Scoring Engine, Jury Verification Terminal, And Institutional Contingent Management For The 2026 Inter-College Championship.
               </p>
 
               {/* Verified Directorate Modules */}
@@ -122,7 +122,7 @@ export const AdminLogin: React.FC = () => {
                   <Scale className="w-5 h-5 text-amber-400 shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-amber-200">Real-Time Jury Engine</p>
-                    <p className="text-[11px] text-rose-300/70">Cryptographic score entry & instant standings</p>
+                    <p className="text-[11px] text-rose-300/70">Cryptographic Score Entry & Instant Standings</p>
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@ export const AdminLogin: React.FC = () => {
                   <FileCheck className="w-5 h-5 text-rose-400 shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-amber-200">22 Official Competitions</p>
-                    <p className="text-[11px] text-rose-300/70">4-Pillar scoring rubrics & participant verification</p>
+                    <p className="text-[11px] text-rose-300/70">4-Pillar Scoring Rubrics & Participant Verification</p>
                   </div>
                 </div>
 
@@ -138,7 +138,7 @@ export const AdminLogin: React.FC = () => {
                   <Landmark className="w-5 h-5 text-amber-400 shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-amber-200">30+ Competing Institutes</p>
-                    <p className="text-[11px] text-rose-300/70">Rolling Trophy point accumulation matrices</p>
+                    <p className="text-[11px] text-rose-300/70">Rolling Trophy Point Accumulation Matrices</p>
                   </div>
                 </div>
               </div>
@@ -163,15 +163,15 @@ export const AdminLogin: React.FC = () => {
                 <h2 className="text-xl sm:text-2xl font-serif font-black text-amber-100">
                   Sign In To Directorate Deck
                 </h2>
-                <p className="text-xs text-rose-200/70 mt-1">
-                  Enter your assigned festival directorate or jury credentials below.
+                <p className="text-xs text-rose-200/80 mt-1">
+                  Enter Your Assigned Festival Directorate Or Jury Credentials Below.
                 </p>
               </div>
 
               {/* 1-Click Role Selection */}
               <div className="mb-6 p-3.5 rounded-2xl bg-[#120205] border border-amber-500/25">
                 <div className="flex items-center justify-between mb-2.5">
-                  <span className="flex items-center gap-1.5 text-[11px] font-black text-amber-300 uppercase tracking-wider">
+                  <span className="flex items-center gap-1.5 text-[11px] font-black text-amber-300 tracking-wider">
                     <KeyRound className="w-3.5 h-3.5 text-amber-400" />
                     <span>Select Directorate Terminal</span>
                   </span>
@@ -238,7 +238,7 @@ export const AdminLogin: React.FC = () => {
               {/* Form */}
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-black uppercase tracking-wider text-amber-300/90 mb-1.5">
+                  <label className="block text-xs font-black tracking-wider text-amber-300/90 mb-1.5">
                     Directorate Email Address
                   </label>
                   <div className="relative">
@@ -255,7 +255,7 @@ export const AdminLogin: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-black uppercase tracking-wider text-amber-300/90 mb-1.5">
+                  <label className="block text-xs font-black tracking-wider text-amber-300/90 mb-1.5">
                     Secure Staff Password
                   </label>
                   <div className="relative">
@@ -281,7 +281,7 @@ export const AdminLogin: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 mt-3 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 text-black font-serif font-black text-xs uppercase tracking-wider transition-all shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-4 mt-3 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 text-black font-serif font-black text-sm tracking-wide transition-all shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   <ShieldCheck className="w-4 h-4 text-black" />
                   <span>
