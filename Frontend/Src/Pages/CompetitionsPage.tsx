@@ -493,3 +493,4 @@ export const CompetitionsPage: React.FC = () => {
   );
 };
 export default CompetitionsPage;
+

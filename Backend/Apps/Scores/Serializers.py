@@ -57,3 +57,4 @@ class LeaderboardEntrySerializer(serializers.Serializer):
     silver_medals = serializers.IntegerField()
     bronze_medals = serializers.IntegerField()
     events_participated = serializers.IntegerField()
+

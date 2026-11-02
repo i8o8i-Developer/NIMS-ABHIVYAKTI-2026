@@ -85,3 +85,4 @@ class AuditLog(models.Model):
 
     def __str__(self):
         return f"{self.action} on {self.target_type} at {self.created_at}"
+

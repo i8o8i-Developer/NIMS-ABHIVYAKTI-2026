@@ -26,3 +26,4 @@ EXPOSE 8000
 
 # Run Migrations, Bootstrap Admin & System Settings, Seed Data, Collect Static, And Start Gunicorn
 CMD ["sh", "-c", "python manage.py migrate --noinput && python manage.py bootstrap && python manage.py seed && python manage.py collectstatic --noinput && gunicorn Config.Wsgi:application --bind 0.0.0.0:8000 --workers 3"]
+

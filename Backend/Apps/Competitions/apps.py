@@ -8,3 +8,4 @@ class CompetitionsConfig(AppConfig):
     name = "Apps.Competitions"
     label = "competitions"
     verbose_name = "Competitions & Events"
+

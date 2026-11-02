@@ -41,3 +41,4 @@ class GalleryItem(models.Model):
         if self.image:
             return self.image.url
         return self.image_url or "/Assets/IMG-20261006-WA0125.png"
+

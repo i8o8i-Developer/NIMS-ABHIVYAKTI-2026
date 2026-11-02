@@ -36,3 +36,4 @@ def to_title_case(text: str) -> str:
             title_words.append(word.capitalize())
 
     return " ".join(title_words)
+

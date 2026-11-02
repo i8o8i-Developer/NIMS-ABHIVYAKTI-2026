@@ -13,3 +13,4 @@ urlpatterns = [
     path("stats/", StatsView.as_view(), name="fest-stats"),
     path("", include(router.urls)),
 ]
+

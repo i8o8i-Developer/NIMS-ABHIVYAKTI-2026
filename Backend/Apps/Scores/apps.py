@@ -8,3 +8,4 @@ class ScoresConfig(AppConfig):
     name = "Apps.Scores"
     label = "scores"
     verbose_name = "Scoring & Leaderboard Engine"
+

@@ -50,3 +50,4 @@ class Competition(models.Model):
 
     def __str__(self):
         return f"{self.title} [{self.get_category_display()}] - {self.venue}"
+

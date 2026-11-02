@@ -203,3 +203,4 @@ export const RulebookPage: React.FC = () => {
   );
 };
 export default RulebookPage;
+

@@ -40,3 +40,4 @@ class Messages:
         UPLOAD_SUCCESS = "Fest Photo Successfully Added To Gallery"
         UPDATED = "Photo Caption And Tags Updated"
         DELETED = "Gallery Item Removed"
+

@@ -49,3 +49,4 @@ class College(models.Model):
     @property
     def events_participated(self) -> int:
         return self.scores.filter(is_verified=True).count()
+

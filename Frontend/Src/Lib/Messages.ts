@@ -28,3 +28,4 @@ export const Messages = {
     Deleted: "Competition Record Removed Successfully",
   },
 };
+

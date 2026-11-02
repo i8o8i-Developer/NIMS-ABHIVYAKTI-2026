@@ -186,3 +186,4 @@ export const AdminColleges: React.FC = () => {
   );
 };
 export default AdminColleges;
+

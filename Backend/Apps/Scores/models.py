@@ -69,3 +69,4 @@ class Score(models.Model):
             self.points_awarded = self.raw_score
 
         super().save(*args, **kwargs)
+

@@ -31,3 +31,4 @@ class GalleryItemSerializer(serializers.ModelSerializer):
 
     def validate_title(self, value):
         return to_title_case(str(value or "").strip()) if value else ""
+

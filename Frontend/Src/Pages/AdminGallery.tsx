@@ -208,3 +208,4 @@ export const AdminGallery: React.FC = () => {
   );
 };
 export default AdminGallery;
+

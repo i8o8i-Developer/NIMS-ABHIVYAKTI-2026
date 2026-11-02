@@ -130,3 +130,4 @@ class UserViewSet(viewsets.ModelViewSet):
         if self.action == "create":
             return UserCreateSerializer
         return UserSerializer
+

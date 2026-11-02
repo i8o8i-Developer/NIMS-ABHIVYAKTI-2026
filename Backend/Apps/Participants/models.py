@@ -59,3 +59,4 @@ class Participant(models.Model):
         if self.student_id:
             self.student_id = self.student_id.strip().upper()
         super().save(*args, **kwargs)
+

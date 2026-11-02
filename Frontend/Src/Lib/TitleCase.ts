@@ -32,3 +32,4 @@ export function ToTitleCase(text: string): string {
     })
     .join(" ");
 }
+

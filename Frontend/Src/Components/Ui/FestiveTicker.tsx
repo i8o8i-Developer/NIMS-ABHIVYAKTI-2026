@@ -31,3 +31,4 @@ export const FestiveTicker: React.FC<FestiveTickerProps> = ({ announcements }) =
     </div>
   );
 };
+

@@ -9,3 +9,4 @@ class CollegeAdmin(admin.ModelAdmin):
     list_display = ("name", "code", "city", "contact_person", "is_active", "total_points", "gold_medals")
     search_fields = ("name", "code", "contact_person", "contact_email")
     list_filter = ("is_active", "state")
+

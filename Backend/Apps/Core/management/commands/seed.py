@@ -340,3 +340,4 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS("Seeded Abhivyakti Gallery Highlights"))
         self.stdout.write(self.style.SUCCESS("ALL ABHIVYAKTI SEED DATA INITIALIZED SUCCESSFULLY!"))
+

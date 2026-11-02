@@ -141,3 +141,4 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
     </div>
   );
 };
+

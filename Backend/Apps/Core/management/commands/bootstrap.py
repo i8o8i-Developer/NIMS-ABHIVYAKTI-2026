@@ -66,3 +66,4 @@ class Command(BaseCommand):
             self.stdout.write(self.style.WARNING("SUPERADMIN_EMAIL Or SUPERADMIN_PASSWORD Not Set."))
 
         self.stdout.write(self.style.SUCCESS("Bootstrap Completed: Admin Seed Only"))
+

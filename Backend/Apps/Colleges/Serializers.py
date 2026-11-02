@@ -42,3 +42,4 @@ class CollegeSerializer(serializers.ModelSerializer):
 
     def validate_contact_person(self, value):
         return to_title_case(str(value or "").strip()) if value else ""
+

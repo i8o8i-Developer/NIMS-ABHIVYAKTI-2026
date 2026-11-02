@@ -8,3 +8,4 @@ class GalleryConfig(AppConfig):
     name = "Apps.Gallery"
     label = "gallery"
     verbose_name = "Fest Gallery"
+

@@ -73,3 +73,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def is_operator(self):
         return self.is_active
+

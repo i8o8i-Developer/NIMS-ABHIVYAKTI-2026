@@ -8,3 +8,4 @@ class AccountsConfig(AppConfig):
     name = "Apps.Accounts"
     label = "accounts"
     verbose_name = "Accounts & Identity"
+

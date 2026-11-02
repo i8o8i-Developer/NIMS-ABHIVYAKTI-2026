@@ -20,3 +20,4 @@ export const FloatingBackgroundElements: React.FC = () => {
     </div>
   );
 };
+

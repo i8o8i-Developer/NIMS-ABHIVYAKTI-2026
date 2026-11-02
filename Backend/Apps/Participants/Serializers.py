@@ -36,3 +36,4 @@ class ParticipantSerializer(serializers.ModelSerializer):
 
     def validate_name(self, value):
         return to_title_case(str(value or "").strip())
+

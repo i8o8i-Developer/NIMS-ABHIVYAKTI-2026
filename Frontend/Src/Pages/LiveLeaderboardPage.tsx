@@ -247,3 +247,4 @@ export const LiveLeaderboardPage: React.FC = () => {
   );
 };
 export default LiveLeaderboardPage;
+

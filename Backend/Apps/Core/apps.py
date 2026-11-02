@@ -8,3 +8,4 @@ class CoreConfig(AppConfig):
     name = "Apps.Core"
     label = "core"
     verbose_name = "Core Operations"
+

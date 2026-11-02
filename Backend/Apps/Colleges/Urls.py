@@ -10,3 +10,4 @@ router.register(r"", CollegeViewSet, basename="colleges")
 urlpatterns = [
     path("", include(router.urls)),
 ]
+

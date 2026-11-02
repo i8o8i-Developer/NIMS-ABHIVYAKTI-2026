@@ -10,3 +10,4 @@ router.register(r"", CompetitionViewSet, basename="competitions")
 urlpatterns = [
     path("", include(router.urls)),
 ]
+

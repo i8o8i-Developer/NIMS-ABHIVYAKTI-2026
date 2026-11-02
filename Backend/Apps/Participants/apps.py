@@ -8,3 +8,4 @@ class ParticipantsConfig(AppConfig):
     name = "Apps.Participants"
     label = "participants"
     verbose_name = "Student Participants"
+

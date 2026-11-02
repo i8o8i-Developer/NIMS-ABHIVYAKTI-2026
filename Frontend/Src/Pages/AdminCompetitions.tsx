@@ -308,3 +308,4 @@ export const AdminCompetitions: React.FC = () => {
   );
 };
 export default AdminCompetitions;
+

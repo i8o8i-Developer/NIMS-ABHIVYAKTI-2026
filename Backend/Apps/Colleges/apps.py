@@ -8,3 +8,4 @@ class CollegesConfig(AppConfig):
     name = "Apps.Colleges"
     label = "colleges"
     verbose_name = "Colleges & Contingents"
+

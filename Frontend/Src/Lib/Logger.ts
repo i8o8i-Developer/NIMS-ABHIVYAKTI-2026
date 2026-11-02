@@ -15,3 +15,4 @@ export const Logger = {
     console.error(`[Error] ${message}`, error || "");
   },
 };
+
