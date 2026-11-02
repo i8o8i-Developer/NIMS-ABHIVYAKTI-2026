@@ -4,6 +4,7 @@ import { FestiveTicker } from "@/Components/Ui/FestiveTicker";
 import { Navbar } from "@/Components/Ui/Navbar";
 import { CountdownTimer } from "@/Components/Ui/CountdownTimer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
+import { StageSpotlights } from "@/Components/Ui/StageSpotlights";
 import { Footer } from "@/Components/Ui/Footer";
 import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
 import { LeaderboardTable, DEFAULT_STANDINGS } from "@/Components/Leaderboard/LeaderboardTable";
@@ -403,6 +404,9 @@ export const Home: React.FC = () => {
 
       {/* Hero Section Matching Image 1 & Image 2 Reference */}
       <section className="relative pt-6 sm:pt-10 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[100rem] mx-auto flex flex-col items-center min-h-[720px]">
+        {/* Three Theatrical Overhead Stage Spotlights Shining Downwards From Top */}
+        <StageSpotlights />
+
         {/* NIMS Championship Pill */}
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-7 z-10 animate-fade-in">
           <Sparkles className="w-4 h-4 text-amber-400" />

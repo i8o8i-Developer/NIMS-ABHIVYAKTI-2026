@@ -64,6 +64,7 @@ export const App: React.FC = () => {
 
           {/* Admin Authentication */}
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/login" element={<Navigate to="/admin/login" replace />} />
 
           {/* Admin Protected Deck */}
           <Route
