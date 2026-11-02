@@ -70,12 +70,12 @@ export const ContingentsPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0e0204] text-amber-50 relative selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#050002] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
@@ -85,7 +85,7 @@ export const ContingentsPage: React.FC = () => {
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
             Contingents & Colleges
           </h1>
-          <p className="text-sm text-rose-200/80 mt-3 leading-relaxed">
+          <p className="text-xs sm:text-sm text-rose-200/80 mt-2 leading-relaxed">
             12 Premier Colleges And Institutes Of NIMS University Competing With Full Contingents For Championship Supremacy.
           </p>
         </div>
@@ -98,7 +98,7 @@ export const ContingentsPage: React.FC = () => {
             placeholder="Search Contingents By Name Or Code..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#170306] border border-rose-950/80 focus:border-amber-500/60 text-xs text-white placeholder-rose-300/40 focus:outline-none transition-colors shadow-lg"
+            className="w-full pl-11 pr-4 py-3 rounded-2xl bg-[#0d0104] border border-rose-950 focus:border-amber-500 text-xs text-white placeholder-rose-300/40 focus:outline-none transition-colors shadow-xl"
           />
         </div>
 
@@ -107,7 +107,7 @@ export const ContingentsPage: React.FC = () => {
           {filteredColleges.map((col) => (
             <div
               key={col.id}
-              className="p-6 rounded-2xl bg-[#170306] border border-rose-950/80 hover:border-amber-500/40 hover:bg-[#1e0408] transition-all group shadow-xl flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-[#0d0104] border border-rose-950 hover:border-amber-500/40 hover:bg-[#140206] transition-all group shadow-xl flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">

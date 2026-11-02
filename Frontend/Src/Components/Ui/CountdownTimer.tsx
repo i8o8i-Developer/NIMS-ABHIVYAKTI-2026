@@ -40,20 +40,20 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   ];
 
   return (
-    <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+    <div className="flex items-center justify-center space-x-2 sm:space-x-4 select-none">
       {units.map((unit, index) => (
         <React.Fragment key={unit.label}>
-          <div className="flex flex-col items-center justify-center bg-[#150408]/90 backdrop-blur-md w-18 sm:w-24 md:w-28 h-20 sm:h-26 md:h-28 rounded-2xl border border-festival-gold-500/30 shadow-[0_8px_30px_rgb(0,0,0,0.6)]">
-            <span className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-festival-gold-400 drop-shadow-[0_2px_10px_rgba(245,184,66,0.3)]">
+          <div className="flex flex-col items-center justify-center bg-[#0a0103]/95 backdrop-blur-xl w-16 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 rounded-2xl border border-amber-500/40 shadow-2xl shadow-rose-950/40 gold-glow-card">
+            <span className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.35)]">
               {String(unit.value).padStart(2, "0")}
             </span>
-            <span className="text-[9px] sm:text-[11px] font-bold tracking-widest text-festival-cream-300 mt-1 uppercase">
+            <span className="text-[9px] sm:text-[11px] font-bold tracking-widest text-amber-200/80 mt-1 uppercase">
               {unit.label}
             </span>
           </div>
 
           {index < units.length - 1 && (
-            <span className="text-xl sm:text-3xl font-serif font-bold text-festival-gold-500/60 pb-4">
+            <span className="text-xl sm:text-3xl font-serif font-bold text-amber-500/60 pb-3">
               :
             </span>
           )}
@@ -62,4 +62,4 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
     </div>
   );
 };
-
+export default CountdownTimer;

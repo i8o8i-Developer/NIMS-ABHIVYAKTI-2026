@@ -58,9 +58,9 @@ export const AdminLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0e0204] text-amber-50 flex flex-col md:flex-row antialiased">
+    <div className="min-h-screen bg-[#050002] text-amber-50 flex flex-col md:flex-row antialiased">
       {/* Mobile Top Header */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-[#180307] border-b border-rose-950/60 sticky top-0 z-50">
+      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-[#0c0104] border-b border-rose-950/60 sticky top-0 z-50">
         <Link to="/admin/dashboard" className="flex items-center gap-2">
           <img src="/Abhivyakti.png" alt="Abhivyakti Logo" className="h-8 w-auto object-contain" />
           <span className="font-serif font-bold text-lg text-amber-400">Admin Portal</span>
@@ -76,7 +76,7 @@ export const AdminLayout: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed md:sticky top-0 z-40 h-screen w-72 bg-[#140206] border-r border-rose-950/70 flex flex-col justify-between transition-transform duration-200 ease-in-out ${
+        className={`fixed md:sticky top-0 z-40 h-screen w-72 bg-[#090103] border-r border-rose-950/70 flex flex-col justify-between transition-transform duration-200 ease-in-out ${
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
       >
@@ -142,13 +142,13 @@ export const AdminLayout: React.FC = () => {
           {/* Bottom Actions */}
           <div className="p-4 border-t border-rose-950/60 space-y-2">
             <Link
-              to="/live"
+              to="/leaderboard"
               target="_blank"
               className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-amber-300/90 bg-amber-950/30 border border-amber-500/30 hover:bg-amber-900/40 transition-colors"
             >
               <div className="flex items-center gap-2">
-                <Flame className="w-4 h-4 text-amber-400 animate-pulse" />
-                <span>Open Stadium Live View</span>
+                <Trophy className="w-4 h-4 text-amber-400" />
+                <span>View Public Leaderboard</span>
               </div>
               <ExternalLink className="w-3.5 h-3.5 text-amber-400" />
             </Link>

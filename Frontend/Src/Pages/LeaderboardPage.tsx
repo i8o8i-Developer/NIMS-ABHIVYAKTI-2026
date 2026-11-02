@@ -70,22 +70,11 @@ export const LeaderboardPage: React.FC = () => {
             <button
               onClick={fetchStandings}
               disabled={loading}
-              className="px-4 py-2.5 rounded-xl bg-[#1d0307] border border-rose-950 text-xs font-bold text-amber-300 hover:bg-rose-950/60 transition-all flex items-center gap-2"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-black text-xs font-bold transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20 hover:scale-105"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
               <span>Refresh Standings</span>
             </button>
-
-            <a
-              href="/live"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-black text-xs font-bold transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20 hover:scale-105"
-            >
-              <Flame className="w-3.5 h-3.5" />
-              <span>Open Stadium Live View</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
           </div>
         </div>
 

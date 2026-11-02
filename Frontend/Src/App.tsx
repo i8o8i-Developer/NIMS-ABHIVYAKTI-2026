@@ -7,8 +7,6 @@ import Home from "@/Pages/Home";
 import CompetitionsPage from "@/Pages/CompetitionsPage";
 import SchedulePage from "@/Pages/SchedulePage";
 import LeaderboardPage from "@/Pages/LeaderboardPage";
-import LiveLeaderboardPage from "@/Pages/LiveLeaderboardPage";
-import RulebookPage from "@/Pages/RulebookPage";
 import GalleryPage from "@/Pages/GalleryPage";
 import ContingentsPage from "@/Pages/ContingentsPage";
 
@@ -29,7 +27,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactElement }> = ({ children }
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#0e0204] flex items-center justify-center text-amber-400">
+      <div className="min-h-screen bg-[#070102] flex items-center justify-center text-amber-400">
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
           <p className="text-xs font-bold uppercase tracking-widest text-rose-300">
@@ -57,10 +55,12 @@ export const App: React.FC = () => {
           <Route path="/competitions" element={<CompetitionsPage />} />
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
-          <Route path="/live" element={<LiveLeaderboardPage />} />
-          <Route path="/rulebook" element={<RulebookPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contingents" element={<ContingentsPage />} />
+
+          {/* Graceful Fallbacks: Rulebook is attached per event, No Live Screen Ever */}
+          <Route path="/rulebook" element={<Navigate to="/competitions" replace />} />
+          <Route path="/live" element={<Navigate to="/leaderboard" replace />} />
 
           {/* Admin Authentication */}
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -92,4 +92,3 @@ export const App: React.FC = () => {
   );
 };
 export default App;
-

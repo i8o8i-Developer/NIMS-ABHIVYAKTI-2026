@@ -92,12 +92,12 @@ export const GalleryPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0e0204] text-amber-50 relative selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#050002] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
@@ -107,7 +107,7 @@ export const GalleryPage: React.FC = () => {
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
             Visual Highlights & Memories
           </h1>
-          <p className="text-sm text-rose-200/80 mt-3 leading-relaxed">
+          <p className="text-xs sm:text-sm text-rose-200/80 mt-2 leading-relaxed">
             Relive The Electric Energy, Majestic Stage Spectacles, And Victorious Moments Captured By The NIMS Media Council.
           </p>
         </div>
@@ -121,7 +121,7 @@ export const GalleryPage: React.FC = () => {
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 selectedCategory === cat
                   ? "bg-amber-500 text-black shadow-md shadow-amber-500/20"
-                  : "bg-[#180307] text-rose-200/70 hover:text-white border border-rose-950/80"
+                  : "bg-[#0d0104] text-rose-200/70 hover:text-white border border-rose-950"
               }`}
             >
               {cat}
@@ -135,9 +135,9 @@ export const GalleryPage: React.FC = () => {
             <div
               key={img.id}
               onClick={() => setActiveImage(img)}
-              className="group relative rounded-2xl overflow-hidden bg-[#180307] border border-rose-950/80 hover:border-amber-500/40 transition-all cursor-pointer shadow-xl flex flex-col"
+              className="group relative rounded-2xl overflow-hidden bg-[#0d0104] border border-rose-950 hover:border-amber-500/40 transition-all cursor-pointer shadow-xl flex flex-col"
             >
-              <div className="h-56 w-full bg-[#120205] flex items-center justify-center p-4 relative overflow-hidden">
+              <div className="h-56 w-full bg-[#070102] flex items-center justify-center p-4 relative overflow-hidden">
                 <img
                   src={img.image_url}
                   alt={img.title}

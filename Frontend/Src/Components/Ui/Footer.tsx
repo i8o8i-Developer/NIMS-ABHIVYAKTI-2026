@@ -4,33 +4,32 @@ import { ShieldCheck, Award, Heart, Phone, Mail, MapPin, ExternalLink } from "lu
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#0D0104] border-t border-festival-gold-500/20 pt-14 pb-8 text-festival-cream-300">
+    <footer className="w-full bg-[#040002] border-t border-amber-500/20 pt-14 pb-8 text-rose-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-          
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-rose-950/80">
           {/* Col 1: Festival Identity */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3">
-              <div className="bg-white/95 p-1.5 rounded-lg border border-festival-gold-500/30">
+              <div className="bg-white/95 p-1.5 rounded-lg border border-amber-500/30">
                 <img
-                  src="/Assets/NIMS-LOGO.png"
+                  src="/NIMS-LOGO.png"
                   alt="NIMS University Rajasthan"
                   className="h-9 w-auto object-contain"
                 />
               </div>
               <div>
                 <h4 className="text-sm font-serif font-bold text-white">NIMS University</h4>
-                <p className="text-[11px] text-festival-gold-400">Rajasthan • Jaipur</p>
+                <p className="text-[11px] text-amber-400">Rajasthan • Jaipur</p>
               </div>
             </div>
-            <p className="text-xs leading-relaxed text-festival-cream-300/80">
-              NIMS Abhivyakti 2026 is the flagship annual inter-college cultural championship celebrating talent, heritage, music, dance, and arts across faculties.
+            <p className="text-xs leading-relaxed text-rose-200/70">
+              NIMS Abhivyakti 2026 Is The Flagship Annual Inter-College Cultural Championship Celebrating Talent, Heritage, Music, Dance, And Arts Across Faculties.
             </p>
             <div className="pt-2 flex items-center space-x-3">
-              <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-festival-gold-400">
+              <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-amber-300">
                 NAAC A+ Accredited
               </span>
-              <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-festival-gold-400">
+              <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-amber-300">
                 NIRF Top 100
               </span>
             </div>
@@ -38,91 +37,80 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-festival-gold-400">
-              Quick Links
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              Championship Links
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link to="/" className="hover:text-festival-gold-300 transition-colors">Overview</Link>
+                <Link to="/" className="hover:text-amber-300 transition-colors">Overview</Link>
               </li>
               <li>
-                <Link to="/competitions" className="hover:text-festival-gold-300 transition-colors">Competitions & Arenas</Link>
+                <Link to="/competitions" className="hover:text-amber-300 transition-colors">Competitions & Guidelines</Link>
               </li>
               <li>
-                <Link to="/schedule" className="hover:text-festival-gold-300 transition-colors">Fest Schedule</Link>
+                <Link to="/schedule" className="hover:text-amber-300 transition-colors">Festival Itinerary</Link>
               </li>
               <li>
-                <Link to="/leaderboard" className="hover:text-festival-gold-300 transition-colors">Championship Leaderboard</Link>
+                <Link to="/leaderboard" className="hover:text-amber-300 transition-colors">Championship Standings</Link>
               </li>
               <li>
-                <Link to="/rulebook" className="hover:text-festival-gold-300 transition-colors">Official Rulebook</Link>
+                <Link to="/contingents" className="hover:text-amber-300 transition-colors">Contingent Colleges</Link>
               </li>
               <li>
-                <Link to="/contingents" className="hover:text-festival-gold-300 transition-colors">Colleges & Contingents</Link>
+                <Link to="/gallery" className="hover:text-amber-300 transition-colors">Media Highlights</Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Cultural Arenas */}
+          {/* Col 3: Student Council Directorate */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-festival-gold-400">
-              Fest Arenas
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              Fest Directorate
             </h4>
-            <ul className="space-y-2 text-xs text-festival-cream-300/80">
-              <li>Dance - Solo, Duet & Group</li>
-              <li>Singing - Solo, Duet & Band</li>
-              <li>Theatre & Mono Act</li>
-              <li>Fine Arts & Face Painting</li>
-              <li>Fashion Upcycling & MakeUp</li>
-              <li>AI Art & Digital Design</li>
-              <li>Celebrity Star Night</li>
-            </ul>
-          </div>
-
-          {/* Col 4: Venue & Contact */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-festival-gold-400">
-              Festival Directorate
-            </h4>
-            <div className="space-y-2.5 text-xs text-festival-cream-300/80">
-              <div className="flex items-start space-x-2.5">
-                <MapPin className="w-4 h-4 text-festival-gold-400 shrink-0 mt-0.5" />
-                <span>Rajeshwari Auditorium & Grounds, NIMS University Rajasthan, Jaipur – 303121</span>
+            <p className="text-xs text-rose-200/70 leading-relaxed">
+              Organized And Steered By The NIMS Student Council Under The Aegis Of The Directorate Of Student Welfare & Cultural Affairs.
+            </p>
+            <div className="pt-1 space-y-1.5 text-xs text-rose-300/80">
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <span>NIMS Jaipur Grounds, NH-11C, Rajasthan</span>
               </div>
-              <div className="flex items-center space-x-2.5">
-                <Mail className="w-4 h-4 text-festival-gold-400 shrink-0" />
-                <a href="mailto:abhivyakti@nimsuniversity.org" className="hover:text-festival-gold-300">
-                  abhivyakti@nimsuniversity.org
-                </a>
-              </div>
-              <div className="flex items-center space-x-2.5">
-                <Phone className="w-4 h-4 text-festival-gold-400 shrink-0" />
-                <span>Helpline: +91 141 666 0999</span>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>abhivyakti@nimsuniversity.org</span>
               </div>
             </div>
-            <div className="pt-3">
+          </div>
+
+          {/* Col 4: Directorate Staff Portal Access */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              Staff & Jury Operations
+            </h4>
+            <p className="text-xs text-rose-200/70 leading-relaxed">
+              Empanelled Jury Members And College Contingent Coordinators Can Access The Official Scoring Deck.
+            </p>
+            <div className="pt-2">
               <Link
                 to="/admin/login"
-                className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-festival-wine-900 border border-festival-gold-500/30 text-xs font-medium text-festival-gold-400 hover:bg-festival-crimson-700/50 transition-colors"
+                className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#130206] hover:bg-amber-500 hover:text-black text-amber-300 border border-amber-500/30 text-xs font-bold transition-all shadow-md"
               >
-                <span>Staff & Jury Login</span>
-                <ExternalLink className="w-3 h-3" />
+                <ShieldCheck className="w-4 h-4" />
+                <span>Directorate Login</span>
               </Link>
             </div>
           </div>
         </div>
 
         {/* Bottom Strip */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-festival-cream-300/60 space-y-3 sm:space-y-0">
-          <p>© 2026 NIMS University Rajasthan • Student Council Fest Directorate. All Rights Reserved.</p>
-          <div className="flex items-center space-x-4">
-            <Link to="/rulebook" className="hover:text-festival-gold-400 transition-colors">Code Of Conduct</Link>
-            <span>•</span>
-            <Link to="/live" target="_blank" className="hover:text-festival-gold-400 transition-colors">Stadium Screen</Link>
-          </div>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-rose-300/60 space-y-3 sm:space-y-0">
+          <p>© 2026 NIMS University Rajasthan. All Rights Reserved. Abhivyakti Cultural Championship.</p>
+          <p className="flex items-center space-x-1">
+            <span>Crafted With Pride For NIMS Student Council</span>
+          </p>
         </div>
       </div>
     </footer>
   );
 };
-
+export default Footer;

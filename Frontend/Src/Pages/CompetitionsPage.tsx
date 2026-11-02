@@ -3,6 +3,7 @@ import { FestiveTicker } from "@/Components/Ui/FestiveTicker";
 import { Navbar } from "@/Components/Ui/Navbar";
 import { Footer } from "@/Components/Ui/Footer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
+import { EventGuidelineModal, GuidelineEventData } from "@/Components/Ui/EventGuidelineModal";
 import { Api } from "@/Lib/Api";
 import {
   Sparkles,
@@ -12,10 +13,7 @@ import {
   Clock,
   Trophy,
   Users,
-  ShieldAlert,
-  X,
-  Layers,
-  ChevronRight,
+  BookOpen,
 } from "lucide-react";
 
 interface Competition {
@@ -44,7 +42,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "10:00 AM",
     max_participants: 12,
-    rules_summary: "Time limit 4-6 minutes. Props allowed with prior approval. Classical, folk, and contemporary styles accepted.",
+    rules_summary: "Time limit 4-6 minutes. Props allowed with prior approval. Classical, folk, and contemporary styles accepted. Track audio in MP3 format.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -59,7 +57,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "10:00 AM",
     max_participants: 6,
-    rules_summary: "Time limit 3-5 minutes. Backing tracks or acoustic instruments permitted. Judging on pitch, rhythm, and expression.",
+    rules_summary: "Time limit 3-5 minutes. Backing tracks or acoustic instruments permitted. Judging on pitch, rhythm, vocal dynamics, and expression.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -74,7 +72,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "02:00 PM",
     max_participants: 2,
-    rules_summary: "Theme announced on spot. Duration 90 minutes. Non-toxic paints strictly required. Both model and painter must be registered.",
+    rules_summary: "Theme announced on spot. Duration 90 minutes. Non-toxic paints strictly required. Both model and painter must be registered students.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -89,7 +87,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "02:00 PM",
     max_participants: 2,
-    rules_summary: "Participants must bring discarded recyclable materials. Duration 2 hours. Judging on creativity and utility.",
+    rules_summary: "Participants must bring discarded recyclable materials. Duration 2 hours. Judging on creativity, utility, and environmental ingenuity.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -104,7 +102,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "03:00 PM",
     max_participants: 4,
-    rules_summary: "Transform discarded textiles into high-couture garments. 3 hours crafting followed by runway demonstration.",
+    rules_summary: "Transform discarded textiles into high-couture garments. 2.5 hours on-site crafting followed by runway demonstration before judges.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -119,7 +117,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "04:00 PM",
     max_participants: 1,
-    rules_summary: "Single participant. A3 sheets provided. Black fine-liners and markers only. Duration 60 minutes.",
+    rules_summary: "Single participant. A3 sheets provided. Black fine-liners and markers only. Duration 60 minutes. Spontaneity and line precision evaluated.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -134,7 +132,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "04:00 PM",
     max_participants: 2,
-    rules_summary: "Theme: 'Heritage Meets Future'. Newspapers, magazines, and adhesives. Duration 90 minutes.",
+    rules_summary: "Theme: 'Heritage Meets Future'. Newspapers, magazines, scissors, and adhesives. Duration 90 minutes. Composition and theme depth judged.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -149,7 +147,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-21",
     start_time: "04:00 PM",
     max_participants: 1,
-    rules_summary: "Terracotta and modeling clay. Duration 2 hours. Judged on structural balance, intricacy, and originality.",
+    rules_summary: "Terracotta and modeling clay. Duration 2 hours. Judged on structural balance, intricacy, anatomical proportions, and originality.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -164,7 +162,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "09:00 AM",
     max_participants: 1,
-    rules_summary: "Solo performance commanding the main stage. 5 minutes maximum. No offensive or profane material.",
+    rules_summary: "Solo performance commanding the main stage. 5 minutes maximum. Minimal hand props. Script delivery, vocal modulation, and character transition.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -179,7 +177,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "11:00 AM",
     max_participants: 12,
-    rules_summary: "Grand finale round for qualified finalists. Elaborate costumes and live lighting coordination permitted.",
+    rules_summary: "Grand finale round for qualified finalists. Elaborate costumes and live lighting coordination permitted. Strict time limits enforced.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -194,7 +192,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "11:00 AM",
     max_participants: 6,
-    rules_summary: "Grand finale vocal showcase. Live microphone setup with dual monitor checks. Jury rubric applied.",
+    rules_summary: "Grand finale vocal showcase. Live microphone setup with dual monitor checks. Em献nelled music gurus evaluating 4-pillar rubric.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -209,7 +207,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "02:00 PM",
     max_participants: 1,
-    rules_summary: "Prompt engineering and digital composition. Real-time generation monitored by technical jury.",
+    rules_summary: "Prompt engineering and digital composition. Real-time generation monitored by technical jury. Complete prompt logs and iterations required.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -224,7 +222,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "02:00 PM",
     max_participants: 1,
-    rules_summary: "Traditional and modern script calligraphy. English and Devanagari scripts evaluated on precision.",
+    rules_summary: "Traditional and modern script calligraphy. English and Devanagari scripts evaluated on line precision, aesthetic balance, and rhythm.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -239,7 +237,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "02:30 PM",
     max_participants: 2,
-    rules_summary: "High-glamour and theatrical makeup styling. 90 minutes working window followed by jury review.",
+    rules_summary: "High-glamour, cinematic, and theatrical makeup styling. 75 minutes working window followed by jury runway inspection.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -254,7 +252,7 @@ const FALLBACK_COMPETITIONS: Competition[] = [
     event_date: "2025-11-22",
     start_time: "02:30 PM",
     max_participants: 2,
-    rules_summary: "Sneaker custom artwork and embellishment. Bring your plain sneakers and paint/accessories.",
+    rules_summary: "Sneaker custom artwork and embellishment. White sneakers customized on-site with acrylic paints, markers, and street styling accessories.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -266,7 +264,10 @@ export const CompetitionsPage: React.FC = () => {
   const [competitions, setCompetitions] = useState<Competition[]>(FALLBACK_COMPETITIONS);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedEvent, setSelectedEvent] = useState<Competition | null>(null);
+
+  // Guideline Modal State
+  const [selectedGuidelineEvent, setSelectedGuidelineEvent] = useState<GuidelineEventData | null>(null);
+  const [isGuidelineModalOpen, setIsGuidelineModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchCompetitions = async () => {
@@ -276,11 +277,28 @@ export const CompetitionsPage: React.FC = () => {
           setCompetitions(res.data.results);
         }
       } catch {
-        // Fallback already initialized
+        // Fallback initialized
       }
     };
     fetchCompetitions();
   }, []);
+
+  const openGuidelines = (comp: Competition) => {
+    setSelectedGuidelineEvent({
+      id: comp.id,
+      title: comp.title,
+      category: comp.category,
+      arena: comp.arena,
+      venue: comp.venue,
+      event_date: comp.event_date,
+      start_time: comp.start_time,
+      rules_summary: comp.rules_summary,
+      first_place_points: comp.first_place_points || 40,
+      second_place_points: comp.second_place_points || 25,
+      third_place_points: comp.third_place_points || 15,
+    });
+    setIsGuidelineModalOpen(true);
+  };
 
   const categories = ["All", "Dance", "Music", "Fine Arts", "Fashion", "Drama", "Digital Arts", "Creative Arts"];
 
@@ -294,12 +312,12 @@ export const CompetitionsPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0e0204] text-amber-50 relative selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#050002] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
@@ -307,15 +325,15 @@ export const CompetitionsPage: React.FC = () => {
             <span>Official Championship Roster</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
-            Competitions & Arenas
+            Competitions & Guidelines
           </h1>
-          <p className="text-sm text-rose-200/80 mt-3 leading-relaxed">
-            15 High-Stakes Competitions Across 6 Cultural Arenas. Review Event Guidelines, Venues, Point Allocations, And Timings.
+          <p className="text-xs sm:text-sm text-rose-200/80 mt-2 leading-relaxed">
+            All 15 Official Competitions Across 6 Cultural Arenas. Click Any Event's 'Guidelines & Rules' Button To Inspect Rubrics And Parameters.
           </p>
         </div>
 
         {/* Filter Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#160207] p-4 rounded-2xl border border-rose-950/80">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104] p-4 rounded-2xl border border-rose-950">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 custom-scrollbar">
             {categories.map((cat) => (
@@ -341,7 +359,7 @@ export const CompetitionsPage: React.FC = () => {
               placeholder="Search Competitions Or Venues..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#1d0307] border border-rose-950/80 focus:border-amber-500/60 text-xs text-white placeholder-rose-300/40 focus:outline-none transition-colors"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#140206] border border-rose-950 focus:border-amber-500 text-xs text-white placeholder-rose-300/40 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -351,8 +369,7 @@ export const CompetitionsPage: React.FC = () => {
           {filteredCompetitions.map((comp) => (
             <div
               key={comp.id}
-              onClick={() => setSelectedEvent(comp)}
-              className="p-6 rounded-2xl bg-[#170306] border border-rose-950/80 hover:border-amber-500/50 hover:bg-[#200409] transition-all cursor-pointer group shadow-xl flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-[#0d0104] border border-rose-950 hover:border-amber-500/50 hover:bg-[#140206] transition-all group shadow-xl flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -373,7 +390,7 @@ export const CompetitionsPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-rose-950/60 space-y-2">
+              <div className="mt-6 pt-4 border-t border-rose-950/60 space-y-3">
                 <div className="flex items-center justify-between text-xs text-rose-300/80">
                   <div className="flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5 text-rose-400" />
@@ -392,105 +409,33 @@ export const CompetitionsPage: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-1 text-amber-400 font-bold shrink-0">
                     <Trophy className="w-3.5 h-3.5" />
-                    <span>{comp.first_place_points} Pts</span>
+                    <span>{comp.first_place_points || 40} Pts</span>
                   </div>
                 </div>
+
+                {/* Direct Event Guideline & Rules Action Button */}
+                <button
+                  onClick={() => openGuidelines(comp)}
+                  className="w-full py-2.5 px-3 rounded-xl bg-[#1b0307] hover:bg-amber-500 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  <span>Guidelines & Scoring Rubric</span>
+                </button>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Modal For Single Event Details */}
-        {selectedEvent && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
-            <div className="w-full max-w-xl rounded-3xl bg-[#1b0307] border border-amber-500/40 p-6 sm:p-8 shadow-2xl relative">
-              <button
-                onClick={() => setSelectedEvent(null)}
-                className="absolute top-5 right-5 p-2 rounded-xl bg-rose-950/60 text-rose-300 hover:text-white hover:bg-rose-900/60 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
-                  {selectedEvent.category}
-                </span>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-rose-950/80 text-rose-300 border border-rose-900/50">
-                  {selectedEvent.arena}
-                </span>
-              </div>
-
-              <h2 className="text-2xl font-serif font-black text-white mb-4">
-                {selectedEvent.title}
-              </h2>
-
-              <div className="grid grid-cols-2 gap-3 mb-6 p-4 rounded-2xl bg-[#140206] border border-rose-950/80 text-xs">
-                <div>
-                  <span className="text-rose-400/80 font-medium">Scheduled Date:</span>
-                  <p className="font-bold text-white mt-0.5">{selectedEvent.event_date}</p>
-                </div>
-                <div>
-                  <span className="text-rose-400/80 font-medium">Start Time:</span>
-                  <p className="font-bold text-white mt-0.5">{selectedEvent.start_time}</p>
-                </div>
-                <div>
-                  <span className="text-rose-400/80 font-medium">Official Venue:</span>
-                  <p className="font-bold text-white mt-0.5">{selectedEvent.venue}</p>
-                </div>
-                <div>
-                  <span className="text-rose-400/80 font-medium">Max Contingent Size:</span>
-                  <p className="font-bold text-white mt-0.5">{selectedEvent.max_participants} Participants</p>
-                </div>
-              </div>
-
-              {/* Point Matrix */}
-              <div className="mb-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">
-                  Championship Points Allocation
-                </h4>
-                <div className="grid grid-cols-3 gap-3 text-center">
-                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30">
-                    <span className="text-lg">🥇</span>
-                    <p className="text-xs font-black text-amber-300 mt-1">1st Place</p>
-                    <p className="text-sm font-bold text-white">{selectedEvent.first_place_points} Points</p>
-                  </div>
-                  <div className="p-3 rounded-xl bg-zinc-400/10 border border-zinc-400/30">
-                    <span className="text-lg">🥈</span>
-                    <p className="text-xs font-black text-zinc-300 mt-1">2nd Place</p>
-                    <p className="text-sm font-bold text-white">{selectedEvent.second_place_points} Points</p>
-                  </div>
-                  <div className="p-3 rounded-xl bg-amber-800/20 border border-amber-700/30">
-                    <span className="text-lg">🥉</span>
-                    <p className="text-xs font-black text-amber-600 mt-1">3rd Place</p>
-                    <p className="text-sm font-bold text-white">{selectedEvent.third_place_points} Points</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Official Guidelines */}
-              <div className="mb-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-rose-300 mb-2">
-                  Competition Rules & Criteria
-                </h4>
-                <p className="text-xs text-rose-200/80 leading-relaxed bg-[#140206] p-4 rounded-xl border border-rose-950/70">
-                  {selectedEvent.rules_summary}
-                </p>
-              </div>
-
-              <button
-                onClick={() => setSelectedEvent(null)}
-                className="w-full py-3 rounded-xl bg-amber-500 text-black font-bold text-xs uppercase tracking-wider hover:bg-amber-400 transition-colors"
-              >
-                Close Event Details
-              </button>
-            </div>
-          </div>
-        )}
       </main>
 
       <Footer />
+
+      {/* Event Guideline Modal Attached Directly To Each Event */}
+      <EventGuidelineModal
+        isOpen={isGuidelineModalOpen}
+        onClose={() => setIsGuidelineModalOpen(false)}
+        event={selectedGuidelineEvent}
+      />
     </div>
   );
 };
 export default CompetitionsPage;
-

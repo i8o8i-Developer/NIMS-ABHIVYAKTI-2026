@@ -32,11 +32,11 @@ export const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0204] text-amber-50 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#050002] text-amber-50 flex items-center justify-center p-4 relative overflow-hidden antialiased">
       {/* Background Lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-rose-900/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-rose-950/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-md bg-[#160207] border border-amber-500/40 rounded-3xl p-8 shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-[#0c0104] border border-amber-500/40 rounded-3xl p-8 shadow-2xl relative z-10">
         <div className="text-center mb-8">
           <div className="inline-block p-3 rounded-2xl bg-[#220409] border border-amber-500/40 mb-4 shadow-lg">
             <img src="/Abhivyakti.png" alt="Abhivyakti Logo" className="h-12 w-auto object-contain mx-auto" />

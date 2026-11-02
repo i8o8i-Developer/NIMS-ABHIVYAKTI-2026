@@ -3,15 +3,15 @@ import { FestiveTicker } from "@/Components/Ui/FestiveTicker";
 import { Navbar } from "@/Components/Ui/Navbar";
 import { Footer } from "@/Components/Ui/Footer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
+import { EventGuidelineModal, GuidelineEventData } from "@/Components/Ui/EventGuidelineModal";
 import {
   Calendar,
   Clock,
   MapPin,
   Sparkles,
   Download,
-  Filter,
   CheckCircle2,
-  ChevronRight,
+  BookOpen,
   Flame,
 } from "lucide-react";
 
@@ -26,6 +26,7 @@ interface ScheduleItem {
   duration: string;
   round: string;
   isGrandFinale?: boolean;
+  rules?: string;
 }
 
 const COMPLETE_SCHEDULE: ScheduleItem[] = [
@@ -40,6 +41,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "180 Mins",
     round: "Elimination Round",
+    rules: "Performance Time: Solo (3-4 Mins), Duet (4-5 Mins), Group (6-8 Mins). Audio track in MP3 format submitted 1 hour prior. Classical, contemporary, Bollywood, and folk styles accepted. Flammable materials prohibited.",
   },
   {
     id: 2,
@@ -51,6 +53,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Management - LT 10 & 11",
     duration: "180 Mins",
     round: "Preliminary Round",
+    rules: "Vocal Time: 4 Minutes Max. Live acoustic instruments or standard karaoke backing allowed. Evaluated on pitch accuracy, rhythm, vocal modulation, and stage presence.",
   },
   {
     id: 3,
@@ -62,6 +65,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Management - LT 16 & 17",
     duration: "90 Mins",
     round: "Finals",
+    rules: "Theme announced on spot. Duration 90 minutes. Non-toxic, skin-safe body paints only. Both model and artist must be bonafide NIMS students.",
   },
   {
     id: 4,
@@ -73,6 +77,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Management - LT 21",
     duration: "120 Mins",
     round: "Finals",
+    rules: "Duration 2 hours. Team size 1-2 students. Recyclable materials and scrap only. Pre-assembled structures lead to instant disqualification.",
   },
   {
     id: 5,
@@ -84,6 +89,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Fashion Lab & LT 16, 17",
     duration: "180 Mins",
     round: "Finals Showcase",
+    rules: "Transform discarded textiles into couture garments. 2.5 hours on-site execution followed by runway jury display.",
   },
   {
     id: 6,
@@ -95,6 +101,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Moot Court 2",
     duration: "60 Mins",
     round: "Finals",
+    rules: "Individual event. Duration 60 minutes. A3 sheets provided. Black fine-liners and ink pens only.",
   },
   {
     id: 7,
@@ -106,6 +113,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "LT 21, 15",
     duration: "90 Mins",
     round: "Finals",
+    rules: "Theme: 'Heritage Meets Future'. Duration 90 minutes. Newspapers, periodicals, scissors, and adhesives.",
   },
   {
     id: 8,
@@ -117,6 +125,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Corridor - 1st Floor",
     duration: "120 Mins",
     round: "Finals",
+    rules: "Natural terracotta clay provided. Duration 2 hours. Judged on structural balance, intricacy, and creative interpretation.",
   },
 
   // Day 2: 22 Nov 2025
@@ -130,6 +139,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "120 Mins",
     round: "Finals",
+    rules: "Solo dramatic performance commanding the main stage. 4-6 minutes limit. Dialogue delivery, emotion transition, and expression evaluated.",
   },
   {
     id: 10,
@@ -142,6 +152,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     duration: "180 Mins",
     round: "Grand Finale",
     isGrandFinale: true,
+    rules: "Grand finale championship round for qualified entries. Synchronisation, choreography complexity, and stage dominance evaluated by celebrity jury.",
   },
   {
     id: 11,
@@ -154,6 +165,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     duration: "150 Mins",
     round: "Grand Finale",
     isGrandFinale: true,
+    rules: "Grand finale vocal championship. Dual stage monitors and professional acoustic check provided. Strict 5-minute performance window.",
   },
   {
     id: 12,
@@ -165,6 +177,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "LT 25",
     duration: "90 Mins",
     round: "Finals",
+    rules: "Prompt engineering and concept rendering executed live on assigned workstations. Complete workflow documentation and prompt logs required.",
   },
   {
     id: 13,
@@ -176,6 +189,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Moot Court",
     duration: "90 Mins",
     round: "Finals",
+    rules: "Traditional and modern scripts (Devanagari, English Gothic, Copperplate). Duration 60 minutes. Evaluated on stroke precision and layout balance.",
   },
   {
     id: 14,
@@ -187,6 +201,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "LT 16, 17 & Corridor (2nd Floor)",
     duration: "90 Mins",
     round: "Finals",
+    rules: "Theatrical, editorial, and fantasy makeup. Duration 75 minutes. Blending, shading, contouring, hygiene, and overall impact evaluated.",
   },
   {
     id: 15,
@@ -198,6 +213,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "LT 21 & 15",
     duration: "90 Mins",
     round: "Finals",
+    rules: "Sneaker custom artwork and street styling. Plain sneakers customized on-site with acrylic paints, markers, and street styling accessories.",
   },
 ];
 
@@ -205,7 +221,29 @@ export const SchedulePage: React.FC = () => {
   const [activeDay, setActiveDay] = useState<"All" | "Day 1" | "Day 2">("Day 1");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // Guideline Modal State
+  const [selectedGuidelineEvent, setSelectedGuidelineEvent] = useState<GuidelineEventData | null>(null);
+  const [isGuidelineModalOpen, setIsGuidelineModalOpen] = useState(false);
+
   const categories = ["All", "Dance", "Music", "Fine Arts", "Fashion", "Drama", "Digital Arts", "Creative Arts"];
+
+  const openGuidelines = (item: ScheduleItem) => {
+    setSelectedGuidelineEvent({
+      id: item.id,
+      title: item.title,
+      category: item.category,
+      venue: item.venue,
+      date: item.date,
+      time: item.time,
+      duration: item.duration,
+      round: item.round,
+      rules_summary: item.rules,
+      first_place_points: 40,
+      second_place_points: 25,
+      third_place_points: 15,
+    });
+    setIsGuidelineModalOpen(true);
+  };
 
   const filteredSchedule = COMPLETE_SCHEDULE.filter((item) => {
     const matchesDay = activeDay === "All" || item.day === activeDay;
@@ -214,12 +252,12 @@ export const SchedulePage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0e0204] text-amber-50 relative selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#050002] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
@@ -227,15 +265,15 @@ export const SchedulePage: React.FC = () => {
             <span>Master Fest Itinerary</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
-            Festival Schedule
+            Festival Schedule & Guidelines
           </h1>
-          <p className="text-sm text-rose-200/80 mt-3 leading-relaxed">
-            Detailed 2-Day Timeline With Venues, Starting Times, And Round Progression For NIMS Abhivyakti 2026.
+          <p className="text-xs sm:text-sm text-rose-200/80 mt-2 leading-relaxed">
+            Detailed 2-Day Timeline With Venues And Start Times. Click 'Guidelines & Rules' For Instant Event Parameter Rubrics.
           </p>
         </div>
 
         {/* Filter Controls */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#160207] p-4 rounded-2xl border border-rose-950/80">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104] p-4 rounded-2xl border border-rose-950">
           {/* Day Tabs */}
           <div className="flex items-center gap-2">
             {(["Day 1", "Day 2", "All"] as const).map((day) => (
@@ -278,8 +316,8 @@ export const SchedulePage: React.FC = () => {
               key={item.id}
               className={`p-5 rounded-2xl border transition-all ${
                 item.isGrandFinale
-                  ? "bg-gradient-to-r from-[#2c060e] via-[#1a0307] to-[#2c060e] border-amber-500/50 shadow-xl shadow-amber-950/20"
-                  : "bg-[#170306] border-rose-950/80 hover:border-amber-500/40 hover:bg-[#1e0408]"
+                  ? "bg-gradient-to-r from-[#200308] via-[#0d0104] to-[#200308] border-amber-500/50 shadow-2xl shadow-amber-950/20"
+                  : "bg-[#0d0104] border-rose-950 hover:border-amber-500/40 hover:bg-[#130206]"
               }`}
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -317,13 +355,20 @@ export const SchedulePage: React.FC = () => {
                   </h3>
                 </div>
 
-                {/* Venue Column */}
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-[#120205] border border-rose-950/70 md:min-w-[240px] justify-between">
-                  <div className="flex items-center gap-2 truncate">
-                    <MapPin className="w-4 h-4 text-rose-400 shrink-0" />
+                {/* Venue & Guidelines Action Buttons */}
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-[#080103] border border-rose-950 md:min-w-[190px]">
+                    <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                     <span className="text-xs font-semibold text-rose-200 truncate">{item.venue}</span>
                   </div>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+
+                  <button
+                    onClick={() => openGuidelines(item)}
+                    className="px-3.5 py-2.5 rounded-xl bg-[#1b0307] hover:bg-amber-500 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center gap-1.5 shrink-0 shadow-sm"
+                  >
+                    <BookOpen className="w-3.5 h-3.5" />
+                    <span>Guidelines</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -331,11 +376,11 @@ export const SchedulePage: React.FC = () => {
         </div>
 
         {/* Schedule Download Notice */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#1b0307] border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 p-6 rounded-2xl bg-[#0d0104] border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="text-sm font-bold text-amber-200">Official Directorate Schedule Sign-Off</h4>
             <p className="text-xs text-rose-300/80 mt-1">
-              Events May Have Staggered Reporting Times (30 Mins Before Start). Contingents Must Report Promptly.
+              Events Have Staggered Reporting Times (30 Mins Prior). Contingents Must Report Promptly.
             </p>
           </div>
           <button
@@ -349,8 +394,14 @@ export const SchedulePage: React.FC = () => {
       </main>
 
       <Footer />
+
+      {/* Event Guideline Modal Attached Directly To Each Event */}
+      <EventGuidelineModal
+        isOpen={isGuidelineModalOpen}
+        onClose={() => setIsGuidelineModalOpen(false)}
+        event={selectedGuidelineEvent}
+      />
     </div>
   );
 };
 export default SchedulePage;
-

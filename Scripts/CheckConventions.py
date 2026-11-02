@@ -29,6 +29,7 @@ EXEMPT_FILENAMES = {
     "db.sqlite3",
     "README.md",
     ".gitignore",
+    ".dockerignore",
     ".env",
     ".env.example",
     "Nginx.conf",

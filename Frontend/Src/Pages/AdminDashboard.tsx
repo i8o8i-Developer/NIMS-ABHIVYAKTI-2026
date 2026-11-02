@@ -90,12 +90,12 @@ export const AdminDashboard: React.FC = () => {
             <span>Open Jury Scoring Engine</span>
           </Link>
           <Link
-            to="/live"
+            to="/leaderboard"
             target="_blank"
             className="px-4 py-2.5 rounded-xl bg-rose-950/50 hover:bg-rose-900/50 text-rose-300 border border-rose-900/60 text-xs font-bold transition-all flex items-center gap-1.5"
           >
-            <Flame className="w-3.5 h-3.5" />
-            <span>Stadium Feed</span>
+            <Trophy className="w-3.5 h-3.5" />
+            <span>Public Leaderboard</span>
           </Link>
         </div>
       </div>
