@@ -20,13 +20,15 @@ import {
 export const FloatingBackgroundElements: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
-      {/* Pure Dark Obsidian Stage Canvas (Zero Top Red Overlay) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050002] via-[#080103] via-[#0c0205] to-[#050002]" />
+      {/* Luxurious Theatrical Wine-Crimson & Obsidian Black Velvet Canvas */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#180307] via-[#24050e] via-[#1a0309] via-[#120206] to-[#0a0103]" />
 
-      {/* Gentle Ambient Wine-Red Depth Across Mid & Lower Gutters Only */}
-      <div className="absolute top-[45%] -left-20 w-[30rem] sm:w-[38rem] h-[30rem] sm:h-[38rem] rounded-full bg-rose-950/15 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[65%] -right-20 w-[30rem] sm:w-[38rem] h-[30rem] sm:h-[38rem] rounded-full bg-rose-950/15 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[40rem] h-[25rem] rounded-full bg-rose-950/20 blur-[140px] pointer-events-none" />
+      {/* Atmospheric Soft Reddish-Wine Velvet Glows (Zero Harsh Edge Blocks) */}
+      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(136,19,55,0.40)_0%,_rgba(88,11,35,0.25)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
+      <div className="absolute top-[30%] -left-16 w-[36rem] sm:w-[44rem] h-[36rem] sm:h-[44rem] rounded-full bg-[#380814]/45 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[30%] -right-16 w-[36rem] sm:w-[44rem] h-[36rem] sm:h-[44rem] rounded-full bg-[#380814]/45 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[55%] left-1/2 -translate-x-1/2 w-[55rem] h-[32rem] rounded-full bg-[#2a0610]/35 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[65rem] h-[30rem] rounded-full bg-[#24050e]/40 blur-[140px] pointer-events-none" />
 
       {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS

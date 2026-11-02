@@ -3,6 +3,9 @@ import React from "react";
 export const StageSpotlights: React.FC = () => {
   return (
     <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0">
+      {/* Soft Theatrical Wine-Crimson Ambient Stage Depth */}
+      <div className="absolute top-0 inset-x-0 h-full bg-[radial-gradient(ellipse_at_50%_18%,_rgba(100,12,38,0.35)_0%,_rgba(45,6,17,0.20)_45%,_transparent_75%)] blur-2xl pointer-events-none" />
+
       {/* =========================================================================
           THEATRICAL STAGE SPOTLIGHT 1: LEFT OVERHEAD BEAM (Angled Down-Right)
           ========================================================================= */}

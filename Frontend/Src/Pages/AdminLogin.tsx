@@ -55,7 +55,7 @@ export const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#050002] text-amber-50 flex flex-col justify-between p-4 sm:p-6 lg:p-10 relative overflow-hidden select-none antialiased">
+    <div className="min-h-screen bg-[#0c0204] text-amber-50 flex flex-col justify-between p-4 sm:p-6 lg:p-10 relative overflow-hidden select-none antialiased">
       {/* Background Lighting & Festival Motifs */}
       <FloatingBackgroundElements />
 

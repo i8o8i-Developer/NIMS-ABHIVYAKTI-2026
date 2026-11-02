@@ -395,8 +395,8 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050002] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
-      {/* Background Lighting, Spotlight Beams & Circle Elements */}
+    <div className="min-h-screen bg-[#0c0204] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
+      {/* Background Lighting, Spotlight Beams & Cultural Motifs */}
       <FloatingBackgroundElements />
 
       {/* Marquee Banner */}
