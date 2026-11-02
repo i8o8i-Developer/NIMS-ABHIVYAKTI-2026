@@ -41,159 +41,229 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   // Day 1: 18 Nov 2026
   {
     id: "1",
-    title: "Dance - Solo & Duet (Round 1 Prelims)",
+    title: "Groove-o-Mania (Dance - Round 1)",
     day: "Day 1",
     date: "18 Nov 2026",
-    time: "10:00 AM",
+    time: "10:00 AM - 01:00 PM",
     venue: "Rajeshwari Auditorium",
     category: "Dance",
-    rules: "Performance Time: Solo (3-4 Mins), Duet (4-5 Mins). Classical, contemporary, Bollywood, and folk styles accepted. Audio track in MP3 format submitted 1 hour prior.",
+    rules: "Solo (Max 3 Mins, 3M/3F per college), Duet (Max 3 Mins, 2 pairs), Group (Max 5 Mins, 6-10 students). All dance styles permitted. Exceeding time limit leads to deduction. Evaluated on Choreography, Synchronization, Expressions, Costumes & Stage Presence.",
   },
   {
     id: "2",
-    title: "Singing - Solo & Duet (Round 1 Prelims)",
+    title: "Harmony Hustle (Singing - Round 1)",
     day: "Day 1",
     date: "18 Nov 2026",
-    time: "10:00 AM",
-    venue: "Management - LT 10 & 11",
+    time: "10:00 AM - 01:00 PM",
+    venue: "NIMS School of Law - LT 10 & 11",
     category: "Music",
-    rules: "Vocal Time: 4 Minutes Max. Live acoustic instruments or standard karaoke backing allowed. Evaluated on pitch accuracy, rhythm, vocal modulation, and stage presence.",
+    rules: "Solo (Max 3 Mins, 3M/3F), Duet (Max 3 Mins, 2 pairs), Group (Max 5 Mins, 6-10 students), Rap (Single round). Karaoke permitted. One accompanist permitted where applicable. Evaluated on Swara (Pitch), Taal (Rhythm), Song Selection, Voice Quality & Stage Presence.",
   },
   {
     id: "3",
-    title: "Face Painting",
+    title: "Spellbound (Spell Bee - Round 1)",
     day: "Day 1",
     date: "18 Nov 2026",
-    time: "02:00 PM",
-    venue: "Management - LT 16 & 17",
-    category: "Fine Arts",
-    rules: "Theme announced on spot. Duration 90 minutes. Non-toxic, skin-safe body paints only. Both model and artist must be bonafide NIMS students.",
+    time: "02:00 PM - 05:00 PM",
+    venue: "Marik / Moot Court",
+    category: "Literature",
+    rules: "5 Solo participants per college (at least 1 female). 4-Round format: Round 1 (20-word Dictation, Top 30 qualify), Round 2 (Moderate Spell Bee), Round 3 (Advanced Spell Bee in sentence context), Round 4 (Sudden-Death Rapid-Fire Finale).",
   },
   {
     id: "4",
-    title: "Best Out Of Waste",
+    title: "Alfaaz Unplugged (Poetry Slam – Hindi & English)",
     day: "Day 1",
     date: "18 Nov 2026",
-    time: "02:00 PM",
-    venue: "Management - LT 21",
-    category: "Creative Arts",
-    rules: "Duration 2 hours. Team size 1-2 students. Recyclable materials and scrap only. Pre-assembled structures lead to instant disqualification.",
+    time: "02:00 PM - 05:00 PM",
+    venue: "Marik / NIET",
+    category: "Literature",
+    rules: "5 Solo participants per language per college. 15 Minutes on-spot preparation, 2-3 minutes performance time. Must create original poetry on the spot without internet, books, or pre-written material. Judged on Originality, Imagery, Voice & Stage Presence.",
   },
 
   // Day 2: 19 Nov 2026
   {
     id: "5",
-    title: "Fashion Upcycling",
+    title: "RangRush (Rangoli)",
     day: "Day 2",
     date: "19 Nov 2026",
-    time: "11:00 AM",
-    venue: "Fashion Lab & LT 16, 17",
-    category: "Fashion",
-    rules: "Transform discarded textiles into couture garments. 2.5 hours on-site execution followed by runway jury display.",
+    time: "09:00 AM - 09:30 AM",
+    venue: "School of Law",
+    category: "Fine Arts",
+    rules: "2 Teams of 3-5 students per college. Rangoli size: 3x3 feet. Theme provided on spot. Duration 60 minutes. All colors and materials brought by teams.",
   },
   {
     id: "6",
-    title: "Doodling Competition",
+    title: "ReThread (Fashion Upcycling)",
     day: "Day 2",
     date: "19 Nov 2026",
-    time: "02:00 PM",
-    venue: "Moot Court 2",
-    category: "Fine Arts",
-    rules: "Individual event. Duration 60 minutes. A3 sheets provided. Black fine-liners and ink pens only.",
+    time: "10:00 AM - 11:00 AM",
+    venue: "School of Law",
+    category: "Fashion",
+    rules: "5 Solo participants per college (at least 1 female). Duration 60 minutes. Upcycle used/old textiles into wearable couture garments on the spot. New fabric strictly prohibited.",
   },
   {
     id: "7",
-    title: "Collage Making",
+    title: "ScribbleSquad (Doodling)",
     day: "Day 2",
     date: "19 Nov 2026",
-    time: "03:00 PM",
-    venue: "LT 21, 15",
+    time: "10:00 AM - 11:00 AM",
+    venue: "School of Law",
     category: "Fine Arts",
-    rules: "Theme: 'Heritage Meets Future'. Duration 90 minutes. Newspapers, periodicals, scissors, and adhesives.",
+    rules: "5 Solo participants per college (at least 1 female). Duration 60 minutes. Paper size A3. On-spot theme. Freehand black fine-liners and ink pens.",
   },
   {
     id: "8",
-    title: "Clay Art",
+    title: "BOT-Brush (AI Art Generation)",
     day: "Day 2",
     date: "19 Nov 2026",
-    time: "04:00 PM",
-    venue: "Corridor - 1st Floor",
+    time: "11:00 AM - 12:00 PM",
+    venue: "School of Law",
+    category: "Digital Arts",
+    rules: "5 Solo participants per college (at least 1 female). Duration 30 minutes. Create an original thematic poster using AI prompt engineering on personal devices. Submit JPG/PNG/PDF <= 5MB via official QR code.",
+  },
+  {
+    id: "9",
+    title: "Inked Expressions (Face Painting)",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "11:00 AM - 12:00 PM",
+    venue: "School of Law",
     category: "Fine Arts",
-    rules: "Natural terracotta clay provided. Duration 2 hours. Judged on structural balance, intricacy, and creative interpretation.",
+    rules: "3 Male & 3 Female participants per college. Duration 60 minutes. Model must arrive with a clean, unpainted face. Skin-safe paints mandatory. Stencils and pre-made outlines prohibited.",
+  },
+  {
+    id: "10",
+    title: "FONT-tastic (Calligraphy)",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "12:00 PM - 01:00 PM",
+    venue: "School of Law",
+    category: "Fine Arts",
+    rules: "5 Solo participants per college (at least 1 female). Duration 30 minutes. Paper size A3. Write on-spot designated text. Calligraphy pens only (no ball/gel pens). Freehand execution without tracing.",
+  },
+  {
+    id: "11",
+    title: "MUA Madness (MakeUp Contest)",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "12:00 PM - 01:00 PM",
+    venue: "School of Law",
+    category: "Fashion",
+    rules: "5 Solo participants per college (at least 1 male). Duration 60 minutes. Model arrives with a clean, makeup-free face. Blending, precision, styling, and hygiene evaluated.",
+  },
+  {
+    id: "12",
+    title: "Kick-Drip (Shoe Decoration Contest)",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "02:00 PM - 03:00 PM",
+    venue: "School of Law",
+    category: "Fashion",
+    rules: "5 Solo participants per college (at least 1 female). Duration 60 minutes. Decorate a single pair of plain shoes on the spot using paints, stencils, accessories, and street art finishes.",
+  },
+  {
+    id: "13",
+    title: "Inkspire (Creative Writing – Hindi & English)",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "02:00 PM - 03:00 PM",
+    venue: "School of Law",
+    category: "Literature",
+    rules: "5 Solo participants per language per college. Duration 45 minutes. Word limit 400-600 words based on on-spot visual or quotation prompt. Evaluated on Originality, Structure, Language & Theme.",
+  },
+  {
+    id: "14",
+    title: "Lit Check (Literature Quiz - Prelims)",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "03:00 PM - 05:00 PM",
+    venue: "Rajeshwari Auditorium",
+    category: "Literature",
+    rules: "1 Team of 4 students per college. 4 Rounds: Questioning, Audio Recognition, Visual Clues, and Rapid-Fire. Covers classic literature, literary movements, authors, and world culture.",
   },
 
   // Day 3: 20 Nov 2026
   {
-    id: "9",
-    title: "Mono Act (Theatrical Soliloquy)",
+    id: "15",
+    title: "SoloFlix (Mono Act)",
     day: "Day 3",
     date: "20 Nov 2026",
-    time: "10:00 AM",
+    time: "09:00 AM - 11:00 AM",
     venue: "Rajeshwari Auditorium",
-    category: "Drama",
-    rules: "Solo dramatic performance commanding the main stage. 4-6 minutes limit. Dialogue delivery, emotion transition, and expression evaluated.",
+    category: "Theatre",
+    rules: "3 Solo participants per college (at least 1 female). Maximum time 3 minutes. Evaluated on Acting Skills, Voice Modulation, Concept Creativity, Stage Presence & Overall Theatrical Impact.",
   },
   {
-    id: "10",
-    title: "AI Art & Digital Prompt Challenge",
+    id: "16",
+    title: "Groove-o-Mania (Dance - Round 2 Battle Round)",
     day: "Day 3",
     date: "20 Nov 2026",
-    time: "02:00 PM",
-    venue: "LT 25",
-    category: "Digital Arts",
-    rules: "Prompt engineering and concept rendering executed live on assigned workstations. Complete workflow documentation and prompt logs required.",
+    time: "11:00 AM - 01:00 PM",
+    venue: "Rajeshwari Auditorium",
+    category: "Dance",
+    rules: "Head-to-head battle round for qualified Solo and Duet performers. Matchups and tracks determined by lottery draw. Evaluated on improvisation, musicality, and crowd dominance.",
   },
   {
-    id: "11",
-    title: "Calligraphy Championship",
+    id: "17",
+    title: "Harmony Hustle (Singing - Round 2 Battle Round)",
     day: "Day 3",
     date: "20 Nov 2026",
-    time: "03:00 PM",
-    venue: "Moot Court",
-    category: "Fine Arts",
-    rules: "Traditional and modern scripts (Devanagari, English Gothic, Copperplate). Duration 60 minutes. Evaluated on stroke precision and layout balance.",
+    time: "11:00 AM - 01:00 PM",
+    venue: "NIMS School of Law - LT 10 & 11",
+    category: "Music",
+    rules: "Vocal face-off for qualified Solo and Duet entries. High-stakes acoustic control, pitch mastery, and emotional resonance tested under direct jury scrutiny.",
   },
   {
-    id: "12",
-    title: "MakeUp & Glamour Contest",
+    id: "18",
+    title: "Clash of Takes (Debate – Hindi & English)",
     day: "Day 3",
     date: "20 Nov 2026",
-    time: "04:00 PM",
-    venue: "LT 16, 17 & Corridor (2nd Floor)",
-    category: "Creative Arts",
-    rules: "Theatrical, editorial, and fantasy makeup. Duration 75 minutes. Blending, shading, contouring, hygiene, and overall impact evaluated.",
+    time: "02:00 PM - 05:00 PM",
+    venue: "Marik / NIET",
+    category: "Literature",
+    rules: "2 Solo participants per language per college. 3 Minutes argument presentation + 1 minute rebuttal. For/Against stance decided via chit draw at the venue. Evaluated on Content, Logic, Rebuttal & Presentation.",
+  },
+  {
+    id: "19",
+    title: "Lit Check (Literature Quiz - Grand Finale)",
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "02:00 PM - 05:00 PM",
+    venue: "Rajeshwari Auditorium",
+    category: "Literature",
+    rules: "Top 6 qualifying contingent quiz teams battle through multimedia rounds, audio clues, and sudden-death buzzer rounds to crown the university quiz champions.",
   },
 
   // Day 4: 21 Nov 2026 (Grand Championship Finale)
   {
-    id: "13",
-    title: "Kick Drip (Sneaker Customization)",
+    id: "20",
+    title: "Act-O-Graphy (Skit)",
     day: "Day 4",
     date: "21 Nov 2026",
-    time: "10:00 AM",
-    venue: "LT 21 & 15",
-    category: "Fashion",
-    rules: "Sneaker custom artwork and street styling. Plain sneakers customized live during 90-minute window using acrylics, stencils, and finishes.",
-  },
-  {
-    id: "14",
-    title: "Singing - Group & Battle Of The Bands (Grand Finale)",
-    day: "Day 4",
-    date: "21 Nov 2026",
-    time: "01:00 PM",
-    venue: "LT 10 & 11",
-    category: "Music",
-    rules: "Grand finale vocal championship. Dual stage monitors and professional acoustic check provided. Strict 5-minute performance window.",
-  },
-  {
-    id: "15",
-    title: "Dance - Group Championship (Mega Grand Finale)",
-    day: "Day 4",
-    date: "21 Nov 2026",
-    time: "04:00 PM",
+    time: "09:00 AM - 11:00 AM",
     venue: "Rajeshwari Auditorium",
-    category: "Dance",
-    rules: "Grand finale championship round for qualified entries. Synchronisation, choreography complexity, and stage dominance evaluated by celebrity jury.",
+    category: "Theatre",
+    rules: "1 Team of 5-10 students per college. Maximum time 10 minutes. Evaluated on Script, Acting, Dialogue Delivery, Team Coordination & Social Impact.",
+  },
+  {
+    id: "21",
+    title: "Championship Grand Finale: Groove-o-Mania & Harmony Hustle",
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "11:00 AM - 02:00 PM",
+    venue: "Rajeshwari Auditorium",
+    category: "Dance & Music",
+    rules: "Grand finale showdown for all qualified Group, Duet, and Solo finalists before celebrity jury. Crown champions awarded official rolling trophy points.",
+  },
+  {
+    id: "22",
+    title: "Couture Clique (Fashion Show – 'The Creative Couture Challenge')",
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "05:00 PM - 07:00 PM",
+    venue: "University Cricket Ground",
+    category: "Fashion",
+    rules: "1 Team of 8-15 students per college. Maximum time 8 minutes. Staged at University Cricket Ground! Theme: 'The Creative Couture Challenge'. Evaluated on Presentation, Walking Posture, Styling, Music & Choreography.",
   },
 ];
 
@@ -306,8 +376,8 @@ export const Home: React.FC = () => {
           <Sparkles className="w-4 h-4 text-amber-400" />
         </div>
 
-        {/* Outer Left Floating Badges (Pinned to Far Left Edge With Increased Sizing) */}
-        <div className="hidden xl:flex flex-col gap-4.5 absolute left-3 2xl:left-8 top-[17%] 2xl:top-[19%] z-20">
+        {/* Outer Left Floating Badges (Pinned to Far Left Edge With Increased Sizing & Generous Gaps) */}
+        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute left-3 2xl:left-8 top-[17%] 2xl:top-[19%] z-20">
           {/* Badge 1: Championship Glory */}
           <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
             <div className="flex items-center gap-3">
@@ -402,10 +472,10 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Outer Right Floating Badges (Pinned to Far Right Edge With Increased Sizing) */}
-        <div className="hidden xl:flex flex-col gap-4.5 absolute right-3 2xl:right-8 top-[17%] 2xl:top-[19%] z-20">
+        {/* Outer Right Floating Badges (Pinned to Far Right Edge With Same Sway Animation & Generous Gaps) */}
+        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute right-3 2xl:right-8 top-[17%] 2xl:top-[19%] z-20">
           {/* Badge 4: 6 Cultural Arenas */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "0.6s" }}>
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center justify-end gap-3">
               <div>
                 <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">6 CULTURAL ARENAS</h4>
@@ -418,7 +488,7 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Badge 5: Grand Central Venue */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "1.9s" }}>
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
             <div className="flex items-center justify-end gap-3">
               <div>
                 <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">GRAND CENTRAL VENUE</h4>
@@ -431,7 +501,7 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Badge 6: Verified Jury Engine */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "3.2s" }}>
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
             <div className="flex items-center justify-end gap-3">
               <div>
                 <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">VERIFIED JURY ENGINE</h4>

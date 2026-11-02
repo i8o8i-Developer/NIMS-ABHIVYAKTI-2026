@@ -33,16 +33,17 @@ interface Competition {
 }
 
 const FALLBACK_COMPETITIONS: Competition[] = [
+  // Group A & Group B & Group C & Group D from Official Abhivyakti 2026 Rulebook
   {
     id: 1,
-    title: "Dance - Solo, Duet & Group (Round 1)",
+    title: "Groove-o-Mania (Dance)",
     category: "Dance",
-    arena: "Performing Arts",
+    arena: "Rajeshwari Auditorium",
     venue: "Rajeshwari Auditorium",
     event_date: "2026-11-18",
     start_time: "10:00 AM",
-    max_participants: 12,
-    rules_summary: "Time limit 4-6 minutes. Props allowed with prior approval. Classical, folk, and contemporary styles accepted. Track audio in MP3 format.",
+    max_participants: 10,
+    rules_summary: "Solo (Max 3 Mins, 3M/3F), Duet (Max 3 Mins, 2 pairs), Group (Max 5 Mins, 1 team of 6-10). All dance styles accepted. 3-round format: Round 1 (Original), Round 2 (Battle Round with draw/lottery tracks), Round 3 (Grand Finale). Judged on Choreography, Synchronization, Expressions, Costumes & Stage Presence.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -50,14 +51,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 2,
-    title: "Singing - Solo, Duet & Group (Round 1)",
+    title: "Harmony Hustle (Singing)",
     category: "Music",
     arena: "Vocal Resonance",
-    venue: "Management - LT 10 & 11",
+    venue: "NIMS School of Law - LT 10 & 11",
     event_date: "2026-11-18",
     start_time: "10:00 AM",
-    max_participants: 6,
-    rules_summary: "Time limit 3-5 minutes. Backing tracks or acoustic instruments permitted. Judging on pitch, rhythm, vocal dynamics, and expression.",
+    max_participants: 10,
+    rules_summary: "Solo (Max 3 Mins, 3M/3F), Duet (Max 3 Mins, 2 pairs), Group (Max 5 Mins, 1 team of 6-10), Rap (Single round). Karaoke allowed. 1 accompanist permitted. Judged on Swara (Pitch), Taal (Rhythm), Voice Quality, Song Selection & Stage Presence.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -65,14 +66,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 3,
-    title: "Face Painting",
-    category: "Fine Arts",
-    arena: "Visual Expression",
-    venue: "Management - LT 16 & 17",
-    event_date: "2026-11-18",
-    start_time: "02:00 PM",
-    max_participants: 2,
-    rules_summary: "Theme announced on spot. Duration 90 minutes. Non-toxic paints strictly required. Both model and painter must be registered students.",
+    title: "Couture Clique (Fashion Show – 'The Creative Couture Challenge')",
+    category: "Fashion",
+    arena: "University Cricket Ground",
+    venue: "University Cricket Ground",
+    event_date: "2026-11-21",
+    start_time: "05:00 PM",
+    max_participants: 15,
+    rules_summary: "Grand Mega Finale staged at University Cricket Ground! 1 team of 8-15 students per college. Maximum time 8 minutes. Overall theme: 'The Creative Couture Challenge'. Evaluated on Presentation, Walking Posture, Styling, Music, Choreography & Overall Impact.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -80,14 +81,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 4,
-    title: "Best Out Of Waste",
-    category: "Creative Arts",
-    arena: "Sustainable Creation",
-    venue: "Management - LT 21",
-    event_date: "2026-11-18",
-    start_time: "02:00 PM",
-    max_participants: 2,
-    rules_summary: "Participants must bring discarded recyclable materials. Duration 2 hours. Judging on creativity, utility, and environmental ingenuity.",
+    title: "SoloFlix (Mono Act)",
+    category: "Theatre",
+    arena: "Rajeshwari Auditorium",
+    venue: "Rajeshwari Auditorium",
+    event_date: "2026-11-20",
+    start_time: "09:00 AM",
+    max_participants: 3,
+    rules_summary: "Maximum time 3 minutes. 3 Solo entries per college (at least 1 female). Solo dramatic monologue commanding stage. Evaluated on Acting Skills, Voice Modulation, Concept Creativity & Theatrical Impact.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -95,14 +96,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 5,
-    title: "Fashion Upcycling",
-    category: "Fashion",
-    arena: "Couture & Runway",
-    venue: "Fashion Lab & LT 16, 17",
-    event_date: "2026-11-19",
-    start_time: "11:00 AM",
-    max_participants: 4,
-    rules_summary: "Transform discarded textiles into high-couture garments. 2.5 hours on-site crafting followed by runway demonstration before judges.",
+    title: "Act-O-Graphy (Skit)",
+    category: "Theatre",
+    arena: "Rajeshwari Auditorium",
+    venue: "Rajeshwari Auditorium",
+    event_date: "2026-11-21",
+    start_time: "09:00 AM",
+    max_participants: 10,
+    rules_summary: "1 Team of 5-10 students per college. Maximum time 10 minutes. Audio track submitted in advance. Evaluated on Script, Acting, Dialogue Delivery, Team Coordination & Overall Impact.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -110,14 +111,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 6,
-    title: "Doodling Competition",
+    title: "Inked Expressions (Face Painting)",
     category: "Fine Arts",
-    arena: "Visual Expression",
-    venue: "Moot Court 2",
+    arena: "School of Law",
+    venue: "School of Law",
     event_date: "2026-11-19",
-    start_time: "02:00 PM",
-    max_participants: 1,
-    rules_summary: "Single participant. A3 sheets provided. Black fine-liners and markers only. Duration 60 minutes. Spontaneity and line precision evaluated.",
+    start_time: "11:00 AM",
+    max_participants: 6,
+    rules_summary: "Maximum time 60 minutes. 3 Male & 3 Female entries per college. Model arrives clean-faced. Skin-friendly non-toxic body paints mandatory. Stencils and pre-made designs strictly prohibited.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -125,14 +126,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 7,
-    title: "Collage Making",
+    title: "RangRush (Rangoli)",
     category: "Fine Arts",
-    arena: "Visual Expression",
-    venue: "LT 21, 15",
+    arena: "School of Law",
+    venue: "School of Law",
     event_date: "2026-11-19",
-    start_time: "03:00 PM",
-    max_participants: 2,
-    rules_summary: "Theme: 'Heritage Meets Future'. Newspapers, magazines, scissors, and adhesives. Duration 90 minutes. Composition and theme depth judged.",
+    start_time: "09:00 AM",
+    max_participants: 5,
+    rules_summary: "Maximum time 60 minutes. 2 Teams of 3-5 students per college. Size 3x3 feet. On-spot theme. All required materials and colors brought by teams.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -140,14 +141,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 8,
-    title: "Clay Art",
+    title: "ScribbleSquad (Doodling)",
     category: "Fine Arts",
-    arena: "Visual Expression",
-    venue: "Corridor - 1st Floor",
+    arena: "School of Law",
+    venue: "School of Law",
     event_date: "2026-11-19",
-    start_time: "04:00 PM",
-    max_participants: 1,
-    rules_summary: "Terracotta and modeling clay. Duration 2 hours. Judged on structural balance, intricacy, anatomical proportions, and originality.",
+    start_time: "10:00 AM",
+    max_participants: 5,
+    rules_summary: "Maximum time 60 minutes. 5 Solo entries per college (at least 1 female). Paper size A3. On-spot theme. Black fine-liners and ink pens only.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -155,14 +156,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 9,
-    title: "Mono Act",
-    category: "Drama",
-    arena: "Theatrical Arts",
-    venue: "Rajeshwari Auditorium",
-    event_date: "2026-11-20",
-    start_time: "10:00 AM",
-    max_participants: 1,
-    rules_summary: "Solo performance commanding the main stage. 5 minutes maximum. Minimal hand props. Script delivery, vocal modulation, and character transition.",
+    title: "BOT-Brush (AI Art Generation)",
+    category: "Digital Arts",
+    arena: "School of Law",
+    venue: "School of Law",
+    event_date: "2026-11-19",
+    start_time: "11:00 AM",
+    max_participants: 5,
+    rules_summary: "Maximum time 30 minutes. 5 Solo entries per college (at least 1 female). Create an original poster based on on-spot theme using preferred AI tools on personal device. Submit JPG/PNG/PDF <= 5MB via official QR code.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -170,14 +171,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 10,
-    title: "Dance - Solo, Duet & Group (Round 2)",
-    category: "Dance",
-    arena: "Performing Arts",
-    venue: "Rajeshwari Auditorium",
-    event_date: "2026-11-21",
-    start_time: "04:00 PM",
-    max_participants: 12,
-    rules_summary: "Grand finale round for qualified finalists. Elaborate costumes and live lighting coordination permitted. Strict time limits enforced.",
+    title: "ReThread (Fashion Upcycling)",
+    category: "Fashion",
+    arena: "School of Law",
+    venue: "School of Law",
+    event_date: "2026-11-19",
+    start_time: "10:00 AM",
+    max_participants: 5,
+    rules_summary: "Maximum time 60 minutes. 5 Solo entries per college (at least 1 female). Upcycle used/old clothing brought by participant into wearable couture garments on the spot. New fabric strictly prohibited.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -185,14 +186,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 11,
-    title: "Singing - Solo, Duet & Group (Round 2)",
-    category: "Music",
-    arena: "Vocal Resonance",
-    venue: "LT 10 & 11",
-    event_date: "2026-11-21",
-    start_time: "01:00 PM",
-    max_participants: 6,
-    rules_summary: "Grand finale vocal showcase. Live microphone setup with dual monitor checks. Empanelled music gurus evaluating 4-pillar rubric.",
+    title: "MUA Madness (MakeUp Contest)",
+    category: "Fashion",
+    arena: "School of Law",
+    venue: "School of Law",
+    event_date: "2026-11-19",
+    start_time: "12:00 PM",
+    max_participants: 5,
+    rules_summary: "Maximum time 60 minutes. 5 Solo entries per college (at least 1 male). Model arrives clean-faced. Blending, shading, contouring, editorial glamour, and hygiene evaluated.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -200,14 +201,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 12,
-    title: "AI Art",
-    category: "Digital Arts",
-    arena: "Innovation & Digital",
-    venue: "LT 25",
-    event_date: "2026-11-20",
-    start_time: "02:00 PM",
-    max_participants: 1,
-    rules_summary: "Prompt engineering and digital composition. Real-time generation monitored by technical jury. Complete prompt logs and iterations required.",
+    title: "FONT-tastic (Calligraphy)",
+    category: "Fine Arts",
+    arena: "School of Law",
+    venue: "School of Law",
+    event_date: "2026-11-19",
+    start_time: "12:00 PM",
+    max_participants: 5,
+    rules_summary: "Maximum time 30 minutes. 5 Solo entries per college (at least 1 female). Write on-spot text on A3 paper. Calligraphy pens only. Mixed styles and ball pens strictly prohibited.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -215,14 +216,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 13,
-    title: "Calligraphy",
-    category: "Fine Arts",
-    arena: "Visual Expression",
-    venue: "Moot Court",
-    event_date: "2026-11-20",
-    start_time: "03:00 PM",
-    max_participants: 1,
-    rules_summary: "Traditional and modern script calligraphy. English and Devanagari scripts evaluated on line precision, aesthetic balance, and rhythm.",
+    title: "Kick-Drip (Shoe Decoration Contest)",
+    category: "Fashion",
+    arena: "School of Law",
+    venue: "School of Law",
+    event_date: "2026-11-19",
+    start_time: "02:00 PM",
+    max_participants: 5,
+    rules_summary: "Maximum time 60 minutes. 5 Solo entries per college (at least 1 female). Decorate 1 pair of shoes live on the spot. Acrylics, street art stencils, and finishes.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -230,14 +231,14 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 14,
-    title: "MakeUp Contest",
-    category: "Creative Arts",
-    arena: "Visual Expression",
-    venue: "LT 16, 17 & Corridor (2nd Floor)",
-    event_date: "2026-11-20",
-    start_time: "04:00 PM",
-    max_participants: 2,
-    rules_summary: "High-glamour, cinematic, and theatrical makeup styling. 75 minutes working window followed by jury runway inspection.",
+    title: "Alfaaz Unplugged (Poetry Slam – Hindi & English)",
+    category: "Literature",
+    arena: "Marik / NIET",
+    venue: "Marik / NIET",
+    event_date: "2026-11-18",
+    start_time: "02:00 PM",
+    max_participants: 5,
+    rules_summary: "5 Solo entries per language per college. 15 Minutes on-spot preparation, 2-3 minutes performance time. Must create original poetry on the spot without external reference. Judged on Originality, Writing, Imagery, Voice & Stage Presence.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -245,14 +246,119 @@ const FALLBACK_COMPETITIONS: Competition[] = [
   },
   {
     id: 15,
-    title: "Kick Drip",
-    category: "Fashion",
-    arena: "Couture & Runway",
-    venue: "LT 21 & 15",
+    title: "Clash of Takes (Debate – Hindi & English)",
+    category: "Literature",
+    arena: "Marik / NIET",
+    venue: "Marik / NIET",
+    event_date: "2026-11-20",
+    start_time: "02:00 PM",
+    max_participants: 2,
+    rules_summary: "2 Solo entries per language per college. 3 Minutes argument presentation + 1 minute rebuttal. 2 Rounds (Prelims & Finals). Stance (For/Against) decided via chit draw on spot. Judged on Content, Logic, Rebuttal & Delivery.",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 16,
+    title: "Lit Check (Literature Quiz)",
+    category: "Literature",
+    arena: "Rajeshwari Auditorium",
+    venue: "Rajeshwari Auditorium",
+    event_date: "2026-11-19",
+    start_time: "03:00 PM",
+    max_participants: 4,
+    rules_summary: "1 Team of 4 students per college. 4 Rounds: Questioning, Audio Clues, Visual Clues, and Rapid-Fire. Top teams advance to Day 3 Grand Finale. Covers world literature, authors, and literary history.",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 17,
+    title: "Inkspire (Creative Writing – Hindi & English)",
+    category: "Literature",
+    arena: "School of Law",
+    venue: "School of Law",
+    event_date: "2026-11-19",
+    start_time: "02:00 PM",
+    max_participants: 5,
+    rules_summary: "5 Solo entries per language per college. 45 Minutes limit. Word count 400-600 words based on on-spot creative stimulus prompt. Evaluated on Originality, Structure, Language & Theme.",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 18,
+    title: "Spellbound (Spell Bee)",
+    category: "Literature",
+    arena: "Marik / Moot Court",
+    venue: "Marik / Moot Court",
+    event_date: "2026-11-18",
+    start_time: "02:00 PM",
+    max_participants: 5,
+    rules_summary: "5 Solo entries per college (at least 1 female). 4-Round championship: Round 1 (20-word Dictation, Top 30 qualify), Round 2 (Moderate Spell Bee), Round 3 (Advanced Spell Bee in context), Round 4 (Rapid-Fire Elimination Finale).",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 19,
+    title: "LOL Lab (Meme Making)",
+    category: "Digital Arts",
+    arena: "Digital Submission",
+    venue: "Online Portal / Submission",
+    event_date: "2026-11-19",
+    start_time: "10:00 AM",
+    max_participants: 5,
+    rules_summary: "Group D submission contest. 5 Solo entries per college (at least 1 female). Format: JPG/PNG/PDF <= 5MB. AI-generation, plagiarism, and inappropriate content strictly prohibited.",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 20,
+    title: "Reel-ity Check (Reel Making)",
+    category: "Digital Arts",
+    arena: "Digital Submission",
+    venue: "Online Portal / Submission",
+    event_date: "2026-11-20",
+    start_time: "10:00 AM",
+    max_participants: 5,
+    rules_summary: "Group D submission contest. 5 Solo entries per college (at least 1 female). 30-60 Second reel. Theme: 'NIMS Through My Eyes'. Format: MP4 <= 200MB. Evaluated on cinematography, storytelling & creative edit.",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 21,
+    title: "Pixel Tales (Photo Story)",
+    category: "Digital Arts",
+    arena: "Digital Submission",
+    venue: "Online Portal / Submission",
+    event_date: "2026-11-20",
+    start_time: "10:00 AM",
+    max_participants: 5,
+    rules_summary: "Group D submission contest. 5 Solo entries per college (at least 1 female). Submit 6 photographs depicting a coherent single narrative story. Format: JPG/PNG/PDF <= 50MB.",
+    status: "Upcoming",
+    first_place_points: 40,
+    second_place_points: 25,
+    third_place_points: 15,
+  },
+  {
+    id: 22,
+    title: "Mini-Mentary (Short Documentary)",
+    category: "Digital Arts",
+    arena: "Digital Submission",
+    venue: "Online Portal / Submission",
     event_date: "2026-11-21",
     start_time: "10:00 AM",
-    max_participants: 2,
-    rules_summary: "Sneaker custom artwork and embellishment. White sneakers customized on-site with acrylic paints, markers, and street styling accessories.",
+    max_participants: 5,
+    rules_summary: "Group D submission contest. 3 Teams per college (3-5 students each). Duration 3-5 minutes. Format: MP4 <= 1GB. Judged on documentary research, narrative depth, sound design, and impact.",
     status: "Upcoming",
     first_place_points: 40,
     second_place_points: 25,
@@ -300,7 +406,16 @@ export const CompetitionsPage: React.FC = () => {
     setIsGuidelineModalOpen(true);
   };
 
-  const categories = ["All", "Dance", "Music", "Fine Arts", "Fashion", "Drama", "Digital Arts", "Creative Arts"];
+  const categories = [
+    "All",
+    "Dance",
+    "Music",
+    "Fashion",
+    "Theatre",
+    "Fine Arts",
+    "Literature",
+    "Digital Arts",
+  ];
 
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
@@ -311,19 +426,23 @@ export const CompetitionsPage: React.FC = () => {
       case "Fashion":
         return "bg-purple-950/70 border-purple-500/40 text-purple-300";
       case "Fine Arts":
-      case "Creative Arts":
         return "bg-yellow-950/70 border-yellow-500/40 text-yellow-300";
       case "Digital Arts":
         return "bg-cyan-950/70 border-cyan-500/40 text-cyan-300";
+      case "Theatre":
       case "Drama":
         return "bg-red-950/70 border-red-500/40 text-red-300";
+      case "Literature":
+        return "bg-emerald-950/70 border-emerald-500/40 text-emerald-300";
       default:
         return "bg-amber-500/10 border-amber-500/30 text-amber-300";
     }
   };
 
   const filteredCompetitions = competitions.filter((c) => {
-    const matchesCategory = selectedCategory === "All" || c.category.toLowerCase() === selectedCategory.toLowerCase();
+    const matchesCategory =
+      selectedCategory === "All" ||
+      c.category.toLowerCase() === selectedCategory.toLowerCase();
     const matchesSearch =
       c.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       c.venue.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -340,20 +459,20 @@ export const CompetitionsPage: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>Official Championship Roster</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
+          <h1 className="text-3xl sm:text-5xl font-serif font-black text-white drop-shadow-[0_4px_25px_rgba(255,255,255,0.35)]">
             Competitions & Guidelines
           </h1>
-          <p className="text-xs sm:text-sm text-rose-200/80 mt-2 leading-relaxed">
-            All 15 Official Competitions Across 6 Cultural Arenas. Click Any Event's 'Guidelines & Rules' Button To Inspect Rubrics And Parameters.
+          <p className="text-xs sm:text-sm text-gray-200 mt-2 leading-relaxed font-medium">
+            All 22 Official Competitions Across Groups A, B, C & D. Click Any Event's 'Guidelines & Scoring Rubric' Button To Inspect Full Criteria.
           </p>
         </div>
 
         {/* Filter Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104] p-4 rounded-2xl border border-rose-950">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104]/95 p-4 rounded-2xl border-2 border-white/10 backdrop-blur-xl shadow-xl">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 custom-scrollbar">
             {categories.map((cat) => (
@@ -362,8 +481,8 @@ export const CompetitionsPage: React.FC = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat
-                    ? "bg-amber-500 text-black shadow-md shadow-amber-500/20"
-                    : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
+                    ? "bg-gradient-to-r from-amber-500 to-yellow-400 text-black shadow-md shadow-amber-500/30"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {cat}
@@ -373,13 +492,13 @@ export const CompetitionsPage: React.FC = () => {
 
           {/* Search Bar */}
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-rose-400/70" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               placeholder="Search Competitions Or Venues..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#140206] border border-rose-950 focus:border-amber-500 text-xs text-white placeholder-rose-300/40 focus:outline-none transition-colors"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#140206] border border-white/20 focus:border-white text-xs text-white placeholder-gray-400 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -389,45 +508,49 @@ export const CompetitionsPage: React.FC = () => {
           {filteredCompetitions.map((comp) => (
             <div
               key={comp.id}
-              className="p-6 rounded-2xl bg-[#0d0104] border border-rose-950 hover:border-amber-500/50 hover:bg-[#140206] transition-all group shadow-xl flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-[#0c0104]/90 border border-white/15 hover:border-amber-400/60 hover:bg-[#140206] transition-all group shadow-xl flex flex-col justify-between backdrop-blur-xl"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${getCategoryBadgeClass(comp.category)}`}>
+                  <span
+                    className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${getCategoryBadgeClass(
+                      comp.category
+                    )}`}
+                  >
                     {comp.category}
                   </span>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-rose-950/60 text-rose-300 border border-rose-900/40">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white border border-white/20">
                     {comp.arena}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors leading-snug mb-2">
+                <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors leading-snug mb-2 drop-shadow-sm">
                   {comp.title}
                 </h3>
 
-                <p className="text-xs text-rose-200/70 line-clamp-2 leading-relaxed">
+                <p className="text-xs text-rose-200/80 line-clamp-3 leading-relaxed">
                   {comp.rules_summary}
                 </p>
               </div>
 
               <div className="mt-6 pt-4 border-t border-rose-950/60 space-y-3">
-                <div className="flex items-center justify-between text-xs text-rose-300/80">
+                <div className="flex items-center justify-between text-xs text-rose-200">
                   <div className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-rose-400" />
+                    <Calendar className="w-3.5 h-3.5 text-amber-300" />
                     <span>{comp.event_date}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-amber-400" />
+                    <Clock className="w-3.5 h-3.5 text-amber-300" />
                     <span>{comp.start_time}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-rose-300/80">
+                <div className="flex items-center justify-between text-xs text-rose-200">
                   <div className="flex items-center gap-1.5 truncate">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                     <span className="truncate">{comp.venue}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-amber-400 font-bold shrink-0">
+                  <div className="flex items-center gap-1 text-amber-300 font-bold shrink-0">
                     <Trophy className="w-3.5 h-3.5" />
                     <span>{comp.first_place_points || 40} Pts</span>
                   </div>
@@ -436,7 +559,7 @@ export const CompetitionsPage: React.FC = () => {
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openGuidelines(comp)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[#1b0307] hover:bg-amber-500 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-3 rounded-xl bg-[#1b0307] hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black text-amber-200 text-xs font-bold border border-amber-500/40 transition-all flex items-center justify-center gap-2 shadow-sm"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>Guidelines & Scoring Rubric</span>

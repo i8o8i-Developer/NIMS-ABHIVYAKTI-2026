@@ -12,6 +12,7 @@ import {
   Printer,
   Scale,
   Sparkles,
+  Download,
 } from "lucide-react";
 
 export interface GuidelineEventData {
@@ -203,14 +204,25 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 sm:p-5 bg-[#140206] border-t border-rose-950/80 flex items-center justify-between shrink-0">
-          <button
-            onClick={() => window.print()}
-            className="px-4 py-2 rounded-xl bg-rose-950/60 hover:bg-rose-900/60 text-rose-300 text-xs font-bold transition-all flex items-center gap-1.5 border border-rose-900/60"
-          >
-            <Printer className="w-3.5 h-3.5" />
-            <span>Print Rule Sheet</span>
-          </button>
+        <div className="p-4 sm:p-5 bg-[#140206] border-t border-rose-950/80 flex flex-wrap items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => window.print()}
+              className="px-4 py-2 rounded-xl bg-rose-950/60 hover:bg-rose-900/60 text-rose-300 text-xs font-bold transition-all flex items-center gap-1.5 border border-rose-900/60"
+            >
+              <Printer className="w-3.5 h-3.5" />
+              <span>Print Rule Sheet</span>
+            </button>
+
+            <a
+              href="/AbhivyaktiRulebookFinal.pdf"
+              download="Abhivyakti 2026 Official Rulebook.pdf"
+              className="px-4 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-xs font-bold transition-all flex items-center gap-1.5 border border-amber-500/40"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download Official PDF</span>
+            </a>
+          </div>
 
           <button
             onClick={onClose}

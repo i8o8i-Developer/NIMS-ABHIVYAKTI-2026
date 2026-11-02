@@ -147,6 +147,46 @@
   }
 }
 
+@keyframes live-flicker {
+  0%, 100% {
+    opacity: 0.95;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 16px rgba(245, 184, 66, 0.85));
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(0.96) translateY(-1.5px) rotate(-1deg);
+    filter: drop-shadow(0 0 10px rgba(245, 184, 66, 0.6));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08) translateY(-3px) rotate(1.5deg);
+    filter: drop-shadow(0 0 24px rgba(245, 184, 66, 0.95));
+  }
+  75% {
+    opacity: 0.82;
+    transform: scale(0.98) translateY(1px) rotate(-0.5deg);
+    filter: drop-shadow(0 0 12px rgba(245, 184, 66, 0.7));
+  }
+}
+
+@keyframes live-leaf-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(12deg);
+  }
+}
+
+.animate-live-flicker {
+  animation: live-flicker 2.8s ease-in-out infinite;
+}
+
+.animate-live-leaf {
+  animation: live-leaf-float 7s ease-in-out infinite;
+}
+
 @keyframes live-twinkle {
   0%, 100% {
     opacity: 0.2;
