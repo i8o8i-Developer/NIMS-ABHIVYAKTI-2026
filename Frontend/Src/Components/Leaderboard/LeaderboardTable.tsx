@@ -103,7 +103,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
   return (
     <div className="w-full space-y-4 select-none">
       {/* Search Header Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#0d0104]/80 p-3 rounded-2xl border border-amber-500/25">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#0d0d0d]/90 p-3 rounded-2xl border border-white/10">
         <div className="relative w-full sm:w-80">
           <Search className="w-4 h-4 text-amber-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
@@ -111,22 +111,22 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search College Or Code..."
-            className="w-full bg-[#160307] border border-amber-500/30 rounded-xl pl-10 pr-4 py-2 text-xs text-amber-100 placeholder:text-amber-200/40 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 transition-all shadow-inner"
+            className="w-full bg-[#141414] border border-white/10 rounded-xl pl-10 pr-4 py-2 text-xs text-amber-100 placeholder:text-gray-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 transition-all shadow-inner"
           />
         </div>
 
-        <div className="flex items-center space-x-2 text-xs text-rose-200">
-          <span className="font-semibold text-amber-200/80">Total Competing:</span>
-          <span className="font-black text-amber-300 bg-[#1e040a] px-3 py-1 rounded-lg border border-amber-500/40 shadow-sm">
+        <div className="flex items-center space-x-2 text-xs text-gray-300">
+          <span className="font-semibold text-gray-400">Total Competing:</span>
+          <span className="font-black text-amber-300 bg-[#181818] px-3 py-1 rounded-lg border border-amber-500/30 shadow-sm">
             {dataList.length} Institutes
           </span>
         </div>
       </div>
 
-      {/* Table Container With Deep Velvet Wine Tone & Golden Accents */}
-      <div className="overflow-x-auto rounded-2xl border-2 border-amber-500/30 bg-[#0a0103]/95 backdrop-blur-2xl shadow-2xl shadow-black/80">
+      {/* Table Container With Sleek Obsidian Black & Golden Accents */}
+      <div className="overflow-x-auto rounded-2xl border-2 border-amber-500/30 bg-[#0a0a0a]/98 backdrop-blur-2xl shadow-2xl shadow-black/80">
         <table className="w-full text-left text-xs">
-          <thead className="bg-[#180307] text-amber-200 font-black uppercase tracking-wider text-[11px] border-b-2 border-amber-500/30">
+          <thead className="bg-[#121212] text-amber-200 font-black uppercase tracking-wider text-[11px] border-b-2 border-amber-500/30">
             <tr>
               <th className="py-4 px-4 text-center w-16 text-amber-300 font-black">Rank</th>
               <th className="py-4 px-4 text-amber-200 font-black">Institute & Faculty</th>
@@ -137,7 +137,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
               <th className="py-4 px-5 text-right font-black text-amber-300">Championship Points</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-amber-500/15 text-rose-100">
+          <tbody className="divide-y divide-white/5 text-gray-200">
             {filteredColleges.length === 0 ? (
               <tr>
                 <td colSpan={7} className="py-12 text-center text-amber-200/60 font-medium">

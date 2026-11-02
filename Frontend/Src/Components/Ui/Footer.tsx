@@ -4,9 +4,9 @@ import { ShieldCheck, Award, Heart, Phone, Mail, MapPin, ExternalLink } from "lu
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#040002] border-t border-amber-500/20 pt-14 pb-8 text-rose-200/80 relative z-30 overflow-hidden">
+    <footer className="w-full bg-[#020202] border-t border-white/10 pt-14 pb-8 text-gray-300 relative z-30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-rose-950/80">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Festival Identity */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3">

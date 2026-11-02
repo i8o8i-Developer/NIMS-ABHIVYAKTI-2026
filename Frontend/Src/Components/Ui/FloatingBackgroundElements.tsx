@@ -20,15 +20,11 @@ import {
 export const FloatingBackgroundElements: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
-      {/* Luxurious Theatrical Wine-Crimson & Obsidian Black Velvet Canvas */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#180307] via-[#24050e] via-[#1a0309] via-[#120206] to-[#0a0103]" />
+      {/* Luxurious Theatrical Wine-Crimson Hero Stage Fading Smoothly Into Obsidian Black */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_#180307_0%,_#24050e_6%,_#160207_12%,_#0a0104_16%,_#060606_21%,_#030303_32%,_#020202_60%,_#000000_100%)]" />
 
-      {/* Atmospheric Soft Reddish-Wine Velvet Glows (Zero Flat Red Blocks) */}
-      <div className="absolute top-[6%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[38rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,18,60,0.36)_0%,_rgba(100,12,38,0.24)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
-      <div className="absolute top-[28%] -left-16 w-[36rem] sm:w-[44rem] h-[36rem] sm:h-[44rem] rounded-full bg-[#380814]/35 blur-[120px] pointer-events-none" />
-      <div className="absolute top-[28%] -right-16 w-[36rem] sm:w-[44rem] h-[36rem] sm:h-[44rem] rounded-full bg-[#380814]/35 blur-[120px] pointer-events-none" />
-      <div className="absolute top-[55%] left-1/2 -translate-x-1/2 w-[55rem] h-[32rem] rounded-full bg-[#2a0610]/25 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[65rem] h-[30rem] rounded-full bg-[#24050e]/30 blur-[140px] pointer-events-none" />
+      {/* Atmospheric Soft Reddish-Wine Velvet Glow (Hero Stage Spotlight Only - 0% to 18%) */}
+      <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,18,60,0.30)_0%,_rgba(100,12,38,0.18)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
 
       {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS

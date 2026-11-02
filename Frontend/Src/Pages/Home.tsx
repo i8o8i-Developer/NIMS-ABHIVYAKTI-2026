@@ -395,7 +395,7 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0103] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
+    <div className="min-h-screen bg-[#040404] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
       {/* Background Lighting, Spotlight Beams & Cultural Motifs */}
       <FloatingBackgroundElements />
 
@@ -676,56 +676,56 @@ export const Home: React.FC = () => {
       <section className="py-14 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Stat 1: 30+ Participating Institutes */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
             <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
               <Landmark className="w-5 h-5" />
             </div>
             <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               30+
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
               Participating Institutes
             </p>
             <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-400 transition-all" />
           </div>
 
           {/* Stat 2: 22+ Official Competitions */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
             <div className="w-10 h-10 mx-auto rounded-xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
               <Sparkles className="w-5 h-5" />
             </div>
             <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               22+
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
               Official Competitions
             </p>
             <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent group-hover:via-rose-400 transition-all" />
           </div>
 
           {/* Stat 3: 4 Days Of Cultural Brilliance */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
             <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
               <Sparkles className="w-5 h-5" />
             </div>
             <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               4 Days
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
               Of Cultural Brilliance
             </p>
             <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-400 transition-all" />
           </div>
 
           {/* Stat 4: 5,000+ Passionate Students */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
             <div className="w-10 h-10 mx-auto rounded-xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
               <Users className="w-5 h-5" />
             </div>
             <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               5,000+
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
               Passionate Students
             </p>
             <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent group-hover:via-rose-400 transition-all" />
@@ -740,7 +740,7 @@ export const Home: React.FC = () => {
       <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#180307] border border-amber-500/40 text-amber-300 mb-3 shadow-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d0d0d] border border-amber-500/40 text-amber-300 mb-3 shadow-md">
               <Calendar className="w-4 h-4 text-amber-400" />
               <span className="text-xs font-black uppercase tracking-wider">
                 Four Days Of Cultural Brilliance • 18-21 Nov 2026
@@ -749,14 +749,14 @@ export const Home: React.FC = () => {
             <h2 className="text-3xl sm:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-amber-300 uppercase tracking-tight drop-shadow-md">
               Official Event Schedule & Guidelines
             </h2>
-            <p className="text-xs sm:text-sm text-rose-200/80 mt-1.5 max-w-2xl font-medium">
+            <p className="text-xs sm:text-sm text-gray-300 mt-1.5 max-w-2xl font-medium">
               Click 'Guidelines & Scoring Rubric' On Any Competition To Inspect The Exact Time Limits, Team Sizes, And 4-Pillar Scoring Rubrics.
             </p>
           </div>
 
           {/* 4-Day Filter Tabs & PDF Quick Action */}
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#120205] border border-amber-500/30 overflow-x-auto max-w-full shadow-xl">
+            <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#0c0c0c] border border-amber-500/30 overflow-x-auto max-w-full shadow-xl">
               {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
                 const labelMap: Record<string, string> = {
                   "Day 1": "Day 1 (18 Nov)",
@@ -772,7 +772,7 @@ export const Home: React.FC = () => {
                     className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
                       selectedDay === day
                         ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/30 scale-105"
-                        : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
+                        : "text-gray-400 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     {labelMap[day]}
@@ -783,7 +783,7 @@ export const Home: React.FC = () => {
 
             <button
               onClick={() => setIsRulebookOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#20040b] hover:bg-rose-950 border border-amber-500/35 text-amber-200 text-xs font-bold transition-all shadow-md shrink-0 hover:border-amber-400"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#121212] hover:bg-[#1c1c1c] border border-amber-500/35 text-amber-200 text-xs font-bold transition-all shadow-md shrink-0 hover:border-amber-400"
               title="Inspect Full PDF Rulebook"
             >
               <FileText className="w-4 h-4 text-rose-400" />
@@ -797,7 +797,7 @@ export const Home: React.FC = () => {
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className="p-6 rounded-2xl bg-gradient-to-b from-[#190409]/95 via-[#0f0205]/95 to-[#070002]/98 border-2 border-amber-500/25 hover:border-amber-400/80 hover:shadow-[0_12px_40px_rgba(245,184,66,0.18)] hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden"
+              className="p-6 rounded-2xl bg-gradient-to-b from-[#141414]/95 via-[#0b0b0b]/98 to-[#040404] border-2 border-amber-500/25 hover:border-amber-400/80 hover:shadow-[0_12px_40px_rgba(245,184,66,0.18)] hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden"
             >
               {/* Ambient Category Corner Accent */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
@@ -831,15 +831,15 @@ export const Home: React.FC = () => {
                   <span className="text-[10px] font-black px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/35 text-amber-300">
                     🥇 40 Pts • 🥈 25 Pts • 🥉 15 Pts
                   </span>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-rose-950/70 border border-rose-500/30 text-rose-300">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-[#1a1a1a] border border-amber-500/30 text-amber-200">
                     {item.day}
                   </span>
                 </div>
               </div>
 
               {/* Card Bottom: Venue + Guidelines Button */}
-              <div className="mt-6 pt-4 border-t border-rose-950/80 space-y-3.5">
-                <div className="flex items-center justify-between text-xs text-rose-300/80">
+              <div className="mt-6 pt-4 border-t border-white/10 space-y-3.5">
+                <div className="flex items-center justify-between text-xs text-gray-300">
                   <div className="flex items-center gap-1.5 truncate">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                     <span className="truncate font-semibold">{item.venue}</span>
@@ -849,7 +849,7 @@ export const Home: React.FC = () => {
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openEventGuidelines(item)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#1d0309] to-[#120206] hover:from-amber-500 hover:via-yellow-400 hover:to-amber-600 hover:text-black text-amber-300 text-xs font-black border border-amber-500/40 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/25 group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#121212] hover:bg-gradient-to-r hover:from-amber-500 hover:via-yellow-400 hover:to-amber-600 hover:text-black text-amber-300 text-xs font-black border border-amber-500/40 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/25 group/btn"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-black transition-colors" />
                   <span>Guidelines & Scoring Rubric</span>
@@ -862,7 +862,7 @@ export const Home: React.FC = () => {
         <div className="mt-10 text-center">
           <Link
             to="/schedule"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#140206] border-2 border-amber-500/40 text-amber-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black transition-all text-xs font-black shadow-lg shadow-amber-950/40"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#0f0f0f] border-2 border-amber-500/40 text-amber-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black transition-all text-xs font-black shadow-lg shadow-black/80"
           >
             <span>View Complete Master Timeline</span>
             <ChevronRight className="w-4 h-4" />
@@ -877,14 +877,14 @@ export const Home: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#140206] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0d0d0d] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
               <Trophy className="w-4 h-4 text-amber-400" />
               <span>Top 3 College Contingents Podium</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-serif font-black text-amber-100 drop-shadow-[0_4px_20px_rgba(245,184,66,0.3)]">
               Championship Leaderboard
             </h2>
-            <p className="text-xs sm:text-sm text-rose-200/90 mt-1 font-medium">
+            <p className="text-xs sm:text-sm text-gray-300 mt-1 font-medium">
               Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
             </p>
           </div>
@@ -921,7 +921,7 @@ export const Home: React.FC = () => {
           <h2 className="text-2xl sm:text-4xl font-serif font-black text-white mt-2">
             6 Arenas Of Distinction
           </h2>
-          <p className="text-xs sm:text-sm text-rose-200/70 mt-2">
+          <p className="text-xs sm:text-sm text-gray-300 mt-2">
             From rhythmic footwork to generative digital art, Abhivyakti honors every form of creative brilliance.
           </p>
         </div>
@@ -987,7 +987,7 @@ export const Home: React.FC = () => {
             return (
               <div
                 key={i}
-                className={`p-6 rounded-2xl bg-[#0c0104]/90 border border-rose-950/80 transition-all duration-300 group shadow-lg ${arena.cardHover}`}
+                className={`p-6 rounded-2xl bg-[#0c0c0c]/95 border border-white/10 hover:border-amber-500/40 transition-all duration-300 group shadow-lg ${arena.cardHover}`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className={`p-3 rounded-xl border group-hover:scale-110 transition-transform ${arena.iconStyle}`}>
@@ -1000,7 +1000,7 @@ export const Home: React.FC = () => {
                 <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
                   {arena.title}
                 </h3>
-                <p className="text-xs text-rose-200/70 mt-2 leading-relaxed">{arena.desc}</p>
+                <p className="text-xs text-gray-400 mt-2 leading-relaxed">{arena.desc}</p>
               </div>
             );
           })}
@@ -1025,7 +1025,7 @@ export const Home: React.FC = () => {
             return (
               <div
                 key={index}
-                className="rounded-xl bg-[#0e0205] border border-rose-950 overflow-hidden transition-all"
+                className="rounded-xl bg-[#0c0c0c] border border-white/10 overflow-hidden transition-all"
               >
                 <button
                   onClick={() => setActiveFaq(isOpen ? null : index)}
@@ -1039,7 +1039,7 @@ export const Home: React.FC = () => {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-4 text-xs sm:text-sm text-rose-200/80 leading-relaxed border-t border-rose-950/40 pt-3">
+                  <div className="px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-3">
                     {faq.a}
                   </div>
                 )}
