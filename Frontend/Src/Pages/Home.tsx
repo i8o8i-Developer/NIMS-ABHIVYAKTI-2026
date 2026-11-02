@@ -5,7 +5,7 @@ import { Navbar } from "@/Components/Ui/Navbar";
 import { CountdownTimer } from "@/Components/Ui/CountdownTimer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
 import { Footer } from "@/Components/Ui/Footer";
-import { Podium } from "@/Components/Leaderboard/Podium";
+import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
 import { LeaderboardTable } from "@/Components/Leaderboard/LeaderboardTable";
 import { EventGuidelineModal, GuidelineEventData } from "@/Components/Ui/EventGuidelineModal";
 import { Api } from "@/Lib/Api";
@@ -38,22 +38,22 @@ interface ScheduleEventItem {
 }
 
 const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
-  // Day 1: 21 Nov 2025
+  // Day 1: 18 Nov 2026
   {
     id: "1",
-    title: "Dance - Solo, Duet & Group (Round 1)",
+    title: "Dance - Solo & Duet (Round 1 Prelims)",
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "10:00 AM",
     venue: "Rajeshwari Auditorium",
     category: "Dance",
-    rules: "Performance Time: Solo (3-4 Mins), Duet (4-5 Mins), Group (6-8 Mins). Audio track in MP3 format submitted 1 hour prior. Classical, contemporary, Bollywood, and folk styles accepted. Flammable materials prohibited.",
+    rules: "Performance Time: Solo (3-4 Mins), Duet (4-5 Mins). Classical, contemporary, Bollywood, and folk styles accepted. Audio track in MP3 format submitted 1 hour prior.",
   },
   {
     id: "2",
-    title: "Singing - Solo, Duet & Group (Round 1)",
+    title: "Singing - Solo & Duet (Round 1 Prelims)",
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "10:00 AM",
     venue: "Management - LT 10 & 11",
     category: "Music",
@@ -63,7 +63,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     id: "3",
     title: "Face Painting",
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "02:00 PM",
     venue: "Management - LT 16 & 17",
     category: "Fine Arts",
@@ -73,18 +73,20 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     id: "4",
     title: "Best Out Of Waste",
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "02:00 PM",
     venue: "Management - LT 21",
     category: "Creative Arts",
     rules: "Duration 2 hours. Team size 1-2 students. Recyclable materials and scrap only. Pre-assembled structures lead to instant disqualification.",
   },
+
+  // Day 2: 19 Nov 2026
   {
     id: "5",
     title: "Fashion Upcycling",
-    day: "Day 1",
-    date: "21 Nov 2025",
-    time: "03:00 PM",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "11:00 AM",
     venue: "Fashion Lab & LT 16, 17",
     category: "Fashion",
     rules: "Transform discarded textiles into couture garments. 2.5 hours on-site execution followed by runway jury display.",
@@ -92,9 +94,9 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   {
     id: "6",
     title: "Doodling Competition",
-    day: "Day 1",
-    date: "21 Nov 2025",
-    time: "04:00 PM",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "02:00 PM",
     venue: "Moot Court 2",
     category: "Fine Arts",
     rules: "Individual event. Duration 60 minutes. A3 sheets provided. Black fine-liners and ink pens only.",
@@ -102,9 +104,9 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   {
     id: "7",
     title: "Collage Making",
-    day: "Day 1",
-    date: "21 Nov 2025",
-    time: "04:00 PM",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "03:00 PM",
     venue: "LT 21, 15",
     category: "Fine Arts",
     rules: "Theme: 'Heritage Meets Future'. Duration 90 minutes. Newspapers, periodicals, scissors, and adhesives.",
@@ -112,91 +114,93 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   {
     id: "8",
     title: "Clay Art",
-    day: "Day 1",
-    date: "21 Nov 2025",
+    day: "Day 2",
+    date: "19 Nov 2026",
     time: "04:00 PM",
     venue: "Corridor - 1st Floor",
     category: "Fine Arts",
     rules: "Natural terracotta clay provided. Duration 2 hours. Judged on structural balance, intricacy, and creative interpretation.",
   },
 
-  // Day 2: 22 Nov 2025
+  // Day 3: 20 Nov 2026
   {
     id: "9",
-    title: "Mono Act",
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "09:00 AM",
+    title: "Mono Act (Theatrical Soliloquy)",
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "10:00 AM",
     venue: "Rajeshwari Auditorium",
     category: "Drama",
     rules: "Solo dramatic performance commanding the main stage. 4-6 minutes limit. Dialogue delivery, emotion transition, and expression evaluated.",
   },
   {
     id: "10",
-    title: "Dance - Solo, Duet & Group (Round 2)",
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "11:00 AM",
-    venue: "Rajeshwari Auditorium",
-    category: "Dance",
-    rules: "Grand finale championship round for qualified entries. Synchronisation, choreography complexity, and stage dominance evaluated by celebrity jury.",
-  },
-  {
-    id: "11",
-    title: "Singing - Solo, Duet & Group (Round 2)",
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "11:00 AM",
-    venue: "LT 10 & 11",
-    category: "Music",
-    rules: "Grand finale vocal championship. Dual stage monitors and professional acoustic check provided. Strict 5-minute performance window.",
-  },
-  {
-    id: "12",
-    title: "AI Art",
-    day: "Day 2",
-    date: "22 Nov 2025",
+    title: "AI Art & Digital Prompt Challenge",
+    day: "Day 3",
+    date: "20 Nov 2026",
     time: "02:00 PM",
     venue: "LT 25",
     category: "Digital Arts",
     rules: "Prompt engineering and concept rendering executed live on assigned workstations. Complete workflow documentation and prompt logs required.",
   },
   {
-    id: "13",
-    title: "Calligraphy",
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "02:00 PM",
+    id: "11",
+    title: "Calligraphy Championship",
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "03:00 PM",
     venue: "Moot Court",
     category: "Fine Arts",
     rules: "Traditional and modern scripts (Devanagari, English Gothic, Copperplate). Duration 60 minutes. Evaluated on stroke precision and layout balance.",
   },
   {
-    id: "14",
-    title: "MakeUp Contest",
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "02:30 PM",
+    id: "12",
+    title: "MakeUp & Glamour Contest",
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "04:00 PM",
     venue: "LT 16, 17 & Corridor (2nd Floor)",
     category: "Creative Arts",
     rules: "Theatrical, editorial, and fantasy makeup. Duration 75 minutes. Blending, shading, contouring, hygiene, and overall impact evaluated.",
   },
+
+  // Day 4: 21 Nov 2026 (Grand Championship Finale)
   {
-    id: "15",
-    title: "Kick Drip",
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "02:30 PM",
+    id: "13",
+    title: "Kick Drip (Sneaker Customization)",
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "10:00 AM",
     venue: "LT 21 & 15",
     category: "Fashion",
     rules: "Sneaker custom artwork and street styling. Plain sneakers customized live during 90-minute window using acrylics, stencils, and finishes.",
   },
+  {
+    id: "14",
+    title: "Singing - Group & Battle Of The Bands (Grand Finale)",
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "01:00 PM",
+    venue: "LT 10 & 11",
+    category: "Music",
+    rules: "Grand finale vocal championship. Dual stage monitors and professional acoustic check provided. Strict 5-minute performance window.",
+  },
+  {
+    id: "15",
+    title: "Dance - Group Championship (Mega Grand Finale)",
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "04:00 PM",
+    venue: "Rajeshwari Auditorium",
+    category: "Dance",
+    rules: "Grand finale championship round for qualified entries. Synchronisation, choreography complexity, and stage dominance evaluated by celebrity jury.",
+  },
 ];
 
 export const Home: React.FC = () => {
-  const [standings, setStandings] = useState<any[]>([]);
-  const [podium, setPodium] = useState<any[]>([]);
-  const [selectedDay, setSelectedDay] = useState<"All" | "Day 1" | "Day 2">("Day 1");
+  const [standings, setStandings] = useState<any[]>(DEFAULT_TOP_THREE);
+  const [podium, setPodium] = useState<any[]>(DEFAULT_TOP_THREE);
+  const [selectedDay, setSelectedDay] = useState<"All" | "Day 1" | "Day 2" | "Day 3" | "Day 4">("Day 1");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   // Event Guideline Modal State (Guidelines Attached Directly To Events)
@@ -207,12 +211,12 @@ export const Home: React.FC = () => {
     const fetchLeaderboard = async () => {
       try {
         const res = await Api.get("/scores/leaderboard/");
-        if (res.data?.standings) {
+        if (res.data?.standings && res.data.standings.length > 0) {
           setStandings(res.data.standings);
           setPodium(res.data.podium || res.data.standings.slice(0, 3));
         }
       } catch {
-        // Fallback
+        // Retain default dummy top 3
       }
     };
     fetchLeaderboard();
@@ -222,18 +226,18 @@ export const Home: React.FC = () => {
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
       case "Dance":
-        return "bg-rose-950/70 border-rose-500/40 text-rose-300";
+        return "bg-rose-950/80 border-rose-500/40 text-rose-300";
       case "Music":
-        return "bg-amber-950/70 border-amber-500/40 text-amber-300";
+        return "bg-amber-950/80 border-amber-500/40 text-amber-300";
       case "Fashion":
-        return "bg-purple-950/70 border-purple-500/40 text-purple-300";
+        return "bg-purple-950/80 border-purple-500/40 text-purple-300";
       case "Fine Arts":
       case "Creative Arts":
-        return "bg-yellow-950/70 border-yellow-500/40 text-yellow-300";
+        return "bg-yellow-950/80 border-yellow-500/40 text-yellow-300";
       case "Digital Arts":
-        return "bg-cyan-950/70 border-cyan-500/40 text-cyan-300";
+        return "bg-cyan-950/80 border-cyan-500/40 text-cyan-300";
       case "Drama":
-        return "bg-red-950/70 border-red-500/40 text-red-300";
+        return "bg-red-950/80 border-red-500/40 text-red-300";
       default:
         return "bg-amber-500/10 border-amber-500/30 text-amber-300";
     }
@@ -266,16 +270,16 @@ export const Home: React.FC = () => {
       a: "All Bonafide Students Currently Enrolled In Any College, Department, Or Institute Of NIMS University Rajasthan Are Eligible To Represent Their Contingent.",
     },
     {
+      q: "When Does Abhivyakti 2026 Take Place?",
+      a: "The Championship Spans 4 Epic Days From 18 November To 21 November 2026, Concluding With The Mega Grand Finale At Rajeshwari Auditorium.",
+    },
+    {
       q: "How Are Event Rules & Guidelines Accessed?",
       a: "Rules Are Directly Attached To Each Event Card! Simply Click 'Guidelines & Rules' On Any Competition To Inspect The Exact Time Limits, Team Sizes, And 4-Pillar Scoring Rubrics.",
     },
     {
       q: "How Is The Overall Championship Trophy Decided?",
       a: "Points Are Awarded For 1st (40 Pts), 2nd (25 Pts), And 3rd Place (15 Pts) In Each Competition. The Contingent With The Highest Cumulative Score Across All Arenas Lifts The Coveted Rolling Trophy.",
-    },
-    {
-      q: "Can An Individual Student Participate In Multiple Events?",
-      a: "Yes, Provided There Is No Direct Time Conflict In The Official Schedule. Ensure You Coordinate With Your College Contingent In-Charge.",
     },
   ];
 
@@ -290,88 +294,93 @@ export const Home: React.FC = () => {
       {/* Primary Navigation */}
       <Navbar />
 
-      {/* Hero Section Matching Image 1 Reference With Circle Elements & Lighting */}
-      <section className="relative pt-10 sm:pt-14 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto flex flex-col items-center">
+      {/* Hero Section Matching Image 1 & Image 2 Reference */}
+      <section className="relative pt-8 sm:pt-12 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[92rem] mx-auto flex flex-col items-center">
         {/* NIMS Championship Pill */}
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-8 z-10 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-7 z-10 animate-fade-in">
           <Sparkles className="w-4 h-4 text-amber-400" />
           <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-300 uppercase">
-            NIMS UNIVERSITY CULTURAL CHAMPIONSHIP 2026
+            NIMS UNIVERSITY CULTURAL CHAMPIONSHIP • 18-21 NOVEMBER 2026
           </span>
           <Sparkles className="w-4 h-4 text-amber-400" />
         </div>
 
-        {/* Hero Grid With Symmetrical Left/Right Floating Badges Matching Image 1 */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10 z-10">
-          {/* Left Floating Badges (3 Badges Perfectly Balanced) */}
-          <div className="hidden lg:flex lg:col-span-3 flex-col gap-4 items-start">
+        {/* Hero Grid With Compact Outer Badges Pushed To The Sides */}
+        <div className="w-full grid grid-cols-1 xl:grid-cols-12 gap-6 items-center mb-10 z-10">
+          {/* Left Side Badges (Pushed Further to the Side & Smaller Boxes) */}
+          <div className="hidden xl:flex xl:col-span-2.5 flex-col gap-3.5 items-start">
             {/* Badge 1: Championship Glory */}
-            <div className="w-full p-4 rounded-2xl bg-[#0f0205]/90 border border-amber-500/35 backdrop-blur-xl shadow-2xl text-left transform hover:-translate-y-1 transition-all duration-300 animate-live-sway">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <Trophy className="w-5 h-5" />
+            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
+                  <Trophy className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-black tracking-wider text-amber-200 uppercase">CHAMPIONSHIP GLORY</h4>
-                  <p className="text-[11px] text-rose-300/80 font-medium">30+ Leading Institutes</p>
+                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">CHAMPIONSHIP GLORY</h4>
+                  <p className="text-[9px] text-rose-300/80 font-medium">30+ Leading Institutes</p>
                 </div>
               </div>
             </div>
 
             {/* Badge 2: 100% Student-Led */}
-            <div className="w-full p-4 rounded-2xl bg-[#0f0205]/90 border border-rose-500/35 backdrop-blur-xl shadow-2xl text-left transform hover:-translate-y-1 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.2s" }}>
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 shrink-0">
-                  <Users className="w-5 h-5" />
+            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-rose-500/35 backdrop-blur-xl shadow-xl text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 shrink-0">
+                  <Users className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-black tracking-wider text-amber-200 uppercase">100% STUDENT-LED</h4>
-                  <p className="text-[11px] text-rose-300/80 font-medium">NIMS Student Council</p>
+                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">100% STUDENT-LED</h4>
+                  <p className="text-[9px] text-rose-300/80 font-medium">NIMS Student Council</p>
                 </div>
               </div>
             </div>
 
             {/* Badge 3: ₹5,00,000+ Awards */}
-            <div className="w-full p-4 rounded-2xl bg-[#0f0205]/90 border border-amber-500/35 backdrop-blur-xl shadow-2xl text-left transform hover:-translate-y-1 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.4s" }}>
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <Award className="w-5 h-5" />
+            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
+                  <Award className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-black tracking-wider text-amber-200 uppercase">₹5,00,000+ AWARDS</h4>
-                  <p className="text-[11px] text-rose-300/80 font-medium">Rolling Champions Trophy</p>
+                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">₹5,00,000+ AWARDS</h4>
+                  <p className="text-[9px] text-rose-300/80 font-medium">Rolling Champions Trophy</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Central Logo & Majestic Typography */}
-          <div className="col-span-1 lg:col-span-6 flex flex-col items-center">
+          {/* Central Logo & Majestic Typography Matching Image 2 Reference */}
+          <div className="col-span-1 xl:col-span-7 flex flex-col items-center px-2">
             {/* Official Abhivyakti Stylized Logo Container */}
-            <div className="relative mb-6 p-4 sm:p-5 rounded-3xl bg-white shadow-2xl shadow-rose-950/70 border-4 border-amber-400/90 max-w-xs sm:max-w-sm w-full mx-auto transform hover:scale-105 transition-transform duration-300">
+            <div className="relative mb-5 p-4 sm:p-5 rounded-3xl bg-white shadow-2xl shadow-rose-950/70 border-4 border-amber-400/90 max-w-xs sm:max-w-sm w-full mx-auto transform hover:scale-105 transition-transform duration-300">
               <img
                 src="/Abhivyakti.png"
                 alt="Abhivyakti Cultural Festival Logo"
-                className="w-full h-auto max-h-36 object-contain mx-auto"
+                className="w-full h-auto max-h-32 sm:max-h-36 object-contain mx-auto"
               />
             </div>
 
-            {/* Guaranteed Two-Liner Regal Headline Matching User Requirement */}
-            <h1 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[2.65rem] xl:text-[3.15rem] font-black tracking-tight leading-[1.12] text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 mb-5 drop-shadow-2xl">
-              <span className="block whitespace-nowrap">Celebrating Cultural</span>
-              <span className="block whitespace-nowrap">Majesty & Excellence</span>
+            {/* Regal Headline With Pure White Line 1 & Golden Amber Line 2 (Matching Image 2 Reference) */}
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[3.4rem] xl:text-[3.85rem] font-black tracking-tight leading-[1.08] mb-5">
+              <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_15px_rgba(255,255,255,0.25)] whitespace-nowrap">
+                Celebrating Cultural
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_25px_rgba(245,184,66,0.45)] whitespace-nowrap mt-1 sm:mt-2">
+                Majesty & Excellence
+              </span>
             </h1>
 
-            {/* Subtitle Description */}
-            <p className="text-xs sm:text-sm text-rose-200/90 font-medium max-w-xl leading-relaxed mb-8">
-              Colleges And Institutes Across NIMS University Compete In Singing, Classical Dance, Street Play,
-              Battle Of The Bands, And Visual Arts For The Coveted{" "}
+            {/* Subtitle Description With 18 to 21 November Date Range */}
+            <p className="text-xs sm:text-sm text-rose-200/90 font-medium max-w-xl leading-relaxed mb-7">
+              Colleges And Institutes Across NIMS University Compete From{" "}
+              <strong className="text-amber-300 font-bold">18 To 21 November 2026</strong> In Singing, Classical Dance,
+              Street Play, Battle Of The Bands, And Visual Arts For The Coveted{" "}
               <strong className="text-amber-300 font-bold">Abhivyakti Inter-College Championship Trophy</strong>.
             </p>
 
             {/* 4-Card Countdown Timer */}
             <div className="w-full max-w-md">
-              <CountdownTimer targetDate="2026-11-21T09:00:00" />
+              <CountdownTimer targetDate="2026-11-18T09:00:00" />
             </div>
 
             {/* Action Buttons */}
@@ -394,51 +403,51 @@ export const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Floating Badges (3 Badges Perfectly Symmetrical) */}
-          <div className="hidden lg:flex lg:col-span-3 flex-col gap-4 items-end">
+          {/* Right Side Badges (Pushed Further to the Side & Smaller Boxes) */}
+          <div className="hidden xl:flex xl:col-span-2.5 flex-col gap-3.5 items-end">
             {/* Badge 4: 6 Cultural Arenas */}
-            <div className="w-full p-4 rounded-2xl bg-[#0f0205]/90 border border-amber-500/35 backdrop-blur-xl shadow-2xl text-right transform hover:-translate-y-1 transition-all duration-300 animate-live-sway" style={{ animationDirection: "reverse", animationDelay: "0.5s" }}>
-              <div className="flex items-center justify-end gap-3">
+            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "0.6s" }}>
+              <div className="flex items-center justify-end gap-2.5">
                 <div>
-                  <h4 className="text-xs font-black tracking-wider text-amber-200 uppercase">6 CULTURAL ARENAS</h4>
-                  <p className="text-[11px] text-rose-300/80 font-medium">Music, Dance, Drama, Vogue</p>
+                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">6 CULTURAL ARENAS</h4>
+                  <p className="text-[9px] text-rose-300/80 font-medium">Music, Dance, Drama, Vogue</p>
                 </div>
-                <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <Flame className="w-5 h-5" />
+                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
+                  <Flame className="w-4 h-4" />
                 </div>
               </div>
             </div>
 
             {/* Badge 5: Grand Central Venue */}
-            <div className="w-full p-4 rounded-2xl bg-[#0f0205]/90 border border-rose-500/35 backdrop-blur-xl shadow-2xl text-right transform hover:-translate-y-1 transition-all duration-300 animate-live-sway" style={{ animationDirection: "reverse", animationDelay: "1.7s" }}>
-              <div className="flex items-center justify-end gap-3">
+            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-rose-500/35 backdrop-blur-xl shadow-xl text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "1.9s" }}>
+              <div className="flex items-center justify-end gap-2.5">
                 <div>
-                  <h4 className="text-xs font-black tracking-wider text-amber-200 uppercase">GRAND CENTRAL VENUE</h4>
-                  <p className="text-[11px] text-rose-300/80 font-medium">NIMS Jaipur Grounds</p>
+                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">GRAND CENTRAL VENUE</h4>
+                  <p className="text-[9px] text-rose-300/80 font-medium">NIMS Jaipur Grounds</p>
                 </div>
-                <div className="p-2.5 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 shrink-0">
-                  <MapPin className="w-5 h-5" />
+                <div className="p-2 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 shrink-0">
+                  <MapPin className="w-4 h-4" />
                 </div>
               </div>
             </div>
 
             {/* Badge 6: Verified Jury Engine */}
-            <div className="w-full p-4 rounded-2xl bg-[#0f0205]/90 border border-amber-500/35 backdrop-blur-xl shadow-2xl text-right transform hover:-translate-y-1 transition-all duration-300 animate-live-sway" style={{ animationDirection: "reverse", animationDelay: "2.9s" }}>
-              <div className="flex items-center justify-end gap-3">
+            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "3.2s" }}>
+              <div className="flex items-center justify-end gap-2.5">
                 <div>
-                  <h4 className="text-xs font-black tracking-wider text-amber-200 uppercase">VERIFIED JURY ENGINE</h4>
-                  <p className="text-[11px] text-rose-300/80 font-medium">Real-Time Score Sync</p>
+                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">VERIFIED JURY ENGINE</h4>
+                  <p className="text-[9px] text-rose-300/80 font-medium">Real-Time Score Sync</p>
                 </div>
-                <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
+                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
+                  <ShieldCheck className="w-4 h-4" />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile Badges Strip (visible on mobile) */}
-        <div className="lg:hidden grid grid-cols-2 sm:grid-cols-3 gap-3 w-full mt-4 z-10">
+        {/* Mobile Badges Strip (visible on mobile / tablet) */}
+        <div className="xl:hidden grid grid-cols-2 sm:grid-cols-3 gap-3 w-full mt-4 z-10 max-w-2xl">
           <div className="p-3 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center">
             <Trophy className="w-4 h-4 text-amber-400 mx-auto mb-1" />
             <p className="text-xs font-bold text-amber-200">Championship Glory</p>
@@ -495,15 +504,17 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Official Schedule Section With Event Guidelines Attached Directly */}
+      {/* Official Schedule Section Matching Image 3 Reference */}
       <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-2 text-amber-400 mb-2">
-              <Calendar className="w-5 h-5" />
-              <span className="text-xs font-bold uppercase tracking-wider">Two Days Of Cultural Brilliance</span>
+              <Calendar className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-wider">
+                Four Days Of Cultural Brilliance • 18-21 Nov 2026
+              </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-serif font-black text-white">
+            <h2 className="text-2xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">
               Official Event Schedule & Guidelines
             </h2>
             <p className="text-xs sm:text-sm text-rose-200/70 mt-1">
@@ -511,34 +522,44 @@ export const Home: React.FC = () => {
             </p>
           </div>
 
-          {/* Day Filter Tabs */}
-          <div className="flex items-center gap-2 p-1.5 rounded-xl bg-[#100205] border border-rose-950">
-            {(["Day 1", "Day 2", "All"] as const).map((day) => (
-              <button
-                key={day}
-                onClick={() => setSelectedDay(day)}
-                className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                  selectedDay === day
-                    ? "bg-amber-500 text-black shadow-md shadow-amber-500/20"
-                    : "text-rose-200/70 hover:text-white"
-                }`}
-              >
-                {day === "All" ? "View Full Schedule" : `${day} (${day === "Day 1" ? "21 Nov" : "22 Nov"})`}
-              </button>
-            ))}
+          {/* 4-Day Filter Tabs */}
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#0f0205] border border-rose-950/80 overflow-x-auto max-w-full">
+            {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
+              const labelMap: Record<string, string> = {
+                "Day 1": "Day 1 (18 Nov)",
+                "Day 2": "Day 2 (19 Nov)",
+                "Day 3": "Day 3 (20 Nov)",
+                "Day 4": "Day 4 (21 Nov)",
+                All: "View Full Schedule",
+              };
+              return (
+                <button
+                  key={day}
+                  onClick={() => setSelectedDay(day)}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                    selectedDay === day
+                      ? "bg-amber-500 text-black shadow-lg shadow-amber-500/25"
+                      : "text-rose-200/70 hover:text-white"
+                  }`}
+                >
+                  {labelMap[day]}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Schedule Cards Grid Matching Image 2 Reference With Attached Guidelines */}
+        {/* Schedule Cards Grid Elevated Matching Image 3 Reference */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className="p-5 rounded-2xl bg-[#0b0104]/90 border border-rose-950/70 hover:border-amber-500/50 hover:bg-[#140207] hover:shadow-[0_8px_30px_rgba(245,184,66,0.1)] transition-all duration-300 group shadow-xl flex flex-col justify-between"
+              className="p-5 rounded-2xl bg-[#0a0103] border border-rose-950/70 hover:border-amber-500/60 hover:bg-[#120206] hover:shadow-[0_8px_30px_rgba(245,184,66,0.12)] transition-all duration-300 group shadow-xl flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${getCategoryBadgeClass(item.category)}`}>
+                {/* Card Top: Category Badge On Left + Date & Time Stacked On Right */}
+                <div className="flex items-start justify-between gap-3 mb-3.5">
+                  <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${getCategoryBadgeClass(item.category)}`}>
                     {item.category}
                   </span>
                   <div className="text-right shrink-0">
@@ -547,12 +568,14 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Event Title In Bold White */}
                 <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-rose-950/80 space-y-3">
+              {/* Card Bottom: Venue + Day + Guidelines Button */}
+              <div className="mt-5 pt-3.5 border-t border-rose-950/80 space-y-3">
                 <div className="flex items-center justify-between text-xs text-rose-300/80">
                   <div className="flex items-center gap-1.5 truncate">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
@@ -585,19 +608,19 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Championship Leaderboard Standings Section */}
+      {/* Dedicated Top 3 Contingents Podium & Championship Leaderboard Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
             <div className="flex items-center gap-2 text-amber-400 mb-2">
               <Trophy className="w-5 h-5" />
-              <span className="text-xs font-bold uppercase tracking-wider">Inter-College Rankings</span>
+              <span className="text-xs font-bold uppercase tracking-wider">Top 3 College Contingents Podium</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-serif font-black text-white">
               Championship Leaderboard
             </h2>
             <p className="text-xs sm:text-sm text-rose-200/70 mt-1">
-              Live standings computed from verified jury scorecards across all cultural arenas.
+              Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
             </p>
           </div>
           <div>
@@ -611,11 +634,13 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Top 3 Podium */}
-        {podium.length >= 3 && <Podium topThree={podium} />}
+        {/* Dedicated Top 3 Elevated Podium With Dummy Data */}
+        <div className="mb-12">
+          <Podium topThree={podium.length >= 3 ? podium : DEFAULT_TOP_THREE} />
+        </div>
 
         {/* Quick Table Preview */}
-        <div className="mt-10">
+        <div className="mt-8">
           <LeaderboardTable colleges={standings.slice(0, 5)} />
         </div>
       </section>

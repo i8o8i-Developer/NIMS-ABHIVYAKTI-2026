@@ -7,11 +7,13 @@ interface FestiveTickerProps {
 
 export const FestiveTicker: React.FC<FestiveTickerProps> = ({ announcements }) => {
   const items = announcements && announcements.length > 0 ? announcements : [
-    "NIMS University Cultural Championship 2026",
+    "NIMS University Cultural Championship • 18-21 November 2026",
     "Abhivyakti 2026 Prestigious Championship Rolling Trophy",
-    "15 Official Competitions Across 6 Cultural Arenas",
-    "Event Guidelines & Four-Pillar Rubrics Available On Each Event",
-    "Star Celebrity Night Announcement Dropping Soon",
+    "Day 1 (18 Nov): Classical Dance & Vocal Resonance Prelims Open",
+    "Day 2 (19 Nov): Couture Upcycling & Visual Arts Arena",
+    "Day 3 (20 Nov): Theatrical Soliloquy & Generative AI Challenge",
+    "Day 4 (21 Nov): Battle Of The Bands & Mega Group Dance Finale",
+    "Official Guidelines & 4-Pillar Rubrics Available On Each Event Card",
   ];
 
   return (

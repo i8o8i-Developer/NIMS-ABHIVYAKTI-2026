@@ -17,7 +17,7 @@ import {
 
 interface ScheduleItem {
   id: number;
-  day: "Day 1" | "Day 2";
+  day: "Day 1" | "Day 2" | "Day 3" | "Day 4";
   date: string;
   time: string;
   title: string;
@@ -30,25 +30,25 @@ interface ScheduleItem {
 }
 
 const COMPLETE_SCHEDULE: ScheduleItem[] = [
-  // Day 1: 21 Nov 2025
+  // Day 1: 18 Nov 2026
   {
     id: 1,
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "10:00 AM",
-    title: "Dance - Solo, Duet & Group (Round 1)",
+    title: "Dance - Solo & Duet (Round 1 Prelims)",
     category: "Dance",
     venue: "Rajeshwari Auditorium",
     duration: "180 Mins",
     round: "Elimination Round",
-    rules: "Performance Time: Solo (3-4 Mins), Duet (4-5 Mins), Group (6-8 Mins). Audio track in MP3 format submitted 1 hour prior. Classical, contemporary, Bollywood, and folk styles accepted. Flammable materials prohibited.",
+    rules: "Performance Time: Solo (3-4 Mins), Duet (4-5 Mins). Classical, contemporary, Bollywood, and folk styles accepted. Audio track in MP3 format submitted 1 hour prior. Flammable materials strictly prohibited.",
   },
   {
     id: 2,
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "10:00 AM",
-    title: "Singing - Solo, Duet & Group (Round 1)",
+    title: "Singing - Solo & Duet (Round 1 Prelims)",
     category: "Music",
     venue: "Management - LT 10 & 11",
     duration: "180 Mins",
@@ -58,7 +58,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
   {
     id: 3,
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "02:00 PM",
     title: "Face Painting",
     category: "Fine Arts",
@@ -70,7 +70,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
   {
     id: 4,
     day: "Day 1",
-    date: "21 Nov 2025",
+    date: "18 Nov 2026",
     time: "02:00 PM",
     title: "Best Out Of Waste",
     category: "Creative Arts",
@@ -79,11 +79,13 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     round: "Finals",
     rules: "Duration 2 hours. Team size 1-2 students. Recyclable materials and scrap only. Pre-assembled structures lead to instant disqualification.",
   },
+
+  // Day 2: 19 Nov 2026
   {
     id: 5,
-    day: "Day 1",
-    date: "21 Nov 2025",
-    time: "03:00 PM",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "11:00 AM",
     title: "Fashion Upcycling",
     category: "Fashion",
     venue: "Fashion Lab & LT 16, 17",
@@ -93,9 +95,9 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
   },
   {
     id: 6,
-    day: "Day 1",
-    date: "21 Nov 2025",
-    time: "04:00 PM",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "02:00 PM",
     title: "Doodling Competition",
     category: "Fine Arts",
     venue: "Moot Court 2",
@@ -105,9 +107,9 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
   },
   {
     id: 7,
-    day: "Day 1",
-    date: "21 Nov 2025",
-    time: "04:00 PM",
+    day: "Day 2",
+    date: "19 Nov 2026",
+    time: "03:00 PM",
     title: "Collage Making",
     category: "Fine Arts",
     venue: "LT 21, 15",
@@ -117,8 +119,8 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
   },
   {
     id: 8,
-    day: "Day 1",
-    date: "21 Nov 2025",
+    day: "Day 2",
+    date: "19 Nov 2026",
     time: "04:00 PM",
     title: "Clay Art",
     category: "Fine Arts",
@@ -128,13 +130,13 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     rules: "Natural terracotta clay provided. Duration 2 hours. Judged on structural balance, intricacy, and creative interpretation.",
   },
 
-  // Day 2: 22 Nov 2025
+  // Day 3: 20 Nov 2026
   {
     id: 9,
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "09:00 AM",
-    title: "Mono Act",
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "10:00 AM",
+    title: "Mono Act (Theatrical Soliloquy)",
     category: "Drama",
     venue: "Rajeshwari Auditorium",
     duration: "120 Mins",
@@ -143,36 +145,10 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
   },
   {
     id: 10,
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "11:00 AM",
-    title: "Dance - Solo, Duet & Group (Round 2)",
-    category: "Dance",
-    venue: "Rajeshwari Auditorium",
-    duration: "180 Mins",
-    round: "Grand Finale",
-    isGrandFinale: true,
-    rules: "Grand finale championship round for qualified entries. Synchronisation, choreography complexity, and stage dominance evaluated by celebrity jury.",
-  },
-  {
-    id: 11,
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "11:00 AM",
-    title: "Singing - Solo, Duet & Group (Round 2)",
-    category: "Music",
-    venue: "LT 10 & 11",
-    duration: "150 Mins",
-    round: "Grand Finale",
-    isGrandFinale: true,
-    rules: "Grand finale vocal championship. Dual stage monitors and professional acoustic check provided. Strict 5-minute performance window.",
-  },
-  {
-    id: 12,
-    day: "Day 2",
-    date: "22 Nov 2025",
+    day: "Day 3",
+    date: "20 Nov 2026",
     time: "02:00 PM",
-    title: "AI Art",
+    title: "AI Art & Digital Prompt Challenge",
     category: "Digital Arts",
     venue: "LT 25",
     duration: "90 Mins",
@@ -180,11 +156,11 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     rules: "Prompt engineering and concept rendering executed live on assigned workstations. Complete workflow documentation and prompt logs required.",
   },
   {
-    id: 13,
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "02:00 PM",
-    title: "Calligraphy",
+    id: 11,
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "03:00 PM",
+    title: "Calligraphy Championship",
     category: "Fine Arts",
     venue: "Moot Court",
     duration: "90 Mins",
@@ -192,33 +168,61 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     rules: "Traditional and modern scripts (Devanagari, English Gothic, Copperplate). Duration 60 minutes. Evaluated on stroke precision and layout balance.",
   },
   {
-    id: 14,
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "02:30 PM",
-    title: "MakeUp Contest",
+    id: 12,
+    day: "Day 3",
+    date: "20 Nov 2026",
+    time: "04:00 PM",
+    title: "MakeUp & Glamour Contest",
     category: "Creative Arts",
     venue: "LT 16, 17 & Corridor (2nd Floor)",
     duration: "90 Mins",
     round: "Finals",
     rules: "Theatrical, editorial, and fantasy makeup. Duration 75 minutes. Blending, shading, contouring, hygiene, and overall impact evaluated.",
   },
+
+  // Day 4: 21 Nov 2026 (Grand Championship Finale)
   {
-    id: 15,
-    day: "Day 2",
-    date: "22 Nov 2025",
-    time: "02:30 PM",
-    title: "Kick Drip",
+    id: 13,
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "10:00 AM",
+    title: "Kick Drip (Sneaker Customization)",
     category: "Fashion",
     venue: "LT 21 & 15",
     duration: "90 Mins",
     round: "Finals",
     rules: "Sneaker custom artwork and street styling. Plain sneakers customized on-site with acrylic paints, markers, and street styling accessories.",
   },
+  {
+    id: 14,
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "01:00 PM",
+    title: "Singing - Group & Battle Of The Bands (Grand Finale)",
+    category: "Music",
+    venue: "LT 10 & 11",
+    duration: "180 Mins",
+    round: "Grand Finale",
+    isGrandFinale: true,
+    rules: "Grand finale vocal championship. Dual stage monitors and professional acoustic check provided. Strict 5-minute performance window.",
+  },
+  {
+    id: 15,
+    day: "Day 4",
+    date: "21 Nov 2026",
+    time: "04:00 PM",
+    title: "Dance - Group Championship (Mega Grand Finale)",
+    category: "Dance",
+    venue: "Rajeshwari Auditorium",
+    duration: "180 Mins",
+    round: "Grand Finale",
+    isGrandFinale: true,
+    rules: "Grand finale championship round for qualified entries. Synchronisation, choreography complexity, and stage dominance evaluated by celebrity jury.",
+  },
 ];
 
 export const SchedulePage: React.FC = () => {
-  const [activeDay, setActiveDay] = useState<"All" | "Day 1" | "Day 2">("Day 1");
+  const [activeDay, setActiveDay] = useState<"All" | "Day 1" | "Day 2" | "Day 3" | "Day 4">("Day 1");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Guideline Modal State
@@ -282,33 +286,42 @@ export const SchedulePage: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
             <Calendar className="w-3.5 h-3.5" />
-            <span>Master Fest Itinerary</span>
+            <span>Master Fest Itinerary • 18-21 Nov 2026</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
             Festival Schedule & Guidelines
           </h1>
           <p className="text-xs sm:text-sm text-rose-200/80 mt-2 leading-relaxed">
-            Detailed 2-Day Timeline With Venues And Start Times. Click 'Guidelines & Rules' For Instant Event Parameter Rubrics.
+            Detailed 4-Day Timeline With Venues And Start Times. Click 'Guidelines & Rules' For Instant Event Parameter Rubrics.
           </p>
         </div>
 
         {/* Filter Controls */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104] p-4 rounded-2xl border border-rose-950">
           {/* Day Tabs */}
-          <div className="flex items-center gap-2">
-            {(["Day 1", "Day 2", "All"] as const).map((day) => (
-              <button
-                key={day}
-                onClick={() => setActiveDay(day)}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                  activeDay === day
-                    ? "bg-amber-500 text-black shadow-md shadow-amber-500/20"
-                    : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
-                }`}
-              >
-                {day === "All" ? "Both Days" : `${day} (${day === "Day 1" ? "21 Nov" : "22 Nov"})`}
-              </button>
-            ))}
+          <div className="flex items-center gap-1.5 overflow-x-auto max-w-full">
+            {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
+              const labelMap: Record<string, string> = {
+                "Day 1": "Day 1 (18 Nov)",
+                "Day 2": "Day 2 (19 Nov)",
+                "Day 3": "Day 3 (20 Nov)",
+                "Day 4": "Day 4 (21 Nov)",
+                All: "All (18-21 Nov)",
+              };
+              return (
+                <button
+                  key={day}
+                  onClick={() => setActiveDay(day)}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                    activeDay === day
+                      ? "bg-amber-500 text-black shadow-md shadow-amber-500/20"
+                      : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
+                  }`}
+                >
+                  {labelMap[day]}
+                </button>
+              );
+            })}
           </div>
 
           {/* Category Filter */}
@@ -378,44 +391,28 @@ export const SchedulePage: React.FC = () => {
                 {/* Venue & Guidelines Action Buttons */}
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-2 p-2.5 rounded-xl bg-[#080103] border border-rose-950 md:min-w-[190px]">
-                    <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                    <span className="text-xs font-semibold text-rose-200 truncate">{item.venue}</span>
+                    <MapPin className="w-4 h-4 text-rose-400 shrink-0" />
+                    <span className="text-xs text-rose-200/90 truncate">{item.venue}</span>
                   </div>
 
+                  {/* Attached Guidelines Modal Trigger */}
                   <button
                     onClick={() => openGuidelines(item)}
-                    className="px-3.5 py-2.5 rounded-xl bg-[#1b0307] hover:bg-amber-500 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center gap-1.5 shrink-0 shadow-sm"
+                    className="p-2.5 rounded-xl bg-[#1c0409] hover:bg-amber-500 hover:text-black text-amber-300 border border-amber-500/30 transition-all flex items-center gap-1.5 text-xs font-bold shadow-md shrink-0"
                   >
-                    <BookOpen className="w-3.5 h-3.5" />
-                    <span>Guidelines</span>
+                    <BookOpen className="w-4 h-4" />
+                    <span className="hidden sm:inline">Guidelines</span>
                   </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Schedule Download Notice */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#0d0104] border border-amber-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h4 className="text-sm font-bold text-amber-200">Official Directorate Schedule Sign-Off</h4>
-            <p className="text-xs text-rose-300/80 mt-1">
-              Events Have Staggered Reporting Times (30 Mins Prior). Contingents Must Report Promptly.
-            </p>
-          </div>
-          <button
-            onClick={() => window.print()}
-            className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold transition-all flex items-center gap-2 shadow-md shadow-amber-500/20"
-          >
-            <Download className="w-4 h-4" />
-            <span>Print Official Schedule</span>
-          </button>
-        </div>
       </main>
 
       <Footer />
 
-      {/* Event Guideline Modal Attached Directly To Each Event */}
+      {/* Guidelines Modal Attached Directly To Events */}
       <EventGuidelineModal
         isOpen={isGuidelineModalOpen}
         onClose={() => setIsGuidelineModalOpen(false)}

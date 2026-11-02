@@ -3,7 +3,7 @@ import { FestiveTicker } from "@/Components/Ui/FestiveTicker";
 import { Navbar } from "@/Components/Ui/Navbar";
 import { Footer } from "@/Components/Ui/Footer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
-import { Podium } from "@/Components/Leaderboard/Podium";
+import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
 import { LeaderboardTable } from "@/Components/Leaderboard/LeaderboardTable";
 import { Api } from "@/Lib/Api";
 import {
@@ -17,8 +17,8 @@ import {
 } from "lucide-react";
 
 export const LeaderboardPage: React.FC = () => {
-  const [standings, setStandings] = useState<any[]>([]);
-  const [podium, setPodium] = useState<any[]>([]);
+  const [standings, setStandings] = useState<any[]>(DEFAULT_TOP_THREE);
+  const [podium, setPodium] = useState<any[]>(DEFAULT_TOP_THREE);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<string>("");
 
