@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: abhivyakti_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-abhivyakti_db}
+      POSTGRES_USER: ${POSTGRES_USER:-abhivyakti_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-AbhivyaktiSecure2026!}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-abhivyakti_user} -d ${POSTGRES_DB:-abhivyakti_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - abhivyakti_net
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: abhivyakti_backend
+    restart: unless-stopped
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py seed &&
+             gunicorn Config.Wsgi:application --bind 0.0.0.0:8000 --workers 3"
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-abhivyakti_championship_secret_key_2026}
+      DJANGO_DEBUG: "False"
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1,backend}
+      DB_ENGINE: django.db.backends.postgresql
+      DB_NAME: ${POSTGRES_DB:-abhivyakti_db}
+      DB_USER: ${POSTGRES_USER:-abhivyakti_user}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-AbhivyaktiSecure2026!}
+      DB_HOST: db
+      DB_PORT: 5432
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost,http://127.0.0.1}
+    volumes:
+      - media_data:/app/Media
+      - static_data:/app/Static
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - abhivyakti_net
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: abhivyakti_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - abhivyakti_net
+
+volumes:
+  postgres_data:
+  media_data:
+  static_data:
+
+networks:
+  abhivyakti_net:
+    driver: bridge
