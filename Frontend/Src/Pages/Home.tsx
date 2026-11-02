@@ -888,42 +888,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Dedicated Top 3 Contingents Podium & Championship Leaderboard Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#140206] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
-              <Trophy className="w-4 h-4 text-amber-400" />
-              <span>Top 3 College Contingents Podium</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-serif font-black text-amber-100 drop-shadow-[0_4px_20px_rgba(245,184,66,0.3)]">
-              Championship Leaderboard
-            </h2>
-            <p className="text-xs sm:text-sm text-rose-200/90 mt-1 font-medium">
-              Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
-            </p>
-          </div>
-          <div>
-            <Link
-              to="/leaderboard"
-              className="px-6 py-2.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black transition-all flex items-center gap-1.5 shadow-md shadow-amber-500/20"
-            >
-              <span>Full Standings</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
 
-        {/* Dedicated Top 3 Elevated Podium With Dummy Data */}
-        <div className="mb-12">
-          <Podium topThree={podium.length >= 3 ? podium : DEFAULT_TOP_THREE} />
-        </div>
-
-        {/* Quick Table Preview */}
-        <div className="mt-8">
-          <LeaderboardTable colleges={standings.slice(0, 5)} />
-        </div>
-      </section>
 
       {/* Cultural Arenas Showcase */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">

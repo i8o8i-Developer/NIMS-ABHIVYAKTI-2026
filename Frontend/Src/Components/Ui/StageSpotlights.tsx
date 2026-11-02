@@ -76,3 +76,4 @@ export const StageSpotlights: React.FC = () => {
 };
 
 export default StageSpotlights;
+
