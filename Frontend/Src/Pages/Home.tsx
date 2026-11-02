@@ -5,7 +5,6 @@ import { Navbar } from "@/Components/Ui/Navbar";
 import { CountdownTimer } from "@/Components/Ui/CountdownTimer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
 import { StageSpotlights } from "@/Components/Ui/StageSpotlights";
-import { HeroCulturalElements } from "@/Components/Ui/HeroCulturalElements";
 import { Footer } from "@/Components/Ui/Footer";
 import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
 import { LeaderboardTable, DEFAULT_STANDINGS } from "@/Components/Leaderboard/LeaderboardTable";
@@ -463,11 +462,88 @@ export const Home: React.FC = () => {
         </div>
 
         {/* =========================================================================
-            FOUR AUTHENTIC CULTURAL ARTIFACT CLUSTERS
+            CULTURAL FESTIVAL HERO ELEMENT CLUSTERS
             Exact Placements Matching User Red Circles In Image 1
-            Classical Natya Drama Masks, Sitar/Flute Ensemble, Classical Dance Mudra, Championship Laurel
             ========================================================================= */}
-        <HeroCulturalElements />
+        {/* Cluster 1: Top-Left (Between Left Badges & Abhivyakti Logo) */}
+        <div className="hidden xl:flex items-center gap-3 absolute top-[13%] 2xl:top-[15%] left-[21%] 2xl:left-[23%] pointer-events-none select-none z-10 animate-live-sway">
+          <div className="p-2.5 2xl:p-3 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-xl shadow-rose-950/40 flex items-center gap-2">
+            <Theater className="w-7 h-7 2xl:w-8 2xl:h-8 text-rose-300 drop-shadow-[0_0_12px_rgba(251,113,133,0.6)]" />
+          </div>
+          <div className="flex flex-col gap-1 items-start">
+            <div className="opacity-90 animate-live-leaf">
+              <svg width="22" height="30" viewBox="0 0 34 44" fill="none">
+                <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.65" />
+                <path d="M17 2L17 42M17 15L27 22M17 22L7 29" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </div>
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-live-twinkle drop-shadow-[0_0_8px_#F5B842]" />
+          </div>
+        </div>
+
+        {/* Cluster 2: Top-Right (Between Abhivyakti Logo & Right Badges) */}
+        <div className="hidden xl:flex items-center gap-3 absolute top-[13%] 2xl:top-[15%] right-[21%] 2xl:right-[23%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.1s" }}>
+          <div className="flex flex-col gap-1 items-end">
+            <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-live-twinkle drop-shadow-[0_0_8px_#FDE047]" />
+            <div className="p-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300">
+              <Mic className="w-3.5 h-3.5" />
+            </div>
+          </div>
+          <div className="p-2.5 2xl:p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-xl shadow-amber-950/40 flex items-center gap-2">
+            <Music className="w-7 h-7 2xl:w-8 2xl:h-8 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.7)]" />
+          </div>
+        </div>
+
+        {/* Cluster 3: Far Bottom-Left (Below Left Badges In Outer Margin) */}
+        <div className="hidden xl:flex flex-col items-center gap-2 absolute bottom-[8%] left-[4%] 2xl:left-[6%] pointer-events-none select-none z-10">
+          <div className="animate-live-flicker">
+            <svg width="44" height="34" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+          <div className="opacity-75 animate-live-leaf">
+            <svg width="20" height="28" viewBox="0 0 34 44" fill="none">
+              <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.55" />
+              <path d="M17 2L17 42M17 15L27 22" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Cluster 4: Bottom-Left Wide Zone (To Left Of Countdown Timer) */}
+        <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] left-[17%] 2xl:left-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.7s" }}>
+          <div className="p-3 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-2xl shadow-rose-950/60 flex items-center gap-2.5">
+            <Theater className="w-7 h-7 text-amber-300 drop-shadow-[0_0_12px_rgba(245,184,66,0.6)]" />
+            <div className="h-6 w-px bg-rose-500/30" />
+            <Palette className="w-5 h-5 text-rose-300 drop-shadow-[0_0_10px_rgba(251,113,133,0.5)]" />
+          </div>
+          <div className="animate-live-flicker" style={{ animationDelay: "0.6s" }}>
+            <svg width="40" height="30" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.6)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FDE047" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#991B1B" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#B45309" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Cluster 5: Bottom-Right Wide Zone (To Right Of Countdown Timer) */}
+        <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] right-[17%] 2xl:right-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "2.3s" }}>
+          <div className="animate-live-flicker" style={{ animationDelay: "1.3s" }}>
+            <svg width="42" height="32" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+          <div className="p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-2xl shadow-amber-950/60 flex items-center gap-2.5">
+            <Trophy className="w-7 h-7 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.6)]" />
+            <div className="h-6 w-px bg-amber-500/30" />
+            <Music className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_10px_rgba(253,224,71,0.5)]" />
+          </div>
+        </div>
 
         {/* Central Logo & Majestic Typography (Generous Unobstructed Space) */}
         <div className="w-full max-w-3xl 2xl:max-w-4xl mx-auto flex flex-col items-center px-4 z-10">
