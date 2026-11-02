@@ -211,9 +211,10 @@ export const Home: React.FC = () => {
     const fetchLeaderboard = async () => {
       try {
         const res = await Api.get("/scores/leaderboard/");
-        if (res.data?.standings && res.data.standings.length > 0) {
-          setStandings(res.data.standings);
-          setPodium(res.data.podium || res.data.standings.slice(0, 3));
+        const list = res.data?.leaderboard || res.data?.standings;
+        if (list && list.length > 0) {
+          setStandings(list);
+          setPodium(res.data?.podium || (list.length >= 3 ? list.slice(0, 3) : DEFAULT_TOP_THREE));
         }
       } catch {
         // Retain default dummy top 3
@@ -295,7 +296,7 @@ export const Home: React.FC = () => {
       <Navbar />
 
       {/* Hero Section Matching Image 1 & Image 2 Reference */}
-      <section className="relative pt-8 sm:pt-12 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[92rem] mx-auto flex flex-col items-center">
+      <section className="relative pt-6 sm:pt-10 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[100rem] mx-auto flex flex-col items-center min-h-[720px]">
         {/* NIMS Championship Pill */}
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-7 z-10 animate-fade-in">
           <Sparkles className="w-4 h-4 text-amber-400" />
@@ -305,163 +306,160 @@ export const Home: React.FC = () => {
           <Sparkles className="w-4 h-4 text-amber-400" />
         </div>
 
-        {/* Hero Grid With Compact Outer Badges Pushed To The Sides */}
-        <div className="w-full grid grid-cols-1 xl:grid-cols-12 gap-6 items-center mb-10 z-10">
-          {/* Left Side Badges (Pushed Further to the Side & Smaller Boxes) */}
-          <div className="hidden xl:flex xl:col-span-2.5 flex-col gap-3.5 items-start">
-            {/* Badge 1: Championship Glory */}
-            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <Trophy className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">CHAMPIONSHIP GLORY</h4>
-                  <p className="text-[9px] text-rose-300/80 font-medium">30+ Leading Institutes</p>
-                </div>
+        {/* Outer Left Floating Badges (Pinned to Far Left Edge With Increased Sizing) */}
+        <div className="hidden xl:flex flex-col gap-4.5 absolute left-3 2xl:left-8 top-[17%] 2xl:top-[19%] z-20">
+          {/* Badge 1: Championship Glory */}
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
+                <Trophy className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
-            </div>
-
-            {/* Badge 2: 100% Student-Led */}
-            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-rose-500/35 backdrop-blur-xl shadow-xl text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 shrink-0">
-                  <Users className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">100% STUDENT-LED</h4>
-                  <p className="text-[9px] text-rose-300/80 font-medium">NIMS Student Council</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Badge 3: ₹5,00,000+ Awards */}
-            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <Award className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">₹5,00,000+ AWARDS</h4>
-                  <p className="text-[9px] text-rose-300/80 font-medium">Rolling Champions Trophy</p>
-                </div>
+              <div>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">CHAMPIONSHIP GLORY</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">30+ Leading Institutes</p>
               </div>
             </div>
           </div>
 
-          {/* Central Logo & Majestic Typography Matching Image 2 Reference */}
-          <div className="col-span-1 xl:col-span-7 flex flex-col items-center px-2">
-            {/* Official Abhivyakti Stylized Logo Container */}
-            <div className="relative mb-5 p-4 sm:p-5 rounded-3xl bg-white shadow-2xl shadow-rose-950/70 border-4 border-amber-400/90 max-w-xs sm:max-w-sm w-full mx-auto transform hover:scale-105 transition-transform duration-300">
-              <img
-                src="/Abhivyakti.png"
-                alt="Abhivyakti Cultural Festival Logo"
-                className="w-full h-auto max-h-32 sm:max-h-36 object-contain mx-auto"
-              />
-            </div>
-
-            {/* Regal Headline With Pure White Line 1 & Golden Amber Line 2 (Matching Image 2 Reference) */}
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[3.4rem] xl:text-[3.85rem] font-black tracking-tight leading-[1.08] mb-5">
-              <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_15px_rgba(255,255,255,0.25)] whitespace-nowrap">
-                Celebrating Cultural
-              </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_25px_rgba(245,184,66,0.45)] whitespace-nowrap mt-1 sm:mt-2">
-                Majesty & Excellence
-              </span>
-            </h1>
-
-            {/* Subtitle Description With 18 to 21 November Date Range */}
-            <p className="text-xs sm:text-sm text-rose-200/90 font-medium max-w-xl leading-relaxed mb-7">
-              Colleges And Institutes Across NIMS University Compete From{" "}
-              <strong className="text-amber-300 font-bold">18 To 21 November 2026</strong> In Singing, Classical Dance,
-              Street Play, Battle Of The Bands, And Visual Arts For The Coveted{" "}
-              <strong className="text-amber-300 font-bold">Abhivyakti Inter-College Championship Trophy</strong>.
-            </p>
-
-            {/* 4-Card Countdown Timer */}
-            <div className="w-full max-w-md">
-              <CountdownTimer targetDate="2026-11-18T09:00:00" />
-            </div>
-
-            {/* Action Buttons */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                to="/competitions"
-                className="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all flex items-center gap-2"
-              >
-                <Sparkles className="w-4 h-4 text-black" />
-                <span>Explore Competitions</span>
-              </Link>
-
-              <Link
-                to="/leaderboard"
-                className="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#140206] text-amber-200 border border-amber-500/40 hover:bg-rose-950/70 hover:text-white transition-all flex items-center gap-2 shadow-xl"
-              >
-                <Trophy className="w-4 h-4 text-amber-400" />
-                <span>View Leaderboard</span>
-              </Link>
+          {/* Badge 2: 100% Student-Led */}
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 shrink-0">
+                <Users className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              </div>
+              <div>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">100% STUDENT-LED</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">NIMS Student Council</p>
+              </div>
             </div>
           </div>
 
-          {/* Right Side Badges (Pushed Further to the Side & Smaller Boxes) */}
-          <div className="hidden xl:flex xl:col-span-2.5 flex-col gap-3.5 items-end">
-            {/* Badge 4: 6 Cultural Arenas */}
-            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "0.6s" }}>
-              <div className="flex items-center justify-end gap-2.5">
-                <div>
-                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">6 CULTURAL ARENAS</h4>
-                  <p className="text-[9px] text-rose-300/80 font-medium">Music, Dance, Drama, Vogue</p>
-                </div>
-                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <Flame className="w-4 h-4" />
-                </div>
+          {/* Badge 3: ₹5,00,000+ Awards */}
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
+                <Award className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              </div>
+              <div>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">₹5,00,000+ AWARDS</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">Rolling Champions Trophy</p>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Badge 5: Grand Central Venue */}
-            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-rose-500/35 backdrop-blur-xl shadow-xl text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "1.9s" }}>
-              <div className="flex items-center justify-end gap-2.5">
-                <div>
-                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">GRAND CENTRAL VENUE</h4>
-                  <p className="text-[9px] text-rose-300/80 font-medium">NIMS Jaipur Grounds</p>
-                </div>
-                <div className="p-2 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-400 shrink-0">
-                  <MapPin className="w-4 h-4" />
-                </div>
+        {/* Central Logo & Majestic Typography (Generous Unobstructed Space) */}
+        <div className="w-full max-w-3xl 2xl:max-w-4xl mx-auto flex flex-col items-center px-4 z-10">
+          {/* Official Abhivyakti Stylized Logo Container */}
+          <div className="relative mb-6 p-4 sm:p-5 rounded-3xl bg-white shadow-2xl shadow-rose-950/70 border-4 border-amber-400/90 max-w-xs sm:max-w-sm w-full mx-auto transform hover:scale-105 transition-transform duration-300">
+            <img
+              src="/Abhivyakti.png"
+              alt="Abhivyakti Cultural Festival Logo"
+              className="w-full h-auto max-h-32 sm:max-h-36 object-contain mx-auto"
+            />
+          </div>
+
+          {/* Regal Headline With Pure White Line 1 & Golden Amber Line 2 (Matching Image 2 Reference) */}
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[3.9rem] 2xl:text-[4.2rem] font-black tracking-tight leading-[1.08] mb-5">
+            <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_18px_rgba(255,255,255,0.35)] whitespace-nowrap">
+              Celebrating Cultural
+            </span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_28px_rgba(245,184,66,0.5)] whitespace-nowrap mt-1 sm:mt-2">
+              Majesty & Excellence
+            </span>
+          </h1>
+
+          {/* Subtitle Description With 18 to 21 November Date Range */}
+          <p className="text-xs sm:text-sm text-rose-200/90 font-medium max-w-xl leading-relaxed mb-7">
+            Colleges And Institutes Across NIMS University Compete From{" "}
+            <strong className="text-amber-300 font-bold">18 To 21 November 2026</strong> In Singing, Classical Dance,
+            Street Play, Battle Of The Bands, And Visual Arts For The Coveted{" "}
+            <strong className="text-amber-300 font-bold">Abhivyakti Inter-College Championship Trophy</strong>.
+          </p>
+
+          {/* 4-Card Countdown Timer */}
+          <div className="w-full max-w-md">
+            <CountdownTimer targetDate="2026-11-18T09:00:00" />
+          </div>
+
+          {/* Action Buttons */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/competitions"
+              className="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all flex items-center gap-2"
+            >
+              <Sparkles className="w-4 h-4 text-black" />
+              <span>Explore Competitions</span>
+            </Link>
+
+            <Link
+              to="/leaderboard"
+              className="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#140206] text-amber-200 border border-amber-500/40 hover:bg-rose-950/70 hover:text-white transition-all flex items-center gap-2 shadow-xl"
+            >
+              <Trophy className="w-4 h-4 text-amber-400" />
+              <span>View Leaderboard</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Outer Right Floating Badges (Pinned to Far Right Edge With Increased Sizing) */}
+        <div className="hidden xl:flex flex-col gap-4.5 absolute right-3 2xl:right-8 top-[17%] 2xl:top-[19%] z-20">
+          {/* Badge 4: 6 Cultural Arenas */}
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "0.6s" }}>
+            <div className="flex items-center justify-end gap-3">
+              <div>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">6 CULTURAL ARENAS</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">Music, Dance, Drama, Vogue</p>
+              </div>
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
+                <Flame className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
+          </div>
 
-            {/* Badge 6: Verified Jury Engine */}
-            <div className="w-48 xl:w-52 p-2.5 sm:p-3 rounded-2xl bg-[#0d0104]/90 border border-amber-500/35 backdrop-blur-xl shadow-xl text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "3.2s" }}>
-              <div className="flex items-center justify-end gap-2.5">
-                <div>
-                  <h4 className="text-[10px] sm:text-[11px] font-bold tracking-wider text-amber-200 uppercase">VERIFIED JURY ENGINE</h4>
-                  <p className="text-[9px] text-rose-300/80 font-medium">Real-Time Score Sync</p>
-                </div>
-                <div className="p-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 shrink-0">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
+          {/* Badge 5: Grand Central Venue */}
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "1.9s" }}>
+            <div className="flex items-center justify-end gap-3">
+              <div>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">GRAND CENTRAL VENUE</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">NIMS Jaipur Grounds</p>
+              </div>
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 shrink-0">
+                <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              </div>
+            </div>
+          </div>
+
+          {/* Badge 6: Verified Jury Engine */}
+          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-float-slow" style={{ animationDelay: "3.2s" }}>
+            <div className="flex items-center justify-end gap-3">
+              <div>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">VERIFIED JURY ENGINE</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">Real-Time Score Sync</p>
+              </div>
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
+                <ShieldCheck className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Mobile Badges Strip (visible on mobile / tablet) */}
-        <div className="xl:hidden grid grid-cols-2 sm:grid-cols-3 gap-3 w-full mt-4 z-10 max-w-2xl">
-          <div className="p-3 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center">
-            <Trophy className="w-4 h-4 text-amber-400 mx-auto mb-1" />
-            <p className="text-xs font-bold text-amber-200">Championship Glory</p>
-            <p className="text-[10px] text-rose-300/70">30+ Colleges</p>
+        <div className="xl:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-10 z-10 max-w-3xl px-2">
+          <div className="p-3.5 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center shadow-lg">
+            <Trophy className="w-5 h-5 text-amber-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-amber-200 uppercase">Championship Glory</p>
+            <p className="text-[11px] text-rose-200">30+ Leading Institutes</p>
           </div>
-          <div className="p-3 rounded-xl bg-[#0e0205] border border-rose-500/30 text-center">
-            <Users className="w-4 h-4 text-rose-400 mx-auto mb-1" />
-            <p className="text-xs font-bold text-amber-200">100% Student-Led</p>
-            <p className="text-[10px] text-rose-300/70">Student Council</p>
+          <div className="p-3.5 rounded-xl bg-[#0e0205] border border-rose-500/30 text-center shadow-lg">
+            <Users className="w-5 h-5 text-rose-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-amber-200 uppercase">100% Student-Led</p>
+            <p className="text-[11px] text-rose-200">NIMS Student Council</p>
           </div>
-          <div className="p-3 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center">
-            <ShieldCheck className="w-4 h-4 text-amber-400 mx-auto mb-1" />
-            <p className="text-xs font-bold text-amber-200">Verified Scoring</p>
-            <p className="text-[10px] text-rose-300/70">Jury Matrix</p>
+          <div className="p-3.5 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center shadow-lg">
+            <ShieldCheck className="w-5 h-5 text-amber-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-amber-200 uppercase">Verified Scoring</p>
+            <p className="text-[11px] text-rose-200">Real-Time Jury Sync</p>
           </div>
         </div>
       </section>
@@ -612,14 +610,14 @@ export const Home: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
-            <div className="flex items-center gap-2 text-amber-400 mb-2">
-              <Trophy className="w-5 h-5" />
-              <span className="text-xs font-bold uppercase tracking-wider">Top 3 College Contingents Podium</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
+              <Trophy className="w-4 h-4 text-amber-300" />
+              <span>Top 3 College Contingents Podium</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-serif font-black text-white">
+            <h2 className="text-3xl sm:text-5xl font-serif font-black text-white drop-shadow-[0_4px_20px_rgba(255,255,255,0.35)]">
               Championship Leaderboard
             </h2>
-            <p className="text-xs sm:text-sm text-rose-200/70 mt-1">
+            <p className="text-xs sm:text-sm text-gray-200 mt-1 font-medium">
               Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
             </p>
           </div>

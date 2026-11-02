@@ -26,13 +26,13 @@ export const LeaderboardPage: React.FC = () => {
     try {
       setLoading(true);
       const res = await Api.get("/scores/leaderboard/");
-      if (res.data?.standings) {
-        setStandings(res.data.standings);
-        setPodium(res.data.podium || res.data.standings.slice(0, 3));
-      }
+      const list = res.data?.leaderboard || res.data?.standings || DEFAULT_TOP_THREE;
+      const top3 = res.data?.podium || (list && list.length >= 3 ? list.slice(0, 3) : DEFAULT_TOP_THREE);
+      setStandings(list);
+      setPodium(top3);
       setLastUpdated(new Date().toLocaleTimeString());
     } catch {
-      // Fallback
+      // Retain fallback data
     } finally {
       setLoading(false);
     }
@@ -40,28 +40,28 @@ export const LeaderboardPage: React.FC = () => {
 
   useEffect(() => {
     fetchStandings();
-    const interval = setInterval(fetchStandings, 15000); // 15 second auto-poll
+    const interval = setInterval(fetchStandings, 15000); // 15-second auto-poll
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0e0204] text-amber-50 relative selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#070103] text-amber-50 relative selection:bg-amber-500 selection:text-black">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        {/* Header with Brilliant White Contrast */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3">
-              <Trophy className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/25 text-white text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md shadow-lg shadow-white/5">
+              <Trophy className="w-4 h-4 text-amber-300" />
               <span>Verified Championship Standings</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-serif font-black text-white">
+            <h1 className="text-4xl sm:text-6xl font-serif font-black text-white drop-shadow-[0_4px_25px_rgba(255,255,255,0.45)]">
               Official Leaderboard
             </h1>
-            <p className="text-sm text-rose-200/80 mt-2">
+            <p className="text-sm sm:text-base text-gray-200 mt-2 font-medium">
               Cumulative Points Tally From All 15 Cultural Competitions. Ranked In Real Time.
             </p>
           </div>
@@ -70,9 +70,9 @@ export const LeaderboardPage: React.FC = () => {
             <button
               onClick={fetchStandings}
               disabled={loading}
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-black text-xs font-bold transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20 hover:scale-105"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black text-xs font-black transition-all flex items-center gap-2 shadow-xl shadow-amber-500/25 hover:scale-105 uppercase tracking-wider"
             >
-              <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
+              <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
               <span>Refresh Standings</span>
             </button>
           </div>
@@ -91,19 +91,21 @@ export const LeaderboardPage: React.FC = () => {
         </div>
 
         {/* Scoring Methodology Note */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#170306] border border-rose-950/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-rose-300/80">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-amber-400 shrink-0" />
+        <div className="mt-12 p-6 rounded-2xl bg-[#140206] border-2 border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-200 shadow-2xl">
+          <div className="flex items-center gap-3.5">
+            <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
+              <ShieldCheck className="w-5 h-5 text-amber-400" />
+            </div>
             <div>
-              <p className="font-bold text-white">Championship Points Rule</p>
-              <p className="text-rose-200/70">
+              <p className="font-bold text-white text-sm">Championship Points Rule</p>
+              <p className="text-gray-300 text-xs mt-0.5">
                 1st Place = 40 Points | 2nd Place = 25 Points | 3rd Place = 15 Points. Participation In All Arenas Awards +5 Bonus Points.
               </p>
             </div>
           </div>
           {lastUpdated && (
-            <span className="text-[11px] text-amber-400/80 whitespace-nowrap">
-              Last Synchronized At: {lastUpdated}
+            <span className="text-xs font-mono font-bold text-amber-300/90 whitespace-nowrap bg-black/40 px-3 py-1.5 rounded-lg border border-amber-500/30">
+              Last Synchronized: {lastUpdated}
             </span>
           )}
         </div>
