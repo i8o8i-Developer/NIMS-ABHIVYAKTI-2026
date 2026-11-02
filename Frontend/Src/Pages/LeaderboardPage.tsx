@@ -9,10 +9,10 @@ import { Api } from "@/Lib/Api";
 import {
   Trophy,
   RefreshCw,
-  ExternalLink,
   Medal,
   Sparkles,
   Flame,
+  Music,
   ShieldCheck,
 } from "lucide-react";
 
@@ -45,14 +45,30 @@ export const LeaderboardPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070103] text-amber-50 relative selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen bg-[#070103] text-amber-50 relative selection:bg-amber-500 selection:text-black overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        {/* Exact Decorative Corner Dashed Rings & Motifs Matching Image 8 Reference */}
+        <div className="absolute top-2 -right-14 w-72 sm:w-88 h-72 sm:h-88 rounded-full border-2 border-dashed border-amber-400/35 opacity-75 pointer-events-none animate-live-spin-slow" />
+        <div
+          className="absolute top-4 -left-14 w-64 sm:w-80 h-64 sm:h-80 rounded-full border-2 border-dotted border-rose-400/35 opacity-70 pointer-events-none animate-live-spin-slow"
+          style={{ animationDirection: "reverse" }}
+        />
+        <div className="absolute top-16 right-10 opacity-40 pointer-events-none animate-live-sway">
+          <Music className="w-5 h-5 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.6)]" />
+        </div>
+        <div className="absolute top-28 right-24 opacity-40 pointer-events-none animate-live-flicker">
+          <Flame className="w-4 h-4 text-rose-400 drop-shadow-[0_0_10px_rgba(244,63,94,0.6)]" />
+        </div>
+        <div className="absolute top-20 left-12 opacity-40 pointer-events-none animate-live-drift-diag">
+          <Trophy className="w-5 h-5 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.6)]" />
+        </div>
+
         {/* Header with Brilliant White Contrast */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 relative z-10">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/25 text-white text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md shadow-lg shadow-white/5">
               <Trophy className="w-4 h-4 text-amber-300" />
@@ -62,7 +78,7 @@ export const LeaderboardPage: React.FC = () => {
               Official Leaderboard
             </h1>
             <p className="text-sm sm:text-base text-gray-200 mt-2 font-medium">
-              Cumulative Points Tally From All 15 Cultural Competitions. Ranked In Real Time.
+              Cumulative Points Tally From All 22 Official Cultural Competitions. Ranked In Real Time.
             </p>
           </div>
 
@@ -80,33 +96,31 @@ export const LeaderboardPage: React.FC = () => {
 
         {/* Top 3 Championship Podium */}
         {podium.length >= 3 && (
-          <div className="mb-14">
+          <div className="mb-14 relative z-10">
             <Podium topThree={podium} />
           </div>
         )}
 
         {/* Detailed Points Table */}
-        <div className="mt-8">
+        <div className="mt-8 relative z-10">
           <LeaderboardTable colleges={standings} />
         </div>
 
         {/* Scoring Methodology Note */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#140206] border-2 border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-200 shadow-2xl">
+        <div className="mt-12 p-6 rounded-2xl bg-[#140206] border-2 border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-200 shadow-2xl relative z-10">
           <div className="flex items-center gap-3.5">
-            <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
-              <ShieldCheck className="w-5 h-5 text-amber-400" />
+            <div className="p-3 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/35">
+              <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <p className="font-bold text-white text-sm">Championship Points Rule</p>
-              <p className="text-gray-300 text-xs mt-0.5">
-                1st Place = 40 Points | 2nd Place = 25 Points | 3rd Place = 15 Points. Participation In All Arenas Awards +5 Bonus Points.
+              <p className="text-gray-300 text-xs">
+                1st Place: 40 Points • 2nd Place: 25 Points • 3rd Place: 15 Points. Participation In All Arenas Awards +5 Bonus Points.
               </p>
             </div>
           </div>
           {lastUpdated && (
-            <span className="text-xs font-mono font-bold text-amber-300/90 whitespace-nowrap bg-black/40 px-3 py-1.5 rounded-lg border border-amber-500/30">
-              Last Synchronized: {lastUpdated}
-            </span>
+            <p className="text-gray-300 font-mono text-xs">Last Synchronized At {lastUpdated}</p>
           )}
         </div>
       </main>
@@ -115,4 +129,5 @@ export const LeaderboardPage: React.FC = () => {
     </div>
   );
 };
+
 export default LeaderboardPage;

@@ -539,7 +539,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-rose-950/60">
           <div className="px-3">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
-              12+
+              30+
             </p>
             <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
               Participating Institutes
@@ -547,7 +547,7 @@ export const Home: React.FC = () => {
           </div>
           <div className="px-3">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
-              15
+              22+
             </p>
             <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
               Official Competitions
@@ -573,7 +573,13 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Official Schedule Section Matching Image 3 Reference */}
-      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 overflow-hidden">
+        {/* Decorative Dashed Ring in Schedule Section */}
+        <div className="absolute top-10 -right-20 w-72 sm:w-88 h-72 sm:h-88 rounded-full border-2 border-dashed border-amber-400/25 opacity-65 pointer-events-none animate-live-spin-slow" />
+        <div
+          className="absolute bottom-10 -left-20 w-64 sm:w-80 h-64 sm:h-80 rounded-full border-2 border-dotted border-rose-400/25 opacity-60 pointer-events-none animate-live-spin-slow"
+          style={{ animationDirection: "reverse" }}
+        />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-2 text-amber-400 mb-2">
@@ -677,7 +683,13 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Dedicated Top 3 Contingents Podium & Championship Leaderboard Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10 overflow-hidden">
+        {/* Exact Decorative Corner Dashed Rings & Motifs Matching Image 8 Reference */}
+        <div className="absolute top-2 -right-16 w-80 sm:w-96 h-80 sm:h-96 rounded-full border-2 border-dashed border-amber-400/35 opacity-75 pointer-events-none animate-live-spin-slow" />
+        <div
+          className="absolute top-6 -left-16 w-72 sm:w-88 h-72 sm:h-88 rounded-full border-2 border-dotted border-rose-400/35 opacity-70 pointer-events-none animate-live-spin-slow"
+          style={{ animationDirection: "reverse" }}
+        />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
