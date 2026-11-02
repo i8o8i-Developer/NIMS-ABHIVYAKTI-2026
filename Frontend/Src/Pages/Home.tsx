@@ -366,7 +366,21 @@ export const Home: React.FC = () => {
       <Navbar />
 
       {/* Hero Section Matching Image 1 & Image 2 Reference */}
-      <section className="relative pt-6 sm:pt-10 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[100rem] mx-auto flex flex-col items-center min-h-[720px]">
+      <section className="relative pt-6 sm:pt-10 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[100rem] mx-auto flex flex-col items-center min-h-[720px] overflow-hidden">
+        {/* Signature Hero Celestial Circle Elements (Exclusively On Home Page Hero) */}
+        {/* Right Hero Circle: Gracefully Frames Right Badges Down Toward Timer */}
+        <div className="hidden lg:block absolute -top-8 sm:-top-4 2xl:top-2 -right-24 sm:-right-16 2xl:-right-6 w-[38rem] sm:w-[48rem] 2xl:w-[54rem] h-[38rem] sm:h-[48rem] 2xl:h-[54rem] rounded-full border-2 sm:border-[3px] border-dashed border-amber-500/35 pointer-events-none opacity-80 animate-live-spin-slow">
+          <div className="absolute top-[38%] left-0 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_12px_#F5B842]" />
+        </div>
+
+        {/* Left Hero Circle: Symmetrically Frames Left Badges */}
+        <div
+          className="hidden lg:block absolute -top-8 sm:-top-4 2xl:top-2 -left-24 sm:-left-16 2xl:-left-6 w-[38rem] sm:w-[48rem] 2xl:w-[54rem] h-[38rem] sm:h-[48rem] 2xl:h-[54rem] rounded-full border-2 sm:border-[3px] border-dashed border-amber-500/25 pointer-events-none opacity-70 animate-live-spin-slow"
+          style={{ animationDirection: "reverse" }}
+        >
+          <div className="absolute top-[38%] right-0 translate-x-1/2 w-2.5 h-2.5 rounded-full bg-amber-300 shadow-[0_0_12px_#FDE047]" />
+        </div>
+
         {/* NIMS Championship Pill */}
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-7 z-10 animate-fade-in">
           <Sparkles className="w-4 h-4 text-amber-400" />
@@ -573,13 +587,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Official Schedule Section Matching Image 3 Reference */}
-      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 overflow-hidden">
-        {/* Decorative Dashed Ring in Schedule Section - Contained Within Margins */}
-        <div className="absolute top-10 right-4 sm:right-8 w-48 sm:w-64 h-48 sm:h-64 rounded-full border border-dashed border-amber-500/25 opacity-60 pointer-events-none animate-live-spin-slow" />
-        <div
-          className="absolute bottom-10 left-4 sm:left-8 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dotted border-rose-500/25 opacity-55 pointer-events-none animate-live-spin-slow"
-          style={{ animationDirection: "reverse" }}
-        />
+      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-2 text-amber-400 mb-2">
@@ -683,13 +691,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Dedicated Top 3 Contingents Podium & Championship Leaderboard Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10 overflow-hidden">
-        {/* Exact Decorative Corner Dashed Rings & Motifs - Contained Within Margins */}
-        <div className="absolute top-4 right-4 sm:right-8 w-48 sm:w-64 h-48 sm:h-64 rounded-full border border-dashed border-amber-500/30 opacity-65 pointer-events-none animate-live-spin-slow" />
-        <div
-          className="absolute top-6 left-4 sm:left-8 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dotted border-rose-500/30 opacity-60 pointer-events-none animate-live-spin-slow"
-          style={{ animationDirection: "reverse" }}
-        />
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#140206] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">

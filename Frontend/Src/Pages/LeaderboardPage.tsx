@@ -51,12 +51,6 @@ export const LeaderboardPage: React.FC = () => {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        {/* Exact Decorative Corner Dashed Rings & Motifs - Fully Contained, Never Cut In Half */}
-        <div className="absolute top-4 right-4 sm:right-8 w-48 sm:w-64 h-48 sm:h-64 rounded-full border border-dashed border-amber-500/30 opacity-65 pointer-events-none animate-live-spin-slow" />
-        <div
-          className="absolute top-6 left-4 sm:left-8 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dotted border-rose-500/30 opacity-60 pointer-events-none animate-live-spin-slow"
-          style={{ animationDirection: "reverse" }}
-        />
         <div className="absolute top-16 right-12 opacity-35 pointer-events-none animate-live-sway">
           <Music className="w-5 h-5 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.5)]" />
         </div>

@@ -28,34 +28,6 @@ export const FloatingBackgroundElements: React.FC = () => {
       <div className="absolute top-[10%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[36rem] h-52 sm:h-[24rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.18)_0%,_rgba(136,19,55,0.14)_50%,_transparent_75%)] blur-3xl pointer-events-none" />
 
       {/* =========================================================================
-          SIGNATURE CELESTIAL CIRCLE RINGS ("THAT CIRCLE THING")
-          Cleanly Contained Within Safe Screen Margins - NEVER CUT IN HALF!
-          ========================================================================= */}
-      {/* Top Right: Whole, Beautifully Formed Celestial Dashed Ring (Safely Positioned In Gutter) */}
-      <div className="absolute top-36 right-3 sm:right-6 md:right-10 w-44 sm:w-60 md:w-72 h-44 sm:h-60 md:h-72 rounded-full border-2 border-dashed border-amber-500/35 opacity-70 pointer-events-none animate-live-spin-slow" />
-      <div
-        className="absolute top-44 right-6 sm:right-10 md:right-16 w-32 sm:w-44 md:w-56 h-32 sm:h-44 md:h-56 rounded-full border border-dotted border-rose-500/30 opacity-60 pointer-events-none animate-live-spin-slow"
-        style={{ animationDirection: "reverse" }}
-      />
-
-      {/* Top Left: Whole, Beautifully Formed Celestial Dotted Ring (Safely Positioned In Gutter) */}
-      <div
-        className="absolute top-36 left-3 sm:left-6 md:left-10 w-44 sm:w-60 md:w-72 h-44 sm:h-60 md:h-72 rounded-full border-2 border-dotted border-rose-500/35 opacity-70 pointer-events-none animate-live-spin-slow"
-        style={{ animationDirection: "reverse" }}
-      />
-      <div className="absolute top-44 left-6 sm:left-10 md:left-16 w-32 sm:w-44 md:w-56 h-32 sm:h-44 md:h-56 rounded-full border border-dashed border-amber-500/30 opacity-60 pointer-events-none animate-live-spin-slow" />
-
-      {/* Mid Canvas Ring (Schedule & Leaderboard Zone - Contained in Safe Gutters) */}
-      <div className="absolute top-[42%] right-4 sm:right-8 md:right-12 w-48 sm:w-64 h-48 sm:h-64 rounded-full border-2 border-dashed border-amber-500/25 opacity-60 pointer-events-none animate-live-spin-slow" />
-      <div
-        className="absolute top-[65%] left-4 sm:left-8 md:left-12 w-48 sm:w-64 h-48 sm:h-64 rounded-full border-2 border-dotted border-rose-500/25 opacity-60 pointer-events-none animate-live-spin-slow"
-        style={{ animationDirection: "reverse" }}
-      />
-
-      {/* Lower Canvas Ring (Arenas & FAQ Zone - Contained in Safe Gutters) */}
-      <div className="absolute top-[82%] right-4 sm:right-8 md:right-12 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dashed border-amber-500/25 opacity-55 pointer-events-none animate-live-spin-slow" />
-
-      {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS
           Safely Positioned in Outer Side Margins - NEVER COLLAPSE OR OVERLAP HEADERS!
           (Top Header Zone 0px to 140px is completely clear)
