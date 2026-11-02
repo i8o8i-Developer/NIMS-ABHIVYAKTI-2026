@@ -198,16 +198,7 @@
   }
 }
 
-@keyframes spotlight-sweep {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scaleY(1) rotate(0deg);
-  }
-  50% {
-    opacity: 0.75;
-    transform: scaleY(1.08) rotate(3deg);
-  }
-}
+
 
 .animate-live-float-slow {
   animation: live-float-slow 8s ease-in-out infinite;
@@ -241,6 +232,4 @@
   animation: live-twinkle 3s ease-in-out infinite;
 }
 
-.animate-spotlight-sweep {
-  animation: spotlight-sweep 6s ease-in-out infinite;
-}
+

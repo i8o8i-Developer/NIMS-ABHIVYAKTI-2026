@@ -1,6 +1,19 @@
 import React, { useState } from "react";
-import { Search, Trophy, Award, Medal, ChevronRight } from "lucide-react";
-import { LeaderboardCollege } from "@/Components/Leaderboard/Podium";
+import { Search, Trophy } from "lucide-react";
+
+interface LeaderboardCollege {
+  college_id: number;
+  college_name: string;
+  college_code: string;
+  city: string;
+  avatar_color: string;
+  gold_medals: number;
+  silver_medals: number;
+  bronze_medals: number;
+  events_participated: number;
+  total_points: number;
+  rank: number;
+}
 
 interface LeaderboardTableProps {
   colleges: LeaderboardCollege[];
@@ -10,9 +23,12 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredColleges = colleges.filter((col) => {
-    if (!searchTerm.trim()) return true;
     const q = searchTerm.toLowerCase();
-    return col.college_name.toLowerCase().includes(q) || col.college_code.toLowerCase().includes(q);
+    return (
+      col.college_name.toLowerCase().includes(q) ||
+      col.college_code.toLowerCase().includes(q) ||
+      col.city.toLowerCase().includes(q)
+    );
   });
 
   return (
@@ -20,42 +36,42 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
       {/* Search Header */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="relative w-full sm:w-80">
-          <Search className="w-4 h-4 text-amber-300 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-amber-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search College Or Code..."
-            className="w-full bg-[#0d0104] border-2 border-white/20 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder:text-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white/40 transition-all shadow-inner"
+            className="w-full bg-[#0d0104] border border-amber-500/30 rounded-xl pl-10 pr-4 py-2 text-xs text-amber-100 placeholder:text-amber-200/40 focus:outline-none focus:border-amber-400 transition-all shadow-inner"
           />
         </div>
 
         <div className="flex items-center space-x-2 text-xs text-rose-200">
-          <span className="font-medium text-white/90">Total Competing:</span>
-          <span className="font-bold text-white bg-white/10 px-3 py-1 rounded-lg border border-white/20 shadow-sm">
+          <span className="font-medium text-amber-200/80">Total Competing:</span>
+          <span className="font-bold text-amber-300 bg-[#140206] px-3 py-1 rounded-lg border border-amber-500/30 shadow-sm">
             {colleges.length} Institutes
           </span>
         </div>
       </div>
 
-      {/* Table Container With Deep Blackish Tone & White Contrast */}
-      <div className="overflow-x-auto rounded-2xl border-2 border-white/15 bg-[#0a0103]/95 backdrop-blur-2xl shadow-2xl shadow-black/80">
+      {/* Table Container With Deep Blackish Tone & Golden Accents */}
+      <div className="overflow-x-auto rounded-2xl border border-amber-500/30 bg-[#0a0103]/95 backdrop-blur-2xl shadow-2xl shadow-black/80">
         <table className="w-full text-left text-xs">
-          <thead className="bg-[#140206] text-white font-black uppercase tracking-wider text-[11px] border-b-2 border-white/20">
+          <thead className="bg-[#140206] text-amber-200 font-black uppercase tracking-wider text-[11px] border-b border-amber-500/30">
             <tr>
-              <th className="py-4 px-4 text-center w-16 text-white font-black">Rank</th>
-              <th className="py-4 px-4 text-white font-black">Institute & Faculty</th>
+              <th className="py-4 px-4 text-center w-16 text-amber-300 font-black">Rank</th>
+              <th className="py-4 px-4 text-amber-200 font-black">Institute & Faculty</th>
               <th className="py-4 px-3 text-center text-amber-300 font-bold">Gold 🥇</th>
               <th className="py-4 px-3 text-center text-slate-200 font-bold">Silver 🥈</th>
               <th className="py-4 px-3 text-center text-amber-500 font-bold">Bronze 🥉</th>
-              <th className="py-4 px-4 text-center text-white/80 font-bold">Events</th>
-              <th className="py-4 px-5 text-right font-black text-white">Championship Points</th>
+              <th className="py-4 px-4 text-center text-amber-200/80 font-bold">Events</th>
+              <th className="py-4 px-5 text-right font-black text-amber-300">Championship Points</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/10 text-rose-100">
+          <tbody className="divide-y divide-amber-500/10 text-rose-100">
             {filteredColleges.length === 0 ? (
               <tr>
-                <td colSpan={7} className="py-10 text-center text-gray-300 font-medium">
+                <td colSpan={7} className="py-10 text-center text-amber-200/60 font-medium">
                   No Institutes Match Your Search Query.
                 </td>
               </tr>
@@ -66,7 +82,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
                 return (
                   <tr
                     key={col.college_id}
-                    className={`hover:bg-white/[0.04] transition-colors ${
+                    className={`hover:bg-amber-500/[0.04] transition-colors ${
                       isTopThree ? "bg-amber-500/[0.06]" : ""
                     }`}
                   >
@@ -79,7 +95,7 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
                             ? "bg-slate-200 text-black shadow-md shadow-slate-300/40"
                             : col.rank === 3
                             ? "bg-amber-700 text-white shadow-md shadow-amber-700/40"
-                            : "bg-white/10 text-white border border-white/20 font-bold"
+                            : "bg-[#140206] text-amber-200 border border-amber-500/30 font-bold"
                         }`}
                       >
                         {col.rank}
@@ -89,13 +105,13 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
                     <td className="py-4 px-4">
                       <div className="flex items-center space-x-3.5">
                         <div
-                          className="w-8.5 h-8.5 rounded-lg flex items-center justify-center text-white font-mono font-bold text-[10px] shrink-0 border border-white/30 shadow-sm"
+                          className="w-8.5 h-8.5 rounded-lg flex items-center justify-center text-amber-100 font-mono font-bold text-[10px] shrink-0 border border-amber-500/30 shadow-sm"
                           style={{ backgroundColor: col.avatar_color || "#334155" }}
                         >
                           {col.college_code.slice(0, 4)}
                         </div>
                         <div>
-                          <p className="font-bold text-white text-sm leading-snug drop-shadow-sm">
+                          <p className="font-bold text-amber-100 text-sm leading-snug drop-shadow-sm">
                             {col.college_name}
                           </p>
                           <p className="text-[10px] text-amber-300/90 font-medium">
@@ -114,10 +130,10 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
                     <td className="py-4 px-3 text-center font-bold text-amber-500 font-mono text-sm">
                       {col.bronze_medals}
                     </td>
-                    <td className="py-4 px-4 text-center text-white/90 font-mono font-semibold">
+                    <td className="py-4 px-4 text-center text-amber-200/90 font-mono font-semibold">
                       {col.events_participated || 0}
                     </td>
-                    <td className="py-4 px-5 text-right font-serif font-black text-white text-base sm:text-lg font-mono drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]">
+                    <td className="py-4 px-5 text-right font-serif font-black text-amber-300 text-base sm:text-lg font-mono drop-shadow-[0_0_12px_rgba(245,184,66,0.3)]">
                       {col.total_points}
                     </td>
                   </tr>
@@ -130,4 +146,5 @@ export const LeaderboardTable: React.FC<LeaderboardTableProps> = ({ colleges }) 
     </div>
   );
 };
+
 export default LeaderboardTable;

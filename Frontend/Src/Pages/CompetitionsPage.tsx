@@ -459,20 +459,20 @@ export const CompetitionsPage: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#140206] border border-amber-500/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md shadow-lg shadow-amber-950/20">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>Official Championship Roster</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-serif font-black text-white drop-shadow-[0_4px_25px_rgba(255,255,255,0.35)]">
+          <h1 className="text-3xl sm:text-5xl font-serif font-black text-amber-100 drop-shadow-[0_4px_25px_rgba(245,184,66,0.3)]">
             Competitions & Guidelines
           </h1>
-          <p className="text-xs sm:text-sm text-gray-200 mt-2 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-rose-200/90 mt-2 leading-relaxed font-medium">
             All 22 Official Competitions Across Groups A, B, C & D. Click Any Event's 'Guidelines & Scoring Rubric' Button To Inspect Full Criteria.
           </p>
         </div>
 
         {/* Filter Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104]/95 p-4 rounded-2xl border-2 border-white/10 backdrop-blur-xl shadow-xl">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104]/95 p-4 rounded-2xl border border-amber-500/30 backdrop-blur-xl shadow-xl shadow-black/60">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 custom-scrollbar">
             {categories.map((cat) => (
@@ -482,7 +482,7 @@ export const CompetitionsPage: React.FC = () => {
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat
                     ? "bg-gradient-to-r from-amber-500 to-yellow-400 text-black shadow-md shadow-amber-500/30"
-                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                    : "text-amber-200/70 hover:text-amber-200 hover:bg-amber-500/10"
                 }`}
               >
                 {cat}
@@ -492,13 +492,13 @@ export const CompetitionsPage: React.FC = () => {
 
           {/* Search Bar */}
           <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-400/60" />
             <input
               type="text"
               placeholder="Search Competitions Or Venues..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#140206] border border-white/20 focus:border-white text-xs text-white placeholder-gray-400 focus:outline-none transition-colors"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#140206] border border-amber-500/30 focus:border-amber-400 text-xs text-amber-100 placeholder-amber-200/40 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -508,7 +508,7 @@ export const CompetitionsPage: React.FC = () => {
           {filteredCompetitions.map((comp) => (
             <div
               key={comp.id}
-              className="p-6 rounded-2xl bg-[#0c0104]/90 border border-white/15 hover:border-amber-400/60 hover:bg-[#140206] transition-all group shadow-xl flex flex-col justify-between backdrop-blur-xl"
+              className="p-6 rounded-2xl bg-[#0c0104]/90 border border-amber-500/25 hover:border-amber-400/70 hover:bg-[#140206] transition-all group shadow-xl shadow-black/80 flex flex-col justify-between backdrop-blur-xl"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -519,12 +519,12 @@ export const CompetitionsPage: React.FC = () => {
                   >
                     {comp.category}
                   </span>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white border border-white/20">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1a0409] text-amber-200 border border-amber-500/30">
                     {comp.arena}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors leading-snug mb-2 drop-shadow-sm">
+                <h3 className="text-lg font-bold text-amber-100 group-hover:text-amber-300 transition-colors leading-snug mb-2 drop-shadow-sm">
                   {comp.title}
                 </h3>
 

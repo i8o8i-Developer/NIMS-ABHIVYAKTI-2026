@@ -574,10 +574,10 @@ export const Home: React.FC = () => {
 
       {/* Official Schedule Section Matching Image 3 Reference */}
       <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 overflow-hidden">
-        {/* Decorative Dashed Ring in Schedule Section */}
-        <div className="absolute top-10 -right-20 w-72 sm:w-88 h-72 sm:h-88 rounded-full border-2 border-dashed border-amber-400/25 opacity-65 pointer-events-none animate-live-spin-slow" />
+        {/* Decorative Dashed Ring in Schedule Section - Contained Within Margins */}
+        <div className="absolute top-10 right-4 sm:right-8 w-48 sm:w-64 h-48 sm:h-64 rounded-full border border-dashed border-amber-500/25 opacity-60 pointer-events-none animate-live-spin-slow" />
         <div
-          className="absolute bottom-10 -left-20 w-64 sm:w-80 h-64 sm:h-80 rounded-full border-2 border-dotted border-rose-400/25 opacity-60 pointer-events-none animate-live-spin-slow"
+          className="absolute bottom-10 left-4 sm:left-8 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dotted border-rose-500/25 opacity-55 pointer-events-none animate-live-spin-slow"
           style={{ animationDirection: "reverse" }}
         />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -684,22 +684,22 @@ export const Home: React.FC = () => {
 
       {/* Dedicated Top 3 Contingents Podium & Championship Leaderboard Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10 overflow-hidden">
-        {/* Exact Decorative Corner Dashed Rings & Motifs Matching Image 8 Reference */}
-        <div className="absolute top-2 -right-16 w-80 sm:w-96 h-80 sm:h-96 rounded-full border-2 border-dashed border-amber-400/35 opacity-75 pointer-events-none animate-live-spin-slow" />
+        {/* Exact Decorative Corner Dashed Rings & Motifs - Contained Within Margins */}
+        <div className="absolute top-4 right-4 sm:right-8 w-48 sm:w-64 h-48 sm:h-64 rounded-full border border-dashed border-amber-500/30 opacity-65 pointer-events-none animate-live-spin-slow" />
         <div
-          className="absolute top-6 -left-16 w-72 sm:w-88 h-72 sm:h-88 rounded-full border-2 border-dotted border-rose-400/35 opacity-70 pointer-events-none animate-live-spin-slow"
+          className="absolute top-6 left-4 sm:left-8 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dotted border-rose-500/30 opacity-60 pointer-events-none animate-live-spin-slow"
           style={{ animationDirection: "reverse" }}
         />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
-              <Trophy className="w-4 h-4 text-amber-300" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#140206] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
+              <Trophy className="w-4 h-4 text-amber-400" />
               <span>Top 3 College Contingents Podium</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-serif font-black text-white drop-shadow-[0_4px_20px_rgba(255,255,255,0.35)]">
+            <h2 className="text-3xl sm:text-5xl font-serif font-black text-amber-100 drop-shadow-[0_4px_20px_rgba(245,184,66,0.3)]">
               Championship Leaderboard
             </h2>
-            <p className="text-xs sm:text-sm text-gray-200 mt-1 font-medium">
+            <p className="text-xs sm:text-sm text-rose-200/90 mt-1 font-medium">
               Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
             </p>
           </div>

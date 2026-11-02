@@ -51,33 +51,33 @@ export const LeaderboardPage: React.FC = () => {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        {/* Exact Decorative Corner Dashed Rings & Motifs Matching Image 8 Reference */}
-        <div className="absolute top-2 -right-14 w-72 sm:w-88 h-72 sm:h-88 rounded-full border-2 border-dashed border-amber-400/35 opacity-75 pointer-events-none animate-live-spin-slow" />
+        {/* Exact Decorative Corner Dashed Rings & Motifs - Fully Contained, Never Cut In Half */}
+        <div className="absolute top-4 right-4 sm:right-8 w-48 sm:w-64 h-48 sm:h-64 rounded-full border border-dashed border-amber-500/30 opacity-65 pointer-events-none animate-live-spin-slow" />
         <div
-          className="absolute top-4 -left-14 w-64 sm:w-80 h-64 sm:h-80 rounded-full border-2 border-dotted border-rose-400/35 opacity-70 pointer-events-none animate-live-spin-slow"
+          className="absolute top-6 left-4 sm:left-8 w-44 sm:w-56 h-44 sm:h-56 rounded-full border border-dotted border-rose-500/30 opacity-60 pointer-events-none animate-live-spin-slow"
           style={{ animationDirection: "reverse" }}
         />
-        <div className="absolute top-16 right-10 opacity-40 pointer-events-none animate-live-sway">
-          <Music className="w-5 h-5 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.6)]" />
+        <div className="absolute top-16 right-12 opacity-35 pointer-events-none animate-live-sway">
+          <Music className="w-5 h-5 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.5)]" />
         </div>
-        <div className="absolute top-28 right-24 opacity-40 pointer-events-none animate-live-flicker">
-          <Flame className="w-4 h-4 text-rose-400 drop-shadow-[0_0_10px_rgba(244,63,94,0.6)]" />
+        <div className="absolute top-28 right-20 opacity-35 pointer-events-none animate-live-flicker">
+          <Flame className="w-4 h-4 text-rose-400 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
         </div>
-        <div className="absolute top-20 left-12 opacity-40 pointer-events-none animate-live-drift-diag">
-          <Trophy className="w-5 h-5 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.6)]" />
+        <div className="absolute top-20 left-12 opacity-35 pointer-events-none animate-live-drift-diag">
+          <Trophy className="w-5 h-5 text-amber-300 drop-shadow-[0_0_8px_rgba(245,184,66,0.5)]" />
         </div>
 
-        {/* Header with Brilliant White Contrast */}
+        {/* Header with Warm Festival Gold Theme */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 relative z-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/25 text-white text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md shadow-lg shadow-white/5">
-              <Trophy className="w-4 h-4 text-amber-300" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#140206] border border-amber-500/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md shadow-lg shadow-amber-950/20">
+              <Trophy className="w-4 h-4 text-amber-400" />
               <span>Verified Championship Standings</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-serif font-black text-white drop-shadow-[0_4px_25px_rgba(255,255,255,0.45)]">
+            <h1 className="text-4xl sm:text-6xl font-serif font-black text-amber-100 drop-shadow-[0_4px_25px_rgba(245,184,66,0.3)]">
               Official Leaderboard
             </h1>
-            <p className="text-sm sm:text-base text-gray-200 mt-2 font-medium">
+            <p className="text-sm sm:text-base text-rose-200/90 mt-2 font-medium">
               Cumulative Points Tally From All 22 Official Cultural Competitions. Ranked In Real Time.
             </p>
           </div>
@@ -107,7 +107,7 @@ export const LeaderboardPage: React.FC = () => {
         </div>
 
         {/* Scoring Methodology Note */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#140206] border-2 border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-200 shadow-2xl relative z-10">
+        <div className="mt-12 p-6 rounded-2xl bg-[#140206] border border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-rose-200 shadow-2xl relative z-10">
           <div className="flex items-center gap-3.5">
             <div className="p-3 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/35">
               <ShieldCheck className="w-5 h-5" />
