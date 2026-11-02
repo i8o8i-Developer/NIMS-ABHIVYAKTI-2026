@@ -20,17 +20,13 @@ import {
 export const FloatingBackgroundElements: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
-      {/* Deep Rich Velvet Crimson & Wine Black Canvas (Matching User Reference Image) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#22040a] via-[#140207] via-[#0d0105] via-[#120207] to-[#070002]" />
-      <div className="absolute top-0 inset-x-0 h-52 bg-gradient-to-b from-[#25040b] via-[#160207] to-transparent z-10" />
+      {/* Pure Dark Obsidian Stage Canvas (Zero Top Red Overlay) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#050002] via-[#080103] via-[#0c0205] to-[#050002]" />
 
-      {/* Warm Golden & Crimson Central Radiance Behind Hero Center */}
-      <div className="absolute top-[12%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[48rem] h-60 sm:h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(225,29,72,0.38)_0%,_rgba(159,18,57,0.30)_40%,_rgba(245,184,66,0.16)_65%,_transparent_80%)] blur-3xl pointer-events-none" />
-
-      {/* Smooth Ambient Wine-Red Gradient Clouds Blended Across The Dark Canvas */}
-      <div className="absolute top-[35%] -left-20 w-[32rem] sm:w-[42rem] h-[32rem] sm:h-[42rem] rounded-full bg-rose-950/20 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[60%] -right-20 w-[32rem] sm:w-[42rem] h-[32rem] sm:h-[42rem] rounded-full bg-rose-950/20 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[44rem] h-[30rem] rounded-full bg-rose-950/25 blur-[140px] pointer-events-none" />
+      {/* Gentle Ambient Wine-Red Depth Across Mid & Lower Gutters Only */}
+      <div className="absolute top-[45%] -left-20 w-[30rem] sm:w-[38rem] h-[30rem] sm:h-[38rem] rounded-full bg-rose-950/15 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[65%] -right-20 w-[30rem] sm:w-[38rem] h-[30rem] sm:h-[38rem] rounded-full bg-rose-950/15 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[40rem] h-[25rem] rounded-full bg-rose-950/20 blur-[140px] pointer-events-none" />
 
       {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS

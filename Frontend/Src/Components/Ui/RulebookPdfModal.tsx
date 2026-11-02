@@ -133,3 +133,4 @@ export const RulebookPdfModal: React.FC<RulebookPdfModalProps> = ({
 };
 
 export default RulebookPdfModal;
+

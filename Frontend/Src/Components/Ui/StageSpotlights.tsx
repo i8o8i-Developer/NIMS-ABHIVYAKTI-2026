@@ -4,20 +4,6 @@ export const StageSpotlights: React.FC = () => {
   return (
     <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0">
       {/* =========================================================================
-          RICH THEATRICAL CRIMSON & BURGUNDY VELVET BACKDROP
-          Matching Reference Image: Deep Regal Reddish Stage Atmosphere
-          ========================================================================= */}
-      {/* Upper Crimson Stage Gradient */}
-      <div className="absolute top-0 inset-x-0 h-[48rem] sm:h-[56rem] bg-gradient-to-b from-[#220308] via-[#460916]/90 via-[#2e050e]/60 to-transparent pointer-events-none" />
-
-      {/* Central Regal Burgundy Radial Aura Behind Central Hero */}
-      <div className="absolute top-[8%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[34rem] sm:h-[42rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(190,18,60,0.48)_0%,_rgba(136,19,55,0.35)_35%,_rgba(50,6,15,0.20)_65%,_transparent_100%)] blur-3xl pointer-events-none" />
-
-      {/* Outer Side Crimson Glow Wings */}
-      <div className="absolute top-[12%] -left-20 w-96 h-96 rounded-full bg-rose-900/30 blur-3xl pointer-events-none" />
-      <div className="absolute top-[12%] -right-20 w-96 h-96 rounded-full bg-rose-900/30 blur-3xl pointer-events-none" />
-
-      {/* =========================================================================
           THEATRICAL STAGE SPOTLIGHT 1: LEFT OVERHEAD BEAM (Angled Down-Right)
           ========================================================================= */}
       <div
