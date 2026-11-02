@@ -376,43 +376,43 @@ export const Home: React.FC = () => {
           <Sparkles className="w-4 h-4 text-amber-400" />
         </div>
 
-        {/* Outer Left Floating Badges (Pinned to Far Left Edge With Increased Sizing & Generous Gaps) */}
-        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute left-3 2xl:left-8 top-[17%] 2xl:top-[19%] z-20">
+        {/* Outer Left Floating Badges (Pinned to Far Left Edge With One-Liner Layout & Generous Width) */}
+        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute left-2 2xl:left-6 top-[17%] 2xl:top-[19%] z-20">
           {/* Badge 1: Championship Glory */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
+          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
             <div className="flex items-center gap-3">
               <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
                 <Trophy className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
-              <div>
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">CHAMPIONSHIP GLORY</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">30+ Leading Institutes</p>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">CHAMPIONSHIP GLORY</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">30+ Leading Institutes</p>
               </div>
             </div>
           </div>
 
           {/* Badge 2: 100% Student-Led */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
+          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
             <div className="flex items-center gap-3">
               <div className="p-2.5 2xl:p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 shrink-0">
                 <Users className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
-              <div>
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">100% STUDENT-LED</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">NIMS Student Council</p>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">100% STUDENT-LED</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">NIMS Student Council</p>
               </div>
             </div>
           </div>
 
           {/* Badge 3: ₹5,00,000+ Awards */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
+          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
             <div className="flex items-center gap-3">
               <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
                 <Award className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
-              <div>
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">₹5,00,000+ AWARDS</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">Rolling Champions Trophy</p>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">₹5,00,000+ AWARDS</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Rolling Champions Trophy</p>
               </div>
             </div>
           </div>
@@ -472,14 +472,14 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Outer Right Floating Badges (Pinned to Far Right Edge With Same Sway Animation & Generous Gaps) */}
-        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute right-3 2xl:right-8 top-[17%] 2xl:top-[19%] z-20">
+        {/* Outer Right Floating Badges (Pinned to Far Right Edge With One-Liner Layout & Generous Width) */}
+        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute right-2 2xl:right-6 top-[17%] 2xl:top-[19%] z-20">
           {/* Badge 4: 6 Cultural Arenas */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
+          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center justify-end gap-3">
-              <div>
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">6 CULTURAL ARENAS</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">Music, Dance, Drama, Vogue</p>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">6 CULTURAL ARENAS</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Music, Dance, Drama, Vogue</p>
               </div>
               <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
                 <Flame className="w-5 h-5 2xl:w-6 2xl:h-6" />
@@ -488,11 +488,11 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Badge 5: Grand Central Venue */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
+          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
             <div className="flex items-center justify-end gap-3">
-              <div>
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">GRAND CENTRAL VENUE</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">NIMS Jaipur Grounds</p>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">GRAND CENTRAL VENUE</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">NIMS Jaipur Grounds</p>
               </div>
               <div className="p-2.5 2xl:p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 shrink-0">
                 <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6" />
@@ -501,11 +501,11 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Badge 6: Verified Jury Engine */}
-          <div className="w-56 2xl:w-64 p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
+          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
             <div className="flex items-center justify-end gap-3">
-              <div>
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase">VERIFIED JURY ENGINE</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5">Real-Time Score Sync</p>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">VERIFIED JURY ENGINE</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Real-Time Score Sync</p>
               </div>
               <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
                 <ShieldCheck className="w-5 h-5 2xl:w-6 2xl:h-6" />
