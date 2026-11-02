@@ -544,3 +544,4 @@ export const HeroCulturalElements: React.FC = () => {
 };
 
 export default HeroCulturalElements;
+

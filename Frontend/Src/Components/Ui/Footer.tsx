@@ -82,22 +82,23 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 4: Directorate Staff Portal Access */}
+          {/* Col 4: Central Festival Helpdesk */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
-              Staff & Jury Operations
+              Festival Helpdesk
             </h4>
             <p className="text-xs text-rose-200/70 leading-relaxed">
-              Empanelled Jury Members And College Contingent Coordinators Can Access The Official Scoring Deck.
+              For Inquiries Regarding College Contingent Registrations, Logistics, Or Competition Guidelines, Contact The Central Helpdesk.
             </p>
-            <div className="pt-2">
-              <Link
-                to="/admin/login"
-                className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-[#130206] hover:bg-amber-500 hover:text-black text-amber-300 border border-amber-500/30 text-xs font-bold transition-all shadow-md"
-              >
-                <ShieldCheck className="w-4 h-4" />
-                <span>Directorate Login</span>
-              </Link>
+            <div className="pt-1 space-y-1.5 text-xs text-rose-300/80">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>+91 141 399 9100 / Ext. 2026</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <span>Student Welfare Central Office</span>
+              </div>
             </div>
           </div>
         </div>

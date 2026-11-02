@@ -55,17 +55,13 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* Right: Student Council Directorate Badge */}
+        {/* Right: Cultural Championship Crest Motif */}
         <div className="hidden md:flex items-center space-x-3 shrink-0">
-          <div className="flex items-center space-x-2.5 bg-[#120205] px-3.5 py-1.5 rounded-full border border-amber-500/30 shadow-md">
-            <div className="text-right">
-              <p className="text-[10px] font-bold tracking-wider text-amber-300 uppercase">Student Council</p>
-              <p className="text-[9px] text-rose-300/80 font-medium">Fest Directorate</p>
-            </div>
+          <div className="flex items-center space-x-2">
             <img
               src="/STUDENT-COUNCIL-LOGO.png"
-              alt="Student Council NIMS"
-              className="w-8 h-8 rounded-full border border-amber-400/40 object-contain bg-white/95 p-0.5"
+              alt="NIMS Student Council"
+              className="w-9 h-9 rounded-full border border-amber-400/40 object-contain bg-white/95 p-0.5 shadow-md"
             />
           </div>
         </div>
@@ -108,16 +104,6 @@ export const Navbar: React.FC = () => {
               </Link>
             );
           })}
-
-          <div className="pt-3 border-t border-rose-950 flex items-center justify-between">
-            <Link
-              to="/admin/login"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs text-rose-300 hover:text-amber-400 font-semibold"
-            >
-              Directorate Staff Portal
-            </Link>
-          </div>
         </div>
       )}
     </header>
