@@ -9,6 +9,7 @@ import { Footer } from "@/Components/Ui/Footer";
 import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
 import { LeaderboardTable, DEFAULT_STANDINGS } from "@/Components/Leaderboard/LeaderboardTable";
 import { EventGuidelineModal, GuidelineEventData } from "@/Components/Ui/EventGuidelineModal";
+import { RulebookPdfModal } from "@/Components/Ui/RulebookPdfModal";
 import { Api } from "@/Lib/Api";
 import {
   Trophy,
@@ -35,6 +36,7 @@ import {
   Medal,
   Crown,
   Bot,
+  FileText,
 } from "lucide-react";
 
 interface ScheduleEventItem {
@@ -287,6 +289,7 @@ export const Home: React.FC = () => {
   // Event Guideline Modal State (Guidelines Attached Directly To Events)
   const [selectedGuidelineEvent, setSelectedGuidelineEvent] = useState<GuidelineEventData | null>(null);
   const [isGuidelineModalOpen, setIsGuidelineModalOpen] = useState(false);
+  const [isRulebookOpen, setIsRulebookOpen] = useState(false);
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
@@ -577,10 +580,10 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/competitions"
-              className="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all flex items-center gap-2"
+              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all flex items-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-black" />
               <span>Explore Competitions</span>
@@ -588,11 +591,19 @@ export const Home: React.FC = () => {
 
             <Link
               to="/leaderboard"
-              className="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#140206] text-amber-200 border border-amber-500/40 hover:bg-rose-950/70 hover:text-white transition-all flex items-center gap-2 shadow-xl"
+              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#140206] text-amber-200 border border-amber-500/40 hover:bg-rose-950/70 hover:text-white transition-all flex items-center gap-2 shadow-xl hover:scale-105"
             >
               <Trophy className="w-4 h-4 text-amber-400" />
               <span>View Leaderboard</span>
             </Link>
+
+            <button
+              onClick={() => setIsRulebookOpen(true)}
+              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-[#22040b] via-[#160207] to-[#120104] text-amber-200 border-2 border-rose-500/50 hover:border-amber-400 hover:bg-rose-950 hover:text-white transition-all flex items-center gap-2 shadow-xl shadow-rose-950/40 hover:scale-105"
+            >
+              <FileText className="w-4 h-4 text-rose-400" />
+              <span>View Full Rulebook (PDF)</span>
+            </button>
           </div>
         </div>
 
@@ -743,30 +754,41 @@ export const Home: React.FC = () => {
             </p>
           </div>
 
-          {/* 4-Day Filter Tabs */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#120205] border border-amber-500/30 overflow-x-auto max-w-full shadow-xl">
-            {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
-              const labelMap: Record<string, string> = {
-                "Day 1": "Day 1 (18 Nov)",
-                "Day 2": "Day 2 (19 Nov)",
-                "Day 3": "Day 3 (20 Nov)",
-                "Day 4": "Day 4 (21 Nov)",
-                All: "View All 22 Events",
-              };
-              return (
-                <button
-                  key={day}
-                  onClick={() => setSelectedDay(day)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
-                    selectedDay === day
-                      ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/30 scale-105"
-                      : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
-                  }`}
-                >
-                  {labelMap[day]}
-                </button>
-              );
-            })}
+          {/* 4-Day Filter Tabs & PDF Quick Action */}
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#120205] border border-amber-500/30 overflow-x-auto max-w-full shadow-xl">
+              {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
+                const labelMap: Record<string, string> = {
+                  "Day 1": "Day 1 (18 Nov)",
+                  "Day 2": "Day 2 (19 Nov)",
+                  "Day 3": "Day 3 (20 Nov)",
+                  "Day 4": "Day 4 (21 Nov)",
+                  All: "View All 22 Events",
+                };
+                return (
+                  <button
+                    key={day}
+                    onClick={() => setSelectedDay(day)}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
+                      selectedDay === day
+                        ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/30 scale-105"
+                        : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
+                    }`}
+                  >
+                    {labelMap[day]}
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              onClick={() => setIsRulebookOpen(true)}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#20040b] hover:bg-rose-950 border border-amber-500/35 text-amber-200 text-xs font-bold transition-all shadow-md shrink-0 hover:border-amber-400"
+              title="Inspect Full PDF Rulebook"
+            >
+              <FileText className="w-4 h-4 text-rose-400" />
+              <span>Full PDF Rulebook</span>
+            </button>
           </div>
         </div>
 
@@ -1035,6 +1057,12 @@ export const Home: React.FC = () => {
         isOpen={isGuidelineModalOpen}
         onClose={() => setIsGuidelineModalOpen(false)}
         event={selectedGuidelineEvent}
+      />
+
+      {/* Official Rulebook Full PDF Modal */}
+      <RulebookPdfModal
+        isOpen={isRulebookOpen}
+        onClose={() => setIsRulebookOpen(false)}
       />
     </div>
   );
