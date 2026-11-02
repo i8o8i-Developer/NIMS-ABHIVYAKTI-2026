@@ -68,16 +68,9 @@ export const FloatingBackgroundElements: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          SACRED FESTIVE PEEPAL / ASHOKA LEAF MOTIFS
-          Safely Positioned in Outer Side Gutters
+          SACRED FESTIVE PEEPAL / ASHOKA LEAF MOTIFS (MID & LOWER PAGE GUTTERS)
+          Safely Positioned Below Hero To Avoid Any Badges Or Header Collisions
           ========================================================================= */}
-      <div className="absolute top-64 left-6 sm:left-12 opacity-30 pointer-events-none animate-live-leaf">
-        <svg width="28" height="38" viewBox="0 0 34 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.35" />
-          <path d="M17 2L17 42M17 15L27 22M17 22L7 29" stroke="#FDE68A" strokeWidth="1.2" strokeLinecap="round" />
-        </svg>
-      </div>
-
       <div className="absolute top-[38%] right-6 sm:right-12 opacity-30 pointer-events-none animate-live-leaf" style={{ animationDelay: "2.5s" }}>
         <svg width="28" height="38" viewBox="0 0 34 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#B45309" opacity="0.35" />
@@ -93,18 +86,9 @@ export const FloatingBackgroundElements: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          CULTURAL COMPETITION MOTIFS (SAFE SIDE GUTTERS ONLY)
-          Never Overlap Headings, Cards, Or Central Layout!
+          CULTURAL MOTIFS (MID & LOWER PAGE GUTTERS ONLY)
+          Safely Positioned Below Hero To Avoid Any Collisions
           ========================================================================= */}
-      {/* Top Left Outer Gutter */}
-      <div className="absolute top-80 left-4 sm:left-8 opacity-30 pointer-events-none animate-live-drift-diag">
-        <Theater className="w-6 h-6 text-rose-300 drop-shadow-[0_0_10px_rgba(251,113,133,0.5)]" />
-      </div>
-
-      {/* Top Right Outer Gutter */}
-      <div className="absolute top-80 right-4 sm:right-8 opacity-30 pointer-events-none animate-live-sway" style={{ animationDelay: "1.5s" }}>
-        <Music className="w-6 h-6 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.5)]" />
-      </div>
 
       {/* Mid Left Outer Gutter */}
       <div className="absolute top-[52%] left-4 sm:left-8 opacity-30 pointer-events-none animate-live-drift-diag" style={{ animationDelay: "2.2s" }}>

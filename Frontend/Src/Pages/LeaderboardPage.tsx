@@ -4,7 +4,7 @@ import { Navbar } from "@/Components/Ui/Navbar";
 import { Footer } from "@/Components/Ui/Footer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
 import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
-import { LeaderboardTable } from "@/Components/Leaderboard/LeaderboardTable";
+import { LeaderboardTable, DEFAULT_STANDINGS } from "@/Components/Leaderboard/LeaderboardTable";
 import { Api } from "@/Lib/Api";
 import {
   Trophy,
@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const LeaderboardPage: React.FC = () => {
-  const [standings, setStandings] = useState<any[]>(DEFAULT_TOP_THREE);
+  const [standings, setStandings] = useState<any[]>(DEFAULT_STANDINGS);
   const [podium, setPodium] = useState<any[]>(DEFAULT_TOP_THREE);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<string>("");
@@ -26,7 +26,7 @@ export const LeaderboardPage: React.FC = () => {
     try {
       setLoading(true);
       const res = await Api.get("/scores/leaderboard/");
-      const list = res.data?.leaderboard || res.data?.standings || DEFAULT_TOP_THREE;
+      const list = res.data?.leaderboard || res.data?.standings || DEFAULT_STANDINGS;
       const top3 = res.data?.podium || (list && list.length >= 3 ? list.slice(0, 3) : DEFAULT_TOP_THREE);
       setStandings(list);
       setPodium(top3);

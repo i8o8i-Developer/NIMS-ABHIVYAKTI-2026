@@ -6,7 +6,7 @@ import { CountdownTimer } from "@/Components/Ui/CountdownTimer";
 import { FloatingBackgroundElements } from "@/Components/Ui/FloatingBackgroundElements";
 import { Footer } from "@/Components/Ui/Footer";
 import { Podium, DEFAULT_TOP_THREE } from "@/Components/Leaderboard/Podium";
-import { LeaderboardTable } from "@/Components/Leaderboard/LeaderboardTable";
+import { LeaderboardTable, DEFAULT_STANDINGS } from "@/Components/Leaderboard/LeaderboardTable";
 import { EventGuidelineModal, GuidelineEventData } from "@/Components/Ui/EventGuidelineModal";
 import { Api } from "@/Lib/Api";
 import {
@@ -24,6 +24,16 @@ import {
   HelpCircle,
   Clock,
   Layers,
+  Theater,
+  Music,
+  Mic,
+  Palette,
+  Feather,
+  Landmark,
+  Star,
+  Medal,
+  Crown,
+  Bot,
 } from "lucide-react";
 
 interface ScheduleEventItem {
@@ -268,7 +278,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
 ];
 
 export const Home: React.FC = () => {
-  const [standings, setStandings] = useState<any[]>(DEFAULT_TOP_THREE);
+  const [standings, setStandings] = useState<any[]>(DEFAULT_STANDINGS);
   const [podium, setPodium] = useState<any[]>(DEFAULT_TOP_THREE);
   const [selectedDay, setSelectedDay] = useState<"All" | "Day 1" | "Day 2" | "Day 3" | "Day 4">("Day 1");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -287,13 +297,36 @@ export const Home: React.FC = () => {
           setPodium(res.data?.podium || (list.length >= 3 ? list.slice(0, 3) : DEFAULT_TOP_THREE));
         }
       } catch {
-        // Retain default dummy top 3
+        // Retain default dummy data matching championship standings
       }
     };
     fetchLeaderboard();
   }, []);
 
-  // Category Badge Styler For Visual Harmony
+  // Category Icon & Badge Styler For Visual Harmony
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return <Flame className="w-3.5 h-3.5" />;
+      case "Music":
+        return <Music className="w-3.5 h-3.5" />;
+      case "Fashion":
+        return <Sparkles className="w-3.5 h-3.5" />;
+      case "Fine Arts":
+      case "Creative Arts":
+        return <Palette className="w-3.5 h-3.5" />;
+      case "Digital Arts":
+        return <Bot className="w-3.5 h-3.5" />;
+      case "Theatre":
+      case "Drama":
+        return <Theater className="w-3.5 h-3.5" />;
+      case "Literature":
+        return <BookOpen className="w-3.5 h-3.5" />;
+      default:
+        return <Sparkles className="w-3.5 h-3.5" />;
+    }
+  };
+
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
       case "Dance":
@@ -308,7 +341,10 @@ export const Home: React.FC = () => {
       case "Digital Arts":
         return "bg-cyan-950/80 border-cyan-500/40 text-cyan-300";
       case "Drama":
+      case "Theatre":
         return "bg-red-950/80 border-red-500/40 text-red-300";
+      case "Literature":
+        return "bg-emerald-950/80 border-emerald-500/40 text-emerald-300";
       default:
         return "bg-amber-500/10 border-amber-500/30 text-amber-300";
     }
@@ -415,6 +451,90 @@ export const Home: React.FC = () => {
                 <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Rolling Champions Trophy</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* =========================================================================
+            CULTURAL FESTIVAL HERO ELEMENT CLUSTERS
+            Exact Placements Matching User Red Circles In Image 1
+            ========================================================================= */}
+        {/* Cluster 1: Top-Left (Between Left Badges & Abhivyakti Logo) */}
+        <div className="hidden xl:flex items-center gap-3 absolute top-[13%] 2xl:top-[15%] left-[21%] 2xl:left-[23%] pointer-events-none select-none z-10 animate-live-sway">
+          <div className="p-2.5 2xl:p-3 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-xl shadow-rose-950/40 flex items-center gap-2">
+            <Theater className="w-7 h-7 2xl:w-8 2xl:h-8 text-rose-300 drop-shadow-[0_0_12px_rgba(251,113,133,0.6)]" />
+          </div>
+          <div className="flex flex-col gap-1 items-start">
+            <div className="opacity-90 animate-live-leaf">
+              <svg width="22" height="30" viewBox="0 0 34 44" fill="none">
+                <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.65" />
+                <path d="M17 2L17 42M17 15L27 22M17 22L7 29" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </div>
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-live-twinkle drop-shadow-[0_0_8px_#F5B842]" />
+          </div>
+        </div>
+
+        {/* Cluster 2: Top-Right (Between Abhivyakti Logo & Right Badges) */}
+        <div className="hidden xl:flex items-center gap-3 absolute top-[13%] 2xl:top-[15%] right-[21%] 2xl:right-[23%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.1s" }}>
+          <div className="flex flex-col gap-1 items-end">
+            <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-live-twinkle drop-shadow-[0_0_8px_#FDE047]" />
+            <div className="p-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300">
+              <Mic className="w-3.5 h-3.5" />
+            </div>
+          </div>
+          <div className="p-2.5 2xl:p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-xl shadow-amber-950/40 flex items-center gap-2">
+            <Music className="w-7 h-7 2xl:w-8 2xl:h-8 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.7)]" />
+          </div>
+        </div>
+
+        {/* Cluster 3: Far Bottom-Left (Below Left Badges In Outer Margin) */}
+        <div className="hidden xl:flex flex-col items-center gap-2 absolute bottom-[8%] left-[4%] 2xl:left-[6%] pointer-events-none select-none z-10">
+          <div className="animate-live-flicker">
+            <svg width="44" height="34" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+          <div className="opacity-75 animate-live-leaf">
+            <svg width="20" height="28" viewBox="0 0 34 44" fill="none">
+              <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.55" />
+              <path d="M17 2L17 42M17 15L27 22" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Cluster 4: Bottom-Left Wide Zone (To Left Of Countdown Timer) */}
+        <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] left-[17%] 2xl:left-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.7s" }}>
+          <div className="p-3 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-2xl shadow-rose-950/60 flex items-center gap-2.5">
+            <Theater className="w-7 h-7 text-amber-300 drop-shadow-[0_0_12px_rgba(245,184,66,0.6)]" />
+            <div className="h-6 w-px bg-rose-500/30" />
+            <Palette className="w-5 h-5 text-rose-300 drop-shadow-[0_0_10px_rgba(251,113,133,0.5)]" />
+          </div>
+          <div className="animate-live-flicker" style={{ animationDelay: "0.6s" }}>
+            <svg width="40" height="30" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.6)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FDE047" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#991B1B" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#B45309" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Cluster 5: Bottom-Right Wide Zone (To Right Of Countdown Timer) */}
+        <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] right-[17%] 2xl:right-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "2.3s" }}>
+          <div className="animate-live-flicker" style={{ animationDelay: "1.3s" }}>
+            <svg width="42" height="32" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+          <div className="p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-2xl shadow-amber-950/60 flex items-center gap-2.5">
+            <Trophy className="w-7 h-7 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.6)]" />
+            <div className="h-6 w-px bg-amber-500/30" />
+            <Music className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_10px_rgba(253,224,71,0.5)]" />
           </div>
         </div>
 
@@ -534,80 +654,109 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Festival Key Metrics Bar With Deep Blackish Tone & Golden Glow */}
-      <section className="border-y border-amber-500/20 bg-gradient-to-r from-[#050002] via-[#120206] to-[#050002] py-9 px-4 relative z-10 shadow-2xl">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-rose-950/60">
-          <div className="px-3">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
+      {/* =========================================================================
+          ELEVATED FESTIVAL STAT CARDS
+          Four High-Contrast Metric Showcase Cards With Icons & Amber Glow
+          ========================================================================= */}
+      <section className="border-y border-amber-500/20 bg-gradient-to-r from-[#050002] via-[#120206] to-[#050002] py-12 px-4 sm:px-6 lg:px-8 relative z-10 shadow-2xl">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {/* Stat 1: 30+ Participating Institutes */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
+              <Landmark className="w-5 h-5" />
+            </div>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               30+
             </p>
-            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
               Participating Institutes
             </p>
+            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-400 transition-all" />
           </div>
-          <div className="px-3">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
+
+          {/* Stat 2: 22+ Official Competitions */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               22+
             </p>
-            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
               Official Competitions
             </p>
+            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent group-hover:via-rose-400 transition-all" />
           </div>
-          <div className="px-3">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
+
+          {/* Stat 3: ₹5,00,000+ Prize & Trophy Value */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
+              <Trophy className="w-5 h-5" />
+            </div>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               ₹5,00,000+
             </p>
-            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
               Prize & Trophy Value
             </p>
+            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-400 transition-all" />
           </div>
-          <div className="px-3">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_12px_rgba(245,184,66,0.3)]">
+
+          {/* Stat 4: 5,000+ Passionate Students */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#180307]/90 via-[#0e0104]/95 to-[#050002]/98 border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-10 h-10 mx-auto rounded-xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
+              <Users className="w-5 h-5" />
+            </div>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
               5,000+
             </p>
-            <p className="text-xs sm:text-sm font-semibold tracking-wide text-rose-200/90 mt-1.5 uppercase">
+            <p className="text-xs sm:text-sm font-bold tracking-wider text-rose-200/90 uppercase mt-2">
               Passionate Students
             </p>
+            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent group-hover:via-rose-400 transition-all" />
           </div>
         </div>
       </section>
 
-      {/* Official Schedule Section Matching Image 3 Reference */}
+      {/* =========================================================================
+          REDESIGNED OFFICIAL EVENT SCHEDULE & GUIDELINES SECTION
+          Modern Festival Cards With Rich Badges, Category Icons & Guidelines CTA
+          ========================================================================= */}
       <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-2 text-amber-400 mb-2">
-              <Calendar className="w-4 h-4" />
-              <span className="text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#180307] border border-amber-500/40 text-amber-300 mb-3 shadow-md">
+              <Calendar className="w-4 h-4 text-amber-400" />
+              <span className="text-xs font-black uppercase tracking-wider">
                 Four Days Of Cultural Brilliance • 18-21 Nov 2026
               </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-serif font-black text-white uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-amber-300 uppercase tracking-tight drop-shadow-md">
               Official Event Schedule & Guidelines
             </h2>
-            <p className="text-xs sm:text-sm text-rose-200/70 mt-1">
-              Click 'Guidelines & Rules' On Any Competition To Inspect Rubrics, Point Matrices, And Time Limits.
+            <p className="text-xs sm:text-sm text-rose-200/80 mt-1.5 max-w-2xl font-medium">
+              Click 'Guidelines & Scoring Rubric' On Any Competition To Inspect The Exact Time Limits, Team Sizes, And 4-Pillar Scoring Rubrics.
             </p>
           </div>
 
           {/* 4-Day Filter Tabs */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#0f0205] border border-rose-950/80 overflow-x-auto max-w-full">
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#120205] border border-amber-500/30 overflow-x-auto max-w-full shadow-xl">
             {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
               const labelMap: Record<string, string> = {
                 "Day 1": "Day 1 (18 Nov)",
                 "Day 2": "Day 2 (19 Nov)",
                 "Day 3": "Day 3 (20 Nov)",
                 "Day 4": "Day 4 (21 Nov)",
-                All: "View Full Schedule",
+                All: "View All 22 Events",
               };
               return (
                 <button
                   key={day}
                   onClick={() => setSelectedDay(day)}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
                     selectedDay === day
-                      ? "bg-amber-500 text-black shadow-lg shadow-amber-500/25"
-                      : "text-rose-200/70 hover:text-white"
+                      ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/30 scale-105"
+                      : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
                   }`}
                 >
                   {labelMap[day]}
@@ -617,62 +766,121 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Schedule Cards Grid Elevated Matching Image 3 Reference */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Schedule Cards Grid Redesigned With Festival Depth */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className="p-5 rounded-2xl bg-[#0a0103] border border-rose-950/70 hover:border-amber-500/60 hover:bg-[#120206] hover:shadow-[0_8px_30px_rgba(245,184,66,0.12)] transition-all duration-300 group shadow-xl flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-gradient-to-b from-[#190409]/95 via-[#0f0205]/95 to-[#070002]/98 border-2 border-amber-500/25 hover:border-amber-400/80 hover:shadow-[0_12px_40px_rgba(245,184,66,0.18)] hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden"
             >
+              {/* Ambient Category Corner Accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
+
               <div>
                 {/* Card Top: Category Badge On Left + Date & Time Stacked On Right */}
-                <div className="flex items-start justify-between gap-3 mb-3.5">
-                  <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${getCategoryBadgeClass(item.category)}`}>
-                    {item.category}
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <span className={`inline-flex items-center gap-1.5 text-xs font-extrabold px-3.5 py-1.5 rounded-full border shadow-sm ${getCategoryBadgeClass(item.category)}`}>
+                    {getCategoryIcon(item.category)}
+                    <span>{item.category}</span>
                   </span>
                   <div className="text-right shrink-0">
-                    <span className="block text-xs font-bold text-amber-100">{item.date}</span>
-                    <span className="block text-[11px] text-amber-400 font-semibold">{item.time}</span>
+                    <span className="flex items-center justify-end gap-1 text-xs font-bold text-amber-200">
+                      <Calendar className="w-3 h-3 text-amber-400" />
+                      {item.date}
+                    </span>
+                    <span className="flex items-center justify-end gap-1 text-[11px] text-amber-400 font-semibold mt-0.5">
+                      <Clock className="w-3 h-3 text-amber-400" />
+                      {item.time}
+                    </span>
                   </div>
                 </div>
 
-                {/* Event Title In Bold White */}
-                <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors leading-snug">
+                {/* Event Title In Bold White & Serif Font */}
+                <h3 className="text-lg font-serif font-black text-white group-hover:text-amber-200 transition-colors leading-snug line-clamp-2">
                   {item.title}
                 </h3>
+
+                {/* Event Key Highlights Badges */}
+                <div className="flex flex-wrap items-center gap-2 mt-3">
+                  <span className="text-[10px] font-black px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/35 text-amber-300">
+                    🥇 40 Pts • 🥈 25 Pts • 🥉 15 Pts
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-rose-950/70 border border-rose-500/30 text-rose-300">
+                    {item.day}
+                  </span>
+                </div>
               </div>
 
-              {/* Card Bottom: Venue + Day + Guidelines Button */}
-              <div className="mt-5 pt-3.5 border-t border-rose-950/80 space-y-3">
+              {/* Card Bottom: Venue + Guidelines Button */}
+              <div className="mt-6 pt-4 border-t border-rose-950/80 space-y-3.5">
                 <div className="flex items-center justify-between text-xs text-rose-300/80">
                   <div className="flex items-center gap-1.5 truncate">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                    <span className="truncate">{item.venue}</span>
+                    <span className="truncate font-semibold">{item.venue}</span>
                   </div>
-                  <span className="text-[11px] font-semibold text-amber-400/90">{item.day}</span>
                 </div>
 
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openEventGuidelines(item)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[#180307] hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black text-amber-300 text-xs font-bold border border-amber-500/30 transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#1d0309] to-[#120206] hover:from-amber-500 hover:via-yellow-400 hover:to-amber-600 hover:text-black text-amber-300 text-xs font-black border border-amber-500/40 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/25 group/btn"
                 >
-                  <BookOpen className="w-3.5 h-3.5" />
-                  <span>Guidelines & Rules</span>
+                  <BookOpen className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-black transition-colors" />
+                  <span>Guidelines & Scoring Rubric</span>
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center">
           <Link
             to="/schedule"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#120205] border border-amber-500/30 text-amber-300 hover:bg-rose-950/60 transition-all text-xs font-bold"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#140206] border-2 border-amber-500/40 text-amber-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black transition-all text-xs font-black shadow-lg shadow-amber-950/40"
           >
             <span>View Complete Master Timeline</span>
             <ChevronRight className="w-4 h-4" />
           </Link>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          DEDICATED TOP 3 CONTINGENTS PODIUM & CHAMPIONSHIP LEADERBOARD SECTION
+          Olympic-Grade Podium Stage With Gold/Silver/Bronze Pedestals & Real-Time Standings
+          ========================================================================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-rose-950/80 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#140206] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
+              <Trophy className="w-4 h-4 text-amber-400" />
+              <span>Top 3 College Contingents Podium</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-serif font-black text-amber-100 drop-shadow-[0_4px_20px_rgba(245,184,66,0.3)]">
+              Championship Leaderboard
+            </h2>
+            <p className="text-xs sm:text-sm text-rose-200/90 mt-1 font-medium">
+              Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
+            </p>
+          </div>
+          <div>
+            <Link
+              to="/leaderboard"
+              className="px-6 py-2.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black transition-all flex items-center gap-1.5 shadow-md shadow-amber-500/20"
+            >
+              <span>Full Standings</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Dedicated Top 3 Elevated Podium With Dummy Data */}
+        <div className="mb-12">
+          <Podium topThree={podium.length >= 3 ? podium : DEFAULT_TOP_THREE} />
+        </div>
+
+        {/* Quick Table Preview */}
+        <div className="mt-8">
+          <LeaderboardTable colleges={standings.slice(0, 5)} />
         </div>
       </section>
 
