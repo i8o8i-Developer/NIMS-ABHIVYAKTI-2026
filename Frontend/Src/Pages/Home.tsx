@@ -366,21 +366,7 @@ export const Home: React.FC = () => {
       <Navbar />
 
       {/* Hero Section Matching Image 1 & Image 2 Reference */}
-      <section className="relative pt-6 sm:pt-10 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[100rem] mx-auto flex flex-col items-center min-h-[720px] overflow-hidden">
-        {/* Signature Hero Celestial Circle Elements (Exclusively On Home Page Hero) */}
-        {/* Right Hero Circle: Gracefully Frames Right Badges Down Toward Timer */}
-        <div className="hidden lg:block absolute -top-8 sm:-top-4 2xl:top-2 -right-24 sm:-right-16 2xl:-right-6 w-[38rem] sm:w-[48rem] 2xl:w-[54rem] h-[38rem] sm:h-[48rem] 2xl:h-[54rem] rounded-full border-2 sm:border-[3px] border-dashed border-amber-500/35 pointer-events-none opacity-80 animate-live-spin-slow">
-          <div className="absolute top-[38%] left-0 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_12px_#F5B842]" />
-        </div>
-
-        {/* Left Hero Circle: Symmetrically Frames Left Badges */}
-        <div
-          className="hidden lg:block absolute -top-8 sm:-top-4 2xl:top-2 -left-24 sm:-left-16 2xl:-left-6 w-[38rem] sm:w-[48rem] 2xl:w-[54rem] h-[38rem] sm:h-[48rem] 2xl:h-[54rem] rounded-full border-2 sm:border-[3px] border-dashed border-amber-500/25 pointer-events-none opacity-70 animate-live-spin-slow"
-          style={{ animationDirection: "reverse" }}
-        >
-          <div className="absolute top-[38%] right-0 translate-x-1/2 w-2.5 h-2.5 rounded-full bg-amber-300 shadow-[0_0_12px_#FDE047]" />
-        </div>
-
+      <section className="relative pt-6 sm:pt-10 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 text-center max-w-[100rem] mx-auto flex flex-col items-center min-h-[720px]">
         {/* NIMS Championship Pill */}
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-7 z-10 animate-fade-in">
           <Sparkles className="w-4 h-4 text-amber-400" />
