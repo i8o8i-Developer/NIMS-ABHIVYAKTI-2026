@@ -20,12 +20,12 @@ import {
 export const FloatingBackgroundElements: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
-      {/* Deep Rich Velvet Dark Canvas (Zero Whitish Haze, 100% Deep Festival Wine & Blackish Tone) */}
-      <div className="absolute inset-0 bg-[#050002]/90 mix-blend-multiply" />
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#050002] via-[#050002]/95 to-transparent z-10" />
+      {/* Deep Rich Velvet Crimson & Wine Black Canvas (Matching User Reference Image) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#180307] via-[#090103] to-[#050002]" />
+      <div className="absolute top-0 inset-x-0 h-44 bg-gradient-to-b from-[#180307] via-[#100205] to-transparent z-10" />
 
-      {/* Warm Golden Central Radiance Behind Hero Center (Pure Amber/Wine, Zero White Haze) */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[36rem] h-52 sm:h-[24rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.18)_0%,_rgba(136,19,55,0.14)_50%,_transparent_75%)] blur-3xl pointer-events-none" />
+      {/* Warm Golden & Crimson Central Radiance Behind Hero Center */}
+      <div className="absolute top-[12%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-[48rem] h-60 sm:h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(225,29,72,0.35)_0%,_rgba(159,18,57,0.28)_40%,_rgba(245,184,66,0.16)_65%,_transparent_80%)] blur-3xl pointer-events-none" />
 
       {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS
