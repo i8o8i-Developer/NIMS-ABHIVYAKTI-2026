@@ -357,7 +357,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Guaranteed Two-Liner Regal Headline Matching User Requirement */}
-            <h1 className="font-serif text-[1.85rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.14] text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 mb-5 drop-shadow-2xl">
+            <h1 className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[2.65rem] xl:text-[3.15rem] font-black tracking-tight leading-[1.12] text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-300 to-amber-500 mb-5 drop-shadow-2xl">
               <span className="block whitespace-nowrap">Celebrating Cultural</span>
               <span className="block whitespace-nowrap">Majesty & Excellence</span>
             </h1>
