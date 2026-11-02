@@ -233,4 +233,32 @@
   animation: live-twinkle 3s ease-in-out infinite;
 }
 
+/* Custom Festive Scrollbars */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #F59E0B rgba(24, 3, 7, 0.6);
+  -webkit-overflow-scrolling: touch;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(18, 2, 5, 0.8);
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #F59E0B, #E11D48, #F59E0B);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #FDE047, #F43F5E, #FDE047);
+}
+
 

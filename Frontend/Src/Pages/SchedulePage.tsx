@@ -41,7 +41,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "180 Mins",
     round: "Round 1 (Original Performances)",
-    rules: "Solo (Max 3 Mins, 3M/3F per college), Duet (Max 3 Mins, 2 pairs), Group (Max 5 Mins, 1 team 6-10 students). All dance forms allowed. Evaluated on Choreography, Coordination, Energy, Costumes & Stage Presence.",
+    rules: "Solo (Max 3 Mins, 3m/3f Per College), Duet (Max 3 Mins, 2 Pairs), Group (Max 5 Mins, 1 Team 6-10 Students). All Dance Forms Allowed. Evaluated On Choreography, Coordination, Energy, Costumes & Stage Presence.",
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "NIMS School of Law - LT 10 & 11",
     duration: "180 Mins",
     round: "Round 1 (Prelims)",
-    rules: "Solo (Max 3 Mins, 3M/3F), Duet (Max 3 Mins, 2 pairs), Group (Max 5 Mins, 1 team 6-10 students), Rap (Single round). Karaoke permitted. One accompanist permitted where applicable. Judged on Swara, Taal, Song Selection, Voice Quality & Expression.",
+    rules: "Solo (Max 3 Mins, 3m/3f), Duet (Max 3 Mins, 2 Pairs), Group (Max 5 Mins, 1 Team 6-10 Students), Rap (Single Round). Karaoke Permitted. One Accompanist Permitted Where Applicable. Judged On Swara, Taal, Song Selection, Voice Quality & Expression.",
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Marik / Moot Court",
     duration: "180 Mins",
     round: "Round 1 (Dictation Round)",
-    rules: "5 Solo participants per college (at least 1 female). Round 1 Dictation consists of 20 words dictated to all. Top 30 participants advance to Round 2 Moderate Spell Bee. Four-round elimination tournament.",
+    rules: "5 Solo Participants Per College (At Least 1 Female). Round 1 Dictation Consists Of 20 Words Dictated To All. Top 30 Participants Advance To Round 2 Moderate Spell Bee. Four-Round Elimination Tournament.",
   },
   {
     id: 4,
@@ -77,7 +77,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Marik / NIET",
     duration: "180 Mins",
     round: "Finals",
-    rules: "5 Solo participants per language per college. 15 Minutes on-spot preparation, 2-3 minutes performance time. Must create original poetry on the spot without external reference. Judged on Originality, Writing, Imagery, Voice & Stage Presence.",
+    rules: "5 Solo Participants Per Language Per College. 15 Minutes On-Spot Preparation, 2-3 Minutes Performance Time. Must Create Original Poetry On The Spot Without External Reference. Judged On Originality, Writing, Imagery, Voice & Stage Presence.",
   },
 
   // Day 2: 19 Nov 2026 (Thursday)
@@ -91,7 +91,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "60 Mins",
     round: "Finals",
-    rules: "2 Teams of 3-5 students per college. Rangoli size 3x3 feet. On-spot theme. All natural colors, petals, and powders brought by participants.",
+    rules: "2 Teams Of 3-5 Students Per College. Rangoli Size 3x3 Feet. On-Spot Theme. All Natural Colors, Petals, And Powders Brought By Participants.",
   },
   {
     id: 6,
@@ -103,7 +103,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "60 Mins",
     round: "Finals",
-    rules: "5 Solo participants per college (at least 1 female). Transform discarded old textiles into wearable runway garments live on the spot. New fabric strictly prohibited.",
+    rules: "5 Solo Participants Per College (At Least 1 Female). Transform Discarded Old Textiles Into Wearable Runway Garments Live On The Spot. New Fabric Strictly Prohibited.",
   },
   {
     id: 7,
@@ -115,7 +115,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "60 Mins",
     round: "Finals",
-    rules: "5 Solo participants per college (at least 1 female). Theme provided on spot. Paper size A3. Black fine-liners and ink pens only.",
+    rules: "5 Solo Participants Per College (At Least 1 Female). Theme Provided On Spot. Paper Size A3. Black Fine-Liners And Ink Pens Only.",
   },
   {
     id: 8,
@@ -127,7 +127,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "30 Mins",
     round: "Finals",
-    rules: "5 Solo participants per college (at least 1 female). Create an original poster based on on-spot theme using AI prompt workflow on personal device. JPG/PNG/PDF <= 5MB submitted via QR code.",
+    rules: "5 Solo Participants Per College (At Least 1 Female). Create An Original Poster Based On On-Spot Theme Using Ai Prompt Workflow On Personal Device. Jpg/Png/Pdf <= 5mb Submitted Via Qr Code.",
   },
   {
     id: 9,
@@ -139,7 +139,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "60 Mins",
     round: "Finals",
-    rules: "3 Male & 3 Female participants per college. Model arrives with clean face. Non-toxic skin-safe body paints mandatory. Stencils and pre-made sketches prohibited.",
+    rules: "3 Male & 3 Female Participants Per College. Model Arrives With Clean Face. Non-Toxic Skin-Safe Body Paints Mandatory. Stencils And Pre-Made Sketches Prohibited.",
   },
   {
     id: 10,
@@ -151,7 +151,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "30 Mins",
     round: "Finals",
-    rules: "5 Solo participants per college (at least 1 female). Paper size A3. Freehand designated text using calligraphy pens. Ball pens and tracing strictly prohibited.",
+    rules: "5 Solo Participants Per College (At Least 1 Female). Paper Size A3. Freehand Designated Text Using Calligraphy Pens. Ball Pens And Tracing Strictly Prohibited.",
   },
   {
     id: 11,
@@ -163,7 +163,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "60 Mins",
     round: "Finals",
-    rules: "5 Solo participants per college (at least 1 male). Model arrives clean-faced. Evaluated on blending technique, contouring, editorial impact, and hygiene.",
+    rules: "5 Solo Participants Per College (At Least 1 Male). Model Arrives Clean-Faced. Evaluated On Blending Technique, Contouring, Editorial Impact, And Hygiene.",
   },
   {
     id: 12,
@@ -175,7 +175,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "60 Mins",
     round: "Finals",
-    rules: "5 Solo participants per college (at least 1 female). Decorate a single pair of plain sneakers live on the spot with street art finishes, stencils, and acrylics.",
+    rules: "5 Solo Participants Per College (At Least 1 Female). Decorate A Single Pair Of Plain Sneakers Live On The Spot With Street Art Finishes, Stencils, And Acrylics.",
   },
   {
     id: 13,
@@ -187,7 +187,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "School of Law",
     duration: "45 Mins",
     round: "Finals",
-    rules: "5 Solo participants per language per college. Word limit 400-600 words on on-spot creative stimulus prompt. Evaluated on Originality, Imagination, Structure & Language.",
+    rules: "5 Solo Participants Per Language Per College. Word Limit 400-600 Words On On-Spot Creative Stimulus Prompt. Evaluated On Originality, Imagination, Structure & Language.",
   },
   {
     id: 14,
@@ -199,7 +199,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "120 Mins",
     round: "Prelims",
-    rules: "1 Team of 4 students per college. Questioning round, audio clue round, and visual round across classic literature, poetry, drama, and world literary movements.",
+    rules: "1 Team Of 4 Students Per College. Questioning Round, Audio Clue Round, And Visual Round Across Classic Literature, Poetry, Drama, And World Literary Movements.",
   },
 
   // Day 3: 20 Nov 2026 (Friday)
@@ -213,7 +213,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "120 Mins",
     round: "Finals",
-    rules: "3 Solo participants per college (at least 1 female). Maximum time 3 minutes. Judged on Acting Skills, Expressions, Voice Modulation, Concept Creativity & Stage Presence.",
+    rules: "3 Solo Participants Per College (At Least 1 Female). Maximum Time 3 Minutes. Judged On Acting Skills, Expressions, Voice Modulation, Concept Creativity & Stage Presence.",
   },
   {
     id: 16,
@@ -225,7 +225,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "120 Mins",
     round: "Round 2 Battle Round",
-    rules: "Head-to-head battle round for qualified Solo and Duet dancers with randomized tracks determined by lottery draw.",
+    rules: "Head-To-Head Battle Round For Qualified Solo And Duet Dancers With Randomized Tracks Determined By Lottery Draw.",
   },
   {
     id: 17,
@@ -237,7 +237,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "NIMS School of Law - LT 10 & 11",
     duration: "120 Mins",
     round: "Round 2 Battle Round",
-    rules: "Direct vocal acoustic face-off for qualified Solo and Duet entries before the festival adjudication panel.",
+    rules: "Direct Vocal Acoustic Face-Off For Qualified Solo And Duet Entries Before The Festival Adjudication Panel.",
   },
   {
     id: 18,
@@ -249,7 +249,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Marik / NIET",
     duration: "180 Mins",
     round: "Finals",
-    rules: "2 Solo participants per language per college. 3 Minutes argument presentation followed by 1 minute rebuttal. For/Against stance allocated via chit system.",
+    rules: "2 Solo Participants Per Language Per College. 3 Minutes Argument Presentation Followed By 1 Minute Rebuttal. For/Against Stance Allocated Via Chit System.",
   },
   {
     id: 19,
@@ -261,7 +261,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "180 Mins",
     round: "Championship Finale",
-    rules: "Top qualified contingent quiz teams compete in high-stakes rapid-fire, multimedia, and sudden-death buzzer rounds.",
+    rules: "Top Qualified Contingent Quiz Teams Compete In High-Stakes Rapid-Fire, Multimedia, And Sudden-Death Buzzer Rounds.",
   },
 
   // Day 4: 21 Nov 2026 (Saturday - Mega Grand Championship Finale)
@@ -275,7 +275,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     venue: "Rajeshwari Auditorium",
     duration: "120 Mins",
     round: "Finals",
-    rules: "1 Team of 5-10 students per college. Maximum time 10 minutes. Evaluated on Script, Acting, Dialogue Delivery, Team Coordination & Overall Impact.",
+    rules: "1 Team Of 5-10 Students Per College. Maximum Time 10 Minutes. Evaluated On Script, Acting, Dialogue Delivery, Team Coordination & Overall Impact.",
   },
   {
     id: 21,
@@ -288,7 +288,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     duration: "180 Mins",
     round: "Grand Finale",
     isGrandFinale: true,
-    rules: "Championship final round for all qualified finalists across Solo, Duet, and Group categories in presence of the full student body and celebrity jury.",
+    rules: "Championship Final Round For All Qualified Finalists Across Solo, Duet, And Group Categories In Presence Of The Full Student Body And Celebrity Jury.",
   },
   {
     id: 22,
@@ -301,7 +301,7 @@ const COMPLETE_SCHEDULE: ScheduleItem[] = [
     duration: "120 Mins",
     round: "Mega Finale",
     isGrandFinale: true,
-    rules: "1 Team of 8-15 students per college. Maximum time 8 minutes. Staged at the University Cricket Ground under stadium illumination! Theme: 'The Creative Couture Challenge'. Evaluated on Presentation, Walking Posture, Styling, Music & Choreography.",
+    rules: "1 Team Of 8-15 Students Per College. Maximum Time 8 Minutes. Staged At The University Cricket Ground Under Stadium Illumination! Theme: 'The Creative Couture Challenge'. Evaluated On Presentation, Walking Posture, Styling, Music & Choreography.",
   },
 ];
 
@@ -380,10 +380,10 @@ export const SchedulePage: React.FC = () => {
           </p>
         </div>
 
-        {/* Filter Controls */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104] p-4 rounded-2xl border border-rose-950">
+        {/* Filter Controls With Custom Scrollable Rails */}
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-8 bg-gradient-to-r from-[#140206] via-[#0d0104] to-[#140206] p-4 rounded-3xl border border-amber-500/25 shadow-xl">
           {/* Day Tabs */}
-          <div className="flex items-center gap-1.5 overflow-x-auto max-w-full">
+          <div className="flex items-center gap-2 overflow-x-auto max-w-full pb-2.5 custom-scrollbar shrink-0">
             {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
               const labelMap: Record<string, string> = {
                 "Day 1": "Day 1 (18 Nov)",
@@ -396,10 +396,10 @@ export const SchedulePage: React.FC = () => {
                 <button
                   key={day}
                   onClick={() => setActiveDay(day)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shrink-0 ${
                     activeDay === day
-                      ? "bg-amber-500 text-black shadow-md shadow-amber-500/20"
-                      : "text-rose-200/70 hover:text-white hover:bg-rose-950/40"
+                      ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/25 scale-102"
+                      : "text-rose-200/70 hover:text-white hover:bg-rose-950/50 bg-[#190308]/60 border border-rose-950/80"
                   }`}
                 >
                   {labelMap[day]}
@@ -409,15 +409,15 @@ export const SchedulePage: React.FC = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="flex items-center gap-2 overflow-x-auto max-w-full pb-2 sm:pb-0 custom-scrollbar">
+          <div className="flex items-center gap-2 overflow-x-auto max-w-full pb-2.5 custom-scrollbar">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-[11px] font-bold whitespace-nowrap transition-all ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 ${
                   selectedCategory === cat
-                    ? "bg-rose-900/60 text-amber-300 border border-amber-500/40"
-                    : "text-rose-300/60 hover:text-white"
+                    ? "bg-rose-900/80 text-amber-300 border border-amber-500/50 shadow-md shadow-rose-950/40"
+                    : "text-rose-300/60 hover:text-white bg-[#100104]/50 hover:bg-rose-950/30 border border-rose-950/60"
                 }`}
               >
                 {cat}

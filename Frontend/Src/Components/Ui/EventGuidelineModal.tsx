@@ -56,7 +56,7 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
   const eventRules =
     event.rules ||
     event.rules_summary ||
-    "All participating students must adhere to the stipulated time limits, report 30 minutes prior to the stage coordinator, and respect the decision of the official jury.";
+    "All Participating Students Must Adhere To The Stipulated Time Limits, Report 30 Minutes Prior To The Stage Coordinator, And Respect The Official Verdict Of The Verified Directorate Jury.";
 
   return (
     <div
@@ -161,7 +161,7 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
                 <span className="text-[10px] font-black text-amber-400">Pillar 1 (25 Pts)</span>
                 <p className="font-bold text-white mt-0.5">Creativity & Innovation</p>
                 <p className="text-[11px] text-rose-300/70 mt-1">
-                  Artistic uniqueness, concept depth, and fresh interpretation.
+                  Artistic Uniqueness, Concept Depth, And Fresh Creative Interpretation.
                 </p>
               </div>
 
@@ -169,7 +169,7 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
                 <span className="text-[10px] font-black text-amber-400">Pillar 2 (25 Pts)</span>
                 <p className="font-bold text-white mt-0.5">Technical Mastery</p>
                 <p className="text-[11px] text-rose-300/70 mt-1">
-                  Rhythm, pitch, stroke technique, craft, or choreography precision.
+                  Rhythm, Pitch, Stroke Technique, Craft, And Choreography Precision.
                 </p>
               </div>
 
@@ -177,7 +177,7 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
                 <span className="text-[10px] font-black text-amber-400">Pillar 3 (25 Pts)</span>
                 <p className="font-bold text-white mt-0.5">Stage Impact & Presence</p>
                 <p className="text-[11px] text-rose-300/70 mt-1">
-                  Audience engagement, aesthetic presentation, and confidence.
+                  Audience Engagement, Aesthetic Presentation, And Stage Confidence.
                 </p>
               </div>
 
@@ -185,7 +185,7 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
                 <span className="text-[10px] font-black text-amber-400">Pillar 4 (25 Pts)</span>
                 <p className="font-bold text-white mt-0.5">Time & Code Discipline</p>
                 <p className="text-[11px] text-rose-300/70 mt-1">
-                  Punctual reporting, strict adherence to time limit, and decorum.
+                  Punctual Reporting, Strict Adherence To Time Limits, And Stage Decorum.
                 </p>
               </div>
             </div>
@@ -197,7 +197,7 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
             <div>
               <strong className="font-bold text-rose-200">Disqualification Notice:</strong>
               <p className="text-[11px] text-rose-300/80 mt-0.5 leading-relaxed">
-                Use of flammable substances, hazardous props, obscene content, or unsportsmanlike conduct results in immediate disqualification and forfeiture of contingent points.
+                Use Of Flammable Substances, Hazardous Props, Obscene Content, Or Unsportsmanlike Conduct Results In Immediate Disqualification And Forfeiture Of Contingent Points.
               </p>
             </div>
           </div>
