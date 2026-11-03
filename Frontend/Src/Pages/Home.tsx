@@ -901,38 +901,33 @@ export const Home: React.FC = () => {
           DEDICATED TOP 3 CONTINGENTS PODIUM & CHAMPIONSHIP LEADERBOARD SECTION
           Olympic-Grade Podium Stage With Gold/Silver/Bronze Pedestals & Real-Time Standings
           ========================================================================= */}
-      <section className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 overflow-hidden">
-        {/* Colorful Theatrical Ambient Backstage Orbs */}
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none -z-10" />
-        <div className="absolute top-1/3 -right-20 w-80 h-80 bg-amber-500/20 rounded-full blur-[100px] pointer-events-none -z-10" />
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-56 bg-rose-600/15 rounded-full blur-[120px] pointer-events-none -z-10" />
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 sm:mb-10 text-center md:text-left">
+      <section className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-amber-500/20 border-2 border-amber-400/70 text-amber-200 text-[10px] min-[340px]:text-xs font-black uppercase tracking-wider mb-2.5 backdrop-blur-md shadow-lg shadow-amber-950/40">
-              <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 text-xs font-black uppercase tracking-wider mb-2 backdrop-blur-md shadow-md">
+              <Trophy className="w-4 h-4 text-amber-400" />
               <span>Top 3 College Contingents Podium</span>
             </div>
-            <h2 className="text-2xl min-[340px]:text-3xl sm:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-amber-400 drop-shadow-[0_4px_25px_rgba(245,184,66,0.4)]">
+            <h2 className="text-3xl sm:text-5xl font-serif font-black text-amber-100 drop-shadow-[0_4px_20px_rgba(245,184,66,0.3)]">
               Championship Leaderboard
             </h2>
-            <p className="text-xs sm:text-sm text-rose-100/90 mt-1.5 font-medium leading-relaxed max-w-xl">
+            <p className="text-xs sm:text-sm text-gray-300 mt-1 font-medium">
               Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
             </p>
           </div>
           <div>
             <Link
               to="/leaderboard"
-              className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs font-black bg-gradient-to-r from-amber-400 via-pink-600 to-purple-600 text-white border-2 border-yellow-200 hover:border-white transition-all flex items-center justify-center gap-1.5 shadow-xl shadow-pink-500/30 hover:scale-105"
+              className="px-6 py-3 rounded-xl text-xs font-black bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-pink-300 hover:border-yellow-300 transition-all flex items-center gap-1.5 shadow-xl shadow-purple-500/30 hover:scale-105"
             >
               <span>Full Standings</span>
-              <ArrowRight className="w-4 h-4 shrink-0" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
 
         {/* Dedicated Top 3 Elevated Podium With Dummy Data */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-12">
           <Podium topThree={podium.length >= 3 ? podium : DEFAULT_TOP_THREE} />
         </div>
 
