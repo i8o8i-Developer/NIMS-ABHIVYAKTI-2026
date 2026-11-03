@@ -13,6 +13,12 @@ import {
   CheckCircle2,
   BookOpen,
   Flame,
+  Music,
+  Layers,
+  Palette,
+  Bot,
+  Theater,
+  Trophy,
 } from "lucide-react";
 
 interface ScheduleItem {
@@ -313,6 +319,52 @@ export const SchedulePage: React.FC = () => {
   const [selectedGuidelineEvent, setSelectedGuidelineEvent] = useState<GuidelineEventData | null>(null);
   const [isGuidelineModalOpen, setIsGuidelineModalOpen] = useState(false);
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return <Flame className="w-3.5 h-3.5" />;
+      case "Music":
+        return <Music className="w-3.5 h-3.5" />;
+      case "Fashion":
+        return <Layers className="w-3.5 h-3.5" />;
+      case "Fine Arts":
+      case "Creative Arts":
+        return <Palette className="w-3.5 h-3.5" />;
+      case "Digital Arts":
+        return <Bot className="w-3.5 h-3.5" />;
+      case "Theatre":
+      case "Drama":
+        return <Theater className="w-3.5 h-3.5" />;
+      case "Literature":
+        return <BookOpen className="w-3.5 h-3.5" />;
+      default:
+        return <Sparkles className="w-3.5 h-3.5" />;
+    }
+  };
+
+  const getEventCardStyle = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return "bg-gradient-to-b from-[#38091d]/95 via-[#220511]/98 to-[#130209] border-2 border-pink-500/70 hover:border-pink-300 shadow-[0_8px_30px_rgba(236,72,153,0.25)]";
+      case "Music":
+        return "bg-gradient-to-b from-[#3d2406]/95 via-[#241503]/98 to-[#130a01] border-2 border-amber-400/70 hover:border-amber-300 shadow-[0_8px_30px_rgba(245,158,11,0.25)]";
+      case "Literature":
+        return "bg-gradient-to-b from-[#06331e]/95 via-[#031f12]/98 to-[#011209] border-2 border-emerald-400/70 hover:border-emerald-300 shadow-[0_8px_30px_rgba(16,185,129,0.25)]";
+      case "Fashion":
+        return "bg-gradient-to-b from-[#082a45]/95 via-[#041a2c]/98 to-[#020e18] border-2 border-cyan-400/70 hover:border-cyan-300 shadow-[0_8px_30px_rgba(6,182,212,0.25)]";
+      case "Fine Arts":
+      case "Creative Arts":
+        return "bg-gradient-to-b from-[#2d0947]/95 via-[#1b052c]/98 to-[#0e0217] border-2 border-purple-400/70 hover:border-purple-300 shadow-[0_8px_30px_rgba(168,85,247,0.25)]";
+      case "Digital Arts":
+        return "bg-gradient-to-b from-[#131c52]/95 via-[#0a1033]/98 to-[#05081c] border-2 border-blue-400/70 hover:border-blue-300 shadow-[0_8px_30px_rgba(59,130,246,0.25)]";
+      case "Drama":
+      case "Theatre":
+        return "bg-gradient-to-b from-[#3b080f]/95 via-[#240409]/98 to-[#130205] border-2 border-red-500/70 hover:border-red-300 shadow-[0_8px_30px_rgba(239,68,68,0.25)]";
+      default:
+        return "bg-gradient-to-b from-[#300512]/95 via-[#1a0208]/98 to-[#0d0104] border-2 border-amber-400/70 shadow-[0_8px_30px_rgba(245,184,66,0.25)]";
+    }
+  };
+
   const categories = ["All", "Dance", "Music", "Fine Arts", "Fashion", "Drama", "Digital Arts", "Creative Arts"];
 
   const getCategoryBadgeClass = (category: string) => {
@@ -360,7 +412,7 @@ export const SchedulePage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#070104] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
@@ -426,68 +478,82 @@ export const SchedulePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Schedule List */}
-        <div className="space-y-4">
+        {/* Schedule Grid (Matching Exact Home Page Event Card Architecture) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className={`p-5 rounded-2xl border transition-all ${
-                item.isGrandFinale
-                  ? "bg-gradient-to-r from-[#42061c]/95 via-[#290538]/95 to-[#122245]/95 border-2 border-amber-400 shadow-2xl shadow-amber-950/40"
-                  : "bg-gradient-to-r from-[#290514]/90 via-[#1c0422]/90 to-[#0e162e]/90 border-2 border-amber-400/40 hover:border-amber-400 hover:bg-[#320618]"
-              }`}
+              className={`p-5 sm:p-6 rounded-2xl ${getEventCardStyle(item.category)} hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden backdrop-blur-xl`}
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                {/* Time & Date Column */}
-                <div className="flex items-center gap-4 min-w-[200px]">
-                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 shrink-0 text-center">
-                    <Clock className="w-5 h-5 mx-auto mb-1" />
-                    <span className="text-xs font-extrabold">{item.time}</span>
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-amber-300">{item.day}</span>
-                    <p className="text-sm font-black text-white">{item.date}</p>
-                    <span className="text-[11px] text-rose-300/70">{item.duration} Duration</span>
-                  </div>
-                </div>
+              {/* Ambient Category Corner Accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
 
-                {/* Event Name & Category */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${getCategoryBadgeClass(item.category)}`}>
-                      {item.category}
+              <div>
+                {/* Card Top: Category Badge On Left + Date & Time Stacked On Right */}
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <span className={`inline-flex items-center gap-1.5 text-xs font-extrabold px-3 py-1.5 rounded-full border shadow-sm ${getCategoryBadgeClass(item.category)}`}>
+                    {getCategoryIcon(item.category)}
+                    <span>{item.category}</span>
+                  </span>
+                  <div className="text-right shrink-0">
+                    <span className="flex items-center justify-end gap-1 text-xs font-bold text-amber-200">
+                      <Calendar className="w-3 h-3 text-amber-400" />
+                      {item.date}
                     </span>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-950/60 text-rose-300 border border-rose-900/40">
-                      {item.round}
+                    <span className="flex items-center justify-end gap-1 text-[11px] text-amber-400 font-semibold mt-0.5">
+                      <Clock className="w-3 h-3 text-amber-400" />
+                      {item.time}
                     </span>
-                    {item.isGrandFinale && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-black flex items-center gap-1">
-                        <Flame className="w-3 h-3 fill-current" />
-                        Grand Finale
-                      </span>
-                    )}
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
-                    {item.title}
-                  </h3>
                 </div>
 
-                {/* Venue & Guidelines Action Buttons */}
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-[#080103] border border-rose-950 md:min-w-[190px]">
-                    <MapPin className="w-4 h-4 text-rose-400 shrink-0" />
-                    <span className="text-xs text-rose-200/90 truncate">{item.venue}</span>
-                  </div>
+                {/* Event Title In Bold White & Serif Font */}
+                <h3 className="text-base sm:text-lg font-serif font-black text-white group-hover:text-amber-200 transition-colors leading-snug line-clamp-2">
+                  {item.title}
+                </h3>
 
-                  {/* Attached Guidelines Modal Trigger */}
-                  <button
-                    onClick={() => openGuidelines(item)}
-                    className="p-2.5 rounded-xl bg-[#1c0409] hover:bg-amber-500 hover:text-black text-amber-300 border border-amber-500/30 transition-all flex items-center gap-1.5 text-xs font-bold shadow-md shrink-0"
-                  >
-                    <BookOpen className="w-4 h-4" />
-                    <span className="hidden sm:inline">Guidelines</span>
-                  </button>
+                {/* Event Key Highlights Badges */}
+                <div className="flex flex-wrap items-center gap-2 mt-3">
+                  <span className="text-[10px] font-black px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/35 text-amber-300">
+                    🥇 40 Pts • 🥈 25 Pts • 🥉 15 Pts
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-black/40 border border-white/20 text-white">
+                    {item.day}
+                  </span>
+                  {item.isGrandFinale && (
+                    <span className="text-[10px] font-black px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-black flex items-center gap-1 shadow-md">
+                      <Flame className="w-3 h-3 fill-current" />
+                      Grand Finale
+                    </span>
+                  )}
                 </div>
+
+                {/* Rules Summary Snippet */}
+                {item.rules && (
+                  <p className="text-xs text-rose-100/80 mt-3 line-clamp-3 leading-relaxed font-medium">
+                    {item.rules}
+                  </p>
+                )}
+              </div>
+
+              {/* Card Bottom: Venue + Guidelines Button */}
+              <div className="mt-6 pt-4 border-t border-white/10 space-y-3.5">
+                <div className="flex items-center justify-between text-xs text-gray-300">
+                  <div className="flex items-center gap-1.5 truncate">
+                    <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                    <span className="truncate font-semibold">{item.venue}</span>
+                  </div>
+                  <span className="text-[11px] text-amber-300 font-bold shrink-0">{item.duration}</span>
+                </div>
+
+                {/* Direct Event Guideline & Rules Action Button */}
+                <button
+                  onClick={() => openGuidelines(item)}
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-400 hover:via-yellow-300 hover:to-orange-500 hover:text-black text-amber-200 text-xs font-black border-2 border-amber-400/60 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/35 group/btn"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-black transition-colors" />
+                  <span>Guidelines & Scoring Rubric</span>
+                </button>
               </div>
             </div>
           ))}

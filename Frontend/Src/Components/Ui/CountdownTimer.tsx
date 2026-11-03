@@ -64,20 +64,20 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({
   ];
 
   return (
-    <div className="flex items-center justify-center space-x-2 sm:space-x-4 select-none">
+    <div className="flex items-center justify-center space-x-1 min-[340px]:space-x-2 sm:space-x-4 select-none max-w-full px-1">
       {units.map((unit, index) => (
         <React.Fragment key={unit.label}>
-          <div className={`flex flex-col items-center justify-center backdrop-blur-xl w-16 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 rounded-2xl transform hover:scale-105 transition-transform duration-300 ${unit.cardStyle}`}>
-            <span className={`text-2xl sm:text-4xl md:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b ${unit.textStyle}`}>
+          <div className={`flex flex-col items-center justify-center backdrop-blur-xl w-[3.6rem] min-[340px]:w-16 sm:w-24 md:w-28 h-16 min-[340px]:h-20 sm:h-24 md:h-28 rounded-xl sm:rounded-2xl transform hover:scale-105 transition-transform duration-300 ${unit.cardStyle}`}>
+            <span className={`text-xl min-[340px]:text-2xl sm:text-4xl md:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b ${unit.textStyle}`}>
               {String(unit.value).padStart(2, "0")}
             </span>
-            <span className={`text-[9px] sm:text-[11px] font-black tracking-widest mt-1 uppercase ${unit.labelStyle}`}>
+            <span className={`text-[8px] min-[340px]:text-[9px] sm:text-[11px] font-black tracking-widest mt-0.5 sm:mt-1 uppercase ${unit.labelStyle}`}>
               {unit.label}
             </span>
           </div>
 
           {index < units.length - 1 && (
-            <span className="text-xl sm:text-3xl font-serif font-black text-amber-400/80 pb-3 drop-shadow-[0_0_8px_rgba(245,158,11,0.6)]">
+            <span className="text-base min-[340px]:text-xl sm:text-3xl font-serif font-black text-amber-400/80 pb-2 sm:pb-3 drop-shadow-[0_0_8px_rgba(245,158,11,0.6)]">
               :
             </span>
           )}

@@ -70,7 +70,7 @@ export const ContingentsPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#070104] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
@@ -107,7 +107,7 @@ export const ContingentsPage: React.FC = () => {
           {filteredColleges.map((col) => (
             <div
               key={col.id}
-              className="p-6 rounded-2xl bg-[#0d0104] border border-rose-950 hover:border-amber-500/40 hover:bg-[#140206] transition-all group shadow-xl flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#240514]/90 via-[#14020c]/95 to-[#080105] border-2 border-amber-400/50 hover:border-amber-300 hover:scale-[1.02] transition-all duration-300 group shadow-2xl flex flex-col justify-between backdrop-blur-xl"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">

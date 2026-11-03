@@ -418,7 +418,7 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#18030c] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
+    <div className="min-h-screen bg-[#070104] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
       {/* Background Lighting, Spotlight Beams & Cultural Motifs */}
       <FloatingBackgroundElements />
 
@@ -485,73 +485,122 @@ export const Home: React.FC = () => {
         </div>
 
         {/* =========================================================================
-            CULTURAL FESTIVAL HERO ELEMENT CLUSTERS
-            Exact Placements Matching User Red Circles In Image 1
+            FOUR AUTHENTIC CULTURAL ARENA SQUARE BOXES
+            Restored To Exact Styling & Visual Layout In Image 1
+            Full Text Visible, In-Bounds, Elegant Floating Sway
             ========================================================================= */}
-        {/* Cluster 1: Top-Left (Between Left Badges & Abhivyakti Logo) */}
-        <div className="hidden xl:flex items-center gap-3 absolute top-[13%] 2xl:top-[15%] left-[21%] 2xl:left-[23%] pointer-events-none select-none z-10 animate-live-sway">
-          <div className="p-2.5 2xl:p-3 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-xl shadow-rose-950/40 flex items-center gap-2">
-            <Theater className="w-7 h-7 2xl:w-8 2xl:h-8 text-rose-300 drop-shadow-[0_0_12px_rgba(251,113,133,0.6)]" />
-          </div>
-          <div className="flex flex-col gap-1 items-start">
-            <div className="opacity-90 animate-live-leaf">
-              <svg width="22" height="30" viewBox="0 0 34 44" fill="none">
-                <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.65" />
-                <path d="M17 2L17 42M17 15L27 22M17 22L7 29" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+        {/* Box 1: Top-Left (Natya & Rangmanch - Theatre & Drama) */}
+        <div className="hidden xl:flex flex-col items-center absolute top-[12%] 2xl:top-[14%] left-[19%] 2xl:left-[21%] pointer-events-none select-none z-10 animate-live-sway">
+          <div className="w-28 h-28 2xl:w-32 2xl:h-32 rounded-2xl 2xl:rounded-3xl bg-gradient-to-br from-[#2a0614]/95 via-[#18030b]/95 to-[#090104]/98 border-2 border-rose-500/70 shadow-[0_0_30px_rgba(244,63,94,0.35)] backdrop-blur-xl flex flex-col items-center justify-center p-3 relative overflow-hidden group">
+            {/* Theatrical Drama Masks Ornate SVG */}
+            <div className="relative">
+              <svg width="56" height="46" viewBox="0 0 64 52" fill="none" className="drop-shadow-[0_0_14px_rgba(251,113,133,0.7)]">
+                {/* Comedy Mask (Golden/Amber) */}
+                <path d="M12 8C12 4 28 4 28 8C28 22 24 34 20 34C16 34 12 22 12 8Z" fill="#F59E0B" opacity="0.9" />
+                <path d="M15 14C17 14 18 16 18 17C18 18 17 19 15 19" stroke="#78350F" strokeWidth="2" strokeLinecap="round" />
+                <path d="M22 14C24 14 25 16 25 17C25 18 24 19 22 19" stroke="#78350F" strokeWidth="2" strokeLinecap="round" />
+                <path d="M16 24C18 28 22 28 24 24" stroke="#78350F" strokeWidth="2.5" strokeLinecap="round" />
+                
+                {/* Tragedy Mask (Velvet Rose) */}
+                <path d="M34 14C34 10 50 10 50 14C50 28 46 40 42 40C38 40 34 28 34 14Z" fill="#BE123C" opacity="0.95" />
+                <path d="M37 20C39 20 40 22 40 23C40 24 39 25 37 25" stroke="#FFE4E6" strokeWidth="2" strokeLinecap="round" />
+                <path d="M44 20C46 20 47 22 47 23C47 24 46 25 44 25" stroke="#FFE4E6" strokeWidth="2" strokeLinecap="round" />
+                <path d="M38 32C40 28 44 28 46 32" stroke="#FFE4E6" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
             </div>
-            <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-live-twinkle drop-shadow-[0_0_8px_#F5B842]" />
+          </div>
+          {/* Guaranteed Full Text Visible Pill */}
+          <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#160208] border border-rose-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-rose-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-rose-500/30">
+            <Sparkles className="w-3 h-3 text-amber-300 shrink-0" />
+            <span>Natya & Rangmanch</span>
           </div>
         </div>
 
-        {/* Cluster 2: Top-Right (Between Abhivyakti Logo & Right Badges) */}
-        <div className="hidden xl:flex items-center gap-3 absolute top-[13%] 2xl:top-[15%] right-[21%] 2xl:right-[23%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.1s" }}>
-          <div className="flex flex-col gap-1 items-end">
-            <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-live-twinkle drop-shadow-[0_0_8px_#FDE047]" />
-            <div className="p-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300">
-              <Mic className="w-3.5 h-3.5" />
+        {/* Box 2: Top-Right (Sangeet & Swara - Music & Vocal Harmony) */}
+        <div className="hidden xl:flex flex-col items-center absolute top-[12%] 2xl:top-[14%] right-[19%] 2xl:right-[21%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.1s" }}>
+          <div className="w-28 h-28 2xl:w-32 2xl:h-32 rounded-2xl 2xl:rounded-3xl bg-gradient-to-br from-[#331c03]/95 via-[#1c1001]/95 to-[#0d0700]/98 border-2 border-amber-400/70 shadow-[0_0_30px_rgba(245,158,11,0.35)] backdrop-blur-xl flex flex-col items-center justify-center p-3 relative overflow-hidden group">
+            {/* Classical Tanpura/Sitar & Musical Notes SVG */}
+            <div className="relative">
+              <svg width="56" height="46" viewBox="0 0 64 52" fill="none" className="drop-shadow-[0_0_14px_rgba(245,184,66,0.7)]">
+                {/* Sitar Body Bowl */}
+                <ellipse cx="20" cy="34" rx="14" ry="12" fill="#D97706" />
+                <ellipse cx="20" cy="34" rx="9" ry="7" fill="#78350F" />
+                {/* Sitar Long Neck */}
+                <path d="M20 34L48 10" stroke="#FDE68A" strokeWidth="3.5" strokeLinecap="round" />
+                {/* Tuning Pegs */}
+                <circle cx="48" cy="10" r="3.5" fill="#F59E0B" />
+                <path d="M44 8L50 6M46 14L52 12" stroke="#FEF08A" strokeWidth="2" strokeLinecap="round" />
+                {/* Strings */}
+                <path d="M16 36L46 12" stroke="#FFFBEB" strokeWidth="1" strokeDasharray="1 1" />
+                <path d="M22 36L48 14" stroke="#FFFBEB" strokeWidth="1" strokeDasharray="1 1" />
+                {/* Golden Floating Notes */}
+                <path d="M42 28C42 26 44 24 47 24V18L55 16V22C55 24 53 26 51 26" stroke="#FDE047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="45" cy="27" r="2.5" fill="#FDE047" />
+                <circle cx="53" cy="24" r="2.5" fill="#FDE047" />
+              </svg>
             </div>
           </div>
-          <div className="p-2.5 2xl:p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-xl shadow-amber-950/40 flex items-center gap-2">
-            <Music className="w-7 h-7 2xl:w-8 2xl:h-8 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.7)]" />
+          {/* Guaranteed Full Text Visible Pill */}
+          <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#1c0d01] border border-amber-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-amber-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-amber-500/30">
+            <Sparkles className="w-3 h-3 text-yellow-300 shrink-0" />
+            <span>Sangeet & Swara</span>
           </div>
         </div>
 
-        {/* Cluster 3: Far Bottom-Left (Below Left Badges In Outer Margin) */}
-        <div className="hidden xl:flex flex-col items-center gap-2 absolute bottom-[8%] left-[4%] 2xl:left-[6%] pointer-events-none select-none z-10">
-          <div className="animate-live-flicker">
-            <svg width="44" height="34" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
-              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
-              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
-              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
-              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
-            </svg>
+        {/* Box 3: Bottom-Left (Nritya & Mudra - Classical & Street Dance) */}
+        {/* Safely Positioned In Wide Outer Zone Away From Action Buttons */}
+        <div className="hidden xl:flex flex-col items-center absolute bottom-[6%] left-[8%] 2xl:left-[11%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.8s" }}>
+          <div className="w-28 h-28 2xl:w-32 2xl:h-32 rounded-2xl 2xl:rounded-3xl bg-gradient-to-br from-[#300522]/95 via-[#1c0214]/95 to-[#0b0108]/98 border-2 border-pink-500/70 shadow-[0_0_30px_rgba(236,72,153,0.35)] backdrop-blur-xl flex flex-col items-center justify-center p-3 relative overflow-hidden group">
+            {/* Classical Nataraja Dance Mudra & Flame Glow SVG */}
+            <div className="relative">
+              <svg width="56" height="46" viewBox="0 0 64 52" fill="none" className="drop-shadow-[0_0_14px_rgba(244,114,182,0.7)]">
+                {/* Radiant Halo Arch */}
+                <path d="M14 38C10 28 14 14 26 10C38 6 50 14 52 26C53 32 50 40 44 44" stroke="#F43F5E" strokeWidth="2.5" strokeDasharray="3 3" strokeLinecap="round" />
+                {/* Traditional Diya Flame In Center */}
+                <path d="M32 12C32 12 37 19 37 24C37 27.5 34.5 30 32 30C29.5 30 27 27.5 27 24C27 19 32 12 32 12Z" fill="#FACC15" />
+                <path d="M32 16C32 16 35 20.5 35 24C35 26 33.5 27.5 32 27.5C30.5 27.5 29 26 29 24C29 20.5 32 16 32 16Z" fill="#FEF08A" />
+                {/* Diya Base */}
+                <path d="M20 27C23 35 29 39 32 39C35 39 41 35 44 27C38 30 35 31 32 31C29 31 26 30 20 27Z" fill="#9F1239" />
+                {/* Ghungroo Bell Beads */}
+                <circle cx="24" cy="42" r="2" fill="#FDE047" />
+                <circle cx="28" cy="43.5" r="2" fill="#FDE047" />
+                <circle cx="32" cy="44" r="2" fill="#FDE047" />
+                <circle cx="36" cy="43.5" r="2" fill="#FDE047" />
+                <circle cx="40" cy="42" r="2" fill="#FDE047" />
+              </svg>
+            </div>
           </div>
-          <div className="opacity-75 animate-live-leaf">
-            <svg width="20" height="28" viewBox="0 0 34 44" fill="none">
-              <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.55" />
-              <path d="M17 2L17 42M17 15L27 22" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
+          {/* Guaranteed Full Text Visible Pill */}
+          <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#180211] border border-pink-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-pink-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-pink-500/30">
+            <Sparkles className="w-3 h-3 text-pink-300 shrink-0" />
+            <span>Nritya & Mudra</span>
           </div>
         </div>
 
-        {/* Cluster 4: Bottom-Left Wide Zone (To Left Of Countdown Timer) */}
-        <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] left-[17%] 2xl:left-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.7s" }}>
-          <div className="p-3 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-2xl shadow-rose-950/60 flex items-center gap-2.5">
-            <Theater className="w-7 h-7 text-amber-300 drop-shadow-[0_0_12px_rgba(245,184,66,0.6)]" />
-            <div className="h-6 w-px bg-rose-500/30" />
-            <Palette className="w-5 h-5 text-rose-300 drop-shadow-[0_0_10px_rgba(251,113,133,0.5)]" />
+        {/* Box 4: Bottom-Right (Kala & Vijayi - Fine Arts, AI & Triumph) */}
+        {/* Safely Positioned In Wide Outer Zone Away From Action Buttons */}
+        <div className="hidden xl:flex flex-col items-center absolute bottom-[6%] right-[8%] 2xl:right-[11%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "2.5s" }}>
+          <div className="w-28 h-28 2xl:w-32 2xl:h-32 rounded-2xl 2xl:rounded-3xl bg-gradient-to-br from-[#332203]/95 via-[#1c1201]/95 to-[#0d0800]/98 border-2 border-yellow-400/70 shadow-[0_0_30px_rgba(234,179,8,0.35)] backdrop-blur-xl flex flex-col items-center justify-center p-3 relative overflow-hidden group">
+            {/* Art Palette & Shining Championship Trophy SVG */}
+            <div className="relative">
+              <svg width="56" height="46" viewBox="0 0 64 52" fill="none" className="drop-shadow-[0_0_14px_rgba(250,204,21,0.7)]">
+                {/* Artist Wooden Palette */}
+                <path d="M12 28C10 20 16 12 26 12C36 12 42 18 42 26C42 30 38 34 34 34C31 34 30 32 28 32C26 32 24 35 24 38C24 41 20 42 16 40C12 38 12 32 12 28Z" fill="#78350F" opacity="0.95" />
+                {/* Color Dollops */}
+                <circle cx="20" cy="18" r="2.5" fill="#EF4444" />
+                <circle cx="28" cy="16" r="2.5" fill="#10B981" />
+                <circle cx="35" cy="20" r="2.5" fill="#3B82F6" />
+                <circle cx="37" cy="28" r="2.5" fill="#FACC15" />
+                {/* Golden Trophy Cup Overlay */}
+                <path d="M40 22H52C52 29 48 34 46 34V39H50V42H42V39H46V34C44 34 40 29 40 22Z" fill="#F59E0B" />
+                <path d="M38 24C35 24 35 28 38 28M54 24C57 24 57 28 54 28" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+            </div>
           </div>
-
-        </div>
-
-        {/* Cluster 5: Bottom-Right Wide Zone (To Right Of Countdown Timer) */}
-        <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] right-[17%] 2xl:right-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "2.3s" }}>
-
-          <div className="p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-2xl shadow-amber-950/60 flex items-center gap-2.5">
-            <Trophy className="w-7 h-7 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.6)]" />
-            <div className="h-6 w-px bg-amber-500/30" />
-            <Music className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_10px_rgba(253,224,71,0.5)]" />
+          {/* Guaranteed Full Text Visible Pill */}
+          <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#1c1201] border border-yellow-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-yellow-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-yellow-500/30">
+            <Sparkles className="w-3 h-3 text-yellow-300 shrink-0" />
+            <span>Kala & Vijayi</span>
           </div>
         </div>
 
@@ -567,11 +616,11 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Regal Headline With Pure White Line 1 & Golden Amber Line 2 (Matching Image 2 Reference) */}
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[3.9rem] 2xl:text-[4.2rem] font-black tracking-tight leading-[1.08] mb-5">
-            <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_18px_rgba(255,255,255,0.35)] whitespace-nowrap">
+          <h1 className="font-serif text-2xl min-[340px]:text-3xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[3.9rem] 2xl:text-[4.2rem] font-black tracking-tight leading-[1.12] sm:leading-[1.08] mb-5 px-1 max-w-full">
+            <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_18px_rgba(255,255,255,0.35)] break-words">
               Celebrating Cultural
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_28px_rgba(245,184,66,0.5)] whitespace-nowrap mt-1 sm:mt-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_28px_rgba(245,184,66,0.5)] break-words mt-1 sm:mt-2">
               Majesty & Excellence
             </span>
           </h1>
@@ -589,29 +638,29 @@ export const Home: React.FC = () => {
             <CountdownTimer targetDate="2026-11-18T09:00:00" />
           </div>
 
-          {/* Action Buttons (Vibrant Festival Palette) */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {/* Action Buttons (Vibrant Festival Palette & 280px Responsive) */}
+          <div className="mt-8 flex flex-col min-[440px]:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-sm min-[440px]:max-w-none px-2">
             <Link
               to="/competitions"
-              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black shadow-xl shadow-amber-500/35 hover:shadow-amber-500/50 hover:scale-105 border-2 border-yellow-200 transition-all flex items-center gap-2"
+              className="w-full min-[440px]:w-auto px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black shadow-xl shadow-amber-500/35 hover:shadow-amber-500/50 hover:scale-105 border-2 border-yellow-200 transition-all flex items-center justify-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-black" />
+              <Sparkles className="w-4 h-4 text-black shrink-0" />
               <span>Explore Competitions</span>
             </Link>
 
             <Link
               to="/leaderboard"
-              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-purple-300 hover:border-yellow-300 shadow-xl shadow-purple-950/50 hover:scale-105 transition-all flex items-center gap-2"
+              className="w-full min-[440px]:w-auto px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-purple-300 hover:border-yellow-300 shadow-xl shadow-purple-950/50 hover:scale-105 transition-all flex items-center justify-center gap-2"
             >
-              <Trophy className="w-4 h-4 text-yellow-300" />
+              <Trophy className="w-4 h-4 text-yellow-300 shrink-0" />
               <span>View Leaderboard</span>
             </Link>
 
             <button
               onClick={() => setIsRulebookOpen(true)}
-              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-emerald-700 via-teal-600 to-cyan-700 text-white border-2 border-emerald-300 hover:border-cyan-300 shadow-xl shadow-emerald-950/50 hover:scale-105 transition-all flex items-center gap-2"
+              className="w-full min-[440px]:w-auto px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-emerald-700 via-teal-600 to-cyan-700 text-white border-2 border-emerald-300 hover:border-cyan-300 shadow-xl shadow-emerald-950/50 hover:scale-105 transition-all flex items-center justify-center gap-2"
             >
-              <FileText className="w-4 h-4 text-emerald-200" />
+              <FileText className="w-4 h-4 text-emerald-200 shrink-0" />
               <span>View Full Rulebook (PDF)</span>
             </button>
           </div>
@@ -684,7 +733,7 @@ export const Home: React.FC = () => {
           Four High-Contrast Metric Showcase Cards With Icons & Amber Glow
           ========================================================================= */}
       <section className="py-14 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 min-[340px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 px-1 sm:px-0">
           {/* Stat 1: 30+ Participating Institutes (Royal Gold Theme) */}
           <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#2a1a04]/95 via-[#180f02]/98 to-[#060300] border-2 border-amber-400/70 hover:border-amber-300 shadow-2xl shadow-amber-950/60 hover:shadow-[0_0_35px_rgba(245,184,66,0.35)] transition-all duration-300 group overflow-hidden text-center">
             <div className="w-11 h-11 mx-auto rounded-xl bg-amber-500/25 border border-amber-400/60 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-lg shadow-amber-500/20">
@@ -747,7 +796,7 @@ export const Home: React.FC = () => {
           REDESIGNED OFFICIAL EVENT SCHEDULE & GUIDELINES SECTION
           Modern Festival Cards With Rich Badges, Category Icons & Guidelines CTA
           ========================================================================= */}
-      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section id="schedule" className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 mb-3 shadow-lg">
@@ -893,7 +942,7 @@ export const Home: React.FC = () => {
           DEDICATED TOP 3 CONTINGENTS PODIUM & CHAMPIONSHIP LEADERBOARD SECTION
           Olympic-Grade Podium Stage With Gold/Silver/Bronze Pedestals & Real-Time Standings
           ========================================================================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 text-xs font-black uppercase tracking-wider mb-2 backdrop-blur-md shadow-md">
@@ -932,7 +981,7 @@ export const Home: React.FC = () => {
 
 
       {/* Cultural Arenas Showcase */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
             Multidisciplinary Arenas

@@ -14,6 +14,12 @@ import {
   Trophy,
   Users,
   BookOpen,
+  Flame,
+  Music,
+  Layers,
+  Palette,
+  Bot,
+  Theater,
 } from "lucide-react";
 
 interface Competition {
@@ -417,6 +423,29 @@ export const CompetitionsPage: React.FC = () => {
     "Digital Arts",
   ];
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return <Flame className="w-3.5 h-3.5" />;
+      case "Music":
+        return <Music className="w-3.5 h-3.5" />;
+      case "Fashion":
+        return <Layers className="w-3.5 h-3.5" />;
+      case "Fine Arts":
+      case "Creative Arts":
+        return <Palette className="w-3.5 h-3.5" />;
+      case "Digital Arts":
+        return <Bot className="w-3.5 h-3.5" />;
+      case "Theatre":
+      case "Drama":
+        return <Theater className="w-3.5 h-3.5" />;
+      case "Literature":
+        return <BookOpen className="w-3.5 h-3.5" />;
+      default:
+        return <Sparkles className="w-3.5 h-3.5" />;
+    }
+  };
+
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
       case "Dance":
@@ -474,7 +503,7 @@ export const CompetitionsPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#070104] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
@@ -526,65 +555,71 @@ export const CompetitionsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Competitions Grid */}
+        {/* Competitions Grid (Matching Exact Home Page Event Card Architecture) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCompetitions.map((comp) => (
             <div
               key={comp.id}
-              className={`p-6 rounded-2xl ${getEventCardStyle(comp.category)} transition-all group shadow-xl flex flex-col justify-between backdrop-blur-xl hover:-translate-y-1`}
+              className={`p-5 sm:p-6 rounded-2xl ${getEventCardStyle(comp.category)} hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden backdrop-blur-xl`}
             >
+              {/* Ambient Category Corner Accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
+
               <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span
-                    className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${getCategoryBadgeClass(
-                      comp.category
-                    )}`}
-                  >
-                    {comp.category}
+                {/* Card Top: Category Badge On Left + Date & Time Stacked On Right */}
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <span className={`inline-flex items-center gap-1.5 text-xs font-extrabold px-3 py-1.5 rounded-full border shadow-sm ${getCategoryBadgeClass(comp.category)}`}>
+                    {getCategoryIcon(comp.category)}
+                    <span>{comp.category}</span>
                   </span>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#1a0409] text-amber-200 border border-amber-500/30">
+                  <div className="text-right shrink-0">
+                    <span className="flex items-center justify-end gap-1 text-xs font-bold text-amber-200">
+                      <Calendar className="w-3 h-3 text-amber-400" />
+                      {comp.event_date}
+                    </span>
+                    <span className="flex items-center justify-end gap-1 text-[11px] text-amber-400 font-semibold mt-0.5">
+                      <Clock className="w-3 h-3 text-amber-400" />
+                      {comp.start_time}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Event Title In Bold White & Serif Font */}
+                <h3 className="text-base sm:text-lg font-serif font-black text-white group-hover:text-amber-200 transition-colors leading-snug line-clamp-2">
+                  {comp.title}
+                </h3>
+
+                {/* Event Key Highlights Badges */}
+                <div className="flex flex-wrap items-center gap-2 mt-3">
+                  <span className="text-[10px] font-black px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/35 text-amber-300">
+                    🥇 {comp.first_place_points || 40} Pts • 🥈 {comp.second_place_points || 25} Pts • 🥉 {comp.third_place_points || 15} Pts
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-black/40 border border-white/20 text-white truncate max-w-[140px]">
                     {comp.arena}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-amber-100 group-hover:text-amber-300 transition-colors leading-snug mb-2 drop-shadow-sm">
-                  {comp.title}
-                </h3>
-
-                <p className="text-xs text-rose-200/80 line-clamp-3 leading-relaxed">
+                {/* Rules Summary Snippet */}
+                <p className="text-xs text-rose-100/80 mt-3 line-clamp-3 leading-relaxed font-medium">
                   {comp.rules_summary}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-rose-950/60 space-y-3">
-                <div className="flex items-center justify-between text-xs text-rose-200">
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-amber-300" />
-                    <span>{comp.event_date}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-amber-300" />
-                    <span>{comp.start_time}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-rose-200">
+              {/* Card Bottom: Venue + Guidelines Button */}
+              <div className="mt-6 pt-4 border-t border-white/10 space-y-3.5">
+                <div className="flex items-center justify-between text-xs text-gray-300">
                   <div className="flex items-center gap-1.5 truncate">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                    <span className="truncate">{comp.venue}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-amber-300 font-bold shrink-0">
-                    <Trophy className="w-3.5 h-3.5" />
-                    <span>{comp.first_place_points || 40} Pts</span>
+                    <span className="truncate font-semibold">{comp.venue}</span>
                   </div>
                 </div>
 
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openGuidelines(comp)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-400 hover:via-yellow-300 hover:to-orange-500 hover:text-black text-amber-200 text-xs font-black border-2 border-amber-400/60 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/35"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-400 hover:via-yellow-300 hover:to-orange-500 hover:text-black text-amber-200 text-xs font-black border-2 border-amber-400/60 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/35 group/btn"
                 >
-                  <BookOpen className="w-3.5 h-3.5" />
+                  <BookOpen className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-black transition-colors" />
                   <span>Guidelines & Scoring Rubric</span>
                 </button>
               </div>

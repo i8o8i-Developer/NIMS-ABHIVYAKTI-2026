@@ -17,14 +17,14 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-gradient-to-r from-[#280410]/95 via-[#1b0526]/95 to-[#0b1d2e]/95 border-b-2 border-amber-400/50 shadow-[0_4px_30px_rgba(245,158,11,0.25)] transition-all">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 min-[340px]:px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
         {/* Left: NIMS University Crest */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3.5 shrink-0 group">
-          <div className="h-11 sm:h-12 bg-white/95 px-2.5 sm:px-3 py-1.5 rounded-xl border-2 border-amber-400/60 shadow-lg flex items-center justify-center transition-transform group-hover:scale-105">
+          <div className="h-10 min-[340px]:h-11 sm:h-12 bg-white/95 px-2 min-[340px]:px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border-2 border-amber-400/60 shadow-lg flex items-center justify-center transition-transform group-hover:scale-105">
             <img
               src="/NIMS-LOGO.png"
               alt="NIMS University Rajasthan"
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-7 min-[340px]:h-8 sm:h-9 w-auto object-contain"
             />
           </div>
         </Link>
@@ -76,15 +76,15 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Right Mobile: Student Council Emblem Badge + Hamburger Button */}
-        <div className="lg:hidden flex items-center gap-2.5">
+        <div className="lg:hidden flex items-center gap-1.5 min-[340px]:gap-2.5">
           {/* Mobile Student Council Emblem Badge */}
-          <div className="h-11 px-2.5 py-1 rounded-xl bg-gradient-to-r from-[#380616] via-[#2a052e] to-[#121e3d] border-2 border-amber-400/80 shadow-md flex items-center gap-1.5">
+          <div className="h-10 min-[340px]:h-11 px-2 min-[340px]:px-2.5 py-1 rounded-xl bg-gradient-to-r from-[#380616] via-[#2a052e] to-[#121e3d] border-2 border-amber-400/80 shadow-md flex items-center gap-1.5">
             <img
               src="/STUDENT-COUNCIL-LOGO.png"
               alt="NIMS Student Council"
-              className="h-7 w-7 rounded-full bg-white p-0.5 object-contain shrink-0 border border-amber-300"
+              className="h-6 w-6 min-[340px]:h-7 min-[340px]:w-7 rounded-full bg-white p-0.5 object-contain shrink-0 border border-amber-300"
             />
-            <span className="text-[10px] font-serif font-black text-amber-300 uppercase leading-none pr-0.5">
+            <span className="hidden min-[360px]:inline text-[10px] font-serif font-black text-amber-300 uppercase leading-none pr-0.5">
               Council
             </span>
           </div>
@@ -92,10 +92,10 @@ export const Navbar: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-gradient-to-r from-rose-900 to-amber-700 border-2 border-amber-400 text-yellow-300 shadow-md"
+            className="p-2 min-[340px]:p-2.5 rounded-xl bg-gradient-to-r from-rose-900 to-amber-700 border-2 border-amber-400 text-yellow-300 shadow-md"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 min-[340px]:w-6 min-[340px]:h-6" /> : <Menu className="w-5 h-5 min-[340px]:w-6 min-[340px]:h-6" />}
           </button>
         </div>
       </div>
