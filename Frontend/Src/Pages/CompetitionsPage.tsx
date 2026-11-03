@@ -420,22 +420,45 @@ export const CompetitionsPage: React.FC = () => {
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
       case "Dance":
-        return "bg-rose-950/70 border-rose-500/40 text-rose-300";
+        return "bg-pink-500/25 border-pink-400 text-pink-200 font-bold";
       case "Music":
-        return "bg-amber-950/70 border-amber-500/40 text-amber-300";
+        return "bg-amber-500/25 border-amber-400 text-amber-200 font-bold";
       case "Fashion":
-        return "bg-purple-950/70 border-purple-500/40 text-purple-300";
+        return "bg-cyan-500/25 border-cyan-400 text-cyan-200 font-bold";
       case "Fine Arts":
-        return "bg-yellow-950/70 border-yellow-500/40 text-yellow-300";
+        return "bg-purple-500/25 border-purple-400 text-purple-200 font-bold";
       case "Digital Arts":
-        return "bg-cyan-950/70 border-cyan-500/40 text-cyan-300";
+        return "bg-blue-500/25 border-blue-400 text-blue-200 font-bold";
       case "Theatre":
       case "Drama":
-        return "bg-red-950/70 border-red-500/40 text-red-300";
+        return "bg-red-500/25 border-red-400 text-red-200 font-bold";
       case "Literature":
-        return "bg-emerald-950/70 border-emerald-500/40 text-emerald-300";
+        return "bg-emerald-500/25 border-emerald-400 text-emerald-200 font-bold";
       default:
-        return "bg-amber-500/10 border-amber-500/30 text-amber-300";
+        return "bg-amber-500/25 border-amber-400 text-amber-200 font-bold";
+    }
+  };
+
+  const getEventCardStyle = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return "bg-gradient-to-b from-[#38091d]/95 via-[#220511]/98 to-[#130209] border-2 border-pink-500/70 hover:border-pink-300 shadow-[0_8px_30px_rgba(236,72,153,0.25)]";
+      case "Music":
+        return "bg-gradient-to-b from-[#3d2406]/95 via-[#241503]/98 to-[#130a01] border-2 border-amber-400/70 hover:border-amber-300 shadow-[0_8px_30px_rgba(245,158,11,0.25)]";
+      case "Literature":
+        return "bg-gradient-to-b from-[#06331e]/95 via-[#031f12]/98 to-[#011209] border-2 border-emerald-400/70 hover:border-emerald-300 shadow-[0_8px_30px_rgba(16,185,129,0.25)]";
+      case "Fashion":
+        return "bg-gradient-to-b from-[#082a45]/95 via-[#041a2c]/98 to-[#020e18] border-2 border-cyan-400/70 hover:border-cyan-300 shadow-[0_8px_30px_rgba(6,182,212,0.25)]";
+      case "Fine Arts":
+      case "Creative Arts":
+        return "bg-gradient-to-b from-[#2d0947]/95 via-[#1b052c]/98 to-[#0e0217] border-2 border-purple-400/70 hover:border-purple-300 shadow-[0_8px_30px_rgba(168,85,247,0.25)]";
+      case "Digital Arts":
+        return "bg-gradient-to-b from-[#131c52]/95 via-[#0a1033]/98 to-[#05081c] border-2 border-blue-400/70 hover:border-blue-300 shadow-[0_8px_30px_rgba(59,130,246,0.25)]";
+      case "Drama":
+      case "Theatre":
+        return "bg-gradient-to-b from-[#3b080f]/95 via-[#240409]/98 to-[#130205] border-2 border-red-500/70 hover:border-red-300 shadow-[0_8px_30px_rgba(239,68,68,0.25)]";
+      default:
+        return "bg-gradient-to-b from-[#300512]/95 via-[#1a0208]/98 to-[#0d0104] border-2 border-amber-400/70 shadow-[0_8px_30px_rgba(245,184,66,0.25)]";
     }
   };
 
@@ -451,7 +474,7 @@ export const CompetitionsPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0a0103] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
@@ -472,7 +495,7 @@ export const CompetitionsPage: React.FC = () => {
         </div>
 
         {/* Filter Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-[#0d0104]/95 p-4 rounded-2xl border border-amber-500/30 backdrop-blur-xl shadow-xl shadow-black/60">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-gradient-to-r from-[#290514]/95 via-[#1b0426]/95 to-[#0b1c2e]/95 p-4 rounded-2xl border-2 border-amber-400/50 backdrop-blur-xl shadow-xl shadow-rose-950/40">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 custom-scrollbar">
             {categories.map((cat) => (
@@ -481,8 +504,8 @@ export const CompetitionsPage: React.FC = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat
-                    ? "bg-gradient-to-r from-amber-500 to-yellow-400 text-black shadow-md shadow-amber-500/30"
-                    : "text-amber-200/70 hover:text-amber-200 hover:bg-amber-500/10"
+                    ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black font-black shadow-md shadow-amber-500/40 border border-yellow-200"
+                    : "text-amber-100 font-bold hover:text-white hover:bg-white/10"
                 }`}
               >
                 {cat}
@@ -498,7 +521,7 @@ export const CompetitionsPage: React.FC = () => {
               placeholder="Search Competitions Or Venues..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#140206] border border-amber-500/30 focus:border-amber-400 text-xs text-amber-100 placeholder-amber-200/40 focus:outline-none transition-colors"
+              className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#18030e] border-2 border-amber-400/40 focus:border-amber-400 text-xs text-amber-100 placeholder-rose-200/50 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -508,7 +531,7 @@ export const CompetitionsPage: React.FC = () => {
           {filteredCompetitions.map((comp) => (
             <div
               key={comp.id}
-              className="p-6 rounded-2xl bg-[#0c0104]/90 border border-amber-500/25 hover:border-amber-400/70 hover:bg-[#140206] transition-all group shadow-xl shadow-black/80 flex flex-col justify-between backdrop-blur-xl"
+              className={`p-6 rounded-2xl ${getEventCardStyle(comp.category)} transition-all group shadow-xl flex flex-col justify-between backdrop-blur-xl hover:-translate-y-1`}
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -559,7 +582,7 @@ export const CompetitionsPage: React.FC = () => {
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openGuidelines(comp)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[#1b0307] hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black text-amber-200 text-xs font-bold border border-amber-500/40 transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-400 hover:via-yellow-300 hover:to-orange-500 hover:text-black text-amber-200 text-xs font-black border-2 border-amber-400/60 transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/35"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>Guidelines & Scoring Rubric</span>

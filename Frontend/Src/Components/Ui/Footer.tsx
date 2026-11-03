@@ -4,13 +4,13 @@ import { ShieldCheck, Award, Heart, Phone, Mail, MapPin, ExternalLink } from "lu
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#020202] border-t border-white/10 pt-14 pb-8 text-gray-300 relative z-30 overflow-hidden">
+    <footer className="w-full bg-gradient-to-b from-[#240410] via-[#1a031e] to-[#0c0112] border-t-2 border-amber-400/50 pt-14 pb-8 text-amber-100 relative z-30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-amber-400/30">
           {/* Col 1: Festival Identity */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center space-x-3">
-              <div className="bg-white/95 p-1.5 rounded-lg border border-amber-500/30">
+              <div className="bg-white/95 p-1.5 rounded-xl border-2 border-amber-400/50 shadow-lg">
                 <img
                   src="/NIMS-LOGO.png"
                   alt="NIMS University Rajasthan"
@@ -22,14 +22,14 @@ export const Footer: React.FC = () => {
                 <p className="text-[11px] text-amber-400">Rajasthan • Jaipur</p>
               </div>
             </div>
-            <p className="text-xs leading-relaxed text-rose-200/70">
+            <p className="text-xs leading-relaxed text-rose-200/90 font-medium">
               NIMS Abhivyakti 2026 Is The Flagship Annual Inter-College Cultural Championship Celebrating Talent, Heritage, Music, Dance, And Arts Across Faculties.
             </p>
             <div className="pt-2 flex items-center space-x-3">
-              <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-amber-300">
+              <span className="text-[10px] font-black px-2.5 py-1 rounded-md bg-gradient-to-r from-amber-500/20 to-pink-500/20 border border-amber-400/40 text-amber-200">
                 NAAC A+ Accredited
               </span>
-              <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-amber-300">
+              <span className="text-[10px] font-black px-2.5 py-1 rounded-md bg-gradient-to-r from-cyan-500/20 to-teal-500/20 border border-cyan-400/40 text-cyan-200">
                 NIRF Top 100
               </span>
             </div>

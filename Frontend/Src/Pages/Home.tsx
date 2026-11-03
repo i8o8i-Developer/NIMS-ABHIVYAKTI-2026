@@ -334,23 +334,46 @@ export const Home: React.FC = () => {
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
       case "Dance":
-        return "bg-rose-950/80 border-rose-500/40 text-rose-300";
+        return "bg-pink-500/25 border-pink-400 text-pink-200";
       case "Music":
-        return "bg-amber-950/80 border-amber-500/40 text-amber-300";
+        return "bg-amber-500/25 border-amber-400 text-amber-200";
       case "Fashion":
-        return "bg-purple-950/80 border-purple-500/40 text-purple-300";
+        return "bg-cyan-500/25 border-cyan-400 text-cyan-200";
       case "Fine Arts":
       case "Creative Arts":
-        return "bg-yellow-950/80 border-yellow-500/40 text-yellow-300";
+        return "bg-purple-500/25 border-purple-400 text-purple-200";
       case "Digital Arts":
-        return "bg-cyan-950/80 border-cyan-500/40 text-cyan-300";
+        return "bg-blue-500/25 border-blue-400 text-blue-200";
       case "Drama":
       case "Theatre":
-        return "bg-red-950/80 border-red-500/40 text-red-300";
+        return "bg-red-500/25 border-red-400 text-red-200";
       case "Literature":
-        return "bg-emerald-950/80 border-emerald-500/40 text-emerald-300";
+        return "bg-emerald-500/25 border-emerald-400 text-emerald-200";
       default:
-        return "bg-amber-500/10 border-amber-500/30 text-amber-300";
+        return "bg-amber-500/25 border-amber-400 text-amber-200";
+    }
+  };
+
+  const getEventCardStyle = (category: string) => {
+    switch (category) {
+      case "Dance":
+        return "bg-gradient-to-b from-[#38091d]/95 via-[#220511]/98 to-[#130209] border-2 border-pink-500/70 hover:border-pink-300 shadow-[0_8px_30px_rgba(236,72,153,0.25)]";
+      case "Music":
+        return "bg-gradient-to-b from-[#3d2406]/95 via-[#241503]/98 to-[#130a01] border-2 border-amber-400/70 hover:border-amber-300 shadow-[0_8px_30px_rgba(245,158,11,0.25)]";
+      case "Literature":
+        return "bg-gradient-to-b from-[#06331e]/95 via-[#031f12]/98 to-[#011209] border-2 border-emerald-400/70 hover:border-emerald-300 shadow-[0_8px_30px_rgba(16,185,129,0.25)]";
+      case "Fashion":
+        return "bg-gradient-to-b from-[#082a45]/95 via-[#041a2c]/98 to-[#020e18] border-2 border-cyan-400/70 hover:border-cyan-300 shadow-[0_8px_30px_rgba(6,182,212,0.25)]";
+      case "Fine Arts":
+      case "Creative Arts":
+        return "bg-gradient-to-b from-[#2d0947]/95 via-[#1b052c]/98 to-[#0e0217] border-2 border-purple-400/70 hover:border-purple-300 shadow-[0_8px_30px_rgba(168,85,247,0.25)]";
+      case "Digital Arts":
+        return "bg-gradient-to-b from-[#131c52]/95 via-[#0a1033]/98 to-[#05081c] border-2 border-blue-400/70 hover:border-blue-300 shadow-[0_8px_30px_rgba(59,130,246,0.25)]";
+      case "Drama":
+      case "Theatre":
+        return "bg-gradient-to-b from-[#3b080f]/95 via-[#240409]/98 to-[#130205] border-2 border-red-500/70 hover:border-red-300 shadow-[0_8px_30px_rgba(239,68,68,0.25)]";
+      default:
+        return "bg-gradient-to-b from-[#300512]/95 via-[#1a0208]/98 to-[#0d0104] border-2 border-amber-400/70 shadow-[0_8px_30px_rgba(245,184,66,0.25)]";
     }
   };
 
@@ -395,7 +418,7 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#040404] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
+    <div className="min-h-screen bg-[#18030c] text-amber-50 selection:bg-amber-500 selection:text-black relative overflow-x-hidden antialiased">
       {/* Background Lighting, Spotlight Beams & Cultural Motifs */}
       <FloatingBackgroundElements />
 
@@ -566,11 +589,11 @@ export const Home: React.FC = () => {
             <CountdownTimer targetDate="2026-11-18T09:00:00" />
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons (Vibrant Festival Palette) */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/competitions"
-              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all flex items-center gap-2"
+              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black shadow-xl shadow-amber-500/35 hover:shadow-amber-500/50 hover:scale-105 border-2 border-yellow-200 transition-all flex items-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-black" />
               <span>Explore Competitions</span>
@@ -578,17 +601,17 @@ export const Home: React.FC = () => {
 
             <Link
               to="/leaderboard"
-              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#140206] text-amber-200 border border-amber-500/40 hover:bg-rose-950/70 hover:text-white transition-all flex items-center gap-2 shadow-xl hover:scale-105"
+              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-purple-300 hover:border-yellow-300 shadow-xl shadow-purple-950/50 hover:scale-105 transition-all flex items-center gap-2"
             >
-              <Trophy className="w-4 h-4 text-amber-400" />
+              <Trophy className="w-4 h-4 text-yellow-300" />
               <span>View Leaderboard</span>
             </Link>
 
             <button
               onClick={() => setIsRulebookOpen(true)}
-              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-[#22040b] via-[#160207] to-[#120104] text-amber-200 border-2 border-rose-500/50 hover:border-amber-400 hover:bg-rose-950 hover:text-white transition-all flex items-center gap-2 shadow-xl shadow-rose-950/40 hover:scale-105"
+              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-emerald-700 via-teal-600 to-cyan-700 text-white border-2 border-emerald-300 hover:border-cyan-300 shadow-xl shadow-emerald-950/50 hover:scale-105 transition-all flex items-center gap-2"
             >
-              <FileText className="w-4 h-4 text-rose-400" />
+              <FileText className="w-4 h-4 text-emerald-200" />
               <span>View Full Rulebook (PDF)</span>
             </button>
           </div>
@@ -727,7 +750,7 @@ export const Home: React.FC = () => {
       <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d0d0d] border border-amber-500/40 text-amber-300 mb-3 shadow-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 mb-3 shadow-lg">
               <Calendar className="w-4 h-4 text-amber-400" />
               <span className="text-xs font-black uppercase tracking-wider">
                 Four Days Of Cultural Brilliance • 18-21 Nov 2026
@@ -743,7 +766,7 @@ export const Home: React.FC = () => {
 
           {/* 4-Day Filter Tabs & PDF Quick Action */}
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#0c0c0c] border border-amber-500/30 overflow-x-auto max-w-full shadow-xl">
+            <div className="flex items-center gap-1.5 p-2 rounded-2xl bg-gradient-to-r from-[#290514]/95 via-[#1a0426]/95 to-[#0b1c2e]/95 border-2 border-amber-400/50 overflow-x-auto max-w-full shadow-xl">
               {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
                 const labelMap: Record<string, string> = {
                   "Day 1": "Day 1 (18 Nov)",
@@ -752,14 +775,23 @@ export const Home: React.FC = () => {
                   "Day 4": "Day 4 (21 Nov)",
                   All: "View All 22 Events",
                 };
+
+                const activeStyles: Record<string, string> = {
+                  "Day 1": "bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black shadow-amber-500/40",
+                  "Day 2": "bg-gradient-to-r from-pink-600 via-rose-500 to-pink-600 text-white shadow-pink-500/40",
+                  "Day 3": "bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 text-white shadow-purple-500/40",
+                  "Day 4": "bg-gradient-to-r from-cyan-500 via-teal-400 to-sky-500 text-black shadow-cyan-500/40",
+                  All: "bg-gradient-to-r from-rose-600 via-pink-600 to-amber-500 text-white shadow-rose-500/40",
+                };
+
                 return (
                   <button
                     key={day}
                     onClick={() => setSelectedDay(day)}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl text-xs font-black whitespace-nowrap transition-all duration-300 ${
                       selectedDay === day
-                        ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/30 scale-105"
-                        : "text-gray-400 hover:text-white hover:bg-white/5"
+                        ? `${activeStyles[day]} font-black shadow-lg scale-105 border border-white/40`
+                        : "text-amber-100 hover:text-white hover:bg-white/10"
                     }`}
                   >
                     {labelMap[day]}
@@ -770,7 +802,7 @@ export const Home: React.FC = () => {
 
             <button
               onClick={() => setIsRulebookOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#121212] hover:bg-[#1c1c1c] border border-amber-500/35 text-amber-200 text-xs font-bold transition-all shadow-md shrink-0 hover:border-amber-400"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 border-2 border-emerald-400 text-emerald-100 text-xs font-black transition-all shadow-lg shrink-0 hover:scale-105"
               title="Inspect Full PDF Rulebook"
             >
               <FileText className="w-4 h-4 text-rose-400" />
@@ -784,7 +816,7 @@ export const Home: React.FC = () => {
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className="p-6 rounded-2xl bg-gradient-to-b from-[#141414]/95 via-[#0b0b0b]/98 to-[#040404] border-2 border-amber-500/25 hover:border-amber-400/80 hover:shadow-[0_12px_40px_rgba(245,184,66,0.18)] hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden"
+              className={`p-6 rounded-2xl ${getEventCardStyle(item.category)} hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden`}
             >
               {/* Ambient Category Corner Accent */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
@@ -836,7 +868,7 @@ export const Home: React.FC = () => {
                 {/* Direct Event Guideline & Rules Action Button */}
                 <button
                   onClick={() => openEventGuidelines(item)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#121212] hover:bg-gradient-to-r hover:from-amber-500 hover:via-yellow-400 hover:to-amber-600 hover:text-black text-amber-300 text-xs font-black border border-amber-500/40 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/25 group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-400 hover:via-yellow-300 hover:to-orange-500 hover:text-black text-amber-200 text-xs font-black border-2 border-amber-400/60 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-amber-500/35 group/btn"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-amber-400 group-hover/btn:text-black transition-colors" />
                   <span>Guidelines & Scoring Rubric</span>
@@ -849,7 +881,7 @@ export const Home: React.FC = () => {
         <div className="mt-10 text-center">
           <Link
             to="/schedule"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#0f0f0f] border-2 border-amber-500/40 text-amber-300 hover:bg-gradient-to-r hover:from-amber-500 hover:to-yellow-400 hover:text-black transition-all text-xs font-black shadow-lg shadow-black/80"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-400 to-orange-500 text-black font-black border-2 border-yellow-200 shadow-xl shadow-amber-500/35 hover:scale-105 transition-all text-xs"
           >
             <span>View Complete Master Timeline</span>
             <ChevronRight className="w-4 h-4" />
@@ -864,7 +896,7 @@ export const Home: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0d0d0d] border border-amber-500/35 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 text-xs font-black uppercase tracking-wider mb-2 backdrop-blur-md shadow-md">
               <Trophy className="w-4 h-4 text-amber-400" />
               <span>Top 3 College Contingents Podium</span>
             </div>
@@ -878,7 +910,7 @@ export const Home: React.FC = () => {
           <div>
             <Link
               to="/leaderboard"
-              className="px-6 py-2.5 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-black transition-all flex items-center gap-1.5 shadow-md shadow-amber-500/20"
+              className="px-6 py-3 rounded-xl text-xs font-black bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-pink-300 hover:border-yellow-300 transition-all flex items-center gap-1.5 shadow-xl shadow-purple-500/30 hover:scale-105"
             >
               <span>Full Standings</span>
               <ArrowRight className="w-4 h-4" />
@@ -971,10 +1003,18 @@ export const Home: React.FC = () => {
             },
           ].map((arena, i) => {
             const Icon = arena.icon;
+            const arenaGradients = [
+              "bg-gradient-to-b from-[#38091d]/95 via-[#220511]/98 to-[#130209] border-2 border-rose-500/70 hover:border-rose-400 shadow-xl shadow-rose-950/40",
+              "bg-gradient-to-b from-[#3d2406]/95 via-[#241503]/98 to-[#130a01] border-2 border-amber-400/70 hover:border-amber-300 shadow-xl shadow-amber-950/40",
+              "bg-gradient-to-b from-[#2d0947]/95 via-[#1b052c]/98 to-[#0e0217] border-2 border-purple-400/70 hover:border-purple-300 shadow-xl shadow-purple-950/40",
+              "bg-gradient-to-b from-[#381804]/95 via-[#240e02]/98 to-[#120701] border-2 border-yellow-500/70 hover:border-yellow-400 shadow-xl shadow-yellow-950/40",
+              "bg-gradient-to-b from-[#082a45]/95 via-[#041a2c]/98 to-[#020e18] border-2 border-cyan-400/70 hover:border-cyan-300 shadow-xl shadow-cyan-950/40",
+              "bg-gradient-to-b from-[#3b080f]/95 via-[#240409]/98 to-[#130205] border-2 border-red-500/70 hover:border-red-300 shadow-xl shadow-red-950/40",
+            ];
             return (
               <div
                 key={i}
-                className={`p-6 rounded-2xl bg-[#0c0c0c]/95 border border-white/10 hover:border-amber-500/40 transition-all duration-300 group shadow-lg ${arena.cardHover}`}
+                className={`p-6 rounded-2xl ${arenaGradients[i % arenaGradients.length]} transition-all duration-300 group shadow-xl hover:-translate-y-1`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className={`p-3 rounded-xl border group-hover:scale-110 transition-transform ${arena.iconStyle}`}>
@@ -1012,7 +1052,7 @@ export const Home: React.FC = () => {
             return (
               <div
                 key={index}
-                className="rounded-xl bg-[#0c0c0c] border border-white/10 overflow-hidden transition-all"
+                className="rounded-2xl bg-gradient-to-r from-[#290514]/90 via-[#1e0422]/90 to-[#100318]/90 border-2 border-amber-400/40 overflow-hidden transition-all shadow-lg"
               >
                 <button
                   onClick={() => setActiveFaq(isOpen ? null : index)}

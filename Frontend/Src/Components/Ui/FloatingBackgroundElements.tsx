@@ -20,15 +20,22 @@ import {
 export const FloatingBackgroundElements: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
-      {/* Luxurious Theatrical Wine-Crimson Hero Stage Fading Smoothly Into Obsidian Black */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_#180307_0%,_#24050e_6%,_#160207_12%,_#0a0104_16%,_#060606_21%,_#030303_32%,_#020202_60%,_#000000_100%)]" />
+      {/* Radiant Multi-Tonal Indian Cultural Festive Canvas (No Obsidian Black Void) */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,_#2c0410_0%,_#38061a_8%,_#29042b_22%,_#130d3a_40%,_#072436_58%,_#04281e_74%,_#2b1504_88%,_#360616_100%)]" />
 
       {/* Atmospheric Multi-Colored Festival Auras & Stage Glows */}
-      <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,18,60,0.32)_0%,_rgba(100,12,38,0.20)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
-      <div className="absolute top-[32%] -left-20 w-[32rem] h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(217,70,239,0.12)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
-      <div className="absolute top-[32%] -right-20 w-[32rem] h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.12)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
-      <div className="absolute top-[60%] left-1/4 w-[36rem] h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.10)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
-      <div className="absolute top-[78%] right-1/4 w-[36rem] h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.10)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      <div className="absolute top-[3%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[38rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(225,29,72,0.36)_0%,_rgba(159,18,57,0.24)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
+      <div className="absolute top-[26%] -left-20 w-[36rem] h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(217,70,239,0.22)_0%,_rgba(192,38,211,0.12)_45%,_transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[26%] -right-20 w-[36rem] h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.22)_0%,_rgba(14,116,144,0.12)_45%,_transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[52%] left-1/4 w-[40rem] h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.20)_0%,_rgba(217,119,6,0.10)_45%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      <div className="absolute top-[72%] right-1/4 w-[40rem] h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.18)_0%,_rgba(5,150,105,0.10)_45%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      <div className="absolute top-[88%] left-1/3 w-[36rem] h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,85,247,0.22)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
+
+      {/* Floating Colorful Bokeh Light Orbs Across Stages */}
+      <div className="absolute top-[15%] left-[12%] w-24 h-24 rounded-full bg-rose-500/15 blur-2xl animate-live-float-slow pointer-events-none" />
+      <div className="absolute top-[28%] right-[14%] w-28 h-28 rounded-full bg-amber-400/15 blur-2xl animate-live-float-reverse pointer-events-none" />
+      <div className="absolute top-[48%] left-[10%] w-32 h-32 rounded-full bg-cyan-400/15 blur-2xl animate-live-float-slow pointer-events-none" />
+      <div className="absolute top-[68%] right-[12%] w-32 h-32 rounded-full bg-emerald-400/15 blur-2xl animate-live-float-reverse pointer-events-none" />
 
       {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS

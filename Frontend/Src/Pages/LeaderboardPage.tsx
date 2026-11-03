@@ -45,7 +45,7 @@ export const LeaderboardPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0103] text-amber-50 relative selection:bg-amber-500 selection:text-black overflow-x-hidden">
+    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
@@ -80,7 +80,7 @@ export const LeaderboardPage: React.FC = () => {
             <button
               onClick={fetchStandings}
               disabled={loading}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black text-xs font-black transition-all flex items-center gap-2 shadow-xl shadow-amber-500/25 hover:scale-105 uppercase tracking-wider"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-black text-xs font-black transition-all flex items-center gap-2 shadow-xl shadow-amber-500/40 hover:scale-105 uppercase tracking-wider border-2 border-yellow-200"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
               <span>Refresh Standings</span>

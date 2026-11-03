@@ -70,7 +70,7 @@ export const ContingentsPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0103] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />

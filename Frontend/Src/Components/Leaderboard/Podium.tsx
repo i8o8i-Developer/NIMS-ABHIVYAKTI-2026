@@ -86,15 +86,15 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
               {/* Header: Square Box, Badge, Full College Name & Points */}
               <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
                 {/* Silver Rounded Square Box With Guaranteed In-Bounds Padding */}
-                <div className="w-24 sm:w-28 h-18 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#182030] via-[#0d131f] to-[#05080e] border-2 sm:border-3 border-slate-300 shadow-[0_0_30px_rgba(203,213,225,0.35)] flex items-center justify-center px-3 transform hover:scale-105 transition-all duration-300 group">
-                  <span className="font-serif font-black text-base sm:text-xl text-slate-100 tracking-normal drop-shadow-[0_2px_10px_rgba(203,213,225,0.4)] whitespace-nowrap">
+                <div className="w-24 sm:w-28 h-18 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#1b2b48] via-[#101c30] to-[#070e1c] border-2 sm:border-3 border-cyan-300 shadow-[0_0_30px_rgba(56,189,248,0.45)] flex items-center justify-center px-3 transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-base sm:text-xl text-cyan-100 tracking-normal drop-shadow-[0_2px_10px_rgba(56,189,248,0.5)] whitespace-nowrap">
                     {second.college_code.slice(0, 4)}
                   </span>
                 </div>
 
                 {/* Silver Medal Badge Tag */}
                 <div className="mt-2.5 sm:mt-3">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-400/20 border border-slate-300/60 text-slate-200 text-[11px] sm:text-xs font-black shadow-[0_0_12px_rgba(203,213,225,0.25)] whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/25 border border-cyan-400 text-cyan-200 text-[11px] sm:text-xs font-black shadow-[0_0_15px_rgba(56,189,248,0.35)] whitespace-nowrap">
                     #2 Silver 🥈
                   </span>
                 </div>
@@ -107,8 +107,8 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
                 </div>
 
                 {/* Scoreboard Points Pill */}
-                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-gradient-to-r from-[#121926] to-[#0a0e17] border border-slate-400/40 shadow-md">
-                  <span className="text-xs sm:text-sm font-mono font-black text-slate-200 tracking-wide">
+                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-gradient-to-r from-[#1a2d4d] to-[#0c182b] border border-cyan-400/60 shadow-md">
+                  <span className="text-xs sm:text-sm font-mono font-black text-cyan-200 tracking-wide">
                     {second.total_points} PTS
                   </span>
                 </div>
@@ -117,16 +117,16 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
               {/* Physical Silver Step Riser */}
               <div className="w-full">
                 {/* Brushed Silver Landing Platform Top */}
-                <div className="h-3.5 sm:h-4 rounded-t-xl bg-gradient-to-r from-slate-400 via-slate-200 to-slate-400 shadow-[0_0_20px_rgba(203,213,225,0.35)] border-t border-white" />
+                <div className="h-3.5 sm:h-4 rounded-t-xl bg-gradient-to-r from-sky-400 via-white to-sky-400 shadow-[0_0_24px_rgba(56,189,248,0.6)] border-t border-white" />
                 {/* Riser Face */}
-                <div className="h-34 sm:h-46 bg-gradient-to-b from-[#141c2c] via-[#0a0f19] to-[#04060b] border-x-2 border-b-2 border-slate-400/40 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
+                <div className="h-34 sm:h-46 bg-gradient-to-b from-[#182a47] via-[#0f1d33] to-[#08101d] border-x-2 border-b-2 border-cyan-400/60 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
                   <div className="w-full text-center">
-                    <span className="font-serif font-black text-4xl sm:text-6xl text-slate-200 drop-shadow-[0_4px_20px_rgba(203,213,225,0.45)]">
+                    <span className="font-serif font-black text-4xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-white via-cyan-100 to-sky-300 drop-shadow-[0_4px_20px_rgba(56,189,248,0.6)]">
                       II
                     </span>
                   </div>
                   {/* Medal Matrix */}
-                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-slate-200 bg-[#0c121d] px-2.5 py-1 rounded-xl border border-slate-500/40 shadow-inner">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-cyan-100 bg-[#0d1829] px-2.5 py-1 rounded-xl border border-cyan-400/50 shadow-inner">
                     <span>🥇 {second.gold_medals}</span>
                     <span>🥈 {second.silver_medals}</span>
                     <span>🥉 {second.bronze_medals}</span>
@@ -150,7 +150,7 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
                 </div>
 
                 {/* Champions Gold Rounded Square Box With Wide Width & Zero Overflow */}
-                <div className="w-28 sm:w-32 h-20 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#240c04] via-[#140602] to-[#080200] border-2 sm:border-3 border-amber-400 shadow-[0_0_35px_rgba(245,184,66,0.45)] flex items-center justify-center px-4 transform hover:scale-105 transition-all duration-300 group">
+                <div className="w-28 sm:w-32 h-20 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#452003] via-[#271202] to-[#120701] border-2 sm:border-3 border-amber-300 shadow-[0_0_40px_rgba(245,158,11,0.6)] flex items-center justify-center px-4 transform hover:scale-105 transition-all duration-300 group">
                   <span className="font-serif font-black text-xl sm:text-2xl text-amber-200 tracking-normal drop-shadow-[0_2px_12px_rgba(245,184,66,0.5)] whitespace-nowrap">
                     {first.college_code.slice(0, 4)}
                   </span>
@@ -171,7 +171,7 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
                 </div>
 
                 {/* Scoreboard Points Pill */}
-                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#200a04] to-[#120401] border border-amber-500/50 shadow-md">
+                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#3d2004] to-[#241302] border-2 border-amber-400 shadow-md">
                   <span className="text-sm sm:text-base font-mono font-black text-amber-300 tracking-wide">
                     {first.total_points} PTS
                   </span>
@@ -183,14 +183,14 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
                 {/* Polished Gold Landing Platform Top */}
                 <div className="h-4 sm:h-5 rounded-t-xl bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 shadow-[0_0_24px_rgba(245,184,66,0.5)] border-t border-amber-300" />
                 {/* Riser Face */}
-                <div className="h-48 sm:h-64 bg-gradient-to-b from-[#240c04] via-[#120501] to-[#060200] border-x-2 border-b-2 border-amber-500/50 p-3 sm:p-5 flex flex-col items-center justify-between shadow-2xl relative overflow-hidden">
+                <div className="h-48 sm:h-64 bg-gradient-to-b from-[#472605] via-[#2d1803] to-[#170c01] border-x-2 border-b-2 border-amber-400 shadow-[0_0_40px_rgba(245,158,11,0.5)] p-3 sm:p-5 flex flex-col items-center justify-between shadow-2xl relative overflow-hidden">
                   <div className="w-full text-center">
                     <span className="font-serif font-black text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_4px_24px_rgba(245,184,66,0.65)]">
                       I
                     </span>
                   </div>
                   {/* Medal Matrix */}
-                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-300 bg-[#160602] px-3 py-1.5 rounded-xl border border-amber-500/40 shadow-inner">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-200 bg-[#2b1602] px-3 py-1.5 rounded-xl border border-amber-400/60 shadow-inner">
                     <span>🥇 {first.gold_medals}</span>
                     <span>🥈 {first.silver_medals}</span>
                     <span>🥉 {first.bronze_medals}</span>
@@ -209,7 +209,7 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
               {/* Header: Square Box, Badge, Full College Name & Points */}
               <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
                 {/* Bronze Rounded Square Box With Guaranteed In-Bounds Padding */}
-                <div className="w-24 sm:w-28 h-18 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#2a1308] via-[#160803] to-[#080200] border-2 sm:border-3 border-amber-700 shadow-[0_0_30px_rgba(180,83,9,0.35)] flex items-center justify-center px-3 transform hover:scale-105 transition-all duration-300 group">
+                <div className="w-24 sm:w-28 h-18 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#3b1706] via-[#240e03] to-[#120601] border-2 sm:border-3 border-orange-400 shadow-[0_0_35px_rgba(249,115,22,0.45)] flex items-center justify-center px-3 transform hover:scale-105 transition-all duration-300 group">
                   <span className="font-serif font-black text-base sm:text-xl text-amber-300 tracking-normal drop-shadow-[0_2px_10px_rgba(180,83,9,0.4)] whitespace-nowrap">
                     {third.college_code.slice(0, 4)}
                   </span>
@@ -217,7 +217,7 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
                 {/* Bronze Medal Badge Tag */}
                 <div className="mt-2.5 sm:mt-3">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-800/25 border border-amber-600/60 text-amber-300 text-[11px] sm:text-xs font-black shadow-[0_0_12px_rgba(180,83,9,0.25)] whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/25 border border-orange-400 text-orange-200 text-[11px] sm:text-xs font-black shadow-[0_0_15px_rgba(249,115,22,0.35)] whitespace-nowrap">
                     #3 Bronze 🥉
                   </span>
                 </div>
@@ -230,8 +230,8 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
                 </div>
 
                 {/* Scoreboard Points Pill */}
-                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-gradient-to-r from-[#1c0c04] to-[#0e0501] border border-amber-700/40 shadow-md">
-                  <span className="text-xs sm:text-sm font-mono font-black text-amber-400 tracking-wide">
+                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-gradient-to-r from-[#2e1306] to-[#1c0a03] border border-orange-500/60 shadow-md">
+                  <span className="text-xs sm:text-sm font-mono font-black text-orange-200 tracking-wide">
                     {third.total_points} PTS
                   </span>
                 </div>
@@ -240,16 +240,16 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
               {/* Physical Bronze Step Riser */}
               <div className="w-full">
                 {/* Antique Bronze Landing Platform Top */}
-                <div className="h-3.5 sm:h-4 rounded-t-xl bg-gradient-to-r from-amber-800 via-amber-600 to-amber-800 shadow-[0_0_20px_rgba(180,83,9,0.35)] border-t border-amber-400" />
+                <div className="h-3.5 sm:h-4 rounded-t-xl bg-gradient-to-r from-amber-700 via-orange-400 to-amber-700 shadow-[0_0_24px_rgba(249,115,22,0.5)] border-t border-orange-300" />
                 {/* Riser Face */}
-                <div className="h-30 sm:h-40 bg-gradient-to-b from-[#1c0b04] via-[#0f0501] to-[#050200] border-x-2 border-b-2 border-amber-800/40 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
+                <div className="h-30 sm:h-40 bg-gradient-to-b from-[#3d1808] via-[#260f05] to-[#140702] border-x-2 border-b-2 border-orange-500/60 shadow-[0_0_30px_rgba(249,115,22,0.3)] p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
                   <div className="w-full text-center">
-                    <span className="font-serif font-black text-4xl sm:text-6xl text-amber-500 drop-shadow-[0_4px_20px_rgba(180,83,9,0.45)]">
+                    <span className="font-serif font-black text-4xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-amber-200 via-orange-300 to-amber-600 drop-shadow-[0_4px_20px_rgba(249,115,22,0.6)]">
                       III
                     </span>
                   </div>
                   {/* Medal Matrix */}
-                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-amber-300 bg-[#100602] px-2.5 py-1 rounded-xl border border-amber-800/40 shadow-inner">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-orange-200 bg-[#1f0d04] px-2.5 py-1 rounded-xl border border-orange-500/50 shadow-inner">
                     <span>🥇 {third.gold_medals}</span>
                     <span>🥈 {third.silver_medals}</span>
                     <span>🥉 {third.bronze_medals}</span>
@@ -269,7 +269,7 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
           <div className="h-2 rounded-full bg-gradient-to-r from-amber-600/20 via-amber-400 to-amber-600/20 shadow-[0_0_20px_rgba(245,184,66,0.5)]" />
 
           {/* Foundation Plinth Base Deck */}
-          <div className="mt-1 py-4 px-6 rounded-b-2xl bg-gradient-to-b from-[#121212] via-[#0c0c0c] to-[#050505] border-b-2 border-x border-amber-500/35 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-2xl">
+          <div className="mt-1 py-4 px-6 rounded-b-2xl bg-gradient-to-b from-[#240612] via-[#1a041f] to-[#0c0214] border-b-2 border-x-2 border-amber-400/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-2xl">
             <div className="flex items-center gap-2.5">
               <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
               <span className="text-xs font-serif font-black text-amber-200 tracking-wider uppercase">

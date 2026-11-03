@@ -360,7 +360,7 @@ export const SchedulePage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0a0103] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#18030c] text-amber-50 relative selection:bg-amber-500 selection:text-black antialiased overflow-x-hidden">
       <FloatingBackgroundElements />
       <FestiveTicker />
       <Navbar />
@@ -381,7 +381,7 @@ export const SchedulePage: React.FC = () => {
         </div>
 
         {/* Filter Controls With Custom Scrollable Rails */}
-        <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-8 bg-gradient-to-r from-[#140206] via-[#0d0104] to-[#140206] p-4 rounded-3xl border border-amber-500/25 shadow-xl">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-8 bg-gradient-to-r from-[#290514]/95 via-[#1b0426]/95 to-[#0b1c2e]/95 p-4 rounded-3xl border-2 border-amber-400/50 shadow-xl">
           {/* Day Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto max-w-full pb-2.5 custom-scrollbar shrink-0">
             {(["Day 1", "Day 2", "Day 3", "Day 4", "All"] as const).map((day) => {
@@ -398,8 +398,8 @@ export const SchedulePage: React.FC = () => {
                   onClick={() => setActiveDay(day)}
                   className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shrink-0 ${
                     activeDay === day
-                      ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black font-black shadow-lg shadow-amber-500/25 scale-102"
-                      : "text-rose-200/70 hover:text-white hover:bg-rose-950/50 bg-[#190308]/60 border border-rose-950/80"
+                      ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black font-black shadow-lg shadow-amber-500/40 border border-yellow-200 scale-105"
+                      : "text-amber-100 font-bold hover:text-white hover:bg-white/10 bg-[#250414]/60 border border-amber-400/30"
                   }`}
                 >
                   {labelMap[day]}
@@ -433,8 +433,8 @@ export const SchedulePage: React.FC = () => {
               key={item.id}
               className={`p-5 rounded-2xl border transition-all ${
                 item.isGrandFinale
-                  ? "bg-gradient-to-r from-[#200308] via-[#0d0104] to-[#200308] border-amber-500/50 shadow-2xl shadow-amber-950/20"
-                  : "bg-[#0d0104] border-rose-950 hover:border-amber-500/40 hover:bg-[#130206]"
+                  ? "bg-gradient-to-r from-[#42061c]/95 via-[#290538]/95 to-[#122245]/95 border-2 border-amber-400 shadow-2xl shadow-amber-950/40"
+                  : "bg-gradient-to-r from-[#290514]/90 via-[#1c0422]/90 to-[#0e162e]/90 border-2 border-amber-400/40 hover:border-amber-400 hover:bg-[#320618]"
               }`}
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
