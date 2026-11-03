@@ -519,25 +519,12 @@ export const Home: React.FC = () => {
             <div className="h-6 w-px bg-rose-500/30" />
             <Palette className="w-5 h-5 text-rose-300 drop-shadow-[0_0_10px_rgba(251,113,133,0.5)]" />
           </div>
-          <div className="animate-live-flicker" style={{ animationDelay: "0.6s" }}>
-            <svg width="40" height="30" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.6)]">
-              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FDE047" />
-              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#991B1B" />
-              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#B45309" />
-            </svg>
-          </div>
+
         </div>
 
         {/* Cluster 5: Bottom-Right Wide Zone (To Right Of Countdown Timer) */}
         <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] right-[17%] 2xl:right-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "2.3s" }}>
-          <div className="animate-live-flicker" style={{ animationDelay: "1.3s" }}>
-            <svg width="42" height="32" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
-              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
-              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
-              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
-              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
-            </svg>
-          </div>
+
           <div className="p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-2xl shadow-amber-950/60 flex items-center gap-2.5">
             <Trophy className="w-7 h-7 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.6)]" />
             <div className="h-6 w-px bg-amber-500/30" />
