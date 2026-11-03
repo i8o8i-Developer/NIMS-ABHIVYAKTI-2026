@@ -433,13 +433,13 @@ export const Home: React.FC = () => {
         {/* Three Theatrical Overhead Stage Spotlights Shining Downwards From Top */}
         <StageSpotlights />
 
-        {/* NIMS Championship Pill */}
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#120205] border border-amber-500/40 shadow-xl shadow-amber-950/20 mb-7 z-10 animate-fade-in">
-          <Sparkles className="w-4 h-4 text-amber-400" />
-          <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-300 uppercase">
+        {/* NIMS Championship Square Sharp Edged Box (Square Edges For Mobile & Desktop) */}
+        <div className="inline-flex items-center justify-center gap-2 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-none bg-[#120205]/95 border-2 border-amber-500/70 shadow-2xl shadow-amber-950/40 mb-7 z-10 animate-fade-in max-w-full">
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
+          <span className="text-[10.5px] min-[340px]:text-xs sm:text-sm font-bold tracking-widest text-amber-300 uppercase text-center break-words">
             NIMS UNIVERSITY CULTURAL CHAMPIONSHIP • 18-21 NOVEMBER 2026
           </span>
-          <Sparkles className="w-4 h-4 text-amber-400" />
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
         </div>
 
         {/* Outer Left Floating Cultural Event Badges (Colorful & Event-Centric) */}
@@ -557,12 +557,20 @@ export const Home: React.FC = () => {
 
         {/* Central Logo & Majestic Typography (Generous Unobstructed Space) */}
         <div className="w-full max-w-3xl 2xl:max-w-4xl mx-auto flex flex-col items-center px-4 z-10">
-          {/* Official Abhivyakti Stylized Logo Container */}
-          <div className="relative mb-6 p-4 sm:p-5 rounded-3xl bg-white shadow-2xl shadow-rose-950/70 border-4 border-amber-400/90 max-w-xs sm:max-w-sm w-full mx-auto transform hover:scale-105 transition-transform duration-300">
+          {/* Official Abhivyakti Stylized Logo - Blended Seamlessly In The Stage Atmosphere */}
+          <div className="relative mb-6 max-w-xs sm:max-w-md w-full mx-auto flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+            {/* Luminous Ambient Spotlight Aura Behind Logo */}
+            <div className="absolute inset-0 -m-6 sm:-m-10 bg-radial from-amber-400/25 via-rose-600/15 to-transparent blur-3xl rounded-full pointer-events-none -z-10" />
+            <div className="absolute inset-x-6 inset-y-2 bg-white/10 blur-2xl rounded-full pointer-events-none -z-10" />
+
             <img
               src="/Abhivyakti.png"
               alt="Abhivyakti Cultural Festival Logo"
-              className="w-full h-auto max-h-32 sm:max-h-36 object-contain mx-auto"
+              style={{
+                filter:
+                  "drop-shadow(0 0 2px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 25px rgba(245, 184, 66, 0.5))",
+              }}
+              className="w-full h-auto max-h-32 sm:max-h-40 object-contain mx-auto"
             />
           </div>
 
