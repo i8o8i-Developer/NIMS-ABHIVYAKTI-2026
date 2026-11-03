@@ -76,32 +76,32 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 max-w-2xl h-64 bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.12)_0%,_transparent_70%)] blur-3xl pointer-events-none" />
 
         {/* 3 Pedestal Columns Grid */}
-        <div className="grid grid-cols-3 items-end gap-2 sm:gap-5 max-w-4xl mx-auto relative z-10">
+        <div className="grid grid-cols-3 items-end gap-2 sm:gap-6 max-w-4xl mx-auto relative z-10">
           {/* =========================================================
               2ND PLACE: STERLING SILVER PEDESTAL (Left Tier)
-              Sleek Square Box, Full Text Legible, Sterling Riser
+              Spacious Square Box (No Text Overflow), Full Title Visible
               ========================================================= */}
           {second && (
             <div className="flex flex-col items-center">
               {/* Header: Square Box, Badge, Full College Name & Points */}
               <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
-                {/* Silver Rounded Square Box */}
-                <div className="w-16 sm:w-22 h-16 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#182030] via-[#0d131f] to-[#05080e] border-2 sm:border-3 border-slate-300 shadow-[0_0_30px_rgba(203,213,225,0.35)] flex items-center justify-center transform hover:scale-105 transition-all duration-300 group">
-                  <span className="font-serif font-black text-base sm:text-2xl text-slate-100 tracking-wider drop-shadow-[0_2px_10px_rgba(203,213,225,0.4)]">
+                {/* Silver Rounded Square Box With Guaranteed In-Bounds Padding */}
+                <div className="w-24 sm:w-28 h-18 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#182030] via-[#0d131f] to-[#05080e] border-2 sm:border-3 border-slate-300 shadow-[0_0_30px_rgba(203,213,225,0.35)] flex items-center justify-center px-3 transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-base sm:text-xl text-slate-100 tracking-normal drop-shadow-[0_2px_10px_rgba(203,213,225,0.4)] whitespace-nowrap">
                     {second.college_code.slice(0, 4)}
                   </span>
                 </div>
 
-                {/* Silver Medal Badge Tag (Natural vertical flow - NO overlap) */}
+                {/* Silver Medal Badge Tag */}
                 <div className="mt-2.5 sm:mt-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-400/20 border border-slate-300/60 text-slate-200 text-[11px] sm:text-xs font-black shadow-[0_0_12px_rgba(203,213,225,0.25)] whitespace-nowrap">
                     #2 Silver 🥈
                   </span>
                 </div>
 
-                {/* Full College Name - 100% Text Visible, Zero Collision */}
-                <div className="mt-2 sm:mt-2.5 w-full min-h-[3rem] sm:min-h-[3.6rem] flex items-center justify-center">
-                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-snug tracking-tight text-center px-1">
+                {/* Full College Name - Clean Multi-Line, No Overflow, Zero Collision */}
+                <div className="mt-2.5 sm:mt-3 w-full max-w-[220px] sm:max-w-[260px] min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center">
+                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-snug tracking-tight text-center px-2">
                     {second.college_name}
                   </h4>
                 </div>
@@ -138,7 +138,7 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
           {/* =========================================================
               1ST PLACE: CHAMPIONS GOLD PEDESTAL (Center Tier)
-              Crown, Square Box, Full Text Legible, Grand Gold Riser
+              Crown, Wide Gold Box (Text 100% In-Bounds), Full Name
               ========================================================= */}
           {first && (
             <div className="flex flex-col items-center -translate-y-4 sm:-translate-y-6 z-20">
@@ -149,30 +149,30 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
                   <Crown className="w-8 h-8 sm:w-10 sm:h-10 text-amber-400 drop-shadow-[0_0_18px_rgba(245,184,66,0.85)] animate-pulse" />
                 </div>
 
-                {/* Champions Gold Rounded Square Box */}
-                <div className="w-20 sm:w-26 h-20 sm:h-26 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#240c04] via-[#140602] to-[#080200] border-2 sm:border-3 border-amber-400 shadow-[0_0_35px_rgba(245,184,66,0.45)] flex items-center justify-center transform hover:scale-105 transition-all duration-300 group">
-                  <span className="font-serif font-black text-xl sm:text-3xl text-amber-200 tracking-wider drop-shadow-[0_2px_12px_rgba(245,184,66,0.5)]">
+                {/* Champions Gold Rounded Square Box With Wide Width & Zero Overflow */}
+                <div className="w-28 sm:w-32 h-20 sm:h-24 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#240c04] via-[#140602] to-[#080200] border-2 sm:border-3 border-amber-400 shadow-[0_0_35px_rgba(245,184,66,0.45)] flex items-center justify-center px-4 transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-xl sm:text-2xl text-amber-200 tracking-normal drop-shadow-[0_2px_12px_rgba(245,184,66,0.5)] whitespace-nowrap">
                     {first.college_code.slice(0, 4)}
                   </span>
                 </div>
 
-                {/* 1st Gold Champion Badge Tag (Natural vertical flow - NO overlap) */}
+                {/* 1st Gold Champion Badge Tag */}
                 <div className="mt-2.5 sm:mt-3">
                   <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-amber-400/25 to-yellow-500/20 border border-amber-400/60 text-amber-200 text-xs font-black shadow-[0_0_15px_rgba(245,184,66,0.3)] whitespace-nowrap">
                     #1 Gold Champion 🏆
                   </span>
                 </div>
 
-                {/* Full College Name - 100% Text Visible, Zero Collision */}
-                <div className="mt-2 sm:mt-2.5 w-full min-h-[3rem] sm:min-h-[3.6rem] flex items-center justify-center">
-                  <h4 className="text-xs sm:text-base font-serif font-black text-amber-100 leading-snug tracking-tight text-center px-1 drop-shadow-[0_2px_8px_rgba(245,184,66,0.3)]">
+                {/* Full College Name - Clean Multi-Line, No Overflow, Zero Collision */}
+                <div className="mt-2.5 sm:mt-3 w-full max-w-[240px] sm:max-w-[280px] min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center">
+                  <h4 className="text-xs sm:text-sm font-serif font-black text-amber-100 leading-snug tracking-tight text-center px-2 drop-shadow-[0_2px_8px_rgba(245,184,66,0.3)]">
                     {first.college_name}
                   </h4>
                 </div>
 
                 {/* Scoreboard Points Pill */}
                 <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#200a04] to-[#120401] border border-amber-500/50 shadow-md">
-                  <span className="text-sm sm:text-lg font-mono font-black text-amber-300 tracking-wide">
+                  <span className="text-sm sm:text-base font-mono font-black text-amber-300 tracking-wide">
                     {first.total_points} PTS
                   </span>
                 </div>
@@ -202,29 +202,29 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
           {/* =========================================================
               3RD PLACE: ANTIQUE BRONZE PEDESTAL (Right Tier)
-              Warm Bronze Square Box, Full Text Legible, Bronze Riser
+              Spacious Bronze Square Box, Full Text In-Bounds
               ========================================================= */}
           {third && (
             <div className="flex flex-col items-center">
               {/* Header: Square Box, Badge, Full College Name & Points */}
               <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
-                {/* Bronze Rounded Square Box */}
-                <div className="w-16 sm:w-22 h-16 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#2a1308] via-[#160803] to-[#080200] border-2 sm:border-3 border-amber-700 shadow-[0_0_30px_rgba(180,83,9,0.35)] flex items-center justify-center transform hover:scale-105 transition-all duration-300 group">
-                  <span className="font-serif font-black text-base sm:text-2xl text-amber-300 tracking-wider drop-shadow-[0_2px_10px_rgba(180,83,9,0.4)]">
+                {/* Bronze Rounded Square Box With Guaranteed In-Bounds Padding */}
+                <div className="w-24 sm:w-28 h-18 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#2a1308] via-[#160803] to-[#080200] border-2 sm:border-3 border-amber-700 shadow-[0_0_30px_rgba(180,83,9,0.35)] flex items-center justify-center px-3 transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-base sm:text-xl text-amber-300 tracking-normal drop-shadow-[0_2px_10px_rgba(180,83,9,0.4)] whitespace-nowrap">
                     {third.college_code.slice(0, 4)}
                   </span>
                 </div>
 
-                {/* Bronze Medal Badge Tag (Natural vertical flow - NO overlap) */}
+                {/* Bronze Medal Badge Tag */}
                 <div className="mt-2.5 sm:mt-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-800/25 border border-amber-600/60 text-amber-300 text-[11px] sm:text-xs font-black shadow-[0_0_12px_rgba(180,83,9,0.25)] whitespace-nowrap">
                     #3 Bronze 🥉
                   </span>
                 </div>
 
-                {/* Full College Name - 100% Text Visible, Zero Collision */}
-                <div className="mt-2 sm:mt-2.5 w-full min-h-[3rem] sm:min-h-[3.6rem] flex items-center justify-center">
-                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-snug tracking-tight text-center px-1">
+                {/* Full College Name - Clean Multi-Line, No Overflow, Zero Collision */}
+                <div className="mt-2.5 sm:mt-3 w-full max-w-[220px] sm:max-w-[260px] min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center">
+                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-snug tracking-tight text-center px-2">
                     {third.college_name}
                   </h4>
                 </div>
