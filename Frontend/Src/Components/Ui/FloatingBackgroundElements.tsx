@@ -37,45 +37,6 @@ export const FloatingBackgroundElements: React.FC = () => {
       <div className="absolute top-[82%] left-[12%] w-28 h-28 rounded-full bg-purple-500/20 blur-2xl animate-live-float-slow pointer-events-none" />
 
       {/* =========================================================================
-          TRADITIONAL MANDALA / RANGOLI WATERMARKS
-          Adds ornate cultural grandeur so background never feels empty
-          ========================================================================= */}
-      <div className="absolute top-[32%] left-[3%] w-72 h-72 opacity-[0.06] animate-live-spin-slow pointer-events-none">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-amber-300">
-          <circle cx="100" cy="100" r="90" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 4" />
-          <circle cx="100" cy="100" r="70" stroke="currentColor" strokeWidth="1" />
-          <circle cx="100" cy="100" r="50" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
-          <circle cx="100" cy="100" r="30" stroke="currentColor" strokeWidth="1" />
-          {[...Array(12)].map((_, i) => (
-            <path
-              key={i}
-              d="M100 10 C115 50 115 50 100 90 C85 50 85 50 100 10Z"
-              stroke="currentColor"
-              strokeWidth="1"
-              transform={`rotate(${i * 30} 100 100)`}
-            />
-          ))}
-        </svg>
-      </div>
-
-      <div className="absolute top-[62%] right-[3%] w-80 h-80 opacity-[0.06] animate-live-spin-slow pointer-events-none" style={{ animationDirection: "reverse" }}>
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-amber-300">
-          <circle cx="100" cy="100" r="90" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 4" />
-          <circle cx="100" cy="100" r="65" stroke="currentColor" strokeWidth="1" />
-          <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="1.5" />
-          {[...Array(16)].map((_, i) => (
-            <path
-              key={i}
-              d="M100 15 C112 55 112 55 100 85 C88 55 88 55 100 15Z"
-              stroke="currentColor"
-              strokeWidth="1"
-              transform={`rotate(${i * 22.5} 100 100)`}
-            />
-          ))}
-        </svg>
-      </div>
-
-      {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS
           Evenly distributed along side margins across all sections
           ========================================================================= */}

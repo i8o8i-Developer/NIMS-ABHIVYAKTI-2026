@@ -76,16 +76,16 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Right Mobile: Student Council Emblem Badge + Hamburger Button */}
-        <div className="lg:hidden flex items-center gap-1.5 min-[340px]:gap-2.5">
-          {/* Mobile Student Council Emblem Badge */}
+        <div className="lg:hidden flex items-center gap-1.5 min-[340px]:gap-2">
+          {/* Mobile Student Council Emblem Badge (Full Text Written) */}
           <div className="h-10 min-[340px]:h-11 px-2 min-[340px]:px-2.5 py-1 rounded-xl bg-gradient-to-r from-[#380616] via-[#2a052e] to-[#121e3d] border-2 border-amber-400/80 shadow-md flex items-center gap-1.5">
             <img
               src="/STUDENT-COUNCIL-LOGO.png"
               alt="NIMS Student Council"
               className="h-6 w-6 min-[340px]:h-7 min-[340px]:w-7 rounded-full bg-white p-0.5 object-contain shrink-0 border border-amber-300"
             />
-            <span className="hidden min-[360px]:inline text-[10px] font-serif font-black text-amber-300 uppercase leading-none pr-0.5">
-              Council
+            <span className="text-[9px] min-[340px]:text-[10px] font-serif font-black text-amber-300 uppercase leading-none whitespace-nowrap pr-0.5">
+              Student Council
             </span>
           </div>
 
@@ -103,19 +103,6 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-gradient-to-b from-[#240410] via-[#1a0526] to-[#0a1827] border-b-2 border-amber-400/50 px-4 pt-3 pb-6 space-y-2">
-          {/* Mobile Directorate Badge Header */}
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-[#3a0618] to-[#25042b] border-2 border-amber-400/60 mb-3 shadow-md">
-            <img
-              src="/STUDENT-COUNCIL-LOGO.png"
-              alt="Student Council"
-              className="w-10 h-10 rounded-full bg-white p-0.5 object-contain shrink-0 border-2 border-amber-400"
-            />
-            <div>
-              <p className="text-xs font-serif font-black text-amber-300 uppercase">NIMS Student Council</p>
-              <p className="text-[11px] text-pink-200 font-bold">Official Fest Directorate • Abhivyakti 2026</p>
-            </div>
-          </div>
-
           {navLinks.map((item) => {
             const isActive = location.pathname === item.path;
             const Icon = item.icon;

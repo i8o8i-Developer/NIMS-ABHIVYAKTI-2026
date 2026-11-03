@@ -512,7 +512,7 @@ export const Home: React.FC = () => {
           {/* Guaranteed Full Text Visible Pill */}
           <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#160208] border border-rose-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-rose-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-rose-500/30">
             <Sparkles className="w-3 h-3 text-amber-300 shrink-0" />
-            <span>Natya & Rangmanch</span>
+            <span>NATYA & RANGMANCH</span>
           </div>
         </div>
 
@@ -543,7 +543,7 @@ export const Home: React.FC = () => {
           {/* Guaranteed Full Text Visible Pill */}
           <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#1c0d01] border border-amber-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-amber-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-amber-500/30">
             <Sparkles className="w-3 h-3 text-yellow-300 shrink-0" />
-            <span>Sangeet & Swara</span>
+            <span>SANGEET & SWARA</span>
           </div>
         </div>
 
@@ -573,7 +573,7 @@ export const Home: React.FC = () => {
           {/* Guaranteed Full Text Visible Pill */}
           <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#180211] border border-pink-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-pink-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-pink-500/30">
             <Sparkles className="w-3 h-3 text-pink-300 shrink-0" />
-            <span>Nritya & Mudra</span>
+            <span>NRITYA & MUDRA</span>
           </div>
         </div>
 
@@ -600,7 +600,7 @@ export const Home: React.FC = () => {
           {/* Guaranteed Full Text Visible Pill */}
           <div className="mt-2.5 px-3.5 py-1 rounded-full bg-[#1c1201] border border-yellow-400/80 shadow-xl text-[10px] 2xl:text-xs font-serif font-black text-yellow-200 uppercase tracking-wider whitespace-nowrap flex items-center justify-center gap-1.5 ring-1 ring-yellow-500/30">
             <Sparkles className="w-3 h-3 text-yellow-300 shrink-0" />
-            <span>Kala & Vijayi</span>
+            <span>KALA & VIJAYI</span>
           </div>
         </div>
 
