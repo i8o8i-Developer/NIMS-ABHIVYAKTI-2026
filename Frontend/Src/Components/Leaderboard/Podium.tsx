@@ -1,5 +1,5 @@
 import React from "react";
-import { Trophy } from "lucide-react";
+import { Trophy, Crown, Sparkles, Award, Medal } from "lucide-react";
 
 export interface LeaderboardCollege {
   rank: number;
@@ -37,7 +37,7 @@ export const DEFAULT_TOP_THREE: LeaderboardCollege[] = [
     rank: 2,
     college_id: 1,
     college_name: "National Institute Of Medical Sciences",
-    college_code: "NIMSR",
+    college_code: "NIMS",
     city: "Jaipur",
     avatar_color: "#881337",
     total_points: 240,
@@ -70,68 +70,63 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
   return (
     <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 py-8 select-none">
-      {/* =========================================================================
-          ARCHITECTURAL THREE-TIER CHAMPIONSHIP PODIUM
-          Matte Physical Dais With Realistic Solid Finishes & Zero Neon Edge Lighting
-          ========================================================================= */}
+      {/* Three Connected Physical Podium Steps */}
       <div className="relative pt-6 sm:pt-10">
-        {/* Subtle Ambient Vignette Behind The Dais (Zero Neon Halo) */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-4/5 h-40 bg-[radial-gradient(ellipse_at_bottom,_rgba(136,19,55,0.08)_0%,_transparent_70%)] blur-3xl pointer-events-none" />
+        {/* Ambient Warm Golden Vignette Behind Central Pedestal */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 max-w-2xl h-64 bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.12)_0%,_transparent_70%)] blur-3xl pointer-events-none" />
 
-        {/* The 3 Connected Physical Podium Steps */}
-        <div className="grid grid-cols-3 items-end gap-2 sm:gap-4 max-w-4xl mx-auto relative z-10">
+        {/* 3 Pedestal Columns Grid */}
+        <div className="grid grid-cols-3 items-end gap-2 sm:gap-5 max-w-4xl mx-auto relative z-10">
           {/* =========================================================
               2ND PLACE: STERLING SILVER PEDESTAL (Left Tier)
-              Matte Brushed Steel, No Neon Outline
+              Sleek Square Box, Full Text Legible, Sterling Riser
               ========================================================= */}
           {second && (
             <div className="flex flex-col items-center">
-              {/* Faculty Crest Medallion */}
-              <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center">
-                {/* Physical Silver Crest */}
-                <div className="relative group">
-                  <div className="w-16 sm:w-22 h-16 sm:h-22 rounded-full bg-gradient-to-br from-slate-600 via-slate-700 to-slate-900 p-[2px] shadow-md border border-slate-600/30 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#111827] via-[#0b0f19] to-[#05070c] border border-slate-700/50 flex flex-col items-center justify-center p-1">
-                      <span className="text-[10px] sm:text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">
-                        Faculty
-                      </span>
-                      <span className="font-serif font-black text-sm sm:text-lg text-slate-200 tracking-wider">
-                        {second.college_code.slice(0, 4)}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Silver Medal Ribbon Tag */}
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[#1e2533] border border-slate-600/40 text-slate-200 text-[10px] font-bold uppercase tracking-wider shadow whitespace-nowrap">
-                    2nd Place
-                  </div>
+              {/* Header: Square Box, Badge, Full College Name & Points */}
+              <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
+                {/* Silver Rounded Square Box */}
+                <div className="w-16 sm:w-22 h-16 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#182030] via-[#0d131f] to-[#05080e] border-2 sm:border-3 border-slate-300 shadow-[0_0_30px_rgba(203,213,225,0.35)] flex items-center justify-center transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-base sm:text-2xl text-slate-100 tracking-wider drop-shadow-[0_2px_10px_rgba(203,213,225,0.4)]">
+                    {second.college_code.slice(0, 4)}
+                  </span>
                 </div>
 
-                {/* College Name & Scoreboard */}
-                <div className="mt-4 px-1 w-full">
-                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-tight min-h-[2.4rem] flex items-center justify-center">
+                {/* Silver Medal Badge Tag (Natural vertical flow - NO overlap) */}
+                <div className="mt-2.5 sm:mt-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-400/20 border border-slate-300/60 text-slate-200 text-[11px] sm:text-xs font-black shadow-[0_0_12px_rgba(203,213,225,0.25)] whitespace-nowrap">
+                    #2 Silver 🥈
+                  </span>
+                </div>
+
+                {/* Full College Name - 100% Text Visible, Zero Collision */}
+                <div className="mt-2 sm:mt-2.5 w-full min-h-[3rem] sm:min-h-[3.6rem] flex items-center justify-center">
+                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-snug tracking-tight text-center px-1">
                     {second.college_name}
                   </h4>
-                  <div className="mt-1.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#0e1422] border border-slate-700/50">
-                    <span className="text-xs sm:text-sm font-mono font-black text-slate-300">
-                      {second.total_points} PTS
-                    </span>
-                  </div>
+                </div>
+
+                {/* Scoreboard Points Pill */}
+                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-gradient-to-r from-[#121926] to-[#0a0e17] border border-slate-400/40 shadow-md">
+                  <span className="text-xs sm:text-sm font-mono font-black text-slate-200 tracking-wide">
+                    {second.total_points} PTS
+                  </span>
                 </div>
               </div>
 
-              {/* Physical Silver Step Riser (Matte, Non-Lighting Edges) */}
+              {/* Physical Silver Step Riser */}
               <div className="w-full">
-                {/* Solid Brushed Steel Landing Platform Top */}
-                <div className="h-3.5 sm:h-4 rounded-t-lg bg-gradient-to-r from-[#1e2533] via-[#334155] to-[#1e2533] border-t border-slate-600/30" />
+                {/* Brushed Silver Landing Platform Top */}
+                <div className="h-3.5 sm:h-4 rounded-t-xl bg-gradient-to-r from-slate-400 via-slate-200 to-slate-400 shadow-[0_0_20px_rgba(203,213,225,0.35)] border-t border-white" />
                 {/* Riser Face */}
-                <div className="h-32 sm:h-44 bg-gradient-to-b from-[#111827] via-[#0b0f19] to-[#05070c] border-x border-b border-slate-700/40 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
+                <div className="h-34 sm:h-46 bg-gradient-to-b from-[#141c2c] via-[#0a0f19] to-[#04060b] border-x-2 border-b-2 border-slate-400/40 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
                   <div className="w-full text-center">
-                    <span className="font-serif font-black text-4xl sm:text-6xl text-slate-300 tracking-wider">
+                    <span className="font-serif font-black text-4xl sm:text-6xl text-slate-200 drop-shadow-[0_4px_20px_rgba(203,213,225,0.45)]">
                       II
                     </span>
                   </div>
                   {/* Medal Matrix */}
-                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold text-slate-300 bg-slate-950/90 px-2.5 py-1 rounded-md border border-slate-700/40">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-slate-200 bg-[#0c121d] px-2.5 py-1 rounded-xl border border-slate-500/40 shadow-inner">
                     <span>🥇 {second.gold_medals}</span>
                     <span>🥈 {second.silver_medals}</span>
                     <span>🥉 {second.bronze_medals}</span>
@@ -143,63 +138,59 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
           {/* =========================================================
               1ST PLACE: CHAMPIONS GOLD PEDESTAL (Center Tier)
-              Matte Dark Brass / Gold, Zero Neon Glow On Edges
+              Crown, Square Box, Full Text Legible, Grand Gold Riser
               ========================================================= */}
           {first && (
             <div className="flex flex-col items-center -translate-y-4 sm:-translate-y-6 z-20">
-              {/* Grand Trophy & Gold Crest Medallion */}
-              <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center">
-                {/* Sculpted Trophy (Clean, No Glowing Neon Halo) */}
+              {/* Header: Crown, Square Box, Badge, Full College Name & Points */}
+              <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
+                {/* Majestic Golden Crown */}
                 <div className="mb-2 relative">
-                  <div className="p-2.5 rounded-2xl bg-[#1e0e07] border border-amber-700/40 shadow-md">
-                    <Trophy className="w-8 h-8 sm:w-10 sm:h-10 text-amber-400" />
-                  </div>
+                  <Crown className="w-8 h-8 sm:w-10 sm:h-10 text-amber-400 drop-shadow-[0_0_18px_rgba(245,184,66,0.85)] animate-pulse" />
                 </div>
 
-                {/* Physical Gold Crest */}
-                <div className="relative group">
-                  <div className="w-20 sm:w-26 h-20 sm:h-26 rounded-full bg-gradient-to-br from-amber-700 via-amber-800 to-amber-950 p-[2.5px] shadow-md border border-amber-600/30 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1c0409] via-[#120206] to-[#070002] border border-amber-700/40 flex flex-col items-center justify-center p-1">
-                      <span className="text-[10px] sm:text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">
-                        Champion
-                      </span>
-                      <span className="font-serif font-black text-base sm:text-2xl text-amber-200 tracking-wider">
-                        {first.college_code.slice(0, 4)}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Gold Champion Ribbon Tag */}
-                  <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#2a1306] border border-amber-600/50 text-amber-200 text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow whitespace-nowrap">
-                    1st Gold Champion
-                  </div>
+                {/* Champions Gold Rounded Square Box */}
+                <div className="w-20 sm:w-26 h-20 sm:h-26 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#240c04] via-[#140602] to-[#080200] border-2 sm:border-3 border-amber-400 shadow-[0_0_35px_rgba(245,184,66,0.45)] flex items-center justify-center transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-xl sm:text-3xl text-amber-200 tracking-wider drop-shadow-[0_2px_12px_rgba(245,184,66,0.5)]">
+                    {first.college_code.slice(0, 4)}
+                  </span>
                 </div>
 
-                {/* College Name & Scoreboard */}
-                <div className="mt-4 px-1 w-full">
-                  <h4 className="text-xs sm:text-base font-serif font-black text-amber-100 leading-tight min-h-[2.4rem] flex items-center justify-center">
+                {/* 1st Gold Champion Badge Tag (Natural vertical flow - NO overlap) */}
+                <div className="mt-2.5 sm:mt-3">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 via-amber-400/25 to-yellow-500/20 border border-amber-400/60 text-amber-200 text-xs font-black shadow-[0_0_15px_rgba(245,184,66,0.3)] whitespace-nowrap">
+                    #1 Gold Champion 🏆
+                  </span>
+                </div>
+
+                {/* Full College Name - 100% Text Visible, Zero Collision */}
+                <div className="mt-2 sm:mt-2.5 w-full min-h-[3rem] sm:min-h-[3.6rem] flex items-center justify-center">
+                  <h4 className="text-xs sm:text-base font-serif font-black text-amber-100 leading-snug tracking-tight text-center px-1 drop-shadow-[0_2px_8px_rgba(245,184,66,0.3)]">
                     {first.college_name}
                   </h4>
-                  <div className="mt-1.5 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#1a0409] border border-amber-700/50 shadow-md">
-                    <span className="text-sm sm:text-lg font-serif font-black text-amber-300">
-                      {first.total_points} PTS
-                    </span>
-                  </div>
+                </div>
+
+                {/* Scoreboard Points Pill */}
+                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#200a04] to-[#120401] border border-amber-500/50 shadow-md">
+                  <span className="text-sm sm:text-lg font-mono font-black text-amber-300 tracking-wide">
+                    {first.total_points} PTS
+                  </span>
                 </div>
               </div>
 
-              {/* Physical Gold Step Riser (Grand Height, Matte Solid Finishes) */}
+              {/* Physical Gold Step Riser (Grand Height) */}
               <div className="w-full">
-                {/* Solid Dark Brass Landing Platform Top */}
-                <div className="h-4 sm:h-5 rounded-t-lg bg-gradient-to-r from-[#381e0e] via-[#4d2d14] to-[#381e0e] border-t border-amber-700/40" />
+                {/* Polished Gold Landing Platform Top */}
+                <div className="h-4 sm:h-5 rounded-t-xl bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 shadow-[0_0_24px_rgba(245,184,66,0.5)] border-t border-amber-300" />
                 {/* Riser Face */}
-                <div className="h-44 sm:h-60 bg-gradient-to-b from-[#24040b] via-[#140206] to-[#0a0103] border-x border-b border-amber-800/40 p-3 sm:p-5 flex flex-col items-center justify-between shadow-2xl relative overflow-hidden">
+                <div className="h-48 sm:h-64 bg-gradient-to-b from-[#240c04] via-[#120501] to-[#060200] border-x-2 border-b-2 border-amber-500/50 p-3 sm:p-5 flex flex-col items-center justify-between shadow-2xl relative overflow-hidden">
                   <div className="w-full text-center">
-                    <span className="font-serif font-black text-5xl sm:text-7xl text-amber-400 tracking-wider">
+                    <span className="font-serif font-black text-5xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_4px_24px_rgba(245,184,66,0.65)]">
                       I
                     </span>
                   </div>
                   {/* Medal Matrix */}
-                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-300 bg-[#160307] px-3 py-1.5 rounded-lg border border-amber-700/40">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-amber-300 bg-[#160602] px-3 py-1.5 rounded-xl border border-amber-500/40 shadow-inner">
                     <span>🥇 {first.gold_medals}</span>
                     <span>🥈 {first.silver_medals}</span>
                     <span>🥉 {first.bronze_medals}</span>
@@ -211,56 +202,54 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
           {/* =========================================================
               3RD PLACE: ANTIQUE BRONZE PEDESTAL (Right Tier)
-              Matte Antique Bronze, Zero Neon Glow
+              Warm Bronze Square Box, Full Text Legible, Bronze Riser
               ========================================================= */}
           {third && (
             <div className="flex flex-col items-center">
-              {/* Faculty Crest Medallion */}
-              <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center">
-                {/* Physical Bronze Crest */}
-                <div className="relative group">
-                  <div className="w-16 sm:w-22 h-16 sm:h-22 rounded-full bg-gradient-to-br from-amber-800 via-amber-900 to-[#1c0803] p-[2px] shadow-md border border-amber-800/30 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#140602] via-[#0d0301] to-[#040100] border border-amber-900/40 flex flex-col items-center justify-center p-1">
-                      <span className="text-[10px] sm:text-xs font-mono font-bold text-amber-600 uppercase tracking-widest">
-                        Faculty
-                      </span>
-                      <span className="font-serif font-black text-sm sm:text-lg text-amber-300 tracking-wider">
-                        {third.college_code.slice(0, 4)}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Bronze Medal Ribbon Tag */}
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[#200c04] border border-amber-800/40 text-amber-300 text-[10px] font-bold uppercase tracking-wider shadow whitespace-nowrap">
-                    3rd Place
-                  </div>
+              {/* Header: Square Box, Badge, Full College Name & Points */}
+              <div className="flex flex-col items-center mb-3 sm:mb-4 w-full text-center px-1">
+                {/* Bronze Rounded Square Box */}
+                <div className="w-16 sm:w-22 h-16 sm:h-22 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#2a1308] via-[#160803] to-[#080200] border-2 sm:border-3 border-amber-700 shadow-[0_0_30px_rgba(180,83,9,0.35)] flex items-center justify-center transform hover:scale-105 transition-all duration-300 group">
+                  <span className="font-serif font-black text-base sm:text-2xl text-amber-300 tracking-wider drop-shadow-[0_2px_10px_rgba(180,83,9,0.4)]">
+                    {third.college_code.slice(0, 4)}
+                  </span>
                 </div>
 
-                {/* College Name & Scoreboard */}
-                <div className="mt-4 px-1 w-full">
-                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-tight min-h-[2.4rem] flex items-center justify-center">
+                {/* Bronze Medal Badge Tag (Natural vertical flow - NO overlap) */}
+                <div className="mt-2.5 sm:mt-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-800/25 border border-amber-600/60 text-amber-300 text-[11px] sm:text-xs font-black shadow-[0_0_12px_rgba(180,83,9,0.25)] whitespace-nowrap">
+                    #3 Bronze 🥉
+                  </span>
+                </div>
+
+                {/* Full College Name - 100% Text Visible, Zero Collision */}
+                <div className="mt-2 sm:mt-2.5 w-full min-h-[3rem] sm:min-h-[3.6rem] flex items-center justify-center">
+                  <h4 className="text-xs sm:text-sm font-serif font-black text-white leading-snug tracking-tight text-center px-1">
                     {third.college_name}
                   </h4>
-                  <div className="mt-1.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#140501] border border-amber-900/40">
-                    <span className="text-xs sm:text-sm font-mono font-black text-amber-400">
-                      {third.total_points} PTS
-                    </span>
-                  </div>
+                </div>
+
+                {/* Scoreboard Points Pill */}
+                <div className="mt-1.5 sm:mt-2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl bg-gradient-to-r from-[#1c0c04] to-[#0e0501] border border-amber-700/40 shadow-md">
+                  <span className="text-xs sm:text-sm font-mono font-black text-amber-400 tracking-wide">
+                    {third.total_points} PTS
+                  </span>
                 </div>
               </div>
 
-              {/* Physical Bronze Step Riser (Matte, Non-Lighting Edges) */}
+              {/* Physical Bronze Step Riser */}
               <div className="w-full">
-                {/* Solid Antique Bronze Landing Platform Top */}
-                <div className="h-3.5 sm:h-4 rounded-t-lg bg-gradient-to-r from-[#220d05] via-[#331508] to-[#220d05] border-t border-amber-800/30" />
+                {/* Antique Bronze Landing Platform Top */}
+                <div className="h-3.5 sm:h-4 rounded-t-xl bg-gradient-to-r from-amber-800 via-amber-600 to-amber-800 shadow-[0_0_20px_rgba(180,83,9,0.35)] border-t border-amber-400" />
                 {/* Riser Face */}
-                <div className="h-28 sm:h-38 bg-gradient-to-b from-[#180702] via-[#0f0401] to-[#060200] border-x border-b border-amber-900/40 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
+                <div className="h-30 sm:h-40 bg-gradient-to-b from-[#1c0b04] via-[#0f0501] to-[#050200] border-x-2 border-b-2 border-amber-800/40 p-3 sm:p-4 flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
                   <div className="w-full text-center">
-                    <span className="font-serif font-black text-4xl sm:text-6xl text-amber-600 tracking-wider">
+                    <span className="font-serif font-black text-4xl sm:text-6xl text-amber-500 drop-shadow-[0_4px_20px_rgba(180,83,9,0.45)]">
                       III
                     </span>
                   </div>
                   {/* Medal Matrix */}
-                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold text-amber-300 bg-[#0c0401] px-2.5 py-1 rounded-md border border-amber-900/30">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-amber-300 bg-[#100602] px-2.5 py-1 rounded-xl border border-amber-800/40 shadow-inner">
                     <span>🥇 {third.gold_medals}</span>
                     <span>🥈 {third.silver_medals}</span>
                     <span>🥉 {third.bronze_medals}</span>
@@ -273,21 +262,21 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
 
         {/* =========================================================================
             MONOLITHIC STAGE PLINTH BASE
-            Solid Architectural Anchor With Clean Non-Illuminated Edge
+            Architectural Stage Anchor With Golden Perimeter Rim & Clean Real-Time Metrics
             ========================================================================= */}
         <div className="max-w-4xl mx-auto -mt-0.5 relative z-30">
-          {/* Solid Architectural Base Trim (Zero Neon Light Strip) */}
-          <div className="h-2 rounded-t bg-gradient-to-r from-[#1c0f08] via-[#2c180e] to-[#1c0f08] border-t border-amber-900/40" />
+          {/* Golden Stage Perimeter Glow Rim */}
+          <div className="h-2 rounded-full bg-gradient-to-r from-amber-600/20 via-amber-400 to-amber-600/20 shadow-[0_0_20px_rgba(245,184,66,0.5)]" />
 
-          {/* Foundation Plinth Base */}
-          <div className="py-3 px-6 rounded-b-2xl bg-gradient-to-b from-[#120205] to-[#070002] border-b border-x border-amber-900/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-xl">
-            <div className="flex items-center gap-2">
+          {/* Foundation Plinth Base Deck */}
+          <div className="mt-1 py-4 px-6 rounded-b-2xl bg-gradient-to-b from-[#121212] via-[#0c0c0c] to-[#050505] border-b-2 border-x border-amber-500/35 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-2xl">
+            <div className="flex items-center gap-2.5">
               <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
               <span className="text-xs font-serif font-black text-amber-200 tracking-wider uppercase">
                 Official Championship Podium • 2026 Inter-College Championship
               </span>
             </div>
-            <p className="text-[11px] text-rose-300/80 font-mono">
+            <p className="text-[11px] text-gray-400 font-mono">
               Scores Calculated In Real-Time Across All 22 Official Competitions
             </p>
           </div>
