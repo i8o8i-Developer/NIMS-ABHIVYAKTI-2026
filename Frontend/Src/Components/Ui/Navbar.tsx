@@ -6,13 +6,19 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
+  interface NavLinkItem {
+    name: string;
+    path: string;
+    icon: React.ComponentType<{ className?: string }>;
+    hasDot?: boolean;
+  }
+
+  const navLinks: NavLinkItem[] = [
     { name: "Overview", path: "/", icon: Home },
     { name: "Competitions", path: "/competitions", icon: Trophy },
     { name: "Schedule", path: "/schedule", icon: Calendar },
     { name: "Gallery", path: "/gallery", icon: Image },
     { name: "Contingents", path: "/contingents", icon: Users },
-    { name: "Leaderboard", path: "/leaderboard", icon: Trophy, hasDot: true },
   ];
 
   return (

@@ -607,13 +607,13 @@ export const Home: React.FC = () => {
               <span>Explore Competitions</span>
             </Link>
 
-            <Link
-              to="/leaderboard"
+            <a
+              href="#leaderboard"
               className="w-full min-[440px]:w-auto px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-purple-300 hover:border-yellow-300 shadow-xl shadow-purple-950/50 hover:scale-105 transition-all flex items-center justify-center gap-2"
             >
               <Trophy className="w-4 h-4 text-yellow-300 shrink-0" />
               <span>View Leaderboard</span>
-            </Link>
+            </a>
 
             <button
               onClick={() => setIsRulebookOpen(true)}
@@ -901,8 +901,8 @@ export const Home: React.FC = () => {
           DEDICATED TOP 3 CONTINGENTS PODIUM & CHAMPIONSHIP LEADERBOARD SECTION
           Olympic-Grade Podium Stage With Gold/Silver/Bronze Pedestals & Real-Time Standings
           ========================================================================= */}
-      <section className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+      <section id="leaderboard" className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 scroll-mt-24">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 text-center md:text-left">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 text-xs font-black uppercase tracking-wider mb-2 backdrop-blur-md shadow-md">
               <Trophy className="w-4 h-4 text-amber-400" />
@@ -915,14 +915,11 @@ export const Home: React.FC = () => {
               Live Standings Computed From Verified Jury Scorecards Across All Cultural Arenas.
             </p>
           </div>
-          <div>
-            <Link
-              to="/leaderboard"
-              className="px-6 py-3 rounded-xl text-xs font-black bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-600 text-white border-2 border-pink-300 hover:border-yellow-300 transition-all flex items-center gap-1.5 shadow-xl shadow-purple-500/30 hover:scale-105"
-            >
-              <span>Full Standings</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500/15 border-2 border-amber-400/50 text-amber-300 text-xs font-bold shadow-md">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span>Official Live Scores</span>
+            </span>
           </div>
         </div>
 
@@ -931,9 +928,9 @@ export const Home: React.FC = () => {
           <Podium topThree={podium.length >= 3 ? podium : DEFAULT_TOP_THREE} />
         </div>
 
-        {/* Quick Table Preview */}
-        <div className="mt-8">
-          <LeaderboardTable colleges={standings.slice(0, 5)} />
+        {/* Full Table Standings Directly On Home Page */}
+        <div id="full-standings" className="mt-8">
+          <LeaderboardTable colleges={standings} />
         </div>
       </section>
 

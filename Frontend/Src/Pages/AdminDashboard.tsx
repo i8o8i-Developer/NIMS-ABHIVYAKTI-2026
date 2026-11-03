@@ -90,7 +90,7 @@ export const AdminDashboard: React.FC = () => {
             <span>Open Jury Scoring Engine</span>
           </Link>
           <Link
-            to="/leaderboard"
+            to="/#leaderboard"
             target="_blank"
             className="px-4 py-2.5 rounded-xl bg-rose-950/50 hover:bg-rose-900/50 text-rose-300 border border-rose-900/60 text-xs font-bold transition-all flex items-center gap-1.5"
           >

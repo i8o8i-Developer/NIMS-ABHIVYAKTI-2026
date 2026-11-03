@@ -6,7 +6,6 @@ import { AuthProvider, useAuth } from "@/Lib/Auth";
 import Home from "@/Pages/Home";
 import CompetitionsPage from "@/Pages/CompetitionsPage";
 import SchedulePage from "@/Pages/SchedulePage";
-import LeaderboardPage from "@/Pages/LeaderboardPage";
 import GalleryPage from "@/Pages/GalleryPage";
 import ContingentsPage from "@/Pages/ContingentsPage";
 
@@ -54,13 +53,13 @@ export const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/competitions" element={<CompetitionsPage />} />
           <Route path="/schedule" element={<SchedulePage />} />
-          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/leaderboard" element={<Navigate to="/#leaderboard" replace />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contingents" element={<ContingentsPage />} />
 
           {/* Graceful Fallbacks: Rulebook is attached per event, No Live Screen Ever */}
           <Route path="/rulebook" element={<Navigate to="/competitions" replace />} />
-          <Route path="/live" element={<Navigate to="/leaderboard" replace />} />
+          <Route path="/live" element={<Navigate to="/#leaderboard" replace />} />
 
           {/* Admin Authentication */}
           <Route path="/admin/login" element={<AdminLogin />} />
