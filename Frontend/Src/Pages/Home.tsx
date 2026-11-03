@@ -419,43 +419,43 @@ export const Home: React.FC = () => {
           <Sparkles className="w-4 h-4 text-amber-400" />
         </div>
 
-        {/* Outer Left Floating Badges (Pinned to Far Left Edge With One-Liner Layout & Generous Width) */}
+        {/* Outer Left Floating Cultural Event Badges (Colorful & Event-Centric) */}
         <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute left-2 2xl:left-6 top-[17%] 2xl:top-[19%] z-20">
-          {/* Badge 1: Championship Glory */}
-          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway">
+          {/* Event 1: Battle of the Bands (Fiery Sunset Orange) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-r from-[#2a0802]/95 via-[#380e04]/95 to-[#1c0401]/95 border-2 border-orange-500/70 backdrop-blur-2xl shadow-2xl shadow-orange-950/60 text-left transform hover:-translate-y-1 hover:border-orange-400 transition-all duration-300 animate-live-sway">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
-                <Trophy className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-orange-500/25 border border-orange-400/60 text-orange-400 shrink-0 shadow-lg shadow-orange-500/20">
+                <Flame className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
               <div className="min-w-0">
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">CHAMPIONSHIP GLORY</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">30+ Leading Institutes</p>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-orange-200 uppercase whitespace-nowrap">BATTLE OF THE BANDS</h4>
+                <p className="text-[11px] 2xl:text-xs text-amber-300 font-bold mt-0.5 whitespace-nowrap">Electric Rock & Fusion War</p>
               </div>
             </div>
           </div>
 
-          {/* Badge 2: 100% Student-Led */}
-          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
+          {/* Event 2: Groove-o-Mania Dance (Radiant Hot Pink & Magenta) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-r from-[#290422]/95 via-[#3b0832]/95 to-[#1c0218]/95 border-2 border-pink-500/70 backdrop-blur-2xl shadow-2xl shadow-pink-950/60 text-left transform hover:-translate-y-1 hover:border-pink-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
             <div className="flex items-center gap-3">
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 shrink-0">
-                <Users className="w-5 h-5 2xl:w-6 2xl:h-6" />
-              </div>
-              <div className="min-w-0">
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">100% STUDENT-LED</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">NIMS Student Council</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Badge 3: Pan-Campus Majesty */}
-          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-left transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-pink-500/25 border border-pink-400/60 text-pink-400 shrink-0 shadow-lg shadow-pink-500/20">
                 <Sparkles className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
               <div className="min-w-0">
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">PAN-CAMPUS MAJESTY</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Inter-College Championship</p>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-pink-200 uppercase whitespace-nowrap">GROOVE-O-MANIA DANCE</h4>
+                <p className="text-[11px] 2xl:text-xs text-fuchsia-300 font-bold mt-0.5 whitespace-nowrap">Classical & Street Battles</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Event 3: Nukkad Natak & Theatre (Emerald Green & Mint) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-r from-[#032415]/95 via-[#063b22]/95 to-[#02180e]/95 border-2 border-emerald-500/70 backdrop-blur-2xl shadow-2xl shadow-emerald-950/60 text-left transform hover:-translate-y-1 hover:border-emerald-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-emerald-500/25 border border-emerald-400/60 text-emerald-400 shrink-0 shadow-lg shadow-emerald-500/20">
+                <Theater className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-emerald-200 uppercase whitespace-nowrap">NUKKAD NATAK & DRAMA</h4>
+                <p className="text-[11px] 2xl:text-xs text-emerald-300 font-bold mt-0.5 whitespace-nowrap">Street Play & SoloFlix Act</p>
               </div>
             </div>
           </div>
@@ -594,64 +594,64 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Outer Right Floating Badges (Pinned to Far Right Edge With One-Liner Layout & Generous Width) */}
+        {/* Outer Right Floating Cultural Event Badges (Colorful & Event-Centric) */}
         <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute right-2 2xl:right-6 top-[17%] 2xl:top-[19%] z-20">
-          {/* Badge 4: 6 Cultural Arenas */}
-          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
+          {/* Event 4: Couture Runway Vogue (Electric Cyan & Azure) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-l from-[#041c2e]/95 via-[#062b47]/95 to-[#02121e]/95 border-2 border-cyan-400/70 backdrop-blur-2xl shadow-2xl shadow-cyan-950/60 text-right transform hover:-translate-y-1 hover:border-cyan-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">6 CULTURAL ARENAS</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Music, Dance, Drama, Vogue</p>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-cyan-200 uppercase whitespace-nowrap">COUTURE RUNWAY VOGUE</h4>
+                <p className="text-[11px] 2xl:text-xs text-cyan-300 font-bold mt-0.5 whitespace-nowrap">Eco Glam & Sneaker Art Contest</p>
               </div>
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
-                <Flame className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-cyan-500/25 border border-cyan-400/60 text-cyan-400 shrink-0 shadow-lg shadow-cyan-500/20">
+                <Layers className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
 
-          {/* Badge 5: Grand Central Venue */}
-          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-rose-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
+          {/* Event 5: Harmony Hustle Singing (Luminous Golden Amber) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-l from-[#2e1d03]/95 via-[#452b05]/95 to-[#1c1101]/95 border-2 border-amber-400/70 backdrop-blur-2xl shadow-2xl shadow-amber-950/60 text-right transform hover:-translate-y-1 hover:border-amber-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">GRAND CENTRAL VENUE</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">NIMS Jaipur Grounds</p>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">HARMONY HUSTLE SINGING</h4>
+                <p className="text-[11px] 2xl:text-xs text-yellow-300 font-bold mt-0.5 whitespace-nowrap">Solo, Duet & Vocal Resonance</p>
               </div>
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 shrink-0">
-                <MapPin className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/25 border border-amber-400/60 text-amber-400 shrink-0 shadow-lg shadow-amber-500/20">
+                <Mic className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
 
-          {/* Badge 6: Verified Jury Engine */}
-          <div className="w-[17.5rem] 2xl:w-[19rem] p-3.5 2xl:p-4 rounded-2xl bg-[#0c0104]/92 border-2 border-amber-500/40 backdrop-blur-2xl shadow-2xl shadow-black/80 text-right transform hover:-translate-y-1 hover:border-amber-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
+          {/* Event 6: Fine Arts & AI Challenge (Royal Amethyst Purple) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-l from-[#1d0530]/95 via-[#2f094d]/95 to-[#12021e]/95 border-2 border-purple-400/70 backdrop-blur-2xl shadow-2xl shadow-purple-950/60 text-right transform hover:-translate-y-1 hover:border-purple-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
-                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">VERIFIED JURY ENGINE</h4>
-                <p className="text-[11px] 2xl:text-xs text-rose-200 font-semibold mt-0.5 whitespace-nowrap">Real-Time Score Sync</p>
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-purple-200 uppercase whitespace-nowrap">FINE ARTS & AI CHALLENGE</h4>
+                <p className="text-[11px] 2xl:text-xs text-purple-300 font-bold mt-0.5 whitespace-nowrap">Live Doodling, Clay & Digital Art</p>
               </div>
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 shrink-0">
-                <ShieldCheck className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              <div className="p-2.5 2xl:p-3 rounded-xl bg-purple-500/25 border border-purple-400/60 text-purple-400 shrink-0 shadow-lg shadow-purple-500/20">
+                <Palette className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile Badges Strip (visible on mobile / tablet) */}
+        {/* Mobile Cultural Event Badges Strip (Vibrant & Colorful) */}
         <div className="xl:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-10 z-10 max-w-3xl px-2">
-          <div className="p-3.5 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center shadow-lg">
-            <Trophy className="w-5 h-5 text-amber-400 mx-auto mb-1" />
-            <p className="text-xs font-bold text-amber-200 uppercase">Championship Glory</p>
-            <p className="text-[11px] text-rose-200">30+ Leading Institutes</p>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#2a0802] to-[#1c0401] border-2 border-orange-500/60 text-center shadow-lg shadow-orange-950/40">
+            <Flame className="w-5 h-5 text-orange-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-orange-200 uppercase">Battle Of The Bands</p>
+            <p className="text-[11px] text-amber-300 font-semibold">Electric Rock & Fusion War</p>
           </div>
-          <div className="p-3.5 rounded-xl bg-[#0e0205] border border-rose-500/30 text-center shadow-lg">
-            <Users className="w-5 h-5 text-rose-400 mx-auto mb-1" />
-            <p className="text-xs font-bold text-amber-200 uppercase">100% Student-Led</p>
-            <p className="text-[11px] text-rose-200">NIMS Student Council</p>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#290422] to-[#1c0218] border-2 border-pink-500/60 text-center shadow-lg shadow-pink-950/40">
+            <Sparkles className="w-5 h-5 text-pink-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-pink-200 uppercase">Groove-O-Mania Dance</p>
+            <p className="text-[11px] text-fuchsia-300 font-semibold">Classical & Street Battles</p>
           </div>
-          <div className="p-3.5 rounded-xl bg-[#0e0205] border border-amber-500/30 text-center shadow-lg">
-            <ShieldCheck className="w-5 h-5 text-amber-400 mx-auto mb-1" />
-            <p className="text-xs font-bold text-amber-200 uppercase">Verified Scoring</p>
-            <p className="text-[11px] text-rose-200">Real-Time Jury Sync</p>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#032415] to-[#02180e] border-2 border-emerald-500/60 text-center shadow-lg shadow-emerald-950/40">
+            <Theater className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-emerald-200 uppercase">Nukkad Natak & Drama</p>
+            <p className="text-[11px] text-emerald-300 font-semibold">Street Play & Theatrical Arts</p>
           </div>
         </div>
       </section>
@@ -662,60 +662,60 @@ export const Home: React.FC = () => {
           ========================================================================= */}
       <section className="py-14 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {/* Stat 1: 30+ Participating Institutes */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
-              <Landmark className="w-5 h-5" />
+          {/* Stat 1: 30+ Participating Institutes (Royal Gold Theme) */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#2a1a04]/95 via-[#180f02]/98 to-[#060300] border-2 border-amber-400/70 hover:border-amber-300 shadow-2xl shadow-amber-950/60 hover:shadow-[0_0_35px_rgba(245,184,66,0.35)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-amber-500/25 border border-amber-400/60 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-lg shadow-amber-500/20">
+              <Landmark className="w-6 h-6" />
             </div>
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.5)]">
               30+
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-black tracking-wider text-amber-200 uppercase mt-2">
               Participating Institutes
             </p>
-            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-400 transition-all" />
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent group-hover:via-yellow-300 transition-all" />
           </div>
 
-          {/* Stat 2: 22+ Official Competitions */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
-              <Sparkles className="w-5 h-5" />
+          {/* Stat 2: 22+ Official Competitions (Vibrant Ruby Rose Theme) */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#330514]/95 via-[#1c020a]/98 to-[#080103] border-2 border-rose-500/70 hover:border-rose-400 shadow-2xl shadow-rose-950/60 hover:shadow-[0_0_35px_rgba(244,63,94,0.35)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-rose-500/25 border border-rose-400/60 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-lg shadow-rose-500/20">
+              <Sparkles className="w-6 h-6" />
             </div>
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-rose-100 via-rose-300 to-pink-500 drop-shadow-[0_2px_14px_rgba(244,63,94,0.5)]">
               22+
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-black tracking-wider text-rose-200 uppercase mt-2">
               Official Competitions
             </p>
-            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent group-hover:via-rose-400 transition-all" />
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-rose-400 to-transparent group-hover:via-pink-300 transition-all" />
           </div>
 
-          {/* Stat 3: 4 Days Of Cultural Brilliance */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-amber-500/30 hover:border-amber-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(245,184,66,0.18)] transition-all duration-300 group overflow-hidden text-center">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
-              <Sparkles className="w-5 h-5" />
+          {/* Stat 3: 4 Days Of Cultural Brilliance (Radiant Emerald Mint Theme) */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#032616]/95 via-[#02180e]/98 to-[#010905] border-2 border-emerald-500/70 hover:border-emerald-400 shadow-2xl shadow-emerald-950/60 hover:shadow-[0_0_35px_rgba(16,185,129,0.35)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-emerald-500/25 border border-emerald-400/60 flex items-center justify-center text-emerald-300 mb-3 group-hover:scale-110 transition-transform shadow-lg shadow-emerald-500/20">
+              <Calendar className="w-6 h-6" />
             </div>
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-emerald-100 via-emerald-300 to-teal-400 drop-shadow-[0_2px_14px_rgba(16,185,129,0.5)]">
               4 Days
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-black tracking-wider text-emerald-200 uppercase mt-2">
               Of Cultural Brilliance
             </p>
-            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent group-hover:via-amber-400 transition-all" />
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent group-hover:via-teal-300 transition-all" />
           </div>
 
-          {/* Stat 4: 5,000+ Passionate Students */}
-          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#131313]/95 via-[#0a0a0a]/98 to-[#040404] border border-rose-500/30 hover:border-rose-400 shadow-2xl shadow-black/80 hover:shadow-[0_8px_30px_rgba(244,63,94,0.18)] transition-all duration-300 group overflow-hidden text-center">
-            <div className="w-10 h-10 mx-auto rounded-xl bg-rose-500/15 border border-rose-500/40 flex items-center justify-center text-rose-300 mb-3 group-hover:scale-110 transition-transform shadow-md">
-              <Users className="w-5 h-5" />
+          {/* Stat 4: 5,000+ Passionate Students (Luminous Electric Cyan Theme) */}
+          <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#042036]/95 via-[#021321]/98 to-[#01080d] border-2 border-cyan-400/70 hover:border-cyan-300 shadow-2xl shadow-cyan-950/60 hover:shadow-[0_0_35px_rgba(34,211,238,0.35)] transition-all duration-300 group overflow-hidden text-center">
+            <div className="w-11 h-11 mx-auto rounded-xl bg-cyan-500/25 border border-cyan-400/60 flex items-center justify-center text-cyan-300 mb-3 group-hover:scale-110 transition-transform shadow-lg shadow-cyan-500/20">
+              <Users className="w-6 h-6" />
             </div>
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-yellow-500 drop-shadow-[0_2px_14px_rgba(245,184,66,0.35)]">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-cyan-100 via-cyan-300 to-sky-400 drop-shadow-[0_2px_14px_rgba(34,211,238,0.5)]">
               5,000+
             </p>
-            <p className="text-xs sm:text-sm font-bold tracking-wider text-amber-200/90 uppercase mt-2">
+            <p className="text-xs sm:text-sm font-black tracking-wider text-cyan-200 uppercase mt-2">
               Passionate Students
             </p>
-            <div className="absolute bottom-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent group-hover:via-rose-400 transition-all" />
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent group-hover:via-sky-300 transition-all" />
           </div>
         </div>
       </section>

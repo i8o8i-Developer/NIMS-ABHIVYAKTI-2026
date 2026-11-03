@@ -23,8 +23,12 @@ export const FloatingBackgroundElements: React.FC = () => {
       {/* Luxurious Theatrical Wine-Crimson Hero Stage Fading Smoothly Into Obsidian Black */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_#180307_0%,_#24050e_6%,_#160207_12%,_#0a0104_16%,_#060606_21%,_#030303_32%,_#020202_60%,_#000000_100%)]" />
 
-      {/* Atmospheric Soft Reddish-Wine Velvet Glow (Hero Stage Spotlight Only - 0% to 18%) */}
-      <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,18,60,0.30)_0%,_rgba(100,12,38,0.18)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
+      {/* Atmospheric Multi-Colored Festival Auras & Stage Glows */}
+      <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,18,60,0.32)_0%,_rgba(100,12,38,0.20)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
+      <div className="absolute top-[32%] -left-20 w-[32rem] h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(217,70,239,0.12)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[32%] -right-20 w-[32rem] h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.12)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[60%] left-1/4 w-[36rem] h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.10)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      <div className="absolute top-[78%] right-1/4 w-[36rem] h-[28rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.10)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
 
       {/* =========================================================================
           TRADITIONAL FESTIVE GLOWING DIYAS
