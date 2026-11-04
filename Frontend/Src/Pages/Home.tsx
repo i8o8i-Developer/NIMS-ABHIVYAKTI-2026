@@ -456,7 +456,7 @@ export const Home: React.FC = () => {
         <div className="inline-flex items-center justify-center gap-2 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-none bg-[#120205]/95 border-2 border-amber-500/70 shadow-2xl shadow-amber-950/40 mb-7 z-10 animate-fade-in max-w-full">
           <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
           <span className="text-[10.5px] min-[340px]:text-xs sm:text-sm font-bold tracking-widest text-amber-300 uppercase text-center break-words">
-            NIMS UNIVERSITY CULTURAL CHAMPIONSHIP • 18-21 NOVEMBER 2026
+            NIMS UNIVERSITY CULTURAL CHAMPIONSHIP
           </span>
           <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
         </div>

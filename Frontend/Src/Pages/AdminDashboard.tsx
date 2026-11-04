@@ -12,6 +12,13 @@ import {
   Award,
   Radio,
   CheckCircle2,
+  Clock,
+  Plus,
+  Sliders,
+  Image as ImageIcon,
+  Medal,
+  ChevronRight,
+  ExternalLink,
 } from "lucide-react";
 import {
   BarChart,
@@ -32,14 +39,16 @@ export const AdminDashboard: React.FC = () => {
     leader: { name: "National Institute Of Medical Sciences & Research", points: 120 },
   });
   const [leaderboard, setLeaderboard] = useState<any[]>([]);
+  const [recentScores, setRecentScores] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [statsRes, lbRes] = await Promise.all([
+        const [statsRes, lbRes, scoresRes] = await Promise.all([
           Api.get("/scores/stats/").catch(() => null),
           Api.get("/scores/leaderboard/").catch(() => null),
+          Api.get("/scores/").catch(() => null),
         ]);
 
         if (statsRes?.data) {
@@ -47,6 +56,10 @@ export const AdminDashboard: React.FC = () => {
         }
         if (lbRes?.data?.standings) {
           setLeaderboard(lbRes.data.standings);
+        }
+        if (scoresRes?.data) {
+          const sData = scoresRes.data.results || scoresRes.data || [];
+          setRecentScores(sData.slice(0, 5));
         }
       } catch {
         // Fallback
@@ -58,116 +71,312 @@ export const AdminDashboard: React.FC = () => {
   }, []);
 
   const chartData = leaderboard.slice(0, 8).map((c) => ({
-    name: c.college_code || c.college_name.substring(0, 10),
+    name: c.college_code || c.college_name.substring(0, 8),
     points: c.total_points,
   }));
 
-  const COLORS = ["#F5B842", "#EAB308", "#CA8A04", "#A16207", "#713F12", "#831843", "#9F1239", "#BE123C"];
+  const COLORS = [
+    "#F59E0B",
+    "#FBBF24",
+    "#FACC15",
+    "#EAB308",
+    "#CA8A04",
+    "#A16207",
+    "#D97706",
+    "#B45309",
+  ];
+
+  const topThree = leaderboard.slice(0, 3);
 
   return (
-    <div className="space-y-8 animate-fade-in">
-      {/* Top Banner */}
-      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#29050e] via-[#1b0308] to-[#29050e] border border-amber-500/40 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in text-amber-50">
+      {/* Top Directorate Hero Banner */}
+      <div className="p-5 sm:p-7 rounded-3xl bg-gradient-to-r from-[#17030c] via-[#0d0106] to-[#17030c] border border-amber-500/35 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
         <div>
-          <div className="flex items-center gap-2 text-amber-400 mb-2">
+          <div className="flex items-center gap-2 text-amber-400 mb-1.5">
             <Sparkles className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-wider">Festival Operations Active</span>
+            <span className="text-[11px] font-black uppercase tracking-widest text-amber-400">
+              Championship Operations Active
+            </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif font-black text-white">
+          <h1 className="text-2xl sm:text-3xl font-serif font-black text-white tracking-wide">
             Directorate Command Center
           </h1>
-          <p className="text-xs sm:text-sm text-rose-200/80 mt-1">
-            Real-Time Scoring Oversight, Contingent Standings, And Arena Orchestration.
+          <p className="text-xs sm:text-sm text-rose-200/80 mt-1 max-w-2xl leading-relaxed">
+            Real-Time Scoring Oversight, Institutional Championship Standings, And Arena Orchestration.
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        {/* Quick Launchers */}
+        <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
           <Link
             to="/admin/scores"
-            className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold transition-all shadow-md shadow-amber-500/20 flex items-center gap-2"
+            className="flex-1 md:flex-none px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 text-black font-serif font-black text-xs sm:text-sm tracking-wide shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2 active:scale-95"
           >
-            <Trophy className="w-4 h-4" />
-            <span>Open Jury Scoring Engine</span>
+            <Trophy className="w-4 h-4 stroke-[2.5]" />
+            <span>Award Score</span>
           </Link>
+
           <Link
             to="/#leaderboard"
             target="_blank"
-            className="px-4 py-2.5 rounded-xl bg-rose-950/50 hover:bg-rose-900/50 text-rose-300 border border-rose-900/60 text-xs font-bold transition-all flex items-center gap-1.5"
+            className="px-3.5 py-2.5 rounded-2xl bg-white/5 hover:bg-white/10 text-rose-200 hover:text-white border border-white/10 text-xs font-bold transition-colors flex items-center gap-1.5"
           >
-            <Trophy className="w-3.5 h-3.5" />
-            <span>Public Leaderboard</span>
+            <ExternalLink className="w-3.5 h-3.5 text-amber-400" />
+            <span>Public Standings</span>
           </Link>
         </div>
       </div>
 
-      {/* KPI Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="p-5 rounded-2xl bg-[#170306] border border-rose-950/80">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-rose-300/80">Participating Contingents</span>
-            <Building2 className="w-4 h-4 text-amber-400" />
+      {/* KPI Metric Cards */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        {/* Contingents */}
+        <Link
+          to="/admin/colleges"
+          className="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-[#120208]/90 border border-amber-500/25 hover:border-amber-400/50 backdrop-blur-xl shadow-lg transition-all group hover:-translate-y-0.5"
+        >
+          <div className="flex items-center justify-between text-rose-300/80">
+            <span className="text-[11px] font-bold uppercase tracking-wider">
+              Institutes Competing
+            </span>
+            <Building2 className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
           </div>
-          <p className="text-3xl font-serif font-black text-white">{stats.total_colleges || 12}</p>
-          <span className="text-[11px] text-emerald-400 font-semibold mt-1 block">100% Accredited Institutes</span>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-[#170306] border border-rose-950/80">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-rose-300/80">Total Competitions</span>
-            <CalendarCheck className="w-4 h-4 text-amber-400" />
-          </div>
-          <p className="text-3xl font-serif font-black text-white">{stats.total_competitions || 15}</p>
-          <span className="text-[11px] text-amber-400 font-semibold mt-1 block">Across 6 Cultural Arenas</span>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-[#170306] border border-rose-950/80">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-rose-300/80">Jury Scores Recorded</span>
-            <Award className="w-4 h-4 text-emerald-400" />
-          </div>
-          <p className="text-3xl font-serif font-black text-white">{stats.total_scores_recorded || 12}</p>
-          <span className="text-[11px] text-rose-300/70 font-semibold mt-1 block">Verified In Database</span>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-[#170306] border border-rose-950/80">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-rose-300/80">Current Trophy Frontrunner</span>
-            <Trophy className="w-4 h-4 text-amber-400" />
-          </div>
-          <p className="text-sm font-bold text-amber-300 truncate">
-            {stats.leader?.name || "Medical Sciences"}
-          </p>
-          <span className="text-lg font-mono font-black text-white mt-1 block">
-            {stats.leader?.points || 120} Points
-          </span>
-        </div>
-      </div>
-
-      {/* Analytics Chart & Leading Colleges */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Chart Column */}
-        <div className="lg:col-span-7 p-6 rounded-3xl bg-[#150206] border border-rose-950/80 flex flex-col justify-between">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h3 className="text-base font-bold font-serif text-white">Points Distribution By Contingent</h3>
-              <p className="text-xs text-rose-300/70">Top Scoring Institutes Ranked Cumulative</p>
-            </div>
-            <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30">
-              Live Standings
+          <div className="mt-2 flex items-baseline justify-between">
+            <span className="text-2xl sm:text-3xl font-serif font-black text-white">
+              {stats.total_colleges || 12}
+            </span>
+            <span className="text-[10px] font-mono font-bold text-amber-400 flex items-center gap-0.5">
+              <span>Manage</span>
+              <ChevronRight className="w-3 h-3" />
             </span>
           </div>
+          <p className="text-[10px] text-rose-300/60 mt-1 truncate">
+            Leader: {stats.leader?.name ? stats.leader.name.split(" ")[0] : "NIET"} ({stats.leader?.points || 0} pts)
+          </p>
+        </Link>
 
-          <div className="h-64 w-full">
+        {/* Competitions */}
+        <Link
+          to="/admin/competitions"
+          className="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-[#120208]/90 border border-amber-500/25 hover:border-amber-400/50 backdrop-blur-xl shadow-lg transition-all group hover:-translate-y-0.5"
+        >
+          <div className="flex items-center justify-between text-rose-300/80">
+            <span className="text-[11px] font-bold uppercase tracking-wider">
+              Competitions
+            </span>
+            <CalendarCheck className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
+          </div>
+          <div className="mt-2 flex items-baseline justify-between">
+            <span className="text-2xl sm:text-3xl font-serif font-black text-white">
+              {stats.total_competitions || 15}
+            </span>
+            <span className="text-[10px] font-mono font-bold text-emerald-400">
+              {stats.completed_competitions || 0} Done
+            </span>
+          </div>
+          <p className="text-[10px] text-rose-300/60 mt-1">
+            Across 8 Major Cultural Arenas
+          </p>
+        </Link>
+
+        {/* Scores & Medals */}
+        <Link
+          to="/admin/scores"
+          className="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-[#120208]/90 border border-amber-500/25 hover:border-amber-400/50 backdrop-blur-xl shadow-lg transition-all group hover:-translate-y-0.5"
+        >
+          <div className="flex items-center justify-between text-rose-300/80">
+            <span className="text-[11px] font-bold uppercase tracking-wider">
+              Scorecards Logged
+            </span>
+            <Trophy className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
+          </div>
+          <div className="mt-2 flex items-baseline justify-between">
+            <span className="text-2xl sm:text-3xl font-serif font-black text-amber-300">
+              {stats.total_scores_recorded || recentScores.length || 1}
+            </span>
+            <span className="text-[10px] font-mono font-bold text-amber-400">Verified</span>
+          </div>
+          <p className="text-[10px] text-rose-300/60 mt-1">
+            Official Marks & Points Engine
+          </p>
+        </Link>
+
+        {/* Media & Gallery */}
+        <Link
+          to="/admin/gallery"
+          className="p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-[#120208]/90 border border-amber-500/25 hover:border-amber-400/50 backdrop-blur-xl shadow-lg transition-all group hover:-translate-y-0.5"
+        >
+          <div className="flex items-center justify-between text-rose-300/80">
+            <span className="text-[11px] font-bold uppercase tracking-wider">
+              Media Archive
+            </span>
+            <ImageIcon className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
+          </div>
+          <div className="mt-2 flex items-baseline justify-between">
+            <span className="text-2xl sm:text-3xl font-serif font-black text-white">
+              6+
+            </span>
+            <span className="text-[10px] font-mono font-bold text-purple-400">HD Snaps</span>
+          </div>
+          <p className="text-[10px] text-rose-300/60 mt-1">
+            Star Night & Stage Captures
+          </p>
+        </Link>
+      </div>
+
+      {/* Podium Standings Showcase (Top 3 Colleges) */}
+      {topThree.length > 0 && (
+        <div className="p-5 sm:p-7 rounded-3xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-xl space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <Trophy className="w-5 h-5 text-amber-400" />
+              <h2 className="font-serif font-black text-lg text-white">
+                Live Championship Podium Leaders
+              </h2>
+            </div>
+            <Link
+              to="/admin/colleges"
+              className="text-xs font-mono font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1"
+            >
+              <span>View Full Standings</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+            {/* #1 Gold */}
+            {topThree[0] && (
+              <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-500/20 via-[#140209] to-[#0a0105] border-2 border-amber-400/60 shadow-xl shadow-amber-500/10 flex flex-col justify-between relative order-1 sm:order-2">
+                <div className="flex items-start justify-between">
+                  <span className="text-2xl">🥇</span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                    #1 Gold Leader
+                  </span>
+                </div>
+                <div className="my-3">
+                  <h3 className="font-serif font-black text-white text-base">
+                    {topThree[0].college_name}
+                  </h3>
+                  <p className="text-xs font-mono font-bold text-amber-400 mt-0.5">
+                    {topThree[0].college_code}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-amber-500/20">
+                  <div className="text-[11px] text-rose-200/80">
+                    🥇 {topThree[0].gold_medals || 0} 🥈 {topThree[0].silver_medals || 0} 🥉 {topThree[0].bronze_medals || 0}
+                  </div>
+                  <span className="text-base font-mono font-black text-amber-300">
+                    {topThree[0].total_points} PTS
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* #2 Silver */}
+            {topThree[1] && (
+              <div className="p-4 rounded-2xl bg-gradient-to-b from-slate-400/15 via-[#140209] to-[#0a0105] border border-slate-300/40 shadow-lg flex flex-col justify-between order-2 sm:order-1">
+                <div className="flex items-start justify-between">
+                  <span className="text-2xl">🥈</span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-slate-400/20 text-slate-200 border border-slate-300/40">
+                    #2 Silver Runner-Up
+                  </span>
+                </div>
+                <div className="my-3">
+                  <h3 className="font-serif font-black text-white text-base">
+                    {topThree[1].college_name}
+                  </h3>
+                  <p className="text-xs font-mono font-bold text-slate-300 mt-0.5">
+                    {topThree[1].college_code}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-slate-400/20">
+                  <div className="text-[11px] text-rose-200/80">
+                    🥇 {topThree[1].gold_medals || 0} 🥈 {topThree[1].silver_medals || 0} 🥉 {topThree[1].bronze_medals || 0}
+                  </div>
+                  <span className="text-base font-mono font-black text-slate-200">
+                    {topThree[1].total_points} PTS
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* #3 Bronze */}
+            {topThree[2] && (
+              <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-800/20 via-[#140209] to-[#0a0105] border border-amber-600/40 shadow-lg flex flex-col justify-between order-3">
+                <div className="flex items-start justify-between">
+                  <span className="text-2xl">🥉</span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-700/20 text-amber-400 border border-amber-600/40">
+                    #3 Bronze Runner-Up
+                  </span>
+                </div>
+                <div className="my-3">
+                  <h3 className="font-serif font-black text-white text-base">
+                    {topThree[2].college_name}
+                  </h3>
+                  <p className="text-xs font-mono font-bold text-amber-500 mt-0.5">
+                    {topThree[2].college_code}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-amber-600/20">
+                  <div className="text-[11px] text-rose-200/80">
+                    🥇 {topThree[2].gold_medals || 0} 🥈 {topThree[2].silver_medals || 0} 🥉 {topThree[2].bronze_medals || 0}
+                  </div>
+                  <span className="text-base font-mono font-black text-amber-400">
+                    {topThree[2].total_points} PTS
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Chart & Recent Scores Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Leaderboard Chart (2 Cols) */}
+        <div className="lg:col-span-2 p-5 sm:p-7 rounded-3xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="font-serif font-black text-lg text-white">
+                Institutional Standings Matrix
+              </h2>
+              <p className="text-xs text-rose-200/80 mt-0.5">
+                Top 8 competing institutes by cumulative championship points.
+              </p>
+            </div>
+          </div>
+
+          <div className="h-64 sm:h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData}>
-                <XAxis dataKey="name" stroke="#a28189" fontSize={11} tickLine={false} />
-                <YAxis stroke="#a28189" fontSize={11} tickLine={false} />
-                <Tooltip
-                  contentStyle={{ backgroundColor: "#1e0408", borderColor: "#f59e0b", borderRadius: "12px", fontSize: "12px" }}
-                  itemStyle={{ color: "#fef3c7" }}
+              <BarChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 20 }}>
+                <XAxis
+                  dataKey="name"
+                  stroke="#F59E0B"
+                  fontSize={10}
+                  tickLine={false}
+                  interval={0}
+                  angle={-15}
+                  textAnchor="end"
                 />
-                <Bar dataKey="points" radius={[6, 6, 0, 0]}>
-                  {chartData.map((_, index) => (
+                <YAxis stroke="#F59E0B" fontSize={10} tickLine={false} />
+                <Tooltip
+                  cursor={{ fill: "rgba(245, 158, 11, 0.08)" }}
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="p-3 rounded-xl bg-[#17030c] border border-amber-500/40 shadow-2xl text-xs">
+                          <p className="font-serif font-bold text-white">{payload[0].payload.name}</p>
+                          <p className="font-mono font-black text-amber-400 mt-1">
+                            {payload[0].value} Championship Points
+                          </p>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
+                />
+                <Bar dataKey="points" radius={[8, 8, 0, 0]}>
+                  {chartData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Bar>
@@ -176,42 +385,134 @@ export const AdminDashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Quick Standings Table */}
-        <div className="lg:col-span-5 p-6 rounded-3xl bg-[#150206] border border-rose-950/80 flex flex-col">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-bold font-serif text-white">Top Podium Standings</h3>
-            <Link to="/admin/scores" className="text-xs text-amber-400 font-bold hover:underline">
-              Enter New Score →
-            </Link>
-          </div>
-
-          <div className="space-y-3 flex-1 overflow-y-auto custom-scrollbar">
-            {leaderboard.slice(0, 5).map((col, idx) => (
-              <div
-                key={col.college_id || idx}
-                className="p-3.5 rounded-xl bg-[#1c0308] border border-rose-950/60 flex items-center justify-between"
+        {/* Recent Scores Stream (1 Col) */}
+        <div className="p-5 sm:p-7 rounded-3xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between pb-3 border-b border-amber-500/15">
+              <h2 className="font-serif font-black text-lg text-white">
+                Live Score Stream
+              </h2>
+              <Link
+                to="/admin/scores"
+                className="text-xs font-mono font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1"
               >
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <span className="w-6 h-6 rounded-lg bg-rose-950/80 text-amber-400 text-xs font-black flex items-center justify-center shrink-0">
-                    #{idx + 1}
-                  </span>
-                  <div className="overflow-hidden">
-                    <p className="text-xs font-bold text-white truncate">{col.college_name}</p>
-                    <p className="text-[10px] text-rose-300/70">{col.college_code}</p>
-                  </div>
-                </div>
+                <span>Scoring Deck</span>
+                <ChevronRight className="w-3 h-3" />
+              </Link>
+            </div>
 
-                <div className="text-right shrink-0">
-                  <span className="text-sm font-black text-amber-400 font-mono">{col.total_points}</span>
-                  <span className="text-[10px] text-rose-400 block">PTS</span>
+            <div className="divide-y divide-amber-500/10 mt-3">
+              {recentScores.length === 0 ? (
+                <div className="py-8 text-center text-xs text-rose-300/60 font-serif">
+                  No scorecards logged yet.
                 </div>
-              </div>
-            ))}
+              ) : (
+                recentScores.map((s) => (
+                  <div key={s.id} className="py-3 flex items-center justify-between gap-2">
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-white truncate">
+                        {s.competition_title}
+                      </p>
+                      <p className="text-[10px] text-rose-300/70 truncate">
+                        {s.college_code} {s.participant_name ? `• ${s.participant_name}` : ""}
+                      </p>
+                    </div>
+
+                    <div className="text-right shrink-0">
+                      <span className="text-xs font-mono font-black text-amber-400">
+                        +{s.points_awarded} PTS
+                      </span>
+                      <div className="text-[10px] text-rose-300/60">
+                        {s.rank === 1 ? "🥇 Gold" : s.rank === 2 ? "🥈 Silver" : s.rank === 3 ? "🥉 Bronze" : "🎖️ Part."}
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
+
+          <Link
+            to="/admin/scores"
+            className="w-full mt-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-rose-200 hover:text-white border border-white/10 text-xs font-bold transition-colors text-center block"
+          >
+            Record New Jury Scorecard
+          </Link>
         </div>
+      </div>
+
+      {/* CRUD Quick Operations Matrix */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <Link
+          to="/admin/colleges"
+          className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/20 hover:border-amber-400/50 p-4 transition-all flex items-center gap-3.5 group"
+        >
+          <div className="p-3 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 group-hover:scale-110 transition-transform">
+            <Building2 className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="font-serif font-black text-white text-xs sm:text-sm">
+              Colleges Registry
+            </h4>
+            <p className="text-[10px] text-rose-300/70">
+              Add, edit, or remove contingents
+            </p>
+          </div>
+        </Link>
+
+        <Link
+          to="/admin/competitions"
+          className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/20 hover:border-amber-400/50 p-4 transition-all flex items-center gap-3.5 group"
+        >
+          <div className="p-3 rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-400 group-hover:scale-110 transition-transform">
+            <CalendarCheck className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="font-serif font-black text-white text-xs sm:text-sm">
+              Competitions Roster
+            </h4>
+            <p className="text-[10px] text-rose-300/70">
+              Manage schedules, rules & arenas
+            </p>
+          </div>
+        </Link>
+
+        <Link
+          to="/admin/settings"
+          className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/20 hover:border-amber-400/50 p-4 transition-all flex items-center gap-3.5 group"
+        >
+          <div className="p-3 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 group-hover:scale-110 transition-transform">
+            <Sliders className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="font-serif font-black text-white text-xs sm:text-sm">
+              System Parameters
+            </h4>
+            <p className="text-[10px] text-rose-300/70">
+              Marquee tickers & remote flags
+            </p>
+          </div>
+        </Link>
+
+        <Link
+          to="/admin/users"
+          className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/20 hover:border-amber-400/50 p-4 transition-all flex items-center gap-3.5 group"
+        >
+          <div className="p-3 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 group-hover:scale-110 transition-transform">
+            <Users className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="font-serif font-black text-white text-xs sm:text-sm">
+              Staff & Permissions
+            </h4>
+            <p className="text-[10px] text-rose-300/70">
+              RBAC roles & access control
+            </p>
+          </div>
+        </Link>
       </div>
     </div>
   );
 };
-export default AdminDashboard;
 
+export default AdminDashboard;
