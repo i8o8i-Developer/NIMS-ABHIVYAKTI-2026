@@ -267,15 +267,15 @@ export const Podium: React.FC<PodiumProps> = ({ topThree }) => {
           {/* Golden Stage Perimeter Glow Rim */}
           <div className="h-2 rounded-full bg-gradient-to-r from-amber-600/20 via-amber-400 to-amber-600/20 shadow-[0_0_20px_rgba(245,184,66,0.5)]" />
 
-          {/* Foundation Plinth Base Deck */}
-          <div className="mt-1 py-3 sm:py-4 px-3 sm:px-6 rounded-b-xl sm:rounded-b-2xl bg-gradient-to-b from-[#240612] via-[#1a041f] to-[#0c0214] border-b-2 border-x-2 border-amber-400/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left shadow-2xl">
+          {/* Foundation Plinth Base Deck In Harmonious Royal Velvet Obsidian */}
+          <div className="mt-1 py-3 sm:py-4 px-3 sm:px-6 rounded-b-xl sm:rounded-b-2xl bg-gradient-to-r from-[#1c030d] via-[#120208] to-[#1c030d] border-b border-x border-amber-500/35 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left shadow-2xl">
             <div className="flex items-center gap-2">
               <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
               <span className="text-[11px] sm:text-xs font-serif font-black text-amber-200 tracking-wider uppercase">
                 Official Championship Podium • 2026 Inter-College Championship
               </span>
             </div>
-            <p className="text-[10px] sm:text-[11px] text-gray-400 font-mono">
+            <p className="text-[10px] sm:text-[11px] text-amber-300/70 font-mono">
               Scores Calculated In Real-Time Across All 22 Official Competitions
             </p>
           </div>
