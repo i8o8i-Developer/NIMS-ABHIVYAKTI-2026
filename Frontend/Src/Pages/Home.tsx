@@ -54,7 +54,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   // Day 1: 18 Nov 2026
   {
     id: "1",
-    title: "Groove-o-Mania (Dance - Round 1)",
+    title: "Groove-O-Mania (Dance - Round 1)",
     day: "Day 1",
     date: "18 Nov 2026",
     time: "10:00 AM - 01:00 PM",
@@ -64,21 +64,21 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   },
   {
     id: "2",
-    title: "Harmony Hustle (Singing - Round 1)",
+    title: "Harmony Hustle (Singing – Round 1)",
     day: "Day 1",
     date: "18 Nov 2026",
     time: "10:00 AM - 01:00 PM",
-    venue: "NIMS School of Law - LT 10 & 11",
+    venue: "NIMS School Of Law – LT 10 & 11",
     category: "Music",
     rules: "Solo (Max 3 Mins, 3m/3f), Duet (Max 3 Mins, 2 Pairs), Group (Max 5 Mins, 6-10 Students), Rap (Single Round). Karaoke Permitted. One Accompanist Permitted Where Applicable. Evaluated On Swara (Pitch), Taal (Rhythm), Song Selection, Voice Quality & Stage Presence.",
   },
   {
     id: "3",
-    title: "Spellbound (Spell Bee - Round 1)",
+    title: "Spellbound (Spell Bee – Round 1)",
     day: "Day 1",
     date: "18 Nov 2026",
     time: "02:00 PM - 05:00 PM",
-    venue: "Marik / Moot Court",
+    venue: "Manik / Moot Court",
     category: "Literature",
     rules: "5 Solo Participants Per College (At Least 1 Female). 4-Round Format: Round 1 (20-Word Dictation, Top 30 Qualify), Round 2 (Moderate Spell Bee), Round 3 (Advanced Spell Bee In Sentence Context), Round 4 (Sudden-Death Rapid-Fire Finale).",
   },
@@ -88,7 +88,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 1",
     date: "18 Nov 2026",
     time: "02:00 PM - 05:00 PM",
-    venue: "Marik / NIET",
+    venue: "Manik / NIET",
     category: "Literature",
     rules: "5 Solo Participants Per Language Per College. 15 Minutes On-Spot Preparation, 2-3 Minutes Performance Time. Must Create Original Poetry On The Spot Without Internet, Books, Or Pre-Written Material. Judged On Originality, Imagery, Voice & Stage Presence.",
   },
@@ -100,7 +100,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "09:00 AM - 09:30 AM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fine Arts",
     rules: "2 Teams Of 3-5 Students Per College. Rangoli Size: 3x3 Feet. Theme Provided On Spot. Duration 60 Minutes. All Colors And Materials Brought By Teams.",
   },
@@ -110,7 +110,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "10:00 AM - 11:00 AM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fashion",
     rules: "5 Solo Participants Per College (At Least 1 Female). Duration 60 Minutes. Upcycle Used/Old Textiles Into Wearable Couture Garments On The Spot. New Fabric Strictly Prohibited.",
   },
@@ -120,7 +120,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "10:00 AM - 11:00 AM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fine Arts",
     rules: "5 Solo Participants Per College (At Least 1 Female). Duration 60 Minutes. Paper Size A3. On-Spot Theme. Freehand Black Fine-Liners And Ink Pens.",
   },
@@ -130,7 +130,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "11:00 AM - 12:00 PM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Digital Arts",
     rules: "5 Solo Participants Per College (At Least 1 Female). Duration 30 Minutes. Create An Original Thematic Poster Using Ai Prompt Engineering On Personal Devices. Submit Jpg/Png/Pdf <= 5mb Via Official Qr Code.",
   },
@@ -140,27 +140,27 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "11:00 AM - 12:00 PM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fine Arts",
     rules: "3 Male & 3 Female Participants Per College. Duration 60 Minutes. Model Must Arrive With A Clean, Unpainted Face. Skin-Safe Paints Mandatory. Stencils And Pre-Made Outlines Prohibited.",
   },
   {
     id: "10",
-    title: "FONT-tastic (Calligraphy)",
+    title: "FONT-Tastic (Calligraphy)",
     day: "Day 2",
     date: "19 Nov 2026",
     time: "12:00 PM - 01:00 PM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fine Arts",
     rules: "5 Solo Participants Per College (At Least 1 Female). Duration 30 Minutes. Paper Size A3. Write On-Spot Designated Text. Calligraphy Pens Only (No Ball/Gel Pens). Freehand Execution Without Tracing.",
   },
   {
     id: "11",
-    title: "MUA Madness (MakeUp Contest)",
+    title: "MUA Madness (Makeup Contest)",
     day: "Day 2",
     date: "19 Nov 2026",
     time: "12:00 PM - 01:00 PM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fashion",
     rules: "5 Solo Participants Per College (At Least 1 Male). Duration 60 Minutes. Model Arrives With A Clean, Makeup-Free Face. Blending, Precision, Styling, And Hygiene Evaluated.",
   },
@@ -170,7 +170,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "02:00 PM - 03:00 PM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Fashion",
     rules: "5 Solo Participants Per College (At Least 1 Female). Duration 60 Minutes. Decorate A Single Pair Of Plain Shoes On The Spot Using Paints, Stencils, Accessories, And Street Art Finishes.",
   },
@@ -180,13 +180,13 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
     day: "Day 2",
     date: "19 Nov 2026",
     time: "02:00 PM - 03:00 PM",
-    venue: "School of Law",
+    venue: "School Of Law",
     category: "Literature",
     rules: "5 Solo Participants Per Language Per College. Duration 45 Minutes. Word Limit 400-600 Words Based On On-Spot Visual Or Quotation Prompt. Evaluated On Originality, Structure, Language & Theme.",
   },
   {
     id: "14",
-    title: "Lit Check (Literature Quiz - Prelims)",
+    title: "Lit Check (Literature Quiz – Prelims)",
     day: "Day 2",
     date: "19 Nov 2026",
     time: "03:00 PM - 05:00 PM",
@@ -208,7 +208,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   },
   {
     id: "16",
-    title: "Groove-o-Mania (Dance - Round 2 Battle Round)",
+    title: "Groove-O-Mania (Dance - Round 2 Battle Round)",
     day: "Day 3",
     date: "20 Nov 2026",
     time: "11:00 AM - 01:00 PM",
@@ -218,27 +218,27 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   },
   {
     id: "17",
-    title: "Harmony Hustle (Singing - Round 2 Battle Round)",
+    title: "Harmony Hustle (Singing – Round 2 Battle Round)",
     day: "Day 3",
     date: "20 Nov 2026",
     time: "11:00 AM - 01:00 PM",
-    venue: "NIMS School of Law - LT 10 & 11",
+    venue: "NIMS School Of Law – LT 10 & 11",
     category: "Music",
     rules: "Vocal Face-Off For Qualified Solo And Duet Entries. High-Stakes Acoustic Control, Pitch Mastery, And Emotional Resonance Tested Under Direct Jury Scrutiny.",
   },
   {
     id: "18",
-    title: "Clash of Takes (Debate – Hindi & English)",
+    title: "Clash Of Takes (Debate – Hindi & English)",
     day: "Day 3",
     date: "20 Nov 2026",
     time: "02:00 PM - 05:00 PM",
-    venue: "Marik / NIET",
+    venue: "Manik / NIET",
     category: "Literature",
     rules: "2 Solo Participants Per Language Per College. 3 Minutes Argument Presentation + 1 Minute Rebuttal. For/Against Stance Decided Via Chit Draw At The Venue. Evaluated On Content, Logic, Rebuttal & Presentation.",
   },
   {
     id: "19",
-    title: "Lit Check (Literature Quiz - Grand Finale)",
+    title: "Lit Check (Literature Quiz – Grand Finale)",
     day: "Day 3",
     date: "20 Nov 2026",
     time: "02:00 PM - 05:00 PM",
@@ -260,7 +260,7 @@ const OFFICIAL_SCHEDULE: ScheduleEventItem[] = [
   },
   {
     id: "21",
-    title: "Championship Grand Finale: Groove-o-Mania & Harmony Hustle",
+    title: "Championship Grand Finale: Groove-O-Mania & Harmony Hustle",
     day: "Day 4",
     date: "21 Nov 2026",
     time: "11:00 AM - 02:00 PM",
@@ -418,32 +418,32 @@ export const Home: React.FC = () => {
     {
       category: "Eligibility & Contingents",
       q: "Who Is Eligible To Participate In Abhivyakti 2026?",
-      a: "All Bonafide Students currently enrolled in any College, Department, or Institute of NIMS University Rajasthan are eligible to represent their institutional contingent in official cultural competitions.",
+      a: "All Bonafide Students Currently Enrolled In Any College, Department, Or Institute Of NIMS University Rajasthan Are Eligible To Represent Their Institutional Contingent In Official Cultural Competitions.",
     },
     {
       category: "Master Timeline & Venue",
       q: "When & Where Does Abhivyakti 2026 Take Place?",
-      a: "The Championship spans 4 epic days from 18 November To 21 November 2026, hosted across the grand Rajeshwari Auditorium, NIMS Convention Grounds, and specialized academic arenas in Jaipur.",
+      a: "The Championship Spans 4 Epic Days From 18 November To 21 November 2026, Hosted Across The Grand Rajeshwari Auditorium & Campus Grounds, NIMS University Rajasthan, Jaipur – 303121, And Specialized Academic Arenas.",
     },
     {
       category: "Rules & Scoring Rubrics",
       q: "How Are Event Rules & Guidelines Accessed?",
-      a: "Rules are directly attached to every event card! Simply click 'Guidelines & Scoring Rubric' on any competition card to inspect exact time limits, stage dimensions, team sizes, and the 4-pillar evaluation criteria (25 pts each = 100 max).",
+      a: "Rules Are Directly Attached To Every Event Card! Simply Click 'Guidelines & Scoring Rubric' On Any Competition Card To Inspect Exact Time Limits, Stage Dimensions, Team Sizes, And The 4-Pillar Evaluation Criteria (25 Pts Each = 100 Max).",
     },
     {
       category: "Championship Rolling Trophy",
       q: "How Is The Overall Championship Trophy Decided?",
-      a: "Points are awarded automatically from verified jury scorecards: 1st Place = 40 Pts, 2nd Place = 25 Pts, and 3rd Place = 15 Pts. The contingent with the highest cumulative score across all cultural arenas lifts the coveted Abhivyakti Rolling Trophy.",
+      a: "Points Are Awarded Automatically From Verified Jury Scorecards: 1st Place = 40 Pts, 2nd Place = 25 Pts, And 3rd Place = 15 Pts. The Contingent With The Highest Cumulative Score Across All Cultural Arenas Lifts The Coveted Abhivyakti Rolling Trophy.",
     },
     {
       category: "Participation Flexibility",
       q: "Can Students Compete In Multiple Events Or Arenas?",
-      a: "Yes! Students may participate in multiple competitions provided the stage schedules do not conflict. Multi-talented students can participate across dance battles, singing showdowns, poetry slams, and fine arts.",
+      a: "Yes! Students May Participate In Multiple Competitions Provided The Stage Schedules Do Not Conflict. Multi-Talented Students Can Participate Across Dance Battles, Singing Showdowns, Poetry Slams, And Fine Arts.",
     },
     {
       category: "Entry & Access Policy",
       q: "Is There Any Entry Fee For NIMS University Students?",
-      a: "No! Participation, stage access, and spectator entry for all 22 official championship competitions, Battle of the Bands, Couture Runway Vogue, and celebrity evening star nights are 100% free for all NIMS University students, faculty, and staff.",
+      a: "No! Participation, Stage Access, And Spectator Entry For All 22 Official Championship Competitions, Battle Of The Bands, Couture Runway Vogue, And Celebrity Evening Star Nights Are 100% Free For All NIMS University Students, Faculty, And Staff.",
     },
   ];
 
@@ -506,7 +506,7 @@ export const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Event 2: Groove-o-Mania Dance (Radiant Hot Pink & Magenta) */}
+          {/* Event 2: Groove-O-Mania Dance (Radiant Hot Pink & Magenta) */}
           <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-r from-[#290422]/95 via-[#3b0832]/95 to-[#1c0218]/95 border-2 border-pink-500/70 backdrop-blur-2xl shadow-2xl shadow-pink-950/60 text-left transform hover:-translate-y-1 hover:border-pink-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
             <div className="flex items-center gap-3">
               <div className="p-2 2xl:p-2.5 rounded-xl bg-pink-500/25 border border-pink-400/60 text-pink-400 shrink-0 shadow-lg shadow-pink-500/20">
@@ -822,7 +822,7 @@ export const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Event 8: Clash of Takes Debate (Sapphire Teal & Amber - Fills Image 1 Red Box) */}
+          {/* Event 8: Clash Of Takes Debate (Sapphire Teal & Amber - Fills Image 1 Red Box) */}
           <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-l from-[#022026]/95 via-[#033038]/95 to-[#011417]/95 border-2 border-teal-400/70 backdrop-blur-2xl shadow-2xl shadow-teal-950/60 text-right transform hover:-translate-y-1 hover:border-teal-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.6s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
@@ -1279,7 +1279,7 @@ export const Home: React.FC = () => {
                 </div>
               </div>
               <p className="text-xs text-rose-200/85 leading-relaxed font-normal">
-                Every competition is evaluated by empanelled jury panels utilizing standardized 4-pillar rubrics (25 pts each = 100 max) sealed in real-time.
+                Every Competition Is Evaluated By Empanelled Jury Panels Utilizing Standardized 4-Pillar Rubrics (25 Pts Each = 100 Max) Sealed In Real-Time.
               </p>
               <div className="mt-4 pt-3 border-t border-rose-500/30 flex items-center justify-between text-[11px] font-bold text-amber-300">
                 <span>Rulebook Sealed</span>
@@ -1379,7 +1379,7 @@ export const Home: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xs sm:text-sm font-serif font-black text-white">Have An Unanswered Query?</h4>
-                  <p className="text-[11px] text-gray-300 mt-0.5">Connect with the official NIMS Student Council Directorate.</p>
+                  <p className="text-[11px] text-gray-300 mt-0.5">Connect With The Official NIMS Student Council Directorate.</p>
                 </div>
               </div>
               <a
@@ -1409,7 +1409,7 @@ export const Home: React.FC = () => {
                 </div>
               </div>
               <p className="text-xs text-amber-200/85 leading-relaxed font-normal">
-                Rolling trophy points are awarded per competition: 🥇 40 pts for 1st, 🥈 25 pts for 2nd, and 🥉 15 pts for 3rd. Real-time scores stream to the dashboard.
+                Rolling Trophy Points Are Awarded Per Competition: 🥇 40 Pts For 1st, 🥈 25 Pts For 2nd, And 🥉 15 Pts For 3rd. Real-Time Scores Stream Directly To The Live Directorate Dashboard.
               </p>
               <div className="mt-4 pt-3 border-t border-amber-500/30 flex items-center justify-between text-[11px] font-bold text-amber-300">
                 <span>30+ Institutes</span>
@@ -1446,62 +1446,6 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* =========================================================================
-          MAGNIFICENT FESTIVE DIVIDER & PROPER FOOTER SEPARATION
-          Ornate Golden Crest, Flickering Diyas & Glowing Horizon Rail
-          ========================================================================= */}
-      <div className="relative w-full pt-14 pb-8 overflow-hidden select-none z-20">
-        {/* Ambient Horizon Glow Beam */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-24 bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.22)_0%,_rgba(225,29,72,0.12)_45%,_transparent_75%)] blur-2xl pointer-events-none" />
-
-        <div className="max-w-[88rem] 2xl:max-w-[94rem] mx-auto px-4 relative flex items-center justify-center">
-          {/* Left Tapering Glowing Gold Line */}
-          <div className="flex-1 h-0.5 bg-gradient-to-r from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_16px_rgba(245,184,66,0.8)]" />
-
-          {/* Left Decorative Diamond Studs */}
-          <div className="hidden sm:flex items-center gap-2.5 mx-4">
-            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
-            <span className="w-2.5 h-2.5 rotate-45 bg-rose-500 shadow-[0_0_10px_#F43F5E]" />
-            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
-          </div>
-
-          {/* Center Royal Medallion Crest with Flickering Brass Diyas */}
-          <div className="relative px-5 sm:px-8 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#290514] via-[#3d0822] to-[#290514] border-2 border-amber-400 shadow-[0_0_40px_rgba(245,184,66,0.5)] flex items-center gap-3 sm:gap-4 shrink-0">
-            {/* Diya Left */}
-            <div className="animate-live-flicker">
-              <svg width="26" height="20" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_12px_rgba(245,184,66,0.85)]">
-                <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
-                <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
-                <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
-                <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
-              </svg>
-            </div>
-            <span className="font-serif font-black text-xs sm:text-sm tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 whitespace-nowrap drop-shadow-md">
-              ✦ ABHIVYAKTI 2026 FESTIVAL DIRECTORATE ✦
-            </span>
-            {/* Diya Right */}
-            <div className="animate-live-flicker" style={{ animationDelay: "1.3s" }}>
-              <svg width="26" height="20" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_12px_rgba(245,184,66,0.85)]">
-                <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
-                <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
-                <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
-                <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Right Decorative Diamond Studs */}
-          <div className="hidden sm:flex items-center gap-2.5 mx-4">
-            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
-            <span className="w-2.5 h-2.5 rotate-45 bg-rose-500 shadow-[0_0_10px_#F43F5E]" />
-            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
-          </div>
-
-          {/* Right Tapering Glowing Gold Line */}
-          <div className="flex-1 h-0.5 bg-gradient-to-l from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_16px_rgba(245,184,66,0.8)]" />
-        </div>
-      </div>
 
       {/* Global Footer */}
       <Footer />

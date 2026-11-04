@@ -184,3 +184,4 @@ The application adheres to an executive, royal, midnight festival aesthetic blen
 ---
 
 *This document is automatically referenced by Antigravity agents during code generation, editing, refactoring, and code review.*
+

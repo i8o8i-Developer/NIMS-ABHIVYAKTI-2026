@@ -8,13 +8,14 @@ export const StageSpotlights: React.FC = () => {
 
       {/* =========================================================================
           THEATRICAL STAGE SPOTLIGHT 1: LEFT OVERHEAD BEAM (Angled Down-Right)
+          Mobile Screen View: Distinct Left Spotlight Beam
           ========================================================================= */}
       <div
-        className="absolute -top-4 left-[6%] sm:left-[12%] 2xl:left-[16%] w-72 sm:w-[26rem] 2xl:w-[30rem] h-[36rem] sm:h-[46rem] pointer-events-none opacity-75 mix-blend-screen transform rotate-[18deg] origin-top animate-pulse"
+        className="absolute -top-4 left-[-12px] min-[360px]:left-[0%] sm:left-[10%] 2xl:left-[15%] w-36 min-[380px]:w-44 sm:w-[24rem] 2xl:w-[28rem] h-[30rem] sm:h-[46rem] pointer-events-none opacity-80 mix-blend-screen transform rotate-[14deg] sm:rotate-[18deg] origin-top animate-pulse"
         style={{ animationDuration: "8s" }}
       >
         {/* Lamp Fixture Source Lens */}
-        <div className="w-16 h-3.5 mx-auto rounded-full bg-gradient-to-r from-amber-600 via-yellow-200 to-amber-600 shadow-[0_0_25px_#F5B842] blur-[1px]" />
+        <div className="w-10 sm:w-16 h-2.5 sm:h-3.5 mx-auto rounded-full bg-gradient-to-r from-amber-600 via-yellow-200 to-amber-600 shadow-[0_0_20px_#F5B842] blur-[1px]" />
         {/* Tapered Light Cone */}
         <svg className="w-full h-full -mt-1 filter drop-shadow-[0_0_20px_rgba(245,184,66,0.3)]" viewBox="0 0 400 700" preserveAspectRatio="none">
           <defs>
@@ -32,13 +33,14 @@ export const StageSpotlights: React.FC = () => {
 
       {/* =========================================================================
           THEATRICAL STAGE SPOTLIGHT 2: CENTER OVERHEAD BEAM (Vertical Center)
+          Mobile Screen View: Distinct Center Spotlight Beam
           ========================================================================= */}
       <div
-        className="absolute -top-4 left-1/2 -translate-x-1/2 w-80 sm:w-[34rem] 2xl:w-[40rem] h-[38rem] sm:h-[48rem] pointer-events-none opacity-85 mix-blend-screen origin-top animate-pulse"
+        className="absolute -top-4 left-1/2 -translate-x-1/2 w-36 min-[380px]:w-44 sm:w-[30rem] 2xl:w-[36rem] h-[32rem] sm:h-[48rem] pointer-events-none opacity-85 mix-blend-screen origin-top animate-pulse"
         style={{ animationDuration: "6s" }}
       >
         {/* Lamp Fixture Source Lens */}
-        <div className="w-20 h-4 mx-auto rounded-full bg-gradient-to-r from-amber-600 via-yellow-100 to-amber-600 shadow-[0_0_30px_#FDE047] blur-[1px]" />
+        <div className="w-12 sm:w-20 h-3 sm:h-4 mx-auto rounded-full bg-gradient-to-r from-amber-600 via-yellow-100 to-amber-600 shadow-[0_0_25px_#FDE047] blur-[1px]" />
         {/* Tapered Light Cone */}
         <svg className="w-full h-full -mt-1 filter drop-shadow-[0_0_25px_rgba(245,184,66,0.35)]" viewBox="0 0 400 700" preserveAspectRatio="none">
           <defs>
@@ -56,13 +58,14 @@ export const StageSpotlights: React.FC = () => {
 
       {/* =========================================================================
           THEATRICAL STAGE SPOTLIGHT 3: RIGHT OVERHEAD BEAM (Angled Down-Left)
+          Mobile Screen View: Distinct Right Spotlight Beam
           ========================================================================= */}
       <div
-        className="absolute -top-4 right-[6%] sm:right-[12%] 2xl:right-[16%] w-72 sm:w-[26rem] 2xl:w-[30rem] h-[36rem] sm:h-[46rem] pointer-events-none opacity-75 mix-blend-screen transform -rotate-[18deg] origin-top animate-pulse"
+        className="absolute -top-4 right-[-12px] min-[360px]:right-[0%] sm:right-[10%] 2xl:right-[15%] w-36 min-[380px]:w-44 sm:w-[24rem] 2xl:w-[28rem] h-[30rem] sm:h-[46rem] pointer-events-none opacity-80 mix-blend-screen transform -rotate-[14deg] sm:-rotate-[18deg] origin-top animate-pulse"
         style={{ animationDuration: "9s" }}
       >
         {/* Lamp Fixture Source Lens */}
-        <div className="w-16 h-3.5 mx-auto rounded-full bg-gradient-to-r from-amber-600 via-yellow-200 to-amber-600 shadow-[0_0_25px_#F5B842] blur-[1px]" />
+        <div className="w-10 sm:w-16 h-2.5 sm:h-3.5 mx-auto rounded-full bg-gradient-to-r from-amber-600 via-yellow-200 to-amber-600 shadow-[0_0_20px_#F5B842] blur-[1px]" />
         {/* Tapered Light Cone */}
         <svg className="w-full h-full -mt-1 filter drop-shadow-[0_0_20px_rgba(245,184,66,0.3)]" viewBox="0 0 400 700" preserveAspectRatio="none">
           <defs>
@@ -79,7 +82,7 @@ export const StageSpotlights: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          GENTLE FLOATING GOLDEN PETALS & EMBERS (As Seen In Reference Image)
+          GENTLE FLOATING GOLDEN PETALS & EMBERS
           Drifting Down Across The Reddish Stage Beams
           ========================================================================= */}
       <div className="absolute inset-0 pointer-events-none">
