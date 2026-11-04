@@ -556,7 +556,7 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Central Logo & Majestic Typography (Generous Unobstructed Space) */}
-        <div className="w-full max-w-4xl 2xl:max-w-5xl mx-auto flex flex-col items-center px-2 min-[340px]:px-4 z-10">
+        <div className="w-full max-w-3xl 2xl:max-w-4xl mx-auto flex flex-col items-center px-2 min-[340px]:px-4 z-10">
           {/* Official Abhivyakti Stylized Logo - Blended Seamlessly In The Stage Atmosphere */}
           <div className="relative mb-6 max-w-xs sm:max-w-md w-full mx-auto flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
             {/* Luminous Ambient Spotlight Aura Behind Logo */}
@@ -574,18 +574,18 @@ export const Home: React.FC = () => {
             />
           </div>
 
-          {/* Regal Headline With Pure White Line 1 & Golden Amber Line 2 (Big Impact Typography) */}
-          <h1 className="font-serif text-[1.95rem] min-[340px]:text-[2.45rem] min-[380px]:text-[2.95rem] min-[440px]:text-[3.4rem] sm:text-[3.75rem] md:text-[4.4rem] lg:text-[4.9rem] xl:text-[5.4rem] 2xl:text-[6rem] font-black tracking-tight leading-[1.08] sm:leading-[1.04] mb-5 px-1 max-w-full text-center">
-            <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_24px_rgba(255,255,255,0.45)] break-words">
+          {/* Regal Headline With Pure White Line 1 & Golden Amber Line 2 (Enlarged Exclusively for Mobile, Original for Tablet/Desktop) */}
+          <h1 className="font-serif text-[1.95rem] min-[340px]:text-[2.45rem] min-[380px]:text-[2.95rem] min-[440px]:text-[3.4rem] sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[3.9rem] 2xl:text-[4.2rem] font-black tracking-tight leading-[1.08] sm:leading-[1.08] mb-5 px-1 max-w-full text-center">
+            <span className="block text-white font-serif font-black tracking-tight drop-shadow-[0_2px_20px_rgba(255,255,255,0.4)] break-words">
               Celebrating Cultural
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_32px_rgba(245,184,66,0.6)] break-words mt-1.5 sm:mt-2.5">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 font-serif font-black tracking-tight drop-shadow-[0_4px_30px_rgba(245,184,66,0.55)] break-words mt-1.5 sm:mt-2">
               Majesty & Excellence
             </span>
           </h1>
 
           {/* Subtitle Description With 18 to 21 November Date Range */}
-          <p className="text-xs min-[360px]:text-sm sm:text-base text-rose-200/90 font-medium max-w-xl sm:max-w-2xl leading-relaxed mb-7 text-center">
+          <p className="text-xs min-[360px]:text-sm sm:text-sm text-rose-200/90 font-medium max-w-xl leading-relaxed mb-7 text-center">
             Colleges And Institutes Across NIMS University Compete From{" "}
             <strong className="text-amber-300 font-bold">18 To 21 November 2026</strong> In Singing, Classical Dance,
             Street Play, Battle Of The Bands, And Visual Arts For The Coveted{" "}
