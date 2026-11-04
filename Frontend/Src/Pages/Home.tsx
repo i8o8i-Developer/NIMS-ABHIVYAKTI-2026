@@ -433,6 +433,25 @@ export const Home: React.FC = () => {
         {/* Three Theatrical Overhead Stage Spotlights Shining Downwards From Top */}
         <StageSpotlights />
 
+        {/* Mobile & Small Screen Festive Diya Accent Bar */}
+        <div className="xl:hidden flex items-center justify-center gap-3 mb-3 z-10 pointer-events-none select-none">
+          <div className="flex items-center gap-1.5 opacity-85 animate-live-flicker">
+            <svg width="26" height="20" viewBox="0 0 44 34" fill="none">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+          <span className="text-[9px] min-[340px]:text-[10px] font-black tracking-widest text-amber-300/80 uppercase">✦ ABHIVYAKTI 2026 ✦</span>
+          <div className="flex items-center gap-1.5 opacity-85 animate-live-flicker" style={{ animationDelay: "1.3s" }}>
+            <svg width="26" height="20" viewBox="0 0 44 34" fill="none">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FDE047" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#991B1B" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+        </div>
+
         {/* NIMS Championship Square Sharp Edged Box (Square Edges For Mobile & Desktop) */}
         <div className="inline-flex items-center justify-center gap-2 px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-none bg-[#120205]/95 border-2 border-amber-500/70 shadow-2xl shadow-amber-950/40 mb-7 z-10 animate-fade-in max-w-full">
           <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
@@ -547,11 +566,44 @@ export const Home: React.FC = () => {
 
         {/* Cluster 5: Bottom-Right Wide Zone (To Right Of Countdown Timer) */}
         <div className="hidden xl:flex items-center gap-3.5 absolute bottom-[10%] right-[17%] 2xl:right-[19%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "2.3s" }}>
-
           <div className="p-3 rounded-2xl bg-[#140206]/92 border border-amber-500/40 backdrop-blur-md shadow-2xl shadow-amber-950/60 flex items-center gap-2.5">
             <Trophy className="w-7 h-7 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.6)]" />
             <div className="h-6 w-px bg-amber-500/30" />
             <Music className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_10px_rgba(253,224,71,0.5)]" />
+          </div>
+        </div>
+
+        {/* Cluster 6: Far Bottom-Right (Below Right Badges In Outer Margin) */}
+        <div className="hidden xl:flex flex-col items-center gap-2 absolute bottom-[8%] right-[4%] 2xl:right-[6%] pointer-events-none select-none z-10">
+          <div className="animate-live-flicker" style={{ animationDelay: "1.6s" }}>
+            <svg width="44" height="34" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
+              <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+              <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+              <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+              <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+            </svg>
+          </div>
+          <div className="opacity-75 animate-live-leaf" style={{ animationDelay: "2.1s" }}>
+            <svg width="20" height="28" viewBox="0 0 34 44" fill="none">
+              <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.55" />
+              <path d="M17 2L17 42M17 15L27 22" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Cluster 7: Mid-Left Floating Cultural Badge (Between Groove-o-Mania & Nukkad Natak) */}
+        <div className="hidden xl:flex items-center gap-2 absolute top-[43%] left-[18%] 2xl:left-[20%] pointer-events-none select-none z-10 animate-live-drift-diag">
+          <div className="p-2.5 rounded-2xl bg-[#140206]/92 border border-pink-500/40 backdrop-blur-md shadow-xl shadow-pink-950/40 flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-pink-300 drop-shadow-[0_0_10px_rgba(244,63,94,0.6)]" />
+            <span className="text-[10px] font-black uppercase text-pink-200 tracking-wider">Nritya & Mudra</span>
+          </div>
+        </div>
+
+        {/* Cluster 8: Mid-Right Floating Cultural Badge (Between Harmony Hustle & Fine Arts) */}
+        <div className="hidden xl:flex items-center gap-2 absolute top-[43%] right-[18%] 2xl:right-[20%] pointer-events-none select-none z-10 animate-live-drift-diag" style={{ animationDelay: "1.5s" }}>
+          <div className="p-2.5 rounded-2xl bg-[#140206]/92 border border-cyan-500/40 backdrop-blur-md shadow-xl shadow-cyan-950/40 flex items-center gap-2">
+            <Award className="w-5 h-5 text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.6)]" />
+            <span className="text-[10px] font-black uppercase text-cyan-200 tracking-wider">Kala & Sahitya</span>
           </div>
         </div>
 

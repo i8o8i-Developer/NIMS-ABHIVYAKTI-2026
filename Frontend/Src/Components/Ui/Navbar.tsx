@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-gradient-to-r from-[#280410]/95 via-[#1b0526]/95 to-[#0b1d2e]/95 border-b-2 border-amber-400/50 shadow-[0_4px_30px_rgba(245,158,11,0.25)] transition-all">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#090104]/95 border-b-2 border-amber-400/50 shadow-[0_4px_30px_rgba(245,158,11,0.2)] transition-all">
       <div className="max-w-7xl mx-auto px-2 min-[340px]:px-3 sm:px-6 lg:px-8 h-18 min-[340px]:h-20 sm:h-22 flex items-center justify-between gap-1.5 min-[340px]:gap-2">
         {/* Left: NIMS University Crest */}
         <Link to="/" className="flex items-center shrink-0 group">
@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
 
         {/* Right Desktop: Elevated Student Council Directorate Seal */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
-          <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-2xl bg-gradient-to-r from-amber-500/25 via-pink-500/25 to-purple-500/25 border-2 border-amber-300 shadow-xl shadow-amber-950/50 backdrop-blur-md hover:scale-105 transition-all">
+          <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-2xl bg-[#1c020d]/90 border-2 border-amber-300 shadow-xl shadow-amber-950/50 backdrop-blur-md hover:scale-105 transition-all">
             <div className="w-9 h-9 rounded-full bg-white p-1 border-2 border-amber-400 shadow flex items-center justify-center shrink-0">
               <img
                 src="/STUDENT-COUNCIL-LOGO.png"
@@ -98,7 +98,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="h-9 w-9 min-[340px]:h-10 min-[340px]:w-10 rounded-xl bg-gradient-to-r from-rose-900 to-amber-700 border-2 border-amber-400 text-yellow-300 shadow-md flex items-center justify-center shrink-0"
+            className="h-9 w-9 min-[340px]:h-10 min-[340px]:w-10 rounded-xl bg-[#1f020c] border-2 border-amber-400 text-yellow-300 shadow-md flex items-center justify-center shrink-0"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4 min-[340px]:w-5 min-[340px]:h-5" /> : <Menu className="w-4 h-4 min-[340px]:w-5 min-[340px]:h-5" />}
@@ -108,7 +108,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-gradient-to-b from-[#240410] via-[#1a0526] to-[#0a1827] border-b-2 border-amber-400/50 px-4 pt-3 pb-6 space-y-2">
+        <div className="lg:hidden bg-[#090104]/98 border-b-2 border-amber-400/50 px-4 pt-3 pb-6 space-y-2">
           {navLinks.map((item) => {
             const isActive = location.pathname === item.path;
             const Icon = item.icon;
