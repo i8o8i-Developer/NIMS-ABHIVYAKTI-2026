@@ -164,12 +164,6 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       <div className="absolute top-[60%] right-1/4 w-[42rem] h-[34rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.16)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
       <div className="absolute top-[80%] left-1/3 w-[38rem] h-[30rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,85,247,0.18)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
 
-      {/* =========================================================================
-          SYMMETRICAL VERTICAL FESTIVE ORNAMENTAL RAILS (LEFT & RIGHT GUIDES)
-          Connects the festival motifs into an elegant royal Indian temple frame
-          ========================================================================= */}
-      <div className="hidden lg:block absolute left-4 lg:left-6 2xl:left-8 top-[23%] bottom-20 w-px bg-gradient-to-b from-transparent via-amber-500/25 via-pink-500/20 via-amber-500/25 to-transparent pointer-events-none" />
-      <div className="hidden lg:block absolute right-4 lg:right-6 2xl:right-8 top-[23%] bottom-20 w-px bg-gradient-to-b from-transparent via-amber-500/25 via-pink-500/20 via-amber-500/25 to-transparent pointer-events-none" />
 
       {/* =========================================================================
           TIER 1 (24% - 28%): ELEVATED FESTIVAL STATS & HIGHLIGHTS
