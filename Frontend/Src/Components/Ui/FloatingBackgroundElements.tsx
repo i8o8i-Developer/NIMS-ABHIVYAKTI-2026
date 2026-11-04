@@ -125,10 +125,6 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
         {/* Soft Ambient Center Spotlight Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.12)_0%,_rgba(225,29,72,0.06)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
 
-        {/* Just Two Gentle Corner Diyas for wide screens */}
-        <FestiveDiya className="hidden md:block absolute top-6 left-4 sm:left-10 opacity-70" />
-        <FestiveDiya className="hidden md:block absolute top-6 right-4 sm:right-10 opacity-70" style={{ animationDelay: "1.4s" }} />
-
         {/* Subtle Twinkling Corner Stars */}
         <div className="absolute top-12 left-[12%] w-1.5 h-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_#F5B842] opacity-75 animate-live-twinkle" />
         <div className="absolute top-16 right-[12%] w-1.5 h-1.5 rounded-full bg-yellow-300 shadow-[0_0_8px_#FDE047] opacity-75 animate-live-twinkle" style={{ animationDelay: "1.2s" }} />
@@ -151,244 +147,212 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
         <div className="absolute top-[40%] -left-12 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[radial-gradient(circle_at_center,_rgba(168,85,247,0.20)_0%,_transparent_65%)] blur-[110px] pointer-events-none" />
         <div className="absolute top-[45%] -right-12 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[radial-gradient(circle_at_center,_rgba(249,115,22,0.20)_0%,_transparent_65%)] blur-[110px] pointer-events-none" />
 
-        {/* Floating Diyas Along Margins */}
-        <FestiveDiya className="absolute top-28 left-2 sm:left-6 opacity-75" />
-        <FestiveDiya className="absolute top-36 right-2 sm:right-6 opacity-75" style={{ animationDelay: "1.2s" }} />
-        <FestiveDiya className="absolute top-[32%] left-2 sm:left-6 opacity-70" style={{ animationDelay: "2.1s" }} />
-        <FestiveDiya className="absolute top-[42%] right-2 sm:right-6 opacity-70" style={{ animationDelay: "0.8s" }} />
-        <FestiveDiya className="absolute top-[62%] left-2 sm:left-6 opacity-65" style={{ animationDelay: "1.7s" }} />
-        <FestiveDiya className="absolute top-[72%] right-2 sm:right-6 opacity-65" style={{ animationDelay: "2.4s" }} />
+        {/* Floating Diyas Along Safe Margins (Below Navbar, No Overlap) */}
+        <FestiveDiya className="absolute top-44 left-2 sm:left-6 opacity-75" />
+        <FestiveDiya className="absolute top-48 right-2 sm:right-6 opacity-75" style={{ animationDelay: "1.2s" }} />
+        <FestiveDiya className="absolute top-[35%] left-2 sm:left-6 opacity-70" style={{ animationDelay: "2.1s" }} />
+        <FestiveDiya className="absolute top-[45%] right-2 sm:right-6 opacity-70" style={{ animationDelay: "0.8s" }} />
+        <FestiveDiya className="absolute top-[65%] left-2 sm:left-6 opacity-65" style={{ animationDelay: "1.7s" }} />
+        <FestiveDiya className="absolute top-[75%] right-2 sm:right-6 opacity-65" style={{ animationDelay: "2.4s" }} />
         <FestiveDiya className="absolute bottom-28 left-2 sm:left-6 opacity-70" style={{ animationDelay: "1.1s" }} />
         <FestiveDiya className="absolute bottom-36 right-2 sm:right-6 opacity-70" style={{ animationDelay: "1.9s" }} />
 
         {/* Sacred Leaves */}
-        <FestiveLeaf className="absolute top-44 right-3 sm:right-10 opacity-45" style={{ animationDelay: "1.5s" }} />
-        <FestiveLeaf className="absolute top-[38%] left-3 sm:left-10 opacity-45" style={{ animationDelay: "2.3s" }} />
-        <FestiveLeaf className="absolute top-[68%] right-3 sm:right-10 opacity-45" style={{ animationDelay: "0.9s" }} />
+        <FestiveLeaf className="absolute top-56 right-3 sm:right-10 opacity-45" style={{ animationDelay: "1.5s" }} />
+        <FestiveLeaf className="absolute top-[40%] left-3 sm:left-10 opacity-45" style={{ animationDelay: "2.3s" }} />
+        <FestiveLeaf className="absolute top-[70%] right-3 sm:right-10 opacity-45" style={{ animationDelay: "0.9s" }} />
         <FestiveLeaf className="absolute bottom-40 left-3 sm:left-10 opacity-45" style={{ animationDelay: "1.8s" }} />
 
         {/* Rangoli Mandalas */}
-        <RangoliMandala className="absolute top-52 left-[8%] animate-live-spin-slow" size={32} opacity={0.4} />
-        <RangoliMandala className="absolute top-[48%] right-[8%] animate-live-spin-slow" size={36} opacity={0.4} color="#EC4899" />
-        <RangoliMandala className="absolute bottom-48 left-[7%] animate-live-spin-slow" size={32} opacity={0.35} color="#06B6D4" />
+        <RangoliMandala className="absolute top-64 left-[6%] animate-live-spin-slow" size={32} opacity={0.4} />
+        <RangoliMandala className="absolute top-[50%] right-[6%] animate-live-spin-slow" size={36} opacity={0.4} color="#EC4899" />
+        <RangoliMandala className="absolute bottom-48 left-[5%] animate-live-spin-slow" size={32} opacity={0.35} color="#06B6D4" />
 
         {/* Twinkling Stars */}
-        <div className="absolute top-24 left-[12%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" />
-        <div className="absolute top-32 right-[14%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.2s" }} />
-        <div className="absolute top-[45%] left-[8%] w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#06B6D4] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.1s" }} />
-        <div className="absolute top-[55%] right-[9%] w-2 h-2 rounded-full bg-pink-300 shadow-[0_0_10px_#F43F5E] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.8s" }} />
-        <div className="absolute bottom-28 left-[11%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.7s" }} />
-        <div className="absolute bottom-36 right-[12%] w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_10px_#10B981] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.4s" }} />
+        <div className="absolute top-40 left-[12%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" />
+        <div className="absolute top-48 right-[14%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.2s" }} />
+        <div className="absolute top-[48%] left-[7%] w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#06B6D4] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.1s" }} />
+        <div className="absolute top-[58%] right-[8%] w-2 h-2 rounded-full bg-pink-300 shadow-[0_0_10px_#F43F5E] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.8s" }} />
+        <div className="absolute bottom-28 left-[10%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.7s" }} />
+        <div className="absolute bottom-36 right-[11%] w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_10px_#10B981] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.4s" }} />
       </div>
     );
   }
 
-  // DEFAULT: HOME VARIANT — ENRICHED WITH FESTIVE ELEMENTS ALL OVER THE PAGE
+  // DEFAULT: HOME VARIANT
+  // ZERO ELEMENTS IN HERO SECTION (top 0% to 22%) TO PREVENT ANY COLLAPSE OR OVERLAP
+  // RICH COLORFUL ELEMENTS BEAUTIFULLY POPULATED IN ALL OTHER SECTIONS (Competitions, Schedule, Leaderboard, Contingents, FAQ, Footer)
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
       {/* Deep Obsidian Velvet Festive Base Canvas */}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_#1c0209_0%,_#280410_6%,_#17020a_14%,_#0a0105_22%,_#060103_36%,_#040002_52%,_#070104_68%,_#0f0208_84%,_#1a0209_100%)]" />
 
-      {/* Atmospheric Theatrical Spotlights */}
-      <div className="absolute top-[2%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[38rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(225,29,72,0.30)_0%,_rgba(159,18,57,0.15)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
-      <div className="absolute top-[18%] -left-20 w-[36rem] h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(217,70,239,0.18)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
-      <div className="absolute top-[18%] -right-20 w-[36rem] h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.18)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
-      <div className="absolute top-[38%] left-1/4 w-[42rem] h-[34rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.18)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
-      <div className="absolute top-[58%] right-1/4 w-[42rem] h-[34rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.16)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
-      <div className="absolute top-[78%] left-1/3 w-[38rem] h-[30rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,85,247,0.18)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      {/* Atmospheric Theatrical Spotlights Across Sections */}
+      <div className="absolute top-[2%] left-1/2 -translate-x-1/2 w-full max-w-6xl h-[38rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(225,29,72,0.25)_0%,_rgba(159,18,57,0.12)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
+      <div className="absolute top-[22%] -left-20 w-[36rem] h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(217,70,239,0.18)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[22%] -right-20 w-[36rem] h-[36rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.18)_0%,_transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[40%] left-1/4 w-[42rem] h-[34rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.18)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      <div className="absolute top-[60%] right-1/4 w-[42rem] h-[34rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.16)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
+      <div className="absolute top-[80%] left-1/3 w-[38rem] h-[30rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(168,85,247,0.18)_0%,_transparent_70%)] blur-[130px] pointer-events-none" />
 
       {/* =========================================================================
-          TRADITIONAL FESTIVE GLOWING DIYAS (ALL OVER PAGE VERTICAL GUTTERS)
-          Evenly distributed from Hero down through Competitions, Schedule,
-          Leaderboard, Contingents, FAQ, and Footer
+          TRADITIONAL FESTIVE GLOWING DIYAS (ONLY IN SECTIONS BELOW HERO: top >= 24%)
           ========================================================================= */}
-      {/* Zone 1: Upper Hero */}
-      <FestiveDiya className="absolute top-28 left-2 sm:left-6 opacity-75" />
-      <FestiveDiya className="absolute top-36 right-2 sm:right-6 opacity-75" style={{ animationDelay: "1.4s" }} />
+      {/* Competitions Arenas Showcase (24% - 35%) */}
+      <FestiveDiya className="absolute top-[25%] left-2 sm:left-5 opacity-75" style={{ animationDelay: "1.8s" }} />
+      <FestiveDiya className="absolute top-[29%] right-2 sm:right-5 opacity-75" style={{ animationDelay: "1.1s" }} />
+      <FestiveDiya className="absolute top-[35%] left-2 sm:left-5 opacity-70" style={{ animationDelay: "2.4s" }} />
+      <FestiveDiya className="absolute top-[39%] right-2 sm:right-5 opacity-70" style={{ animationDelay: "0.9s" }} />
 
-      {/* Zone 2: Mid Hero */}
-      <FestiveDiya className="absolute top-[14%] left-3 sm:left-8 opacity-70" style={{ animationDelay: "2.1s" }} />
-      <FestiveDiya className="absolute top-[17%] right-3 sm:right-8 opacity-70" style={{ animationDelay: "0.7s" }} />
+      {/* Schedule 4-Day Timeline (45% - 55%) */}
+      <FestiveDiya className="absolute top-[47%] left-2 sm:left-5 opacity-75" style={{ animationDelay: "1.6s" }} />
+      <FestiveDiya className="absolute top-[52%] right-2 sm:right-5 opacity-75" style={{ animationDelay: "2.2s" }} />
 
-      {/* Zone 3: Competitions Arenas Showcase */}
-      <FestiveDiya className="absolute top-[25%] left-2 sm:left-7 opacity-75" style={{ animationDelay: "1.8s" }} />
-      <FestiveDiya className="absolute top-[29%] right-2 sm:right-7 opacity-75" style={{ animationDelay: "1.1s" }} />
+      {/* Championship Leaderboard & Podium (58% - 68%) */}
+      <FestiveDiya className="absolute top-[60%] left-2 sm:left-5 opacity-75" style={{ animationDelay: "0.5s" }} />
+      <FestiveDiya className="absolute top-[65%] right-2 sm:right-5 opacity-75" style={{ animationDelay: "1.9s" }} />
 
-      {/* Zone 4: Competitions Cards Midzone */}
-      <FestiveDiya className="absolute top-[36%] left-3 sm:left-8 opacity-70" style={{ animationDelay: "2.4s" }} />
-      <FestiveDiya className="absolute top-[40%] right-3 sm:right-8 opacity-70" style={{ animationDelay: "0.9s" }} />
+      {/* College Contingents Standings (70% - 82%) */}
+      <FestiveDiya className="absolute top-[72%] left-2 sm:left-5 opacity-70" style={{ animationDelay: "2.5s" }} />
+      <FestiveDiya className="absolute top-[77%] right-2 sm:right-5 opacity-70" style={{ animationDelay: "1.3s" }} />
 
-      {/* Zone 5: Schedule 4-Day Timeline */}
-      <FestiveDiya className="absolute top-[47%] left-2 sm:left-7 opacity-75" style={{ animationDelay: "1.6s" }} />
-      <FestiveDiya className="absolute top-[52%] right-2 sm:right-7 opacity-75" style={{ animationDelay: "2.2s" }} />
+      {/* FAQ & Celebration Zone (84% - 95%) */}
+      <FestiveDiya className="absolute top-[85%] left-2 sm:left-5 opacity-75" style={{ animationDelay: "0.8s" }} />
+      <FestiveDiya className="absolute top-[90%] right-2 sm:right-5 opacity-75" style={{ animationDelay: "2.0s" }} />
 
-      {/* Zone 6: Championship Leaderboard & Podium */}
-      <FestiveDiya className="absolute top-[60%] left-3 sm:left-8 opacity-75" style={{ animationDelay: "0.5s" }} />
-      <FestiveDiya className="absolute top-[64%] right-3 sm:right-8 opacity-75" style={{ animationDelay: "1.9s" }} />
-
-      {/* Zone 7: College Contingents Standings */}
-      <FestiveDiya className="absolute top-[72%] left-2 sm:left-7 opacity-70" style={{ animationDelay: "2.5s" }} />
-      <FestiveDiya className="absolute top-[77%] right-2 sm:right-7 opacity-70" style={{ animationDelay: "1.3s" }} />
-
-      {/* Zone 8: FAQ & Celebration Zone */}
-      <FestiveDiya className="absolute top-[85%] left-3 sm:left-8 opacity-75" style={{ animationDelay: "0.8s" }} />
-      <FestiveDiya className="absolute top-[90%] right-3 sm:right-8 opacity-75" style={{ animationDelay: "2.0s" }} />
-
-      {/* Zone 9: Footer Anchor */}
-      <FestiveDiya className="absolute bottom-16 left-3 sm:left-8 opacity-70" style={{ animationDelay: "1.5s" }} />
-      <FestiveDiya className="absolute bottom-20 right-3 sm:right-8 opacity-70" style={{ animationDelay: "2.7s" }} />
+      {/* Footer Anchor */}
+      <FestiveDiya className="absolute bottom-16 left-2 sm:left-5 opacity-70" style={{ animationDelay: "1.5s" }} />
+      <FestiveDiya className="absolute bottom-20 right-2 sm:right-5 opacity-70" style={{ animationDelay: "2.7s" }} />
 
       {/* =========================================================================
-          SACRED FESTIVE PEEPAL / ASHOKA LEAF MOTIFS (DISTRIBUTED ALL OVER PAGE)
+          SACRED FESTIVE PEEPAL / ASHOKA LEAF MOTIFS (DISTRIBUTED SAFELY IN NON-HERO SECTIONS)
           ========================================================================= */}
-      <FestiveLeaf className="absolute top-[10%] right-4 sm:right-12 opacity-50" style={{ animationDelay: "2.5s" }} />
-      <FestiveLeaf className="absolute top-[21%] left-4 sm:left-12 opacity-50" style={{ animationDelay: "1.7s" }} />
-      <FestiveLeaf className="absolute top-[32%] right-4 sm:right-12 opacity-50" style={{ animationDelay: "0.8s" }} />
-      <FestiveLeaf className="absolute top-[43%] left-4 sm:left-12 opacity-50" style={{ animationDelay: "2.9s" }} />
-      <FestiveLeaf className="absolute top-[55%] right-4 sm:right-12 opacity-50" style={{ animationDelay: "1.3s" }} />
-      <FestiveLeaf className="absolute top-[66%] left-4 sm:left-12 opacity-50" style={{ animationDelay: "2.1s" }} />
-      <FestiveLeaf className="absolute top-[78%] right-4 sm:right-12 opacity-50" style={{ animationDelay: "1.0s" }} />
-      <FestiveLeaf className="absolute top-[88%] left-4 sm:left-12 opacity-50" style={{ animationDelay: "2.6s" }} />
+      <FestiveLeaf className="absolute top-[26%] right-3 sm:right-8 opacity-50" style={{ animationDelay: "1.7s" }} />
+      <FestiveLeaf className="absolute top-[37%] left-3 sm:left-8 opacity-50" style={{ animationDelay: "0.8s" }} />
+      <FestiveLeaf className="absolute top-[49%] right-3 sm:right-8 opacity-50" style={{ animationDelay: "2.9s" }} />
+      <FestiveLeaf className="absolute top-[61%] left-3 sm:left-8 opacity-50" style={{ animationDelay: "1.3s" }} />
+      <FestiveLeaf className="absolute top-[73%] right-3 sm:right-8 opacity-50" style={{ animationDelay: "2.1s" }} />
+      <FestiveLeaf className="absolute top-[83%] left-3 sm:left-8 opacity-50" style={{ animationDelay: "1.0s" }} />
+      <FestiveLeaf className="absolute top-[93%] right-3 sm:right-8 opacity-50" style={{ animationDelay: "2.6s" }} />
 
       {/* =========================================================================
           SACRED RANGOLI MANDALAS (ROTATING GENTLY AT SECTION TRANSITIONS)
           ========================================================================= */}
-      <RangoliMandala className="absolute top-[15%] left-[5%] animate-live-spin-slow" size={38} opacity={0.4} color="#F5B842" />
-      <RangoliMandala className="absolute top-[28%] right-[5%] animate-live-spin-slow" size={42} opacity={0.4} color="#EC4899" />
-      <RangoliMandala className="absolute top-[45%] left-[4%] animate-live-spin-slow" size={40} opacity={0.35} color="#06B6D4" />
-      <RangoliMandala className="absolute top-[63%] right-[5%] animate-live-spin-slow" size={44} opacity={0.4} color="#FACC15" />
-      <RangoliMandala className="absolute top-[81%] left-[5%] animate-live-spin-slow" size={38} opacity={0.35} color="#10B981" />
-      <RangoliMandala className="absolute top-[93%] right-[4%] animate-live-spin-slow" size={40} opacity={0.4} color="#A855F7" />
+      <RangoliMandala className="absolute top-[27%] left-[3%] animate-live-spin-slow" size={38} opacity={0.35} color="#EC4899" />
+      <RangoliMandala className="absolute top-[44%] right-[3%] animate-live-spin-slow" size={40} opacity={0.35} color="#06B6D4" />
+      <RangoliMandala className="absolute top-[62%] left-[3%] animate-live-spin-slow" size={42} opacity={0.35} color="#FACC15" />
+      <RangoliMandala className="absolute top-[80%] right-[3%] animate-live-spin-slow" size={38} opacity={0.35} color="#10B981" />
+      <RangoliMandala className="absolute top-[92%] left-[3%] animate-live-spin-slow" size={40} opacity={0.35} color="#A855F7" />
 
       {/* =========================================================================
-          CULTURAL FESTIVAL MOTIF BADGES & ICONS (FLOATING ALONG GUTTERS ALL OVER PAGE)
+          CULTURAL FESTIVAL MOTIF BADGES & ICONS (SAFE MARGIN GUTTERS OUTSIDE CONTENT)
           ========================================================================= */}
-      {/* 1. Dramatic Arts (Natya) */}
-      <div className="absolute top-[8%] left-4 sm:left-10 opacity-75 animate-live-drift-diag" style={{ animationDelay: "1.2s" }}>
-        <div className="p-2 sm:p-2.5 rounded-xl bg-[#170208]/90 border border-rose-500/50 shadow-lg shadow-rose-950/60 flex items-center justify-center">
-          <Theater className="w-5 h-5 sm:w-6 sm:h-6 text-rose-300 drop-shadow-[0_0_12px_rgba(244,63,94,0.7)]" />
-        </div>
-      </div>
-
-      {/* 2. Classical Music & Sitar Swara */}
-      <div className="absolute top-[12%] right-4 sm:right-10 opacity-75 animate-live-sway" style={{ animationDelay: "0.6s" }}>
-        <div className="p-2 sm:p-2.5 rounded-xl bg-[#170208]/90 border border-amber-500/50 shadow-lg shadow-amber-950/60 flex items-center justify-center">
-          <Music className="w-5 h-5 sm:w-6 sm:h-6 text-amber-300 drop-shadow-[0_0_12px_rgba(245,184,66,0.7)]" />
-        </div>
-      </div>
-
-      {/* 3. Dance Mudras & Peacock Feather */}
-      <div className="absolute top-[22%] left-3 sm:left-9 opacity-75 animate-live-sway" style={{ animationDelay: "2.3s" }}>
+      {/* Dance Mudras & Peacock Feather (Competitions Section) */}
+      <div className="absolute top-[24%] left-2 sm:left-6 opacity-75 animate-live-sway" style={{ animationDelay: "2.3s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#02170d]/90 border border-emerald-500/50 shadow-lg shadow-emerald-950/60 flex items-center justify-center">
-          <Feather className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.7)]" />
+          <Feather className="w-5 h-5 text-emerald-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.7)]" />
         </div>
       </div>
 
-      {/* 4. Fine Arts & Painting Palette */}
-      <div className="absolute top-[26%] right-3 sm:right-9 opacity-75 animate-live-drift-diag" style={{ animationDelay: "1.7s" }}>
+      {/* Fine Arts & Painting Palette */}
+      <div className="absolute top-[31%] right-2 sm:right-6 opacity-75 animate-live-drift-diag" style={{ animationDelay: "1.7s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#140217]/90 border border-purple-500/50 shadow-lg shadow-purple-950/60 flex items-center justify-center">
-          <Palette className="w-5 h-5 sm:w-6 sm:h-6 text-purple-300 drop-shadow-[0_0_12px_rgba(168,85,247,0.7)]" />
+          <Palette className="w-5 h-5 text-purple-300 drop-shadow-[0_0_12px_rgba(168,85,247,0.7)]" />
         </div>
       </div>
 
-      {/* 5. Electric Beats & DJ Disc */}
-      <div className="absolute top-[34%] left-4 sm:left-10 opacity-75 animate-live-spin-slow" style={{ animationDelay: "0.9s" }}>
+      {/* Electric Beats & DJ Disc */}
+      <div className="absolute top-[38%] left-2 sm:left-6 opacity-75 animate-live-spin-slow" style={{ animationDelay: "0.9s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#021419]/90 border border-cyan-500/50 shadow-lg shadow-cyan-950/60 flex items-center justify-center">
-          <Disc className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-300 drop-shadow-[0_0_12px_rgba(6,182,212,0.7)]" />
+          <Disc className="w-5 h-5 text-cyan-300 drop-shadow-[0_0_12px_rgba(6,182,212,0.7)]" />
         </div>
       </div>
 
-      {/* 6. Vocal Poetry & Stage Mic */}
-      <div className="absolute top-[38%] right-4 sm:right-10 opacity-75 animate-live-sway" style={{ animationDelay: "2.7s" }}>
+      {/* Vocal Poetry & Stage Mic */}
+      <div className="absolute top-[43%] right-2 sm:right-6 opacity-75 animate-live-sway" style={{ animationDelay: "2.7s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#1c0208]/90 border border-pink-500/50 shadow-lg shadow-pink-950/60 flex items-center justify-center">
-          <Mic className="w-5 h-5 sm:w-6 sm:h-6 text-pink-300 drop-shadow-[0_0_12px_rgba(236,72,153,0.7)]" />
+          <Mic className="w-5 h-5 text-pink-300 drop-shadow-[0_0_12px_rgba(236,72,153,0.7)]" />
         </div>
       </div>
 
-      {/* 7. Ghungroo / Sacred Bell */}
-      <div className="absolute top-[49%] left-3 sm:left-9 opacity-75 animate-live-sway" style={{ animationDelay: "1.4s" }}>
+      {/* Ghungroo / Sacred Bell (Schedule Section) */}
+      <div className="absolute top-[51%] left-2 sm:left-6 opacity-75 animate-live-sway" style={{ animationDelay: "1.4s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#1a0e02]/90 border border-amber-500/50 shadow-lg shadow-amber-950/60 flex items-center justify-center">
-          <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300 drop-shadow-[0_0_12px_rgba(250,204,21,0.7)]" />
+          <Bell className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_12px_rgba(250,204,21,0.7)]" />
         </div>
       </div>
 
-      {/* 8. Championship Trophy */}
-      <div className="absolute top-[54%] right-3 sm:right-9 opacity-75 animate-live-drift-diag" style={{ animationDelay: "0.8s" }}>
+      {/* Championship Trophy (Leaderboard Section) */}
+      <div className="absolute top-[56%] right-2 sm:right-6 opacity-75 animate-live-drift-diag" style={{ animationDelay: "0.8s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#1a0e02]/90 border border-yellow-400/50 shadow-lg shadow-yellow-950/60 flex items-center justify-center">
-          <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
+          <Trophy className="w-5 h-5 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
         </div>
       </div>
 
-      {/* 9. Olympic Victory Medal */}
-      <div className="absolute top-[66%] left-4 sm:left-10 opacity-75 animate-live-sway" style={{ animationDelay: "2.0s" }}>
+      {/* Olympic Victory Medal */}
+      <div className="absolute top-[67%] left-2 sm:left-6 opacity-75 animate-live-sway" style={{ animationDelay: "2.0s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#051525]/90 border border-blue-400/50 shadow-lg shadow-blue-950/60 flex items-center justify-center">
-          <Medal className="w-5 h-5 sm:w-6 sm:h-6 text-sky-300 drop-shadow-[0_0_12px_rgba(56,189,248,0.7)]" />
+          <Medal className="w-5 h-5 text-sky-300 drop-shadow-[0_0_12px_rgba(56,189,248,0.7)]" />
         </div>
       </div>
 
-      {/* 10. Crown of Excellence */}
-      <div className="absolute top-[70%] right-4 sm:right-10 opacity-75 animate-live-drift-diag" style={{ animationDelay: "1.1s" }}>
+      {/* Crown of Excellence */}
+      <div className="absolute top-[74%] right-2 sm:right-6 opacity-75 animate-live-drift-diag" style={{ animationDelay: "1.1s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#19020e]/90 border border-yellow-400/50 shadow-lg shadow-yellow-950/60 flex items-center justify-center">
-          <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300 drop-shadow-[0_0_14px_rgba(253,224,71,0.8)]" />
+          <Crown className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_14px_rgba(253,224,71,0.8)]" />
         </div>
       </div>
 
-      {/* 11. Street Theatre Drama */}
-      <div className="absolute top-[80%] left-3 sm:left-9 opacity-75 animate-live-drift-diag" style={{ animationDelay: "2.4s" }}>
+      {/* Street Theatre Drama (Contingents Section) */}
+      <div className="absolute top-[81%] left-2 sm:left-6 opacity-75 animate-live-drift-diag" style={{ animationDelay: "2.4s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#041a12]/90 border border-emerald-400/50 shadow-lg shadow-emerald-950/60 flex items-center justify-center">
-          <Drama className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.7)]" />
+          <Drama className="w-5 h-5 text-emerald-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.7)]" />
         </div>
       </div>
 
-      {/* 12. Festival Torch & Energy Flame */}
-      <div className="absolute top-[84%] right-3 sm:right-9 opacity-75 animate-live-sway" style={{ animationDelay: "1.6s" }}>
+      {/* Festival Torch & Energy Flame */}
+      <div className="absolute top-[87%] right-2 sm:right-6 opacity-75 animate-live-sway" style={{ animationDelay: "1.6s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#1f0902]/90 border border-orange-400/50 shadow-lg shadow-orange-950/60 flex items-center justify-center">
-          <Flame className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400 drop-shadow-[0_0_14px_rgba(251,146,60,0.8)]" />
+          <Flame className="w-5 h-5 text-orange-400 drop-shadow-[0_0_14px_rgba(251,146,60,0.8)]" />
         </div>
       </div>
 
-      {/* 13. Prestigious Honor Award */}
-      <div className="absolute top-[94%] left-4 sm:left-10 opacity-75 animate-live-sway" style={{ animationDelay: "0.5s" }}>
+      {/* Prestigious Honor Award (FAQ Section) */}
+      <div className="absolute top-[93%] left-2 sm:left-6 opacity-75 animate-live-sway" style={{ animationDelay: "0.5s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#140212]/90 border border-fuchsia-400/50 shadow-lg shadow-fuchsia-950/60 flex items-center justify-center">
-          <Award className="w-5 h-5 sm:w-6 sm:h-6 text-fuchsia-300 drop-shadow-[0_0_12px_rgba(217,70,239,0.7)]" />
+          <Award className="w-5 h-5 text-fuchsia-300 drop-shadow-[0_0_12px_rgba(217,70,239,0.7)]" />
         </div>
       </div>
 
-      {/* 14. Celestial Cultural Sparkle */}
-      <div className="absolute top-[96%] right-4 sm:right-10 opacity-75 animate-live-drift-diag" style={{ animationDelay: "2.2s" }}>
+      {/* Celestial Cultural Sparkle */}
+      <div className="absolute top-[96%] right-2 sm:right-6 opacity-75 animate-live-drift-diag" style={{ animationDelay: "2.2s" }}>
         <div className="p-2 sm:p-2.5 rounded-xl bg-[#1a0e02]/90 border border-amber-400/50 shadow-lg shadow-amber-950/60 flex items-center justify-center">
-          <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
+          <Sparkles className="w-5 h-5 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
         </div>
       </div>
 
       {/* =========================================================================
-          TWINKLING GOLDEN & GEMSTONE STARS (ALL OVER PAGE)
+          TWINKLING GOLDEN & GEMSTONE STARS (BELOW HERO)
           ========================================================================= */}
-      <div className="absolute top-[6%] left-[9%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.2s" }} />
-      <div className="absolute top-[9%] right-[9%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.4s" }} />
-      <div className="absolute top-[16%] left-[6%] w-2 h-2 rounded-full bg-pink-300 shadow-[0_0_10px_#F43F5E] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.1s" }} />
-      <div className="absolute top-[20%] right-[7%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.8s" }} />
-      <div className="absolute top-[30%] left-[8%] w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#06B6D4] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.7s" }} />
-      <div className="absolute top-[35%] right-[8%] w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_10px_#10B981] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.5s" }} />
-      <div className="absolute top-[44%] left-[7%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FACC15] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.5s" }} />
-      <div className="absolute top-[50%] right-[6%] w-2 h-2 rounded-full bg-rose-300 shadow-[0_0_10px_#FB7185] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.9s" }} />
-      <div className="absolute top-[58%] left-[8%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.6s" }} />
-      <div className="absolute top-[64%] right-[7%] w-2 h-2 rounded-full bg-purple-300 shadow-[0_0_10px_#C084FC] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.1s" }} />
-      <div className="absolute top-[73%] left-[7%] w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#22D3EE] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.3s" }} />
-      <div className="absolute top-[79%] right-[8%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.7s" }} />
-      <div className="absolute top-[86%] left-[8%] w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_10px_#34D399] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.8s" }} />
-      <div className="absolute top-[92%] right-[7%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.7s" }} />
+      <div className="absolute top-[28%] left-[7%] w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#06B6D4] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.7s" }} />
+      <div className="absolute top-[33%] right-[7%] w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_10px_#10B981] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.5s" }} />
+      <div className="absolute top-[42%] left-[6%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FACC15] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.5s" }} />
+      <div className="absolute top-[53%] right-[6%] w-2 h-2 rounded-full bg-rose-300 shadow-[0_0_10px_#FB7185] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.9s" }} />
+      <div className="absolute top-[63%] left-[7%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.6s" }} />
+      <div className="absolute top-[71%] right-[6%] w-2 h-2 rounded-full bg-purple-300 shadow-[0_0_10px_#C084FC] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.1s" }} />
+      <div className="absolute top-[79%] left-[6%] w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_10px_#22D3EE] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.3s" }} />
+      <div className="absolute top-[85%] right-[7%] w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] opacity-85 animate-live-twinkle" style={{ animationDelay: "0.7s" }} />
+      <div className="absolute top-[91%] left-[7%] w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_10px_#34D399] opacity-85 animate-live-twinkle" style={{ animationDelay: "1.8s" }} />
+      <div className="absolute top-[97%] right-[6%] w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] opacity-85 animate-live-twinkle" style={{ animationDelay: "2.7s" }} />
 
-      {/* Gentle Rising Warm Amber Embers */}
+      {/* Gentle Rising Warm Amber Embers (Safe Lower Zones) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <span className="absolute left-[4%] top-[15%] w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_#F5B842] animate-live-sparkle" style={{ animationDelay: "0s", animationDuration: "6s" }} />
-        <span className="absolute left-[7%] top-[35%] w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15] animate-live-sparkle" style={{ animationDelay: "1.8s", animationDuration: "7s" }} />
-        <span className="absolute left-[5%] top-[55%] w-2 h-2 rounded-full bg-orange-400 shadow-[0_0_10px_#FB923C] animate-live-sparkle" style={{ animationDelay: "3.2s", animationDuration: "6.5s" }} />
-        <span className="absolute left-[6%] top-[75%] w-1.5 h-1.5 rounded-full bg-rose-400 shadow-[0_0_8px_#FB7185] animate-live-sparkle" style={{ animationDelay: "1.1s", animationDuration: "7.5s" }} />
-        <span className="absolute right-[5%] top-[25%] w-2 h-2 rounded-full bg-rose-400 shadow-[0_0_10px_#FB7185] animate-live-sparkle" style={{ animationDelay: "2.6s", animationDuration: "6.5s" }} />
-        <span className="absolute right-[7%] top-[45%] w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22D3EE] animate-live-sparkle" style={{ animationDelay: "0.8s", animationDuration: "7.5s" }} />
-        <span className="absolute right-[4%] top-[65%] w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_#F5B842] animate-live-sparkle" style={{ animationDelay: "3.5s", animationDuration: "7s" }} />
-        <span className="absolute right-[6%] top-[85%] w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15] animate-live-sparkle" style={{ animationDelay: "1.5s", animationDuration: "6s" }} />
+        <span className="absolute left-[4%] top-[30%] w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15] animate-live-sparkle" style={{ animationDelay: "1.8s", animationDuration: "7s" }} />
+        <span className="absolute left-[3%] top-[52%] w-2 h-2 rounded-full bg-orange-400 shadow-[0_0_10px_#FB923C] animate-live-sparkle" style={{ animationDelay: "3.2s", animationDuration: "6.5s" }} />
+        <span className="absolute left-[4%] top-[74%] w-1.5 h-1.5 rounded-full bg-rose-400 shadow-[0_0_8px_#FB7185] animate-live-sparkle" style={{ animationDelay: "1.1s", animationDuration: "7.5s" }} />
+        <span className="absolute right-[3%] top-[42%] w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22D3EE] animate-live-sparkle" style={{ animationDelay: "0.8s", animationDuration: "7.5s" }} />
+        <span className="absolute right-[4%] top-[64%] w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_#F5B842] animate-live-sparkle" style={{ animationDelay: "3.5s", animationDuration: "7s" }} />
+        <span className="absolute right-[3%] top-[86%] w-1.5 h-1.5 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15] animate-live-sparkle" style={{ animationDelay: "1.5s", animationDuration: "6s" }} />
       </div>
     </div>
   );
