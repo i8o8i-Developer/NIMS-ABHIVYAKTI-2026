@@ -37,7 +37,7 @@ export const AdminSettings: React.FC = () => {
   const [edition, setEdition] = useState("2026");
   const [dateRangeDisplay, setDateRangeDisplay] = useState("18–21 November 2026");
   const [venue, setVenue] = useState(
-    "Rajeshwari Auditorium & NIMS Convention Grounds, Jaipur"
+    "Multiple Campus Arenas: Rajeshwari Auditorium, School Of Law, Manik / NIET & Cricket Ground"
   );
 
   // Separate Date & Time Selectors for Countdown Kickoff

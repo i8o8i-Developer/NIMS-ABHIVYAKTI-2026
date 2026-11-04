@@ -423,7 +423,7 @@ export const Home: React.FC = () => {
     {
       category: "Master Timeline & Venue",
       q: "When & Where Does Abhivyakti 2026 Take Place?",
-      a: "The Championship Spans 4 Epic Days From 18 November To 21 November 2026, Hosted Across The Grand Rajeshwari Auditorium & Campus Grounds, NIMS University Rajasthan, Jaipur – 303121, And Specialized Academic Arenas.",
+      a: "The Championship Spans 4 Epic Days From 18 November To 21 November 2026, Hosted Across Multiple Official Campus Arenas: Rajeshwari Auditorium (Main Stage & Finals), School Of Law (LT 10 & 11), Manik / NIET Arenas, And The University Cricket Ground, NIMS University Rajasthan, Jaipur – 303121.",
     },
     {
       category: "Rules & Scoring Rubrics",
@@ -1289,19 +1289,34 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Middle Auspicious Brass Diya & Rajeshwari Arena Showcase */}
-            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#1c040d]/90 to-[#0e0207]/95 border-2 border-amber-500/40 backdrop-blur-md shadow-xl flex flex-col items-center gap-3.5 text-center">
+            {/* Middle Auspicious Brass Diya & Multi-Venue Campus Arenas Showcase */}
+            <div className="p-4 rounded-2xl bg-gradient-to-b from-[#1c040d]/90 to-[#0e0207]/95 border-2 border-amber-500/40 backdrop-blur-md shadow-xl flex flex-col items-center gap-2.5 text-center">
               <div className="animate-live-flicker">
-                <svg width="40" height="30" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.7)]">
+                <svg width="34" height="24" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_14px_rgba(245,184,66,0.7)]">
                   <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
                   <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
                   <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
                   <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
                 </svg>
               </div>
-              <div>
-                <span className="text-xs font-serif font-black tracking-widest text-amber-300 uppercase block">Rajeshwari Arena</span>
-                <span className="text-[10px] text-gray-300 font-medium block mt-0.5">Central Championship Stage</span>
+              <div className="w-full">
+                <span className="text-[11px] font-serif font-black tracking-widest text-amber-300 uppercase block mb-1.5">
+                  Multiple Festival Arenas
+                </span>
+                <div className="space-y-1 text-[10px] text-left">
+                  <div className="px-2 py-0.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-200 truncate">
+                    🏛 Rajeshwari Auditorium (Main Stage)
+                  </div>
+                  <div className="px-2 py-0.5 rounded-lg bg-white/5 border border-white/10 text-slate-200 truncate">
+                    ⚖️ School Of Law – LT 10 & 11
+                  </div>
+                  <div className="px-2 py-0.5 rounded-lg bg-white/5 border border-white/10 text-slate-200 truncate">
+                    📜 Manik / NIET & Moot Court
+                  </div>
+                  <div className="px-2 py-0.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-200 truncate">
+                    🏟 University Cricket Ground
+                  </div>
+                </div>
               </div>
             </div>
 

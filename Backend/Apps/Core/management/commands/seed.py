@@ -30,7 +30,7 @@ class Command(BaseCommand):
         event_setting.start_date = timezone.make_aware(datetime(2026, 11, 18, 9, 0, 0))
         event_setting.end_date = timezone.make_aware(datetime(2026, 11, 21, 21, 0, 0))
         event_setting.date_range_display = "18–21 November 2026"
-        event_setting.venue = "Rajeshwari Auditorium & Campus Grounds, NIMS University Rajasthan, Jaipur – 303121"
+        event_setting.venue = "Multiple Campus Arenas: Rajeshwari Auditorium, School Of Law, Manik / NIET & University Cricket Ground, Jaipur"
         event_setting.marquee_announcements = [
             "NIMS University Cultural Championship 2026 • 18-21 November 2026",
             "Abhivyakti 2026 Prestigious Championship Rolling Trophy",

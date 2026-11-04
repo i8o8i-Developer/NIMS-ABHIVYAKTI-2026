@@ -131,8 +131,14 @@ export const Footer: React.FC = () => {
                 <div className="flex items-start gap-2.5 sm:gap-3 bg-black/60 p-3 sm:p-3.5 rounded-xl border border-amber-500/20">
                   <Landmark className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                   <div className="min-w-0 flex-1">
-                    <p className="font-bold text-white text-xs whitespace-normal">Rajeshwari Auditorium & Campus Grounds</p>
-                    <p className="text-[10.5px] sm:text-[11px] text-amber-200/70 mt-0.5 whitespace-normal">NIMS University Rajasthan, Jaipur – 303121</p>
+                    <p className="font-bold text-white text-xs whitespace-normal">Multiple Championship Arenas</p>
+                    <div className="mt-1 space-y-0.5 text-[10px] sm:text-[10.5px] text-amber-200/85">
+                      <p>• Rajeshwari Auditorium (Main Stage & Finals)</p>
+                      <p>• School Of Law & LT 10–11 (Music & Fine Arts)</p>
+                      <p>• Manik / NIET & Moot Court (Literary & Debate)</p>
+                      <p>• University Cricket Ground (Mega Fashion Show)</p>
+                    </div>
+                    <p className="text-[9.5px] sm:text-[10px] text-amber-300/60 mt-1.5 whitespace-normal">NIMS University Rajasthan, Jaipur – 303121</p>
                   </div>
                 </div>
 
@@ -206,7 +212,7 @@ export const Footer: React.FC = () => {
             <span className="text-amber-400/80">•</span>
             <span className="text-amber-300 font-semibold">NIMS Student Council</span>
             <span className="text-amber-400/80">•</span>
-            <span>Rajeshwari Auditorium</span>
+            <span>Multiple Campus Arenas</span>
           </div>
         </div>
       </div>
