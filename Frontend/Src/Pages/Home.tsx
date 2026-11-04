@@ -575,7 +575,7 @@ export const Home: React.FC = () => {
           <div className="p-2.5 rounded-2xl bg-[#140206]/92 border border-rose-500/40 backdrop-blur-md shadow-xl shadow-rose-950/40 flex items-center gap-2">
             <Theater className="w-6 h-6 text-rose-300 drop-shadow-[0_0_12px_rgba(251,113,133,0.6)]" />
           </div>
-          <div className="flex flex-col gap-1 items-start">
+          <div className="flex flex-col gap-3 sm:gap-4 items-start">
             <div className="opacity-90 animate-live-leaf">
               <svg width="20" height="28" viewBox="0 0 34 44" fill="none">
                 <path d="M17 2C17 2 32 14 32 28C32 36 25 42 17 42C9 42 2 36 2 28C2 14 17 2 17 2Z" fill="#047857" opacity="0.65" />
@@ -588,7 +588,7 @@ export const Home: React.FC = () => {
 
         {/* Upper-Right Cluster: Music & Stage Mic */}
         <div className="hidden xl:flex items-center gap-3 absolute top-[12%] 2xl:top-[14%] right-[23%] 2xl:right-[25%] pointer-events-none select-none z-10 animate-live-sway" style={{ animationDelay: "1.1s" }}>
-          <div className="flex flex-col gap-1 items-end">
+          <div className="flex flex-col gap-3 sm:gap-4 items-end">
             <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-live-twinkle drop-shadow-[0_0_8px_#FDE047]" />
             <div className="p-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300">
               <Mic className="w-3 h-3" />
@@ -662,7 +662,7 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Far Bottom-Left Margin: Diya & Leaf */}
-        <div className="hidden xl:flex flex-col items-center gap-1.5 absolute bottom-[6%] left-[4%] 2xl:left-[6%] pointer-events-none select-none z-10">
+        <div className="hidden xl:flex flex-col items-center gap-6 sm:gap-8 absolute bottom-[6%] left-[4%] 2xl:left-[6%] pointer-events-none select-none z-10">
           <div className="animate-live-flicker">
             <svg width="38" height="28" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
               <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
@@ -680,7 +680,7 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Far Bottom-Right Margin: Diya & Leaf */}
-        <div className="hidden xl:flex flex-col items-center gap-1.5 absolute bottom-[6%] right-[4%] 2xl:right-[6%] pointer-events-none select-none z-10">
+        <div className="hidden xl:flex flex-col items-center gap-6 sm:gap-8 absolute bottom-[6%] right-[4%] 2xl:right-[6%] pointer-events-none select-none z-10">
           <div className="animate-live-flicker" style={{ animationDelay: "1.6s" }}>
             <svg width="38" height="28" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.65)]">
               <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />

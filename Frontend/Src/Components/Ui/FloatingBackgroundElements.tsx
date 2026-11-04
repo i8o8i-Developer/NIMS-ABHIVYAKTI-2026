@@ -174,9 +174,10 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       {/* =========================================================================
           TIER 1 (24% - 28%): ELEVATED FESTIVAL STATS & HIGHLIGHTS
           Balanced Diya, Peepal Leaf & Peacock Feather Symmetrically Placed
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 1 - Left */}
-      <div className="absolute top-[25%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[25%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={34} height={26} style={{ animationDelay: "1.2s" }} />
         <div className="p-2 rounded-xl bg-[#031c10]/90 border border-emerald-500/50 shadow-lg shadow-emerald-950/60 animate-live-sway">
           <Feather className="w-4 h-4 text-emerald-300 drop-shadow-[0_0_10px_rgba(16,185,129,0.7)]" />
@@ -185,7 +186,7 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       </div>
 
       {/* Tier 1 - Right (Mirrored) */}
-      <div className="absolute top-[25%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[25%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={34} height={26} style={{ animationDelay: "2.0s" }} />
         <div className="p-2 rounded-xl bg-[#21020a]/90 border border-rose-500/50 shadow-lg shadow-rose-950/60 animate-live-sway" style={{ animationDelay: "1.4s" }}>
           <FestiveLeaf width={18} height={26} fillColor="#E11D48" strokeColor="#FDE68A" />
@@ -196,9 +197,10 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       {/* =========================================================================
           TIER 2 (36% - 41%): OFFICIAL EVENT SCHEDULE HEADER (IMAGE 2 ALIGNMENT)
           Sacred Mandalas + Classical Bell & Music Emblem Perfectly Mirrored
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 2 - Left */}
-      <div className="absolute top-[37%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[37%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <RangoliMandala size={36} opacity={0.45} color="#F5B842" className="animate-live-spin-slow" />
         <div className="p-2 rounded-xl bg-[#1f1002]/90 border border-amber-500/50 shadow-lg shadow-amber-950/60 animate-live-sway" style={{ animationDelay: "0.8s" }}>
           <Bell className="w-4 h-4 text-amber-300 drop-shadow-[0_0_10px_rgba(245,184,66,0.7)]" />
@@ -207,7 +209,7 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       </div>
 
       {/* Tier 2 - Right (Mirrored) */}
-      <div className="absolute top-[37%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[37%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <RangoliMandala size={36} opacity={0.45} color="#06B6D4" className="animate-live-spin-slow" />
         <div className="p-2 rounded-xl bg-[#041d24]/90 border border-cyan-500/50 shadow-lg shadow-cyan-950/60 animate-live-sway" style={{ animationDelay: "2.2s" }}>
           <Music className="w-4 h-4 text-cyan-300 drop-shadow-[0_0_10px_rgba(6,182,212,0.7)]" />
@@ -218,27 +220,33 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       {/* =========================================================================
           TIER 3 (47% - 52%): SCHEDULE CARDS GRID MIDLINE (IMAGE 2 ALIGNMENT)
           Auspicious Brass Diyas + Sacred Leaves Framing Schedule Cards Grid
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 3 - Left */}
-      <div className="absolute top-[48%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[48%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={36} height={28} style={{ animationDelay: "1.7s" }} />
-        <FestiveLeaf width={20} height={28} style={{ animationDelay: "2.5s" }} />
+        <div className="p-1.5 rounded-xl bg-[#031f13]/90 border border-emerald-500/50 shadow-lg shadow-emerald-950/60 animate-live-sway" style={{ animationDelay: "2.5s" }}>
+          <FestiveLeaf width={20} height={28} />
+        </div>
         <div className="w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] animate-live-twinkle" />
       </div>
 
       {/* Tier 3 - Right (Mirrored) */}
-      <div className="absolute top-[48%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[48%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={36} height={28} style={{ animationDelay: "0.9s" }} />
-        <FestiveLeaf width={20} height={28} style={{ animationDelay: "1.3s" }} />
+        <div className="p-1.5 rounded-xl bg-[#210512]/90 border border-rose-500/50 shadow-lg shadow-rose-950/60 animate-live-sway" style={{ animationDelay: "1.3s" }}>
+          <FestiveLeaf width={20} height={28} fillColor="#E11D48" strokeColor="#FDE68A" />
+        </div>
         <div className="w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] animate-live-twinkle" style={{ animationDelay: "1.8s" }} />
       </div>
 
       {/* =========================================================================
           TIER 4 (58% - 63%): CHAMPIONSHIP LEADERBOARD & PODIUM STAGE
           Golden Trophy & Royal Crown Emblems Marking Trophy Race
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 4 - Left */}
-      <div className="absolute top-[59%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[59%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <div className="p-2.5 rounded-2xl bg-[#241302]/95 border-2 border-amber-400/60 shadow-xl shadow-amber-950/70 animate-live-sway">
           <Trophy className="w-5 h-5 text-amber-300 drop-shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
         </div>
@@ -247,7 +255,7 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       </div>
 
       {/* Tier 4 - Right (Mirrored) */}
-      <div className="absolute top-[59%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[59%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <div className="p-2.5 rounded-2xl bg-[#241302]/95 border-2 border-yellow-400/60 shadow-xl shadow-yellow-950/70 animate-live-sway" style={{ animationDelay: "1.9s" }}>
           <Crown className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_14px_rgba(253,224,71,0.8)]" />
         </div>
@@ -258,9 +266,10 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       {/* =========================================================================
           TIER 5 (69% - 74%): CULTURAL ARENAS & 4-PILLAR EVALUATION RUBRIC
           Nataraja Dance Mudra & Fine Arts Palette Framing Rubrics
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 5 - Left */}
-      <div className="absolute top-[70%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[70%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <RangoliMandala size={36} opacity={0.4} color="#EC4899" className="animate-live-spin-slow" />
         <div className="p-2 rounded-xl bg-[#1c0213]/90 border border-pink-500/50 shadow-lg shadow-pink-950/60 animate-live-sway" style={{ animationDelay: "2.7s" }}>
           <Theater className="w-4 h-4 text-pink-300 drop-shadow-[0_0_10px_rgba(236,72,153,0.7)]" />
@@ -269,7 +278,7 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       </div>
 
       {/* Tier 5 - Right (Mirrored) */}
-      <div className="absolute top-[70%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[70%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <RangoliMandala size={36} opacity={0.4} color="#A855F7" className="animate-live-spin-slow" />
         <div className="p-2 rounded-xl bg-[#180221]/90 border border-purple-500/50 shadow-lg shadow-purple-950/60 animate-live-sway" style={{ animationDelay: "1.5s" }}>
           <Palette className="w-4 h-4 text-purple-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.7)]" />
@@ -280,9 +289,10 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       {/* =========================================================================
           TIER 6 (81% - 86%): FESTIVAL GUIDELINES & CELEBRATION FAQ
           Honor Award & Torch Flame Accompanying Guidelines
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 6 - Left */}
-      <div className="absolute top-[82%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[82%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={34} height={26} style={{ animationDelay: "1.5s" }} />
         <div className="p-2 rounded-xl bg-[#1c051f]/90 border border-fuchsia-500/50 shadow-lg shadow-fuchsia-950/60 animate-live-sway">
           <Award className="w-4 h-4 text-fuchsia-300 drop-shadow-[0_0_10px_rgba(217,70,239,0.7)]" />
@@ -291,7 +301,7 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       </div>
 
       {/* Tier 6 - Right (Mirrored) */}
-      <div className="absolute top-[82%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[82%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={34} height={26} style={{ animationDelay: "2.6s" }} />
         <div className="p-2 rounded-xl bg-[#260802]/90 border border-orange-500/50 shadow-lg shadow-orange-950/60 animate-live-sway" style={{ animationDelay: "1.8s" }}>
           <Flame className="w-4 h-4 text-orange-400 drop-shadow-[0_0_12px_rgba(251,146,60,0.8)]" />
@@ -302,16 +312,17 @@ export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProp
       {/* =========================================================================
           TIER 7 (93% - 97%): ABOVE FOOTER TERMINAL ANCHOR
           Golden Brass Diyas, Auspicious Leaves & Stardust Finishing The Journey
+          With Generous Vertical Spacing To Eliminate Any Visual Collision
           ========================================================================= */}
       {/* Tier 7 - Left */}
-      <div className="absolute top-[94%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[94%] left-2 sm:left-4 lg:left-6 2xl:left-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={36} height={28} style={{ animationDelay: "0.6s" }} />
         <FestiveLeaf width={20} height={28} />
         <div className="w-2 h-2 rounded-full bg-amber-300 shadow-[0_0_10px_#F5B842] animate-live-twinkle" />
       </div>
 
       {/* Tier 7 - Right (Mirrored) */}
-      <div className="absolute top-[94%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-2">
+      <div className="absolute top-[94%] right-2 sm:right-4 lg:right-6 2xl:right-8 flex flex-col items-center gap-8 sm:gap-11 2xl:gap-14">
         <FestiveDiya width={36} height={28} style={{ animationDelay: "2.1s" }} />
         <FestiveLeaf width={20} height={28} />
         <div className="w-2 h-2 rounded-full bg-yellow-300 shadow-[0_0_10px_#FDE047] animate-live-twinkle" />
