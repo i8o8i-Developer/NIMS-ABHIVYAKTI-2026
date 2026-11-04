@@ -478,11 +478,11 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Outer Left Floating Cultural Event Badges (Colorful & Event-Centric) */}
-        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute left-2 2xl:left-6 top-[17%] 2xl:top-[19%] z-20">
+        <div className="hidden xl:flex flex-col gap-3.5 2xl:gap-4 absolute left-2 2xl:left-6 top-[10%] 2xl:top-[12%] z-20">
           {/* Event 1: Battle of the Bands (Fiery Sunset Orange) */}
-          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-r from-[#2a0802]/95 via-[#380e04]/95 to-[#1c0401]/95 border-2 border-orange-500/70 backdrop-blur-2xl shadow-2xl shadow-orange-950/60 text-left transform hover:-translate-y-1 hover:border-orange-400 transition-all duration-300 animate-live-sway">
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-r from-[#2a0802]/95 via-[#380e04]/95 to-[#1c0401]/95 border-2 border-orange-500/70 backdrop-blur-2xl shadow-2xl shadow-orange-950/60 text-left transform hover:-translate-y-1 hover:border-orange-400 transition-all duration-300 animate-live-sway">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-orange-500/25 border border-orange-400/60 text-orange-400 shrink-0 shadow-lg shadow-orange-500/20">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-orange-500/25 border border-orange-400/60 text-orange-400 shrink-0 shadow-lg shadow-orange-500/20">
                 <Flame className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
               <div className="min-w-0">
@@ -493,9 +493,9 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Event 2: Groove-o-Mania Dance (Radiant Hot Pink & Magenta) */}
-          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-r from-[#290422]/95 via-[#3b0832]/95 to-[#1c0218]/95 border-2 border-pink-500/70 backdrop-blur-2xl shadow-2xl shadow-pink-950/60 text-left transform hover:-translate-y-1 hover:border-pink-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-r from-[#290422]/95 via-[#3b0832]/95 to-[#1c0218]/95 border-2 border-pink-500/70 backdrop-blur-2xl shadow-2xl shadow-pink-950/60 text-left transform hover:-translate-y-1 hover:border-pink-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.3s" }}>
             <div className="flex items-center gap-3">
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-pink-500/25 border border-pink-400/60 text-pink-400 shrink-0 shadow-lg shadow-pink-500/20">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-pink-500/25 border border-pink-400/60 text-pink-400 shrink-0 shadow-lg shadow-pink-500/20">
                 <Sparkles className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
               <div className="min-w-0">
@@ -506,9 +506,9 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Event 3: Nukkad Natak & Theatre (Emerald Green & Mint) */}
-          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-r from-[#032415]/95 via-[#063b22]/95 to-[#02180e]/95 border-2 border-emerald-500/70 backdrop-blur-2xl shadow-2xl shadow-emerald-950/60 text-left transform hover:-translate-y-1 hover:border-emerald-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-r from-[#032415]/95 via-[#063b22]/95 to-[#02180e]/95 border-2 border-emerald-500/70 backdrop-blur-2xl shadow-2xl shadow-emerald-950/60 text-left transform hover:-translate-y-1 hover:border-emerald-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.6s" }}>
             <div className="flex items-center gap-3">
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-emerald-500/25 border border-emerald-400/60 text-emerald-400 shrink-0 shadow-lg shadow-emerald-500/20">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-emerald-500/25 border border-emerald-400/60 text-emerald-400 shrink-0 shadow-lg shadow-emerald-500/20">
                 <Theater className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
               <div className="min-w-0">
@@ -516,6 +516,27 @@ export const Home: React.FC = () => {
                 <p className="text-[11px] 2xl:text-xs text-emerald-300 font-bold mt-0.5 whitespace-nowrap">Street Play & SoloFlix Act</p>
               </div>
             </div>
+          </div>
+
+          {/* Event 4: Alfaaz & Spellbound (Royal Crimson & Ruby - Fills Image 1 Red Box) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-r from-[#290314]/95 via-[#3d051f]/95 to-[#1a020d]/95 border-2 border-rose-500/70 backdrop-blur-2xl shadow-2xl shadow-rose-950/60 text-left transform hover:-translate-y-1 hover:border-rose-400 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.2s" }}>
+            <div className="flex items-center gap-3">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-rose-500/25 border border-rose-400/60 text-rose-300 shrink-0 shadow-lg shadow-rose-500/20">
+                <BookOpen className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-rose-200 uppercase whitespace-nowrap">ALFAAZ & SPELLBOUND</h4>
+                <p className="text-[11px] 2xl:text-xs text-rose-300 font-bold mt-0.5 whitespace-nowrap">Poetry Slam & Spell Bee Finals</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Festive Embellishment Node In Image 1 Lower-Left Void */}
+          <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#140206]/85 border border-amber-500/35 backdrop-blur-md shadow-lg shadow-amber-950/50 mt-0.5 self-start">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-live-twinkle" />
+            <span className="text-[10px] font-mono font-bold tracking-wider text-amber-200 uppercase">
+              Championship Live Arena 01–04
+            </span>
           </div>
         </div>
 
@@ -747,49 +768,70 @@ export const Home: React.FC = () => {
         </div>
 
         {/* Outer Right Floating Cultural Event Badges (Colorful & Event-Centric) */}
-        <div className="hidden xl:flex flex-col gap-7 2xl:gap-8 absolute right-2 2xl:right-6 top-[17%] 2xl:top-[19%] z-20">
-          {/* Event 4: Couture Runway Vogue (Electric Cyan & Azure) */}
-          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-l from-[#041c2e]/95 via-[#062b47]/95 to-[#02121e]/95 border-2 border-cyan-400/70 backdrop-blur-2xl shadow-2xl shadow-cyan-950/60 text-right transform hover:-translate-y-1 hover:border-cyan-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
+        <div className="hidden xl:flex flex-col gap-3.5 2xl:gap-4 absolute right-2 2xl:right-6 top-[10%] 2xl:top-[12%] z-20">
+          {/* Event 5: Couture Runway Vogue (Electric Cyan & Azure) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-l from-[#041c2e]/95 via-[#062b47]/95 to-[#02121e]/95 border-2 border-cyan-400/70 backdrop-blur-2xl shadow-2xl shadow-cyan-950/60 text-right transform hover:-translate-y-1 hover:border-cyan-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "0.7s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
                 <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-cyan-200 uppercase whitespace-nowrap">COUTURE RUNWAY VOGUE</h4>
                 <p className="text-[11px] 2xl:text-xs text-cyan-300 font-bold mt-0.5 whitespace-nowrap">Eco Glam & Sneaker Art Contest</p>
               </div>
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-cyan-500/25 border border-cyan-400/60 text-cyan-400 shrink-0 shadow-lg shadow-cyan-500/20">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-cyan-500/25 border border-cyan-400/60 text-cyan-400 shrink-0 shadow-lg shadow-cyan-500/20">
                 <Layers className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
 
-          {/* Event 5: Harmony Hustle Singing (Luminous Golden Amber) */}
-          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-l from-[#2e1d03]/95 via-[#452b05]/95 to-[#1c1101]/95 border-2 border-amber-400/70 backdrop-blur-2xl shadow-2xl shadow-amber-950/60 text-right transform hover:-translate-y-1 hover:border-amber-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
+          {/* Event 6: Harmony Hustle Singing (Luminous Golden Amber) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-l from-[#2e1d03]/95 via-[#452b05]/95 to-[#1c1101]/95 border-2 border-amber-400/70 backdrop-blur-2xl shadow-2xl shadow-amber-950/60 text-right transform hover:-translate-y-1 hover:border-amber-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "2.0s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
                 <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-amber-200 uppercase whitespace-nowrap">HARMONY HUSTLE SINGING</h4>
                 <p className="text-[11px] 2xl:text-xs text-yellow-300 font-bold mt-0.5 whitespace-nowrap">Solo, Duet & Vocal Resonance</p>
               </div>
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-amber-500/25 border border-amber-400/60 text-amber-400 shrink-0 shadow-lg shadow-amber-500/20">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-amber-500/25 border border-amber-400/60 text-amber-400 shrink-0 shadow-lg shadow-amber-500/20">
                 <Mic className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
 
-          {/* Event 6: Fine Arts & AI Challenge (Royal Amethyst Purple) */}
-          <div className="w-[18rem] 2xl:w-[19.5rem] p-3.5 2xl:p-4 rounded-2xl bg-gradient-to-l from-[#1d0530]/95 via-[#2f094d]/95 to-[#12021e]/95 border-2 border-purple-400/70 backdrop-blur-2xl shadow-2xl shadow-purple-950/60 text-right transform hover:-translate-y-1 hover:border-purple-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
+          {/* Event 7: Fine Arts & AI Challenge (Royal Amethyst Purple) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-l from-[#1d0530]/95 via-[#2f094d]/95 to-[#12021e]/95 border-2 border-purple-400/70 backdrop-blur-2xl shadow-2xl shadow-purple-950/60 text-right transform hover:-translate-y-1 hover:border-purple-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "3.3s" }}>
             <div className="flex items-center justify-end gap-3">
               <div className="min-w-0">
                 <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-purple-200 uppercase whitespace-nowrap">FINE ARTS & AI CHALLENGE</h4>
                 <p className="text-[11px] 2xl:text-xs text-purple-300 font-bold mt-0.5 whitespace-nowrap">Live Doodling, Clay & Digital Art</p>
               </div>
-              <div className="p-2.5 2xl:p-3 rounded-xl bg-purple-500/25 border border-purple-400/60 text-purple-400 shrink-0 shadow-lg shadow-purple-500/20">
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-purple-500/25 border border-purple-400/60 text-purple-400 shrink-0 shadow-lg shadow-purple-500/20">
                 <Palette className="w-5 h-5 2xl:w-6 2xl:h-6" />
               </div>
             </div>
           </div>
+
+          {/* Event 8: Clash of Takes Debate (Sapphire Teal & Amber - Fills Image 1 Red Box) */}
+          <div className="w-[18rem] 2xl:w-[19.5rem] p-3 2xl:p-3.5 rounded-2xl bg-gradient-to-l from-[#022026]/95 via-[#033038]/95 to-[#011417]/95 border-2 border-teal-400/70 backdrop-blur-2xl shadow-2xl shadow-teal-950/60 text-right transform hover:-translate-y-1 hover:border-teal-300 transition-all duration-300 animate-live-sway" style={{ animationDelay: "1.6s" }}>
+            <div className="flex items-center justify-end gap-3">
+              <div className="min-w-0">
+                <h4 className="text-xs 2xl:text-sm font-black tracking-wider text-teal-200 uppercase whitespace-nowrap">CLASH OF TAKES DEBATE</h4>
+                <p className="text-[11px] 2xl:text-xs text-teal-300 font-bold mt-0.5 whitespace-nowrap">Literature Quiz & Oratory Duel</p>
+              </div>
+              <div className="p-2 2xl:p-2.5 rounded-xl bg-teal-500/25 border border-teal-400/60 text-teal-400 shrink-0 shadow-lg shadow-teal-500/20">
+                <Award className="w-5 h-5 2xl:w-6 2xl:h-6" />
+              </div>
+            </div>
+          </div>
+
+          {/* Festive Embellishment Node In Image 1 Lower-Right Void */}
+          <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-[#140206]/85 border border-amber-500/35 backdrop-blur-md shadow-lg shadow-amber-950/50 mt-0.5 self-end">
+            <span className="text-[10px] font-mono font-bold tracking-wider text-amber-200 uppercase">
+              22 Official Rulebook Contests
+            </span>
+            <Trophy className="w-3.5 h-3.5 text-amber-400" />
+          </div>
         </div>
 
         {/* Mobile Cultural Event Badges Strip (Vibrant & Colorful) */}
-        <div className="xl:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-10 z-10 max-w-3xl px-2">
+        <div className="xl:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full mt-10 z-10 max-w-5xl px-2">
           <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#2a0802] to-[#1c0401] border-2 border-orange-500/60 text-center shadow-lg shadow-orange-950/40">
             <Flame className="w-5 h-5 text-orange-400 mx-auto mb-1" />
             <p className="text-xs font-bold text-orange-200 uppercase">Battle Of The Bands</p>
@@ -805,6 +847,31 @@ export const Home: React.FC = () => {
             <p className="text-xs font-bold text-emerald-200 uppercase">Nukkad Natak & Drama</p>
             <p className="text-[11px] text-emerald-300 font-semibold">Street Play & Theatrical Arts</p>
           </div>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#290314] to-[#1a020d] border-2 border-rose-500/60 text-center shadow-lg shadow-rose-950/40">
+            <BookOpen className="w-5 h-5 text-rose-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-rose-200 uppercase">Alfaaz & Spellbound</p>
+            <p className="text-[11px] text-rose-300 font-semibold">Poetry Slam & Spell Bee</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#041c2e] to-[#02121e] border-2 border-cyan-400/60 text-center shadow-lg shadow-cyan-950/40">
+            <Layers className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-cyan-200 uppercase">Couture Runway</p>
+            <p className="text-[11px] text-cyan-300 font-semibold">Eco Glam & Sneaker Art</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#2e1d03] to-[#1c1101] border-2 border-amber-400/60 text-center shadow-lg shadow-amber-950/40">
+            <Mic className="w-5 h-5 text-amber-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-amber-200 uppercase">Harmony Hustle</p>
+            <p className="text-[11px] text-yellow-300 font-semibold">Solo, Duet & Vocal War</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#1d0530] to-[#12021e] border-2 border-purple-400/60 text-center shadow-lg shadow-purple-950/40">
+            <Palette className="w-5 h-5 text-purple-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-purple-200 uppercase">Fine Arts & AI</p>
+            <p className="text-[11px] text-purple-300 font-semibold">Live Doodling & Clay Art</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#022026] to-[#011417] border-2 border-teal-400/60 text-center shadow-lg shadow-teal-950/40">
+            <Award className="w-5 h-5 text-teal-400 mx-auto mb-1" />
+            <p className="text-xs font-bold text-teal-200 uppercase">Clash Of Takes</p>
+            <p className="text-[11px] text-teal-300 font-semibold">Debate & Literature Quiz</p>
+          </div>
         </div>
       </section>
 
@@ -812,8 +879,8 @@ export const Home: React.FC = () => {
           ELEVATED FESTIVAL STAT CARDS
           Four High-Contrast Metric Showcase Cards With Icons & Amber Glow
           ========================================================================= */}
-      <section className="py-14 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 min-[340px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 px-1 sm:px-0">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[88rem] 2xl:max-w-[94rem] mx-auto grid grid-cols-1 min-[340px]:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-1 sm:px-0">
           {/* Stat 1: 30+ Participating Institutes (Royal Gold Theme) */}
           <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#2a1a04]/95 via-[#180f02]/98 to-[#060300] border-2 border-amber-400/70 hover:border-amber-300 shadow-2xl shadow-amber-950/60 hover:shadow-[0_0_35px_rgba(245,184,66,0.35)] transition-all duration-300 group overflow-hidden text-center">
             <div className="w-11 h-11 mx-auto rounded-xl bg-amber-500/25 border border-amber-400/60 flex items-center justify-center text-amber-300 mb-3 group-hover:scale-110 transition-transform shadow-lg shadow-amber-500/20">
@@ -876,8 +943,8 @@ export const Home: React.FC = () => {
           REDESIGNED OFFICIAL EVENT SCHEDULE & GUIDELINES SECTION
           Modern Festival Cards With Rich Badges, Category Icons & Guidelines CTA
           ========================================================================= */}
-      <section id="schedule" className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <section id="schedule" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-[88rem] 2xl:max-w-[94rem] mx-auto relative z-10">
+        <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 mb-3 shadow-lg">
               <Calendar className="w-4 h-4 text-amber-400" />
@@ -940,12 +1007,12 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Schedule Cards Grid Redesigned With Festival Depth */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Schedule Cards Grid Redesigned With Balanced Responsive Columns */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${filteredSchedule.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3 xl:grid-cols-4"} gap-6`}>
           {filteredSchedule.map((item) => (
             <div
               key={item.id}
-              className={`p-6 rounded-2xl ${getEventCardStyle(item.category)} hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between relative overflow-hidden`}
+              className={`p-6 rounded-2xl ${getEventCardStyle(item.category)} hover:-translate-y-1 transition-all duration-300 group shadow-2xl flex flex-col justify-between h-full relative overflow-hidden`}
             >
               {/* Ambient Category Corner Accent */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors" />
@@ -1022,7 +1089,7 @@ export const Home: React.FC = () => {
           DEDICATED TOP 3 CONTINGENTS PODIUM & CHAMPIONSHIP LEADERBOARD SECTION
           Olympic-Grade Podium Stage With Gold/Silver/Bronze Pedestals & Real-Time Standings
           ========================================================================= */}
-      <section id="leaderboard" className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 scroll-mt-24">
+      <section id="leaderboard" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-[88rem] 2xl:max-w-[94rem] mx-auto relative z-10 scroll-mt-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 text-center md:text-left">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 text-xs font-black uppercase tracking-wider mb-2 backdrop-blur-md shadow-md">
@@ -1058,7 +1125,7 @@ export const Home: React.FC = () => {
 
 
       {/* Cultural Arenas Showcase */}
-      <section className="py-14 sm:py-20 px-2 min-[340px]:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-[88rem] 2xl:max-w-[94rem] mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">
             Multidisciplinary Arenas
@@ -1071,7 +1138,7 @@ export const Home: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {[
             {
               title: "Performing Arts & Choreography",
@@ -1140,20 +1207,22 @@ export const Home: React.FC = () => {
             return (
               <div
                 key={i}
-                className={`p-6 rounded-2xl ${arenaGradients[i % arenaGradients.length]} transition-all duration-300 group shadow-xl hover:-translate-y-1`}
+                className={`p-6 rounded-2xl ${arenaGradients[i % arenaGradients.length]} transition-all duration-300 group shadow-xl hover:-translate-y-1 h-full flex flex-col justify-between`}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 rounded-xl border group-hover:scale-110 transition-transform ${arena.iconStyle}`}>
-                    <Icon className="w-5 h-5" />
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`p-3 rounded-xl border group-hover:scale-110 transition-transform ${arena.iconStyle}`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${arena.badgeStyle}`}>
+                      {arena.badge}
+                    </span>
                   </div>
-                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${arena.badgeStyle}`}>
-                    {arena.badge}
-                  </span>
+                  <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
+                    {arena.title}
+                  </h3>
+                  <p className="text-xs text-gray-400 mt-2 leading-relaxed">{arena.desc}</p>
                 </div>
-                <h3 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
-                  {arena.title}
-                </h3>
-                <p className="text-xs text-gray-400 mt-2 leading-relaxed">{arena.desc}</p>
               </div>
             );
           })}
@@ -1161,7 +1230,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto relative z-10">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 text-amber-400 mb-2">
             <HelpCircle className="w-4 h-4" />
@@ -1172,7 +1241,7 @@ export const Home: React.FC = () => {
           </h2>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = activeFaq === index;
             return (
