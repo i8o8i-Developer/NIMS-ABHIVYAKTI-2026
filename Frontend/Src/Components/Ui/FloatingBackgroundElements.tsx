@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 interface FloatingBackgroundElementsProps {
-  variant?: "home" | "subpage";
+  variant?: "home" | "subpage" | "auth";
 }
 
 // Sacred Indian Rangoli Mandala Motif
@@ -116,6 +116,28 @@ const FestiveLeaf: React.FC<{
 export const FloatingBackgroundElements: React.FC<FloatingBackgroundElementsProps> = ({
   variant = "home",
 }) => {
+  if (variant === "auth") {
+    return (
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
+        {/* Subtle Dark Velvet Canvas */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,_#140207_0%,_#0d0105_40%,_#060002_100%)]" />
+
+        {/* Soft Ambient Center Spotlight Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[32rem] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.12)_0%,_rgba(225,29,72,0.06)_45%,_transparent_75%)] blur-3xl pointer-events-none" />
+
+        {/* Just Two Gentle Corner Diyas for wide screens */}
+        <FestiveDiya className="hidden md:block absolute top-6 left-4 sm:left-10 opacity-70" />
+        <FestiveDiya className="hidden md:block absolute top-6 right-4 sm:right-10 opacity-70" style={{ animationDelay: "1.4s" }} />
+
+        {/* Subtle Twinkling Corner Stars */}
+        <div className="absolute top-12 left-[12%] w-1.5 h-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_#F5B842] opacity-75 animate-live-twinkle" />
+        <div className="absolute top-16 right-[12%] w-1.5 h-1.5 rounded-full bg-yellow-300 shadow-[0_0_8px_#FDE047] opacity-75 animate-live-twinkle" style={{ animationDelay: "1.2s" }} />
+        <div className="absolute bottom-12 left-[10%] w-1.5 h-1.5 rounded-full bg-pink-300 shadow-[0_0_8px_#F43F5E] opacity-70 animate-live-twinkle" style={{ animationDelay: "2.1s" }} />
+        <div className="absolute bottom-16 right-[10%] w-1.5 h-1.5 rounded-full bg-cyan-300 shadow-[0_0_8px_#06B6D4] opacity-70 animate-live-twinkle" style={{ animationDelay: "0.8s" }} />
+      </div>
+    );
+  }
+
   if (variant === "subpage") {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 select-none">
