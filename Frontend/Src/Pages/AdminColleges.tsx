@@ -46,7 +46,7 @@ export const AdminColleges: React.FC = () => {
     try {
       setLoading(true);
       const res = await Api.get("/colleges/");
-      const data = res.data.results || res.data || [];
+      const data = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
       // Sort by total_points descending by default
       const sorted = [...data].sort((a: any, b: any) => (b.total_points || 0) - (a.total_points || 0));
       setColleges(sorted);
@@ -144,7 +144,8 @@ export const AdminColleges: React.FC = () => {
     }
   };
 
-  const filteredColleges = colleges.filter((c) => {
+  const safeColleges = Array.isArray(colleges) ? colleges : [];
+  const filteredColleges = safeColleges.filter((c) => {
     const q = searchTerm.toLowerCase();
     return (
       c.name?.toLowerCase().includes(q) ||

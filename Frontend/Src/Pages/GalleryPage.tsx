@@ -75,9 +75,8 @@ export const GalleryPage: React.FC = () => {
     const fetchGallery = async () => {
       try {
         const res = await Api.get("/gallery/");
-        if (res.data?.results && res.data.results.length > 0) {
-          setItems(res.data.results);
-        }
+        const list = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
+        if (list.length > 0) setItems(list);
       } catch {
         // Fallback
       }
@@ -87,7 +86,8 @@ export const GalleryPage: React.FC = () => {
 
   const categories = ["All", "Ceremonies", "Competitions", "Stage Highlights", "Winners"];
 
-  const filteredItems = items.filter(
+  const safeItems = Array.isArray(items) ? items : [];
+  const filteredItems = safeItems.filter(
     (item) => selectedCategory === "All" || item.category.toLowerCase() === selectedCategory.toLowerCase()
   );
 

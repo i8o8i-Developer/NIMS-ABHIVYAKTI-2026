@@ -55,7 +55,7 @@ export const AdminScores: React.FC = () => {
         Api.get("/colleges/"),
       ]);
 
-      const scoresData = scoresRes.data.results || scoresRes.data || [];
+      const scoresData = Array.isArray(scoresRes.data) ? scoresRes.data : Array.isArray(scoresRes.data?.results) ? scoresRes.data.results : [];
       const compsData = compsRes.data.results || compsRes.data || [];
       const colsData = colsRes.data.results || colsRes.data || [];
 
@@ -183,7 +183,8 @@ export const AdminScores: React.FC = () => {
   };
 
   // Filtered list
-  const filteredScores = scores.filter((score) => {
+  const safeScores = Array.isArray(scores) ? scores : [];
+  const filteredScores = safeScores.filter((score) => {
     const matchesSearch =
       (score.competition_title || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
       (score.college_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||

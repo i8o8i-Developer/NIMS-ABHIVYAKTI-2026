@@ -63,7 +63,7 @@ export const AdminCompetitions: React.FC = () => {
     try {
       setLoading(true);
       const res = await Api.get("/competitions/");
-      const data = res.data.results || res.data || [];
+      const data = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
       setCompetitions(data);
     } catch {
       showFeedbackMessage("error", "Failed To Load Competitions List.");
@@ -178,7 +178,8 @@ export const AdminCompetitions: React.FC = () => {
     }
   };
 
-  const filteredCompetitions = competitions.filter((comp) => {
+  const safeComps = Array.isArray(competitions) ? competitions : [];
+  const filteredCompetitions = safeComps.filter((comp) => {
     const q = searchTerm.toLowerCase();
     const matchesSearch =
       comp.title?.toLowerCase().includes(q) ||

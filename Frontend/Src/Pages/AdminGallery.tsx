@@ -58,7 +58,7 @@ export const AdminGallery: React.FC = () => {
     try {
       setLoading(true);
       const res = await Api.get("/gallery/");
-      const data = res.data.results || res.data || [];
+      const data = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
       setItems(data);
     } catch {
       showFeedbackMessage("error", "Failed To Load Festival Gallery Media.");
@@ -162,7 +162,8 @@ export const AdminGallery: React.FC = () => {
     }
   };
 
-  const filteredItems = items.filter((item) => {
+  const safeItems = Array.isArray(items) ? items : [];
+  const filteredItems = safeItems.filter((item) => {
     const matchesSearch =
       (item.title || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
       (item.caption || "").toLowerCase().includes(searchTerm.toLowerCase());

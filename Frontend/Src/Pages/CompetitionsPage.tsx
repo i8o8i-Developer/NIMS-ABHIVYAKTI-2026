@@ -385,9 +385,8 @@ export const CompetitionsPage: React.FC = () => {
     const fetchCompetitions = async () => {
       try {
         const res = await Api.get("/competitions/");
-        if (res.data?.results && res.data.results.length > 0) {
-          setCompetitions(res.data.results);
-        }
+        const list = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
+        if (list.length > 0) setCompetitions(list);
       } catch {
         // Fallback initialized
       }
@@ -491,7 +490,8 @@ export const CompetitionsPage: React.FC = () => {
     }
   };
 
-  const filteredCompetitions = competitions.filter((c) => {
+  const safeComps = Array.isArray(competitions) ? competitions : [];
+  const filteredCompetitions = safeComps.filter((c) => {
     const matchesCategory =
       selectedCategory === "All" ||
       c.category.toLowerCase() === selectedCategory.toLowerCase();

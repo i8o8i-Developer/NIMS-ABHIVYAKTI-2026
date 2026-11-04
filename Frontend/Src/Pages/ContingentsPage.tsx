@@ -221,9 +221,8 @@ export const ContingentsPage: React.FC = () => {
     const fetchColleges = async () => {
       try {
         const res = await Api.get("/colleges/");
-        if (res.data?.results && res.data.results.length > 0) {
-          setColleges(res.data.results);
-        }
+        const list = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
+        if (list.length > 0) setColleges(list);
       } catch {
         // Fallback
       }
@@ -231,7 +230,8 @@ export const ContingentsPage: React.FC = () => {
     fetchColleges();
   }, []);
 
-  const filteredColleges = colleges.filter(
+  const safeColleges = Array.isArray(colleges) ? colleges : [];
+  const filteredColleges = safeColleges.filter(
     (c) =>
       c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       c.code.toLowerCase().includes(searchTerm.toLowerCase()) ||

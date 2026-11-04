@@ -54,7 +54,7 @@ export const AdminUsers: React.FC = () => {
     try {
       setLoading(true);
       const res = await Api.get("/auth/users/");
-      const data = res.data.results || res.data || [];
+      const data = Array.isArray(res.data) ? res.data : Array.isArray(res.data?.results) ? res.data.results : [];
       setUsers(data);
     } catch {
       showFeedbackMessage("error", "Failed To Load Directorate Staff Directory.");
@@ -158,7 +158,8 @@ export const AdminUsers: React.FC = () => {
     }
   };
 
-  const filteredUsers = users.filter((u) => {
+  const safeUsers = Array.isArray(users) ? users : [];
+  const filteredUsers = safeUsers.filter((u) => {
     const matchesSearch =
       (u.full_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
       (u.email || "").toLowerCase().includes(searchTerm.toLowerCase());
