@@ -416,20 +416,34 @@ export const Home: React.FC = () => {
 
   const faqs = [
     {
+      category: "Eligibility & Contingents",
       q: "Who Is Eligible To Participate In Abhivyakti 2026?",
-      a: "All Bonafide Students Currently Enrolled In Any College, Department, Or Institute Of NIMS University Rajasthan Are Eligible To Represent Their Contingent.",
+      a: "All Bonafide Students currently enrolled in any College, Department, or Institute of NIMS University Rajasthan are eligible to represent their institutional contingent in official cultural competitions.",
     },
     {
-      q: "When Does Abhivyakti 2026 Take Place?",
-      a: "The Championship Spans 4 Epic Days From 18 November To 21 November 2026, Concluding With The Mega Grand Finale At Rajeshwari Auditorium.",
+      category: "Master Timeline & Venue",
+      q: "When & Where Does Abhivyakti 2026 Take Place?",
+      a: "The Championship spans 4 epic days from 18 November To 21 November 2026, hosted across the grand Rajeshwari Auditorium, NIMS Convention Grounds, and specialized academic arenas in Jaipur.",
     },
     {
+      category: "Rules & Scoring Rubrics",
       q: "How Are Event Rules & Guidelines Accessed?",
-      a: "Rules Are Directly Attached To Each Event Card! Simply Click 'Guidelines & Rules' On Any Competition To Inspect The Exact Time Limits, Team Sizes, And 4-Pillar Scoring Rubrics.",
+      a: "Rules are directly attached to every event card! Simply click 'Guidelines & Scoring Rubric' on any competition card to inspect exact time limits, stage dimensions, team sizes, and the 4-pillar evaluation criteria (25 pts each = 100 max).",
     },
     {
+      category: "Championship Rolling Trophy",
       q: "How Is The Overall Championship Trophy Decided?",
-      a: "Points Are Awarded For 1st (40 Pts), 2nd (25 Pts), And 3rd Place (15 Pts) In Each Competition. The Contingent With The Highest Cumulative Score Across All Arenas Lifts The Coveted Rolling Trophy.",
+      a: "Points are awarded automatically from verified jury scorecards: 1st Place = 40 Pts, 2nd Place = 25 Pts, and 3rd Place = 15 Pts. The contingent with the highest cumulative score across all cultural arenas lifts the coveted Abhivyakti Rolling Trophy.",
+    },
+    {
+      category: "Participation Flexibility",
+      q: "Can Students Compete In Multiple Events Or Arenas?",
+      a: "Yes! Students may participate in multiple competitions provided the stage schedules do not conflict. Multi-talented students can participate across dance battles, singing showdowns, poetry slams, and fine arts.",
+    },
+    {
+      category: "Entry & Access Policy",
+      q: "Is There Any Entry Fee For NIMS University Students?",
+      a: "No! Participation, stage access, and spectator entry for all 22 official championship competitions, Battle of the Bands, Couture Runway Vogue, and celebrity evening star nights are 100% free for all NIMS University students, faculty, and staff.",
     },
   ];
 
@@ -1229,47 +1243,265 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Frequently Asked Questions */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 text-amber-400 mb-2">
-            <HelpCircle className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-wider">Inquiries & Clarifications</span>
+      {/* =========================================================================
+          REIMAGINED FREQUENTLY ASKED QUESTIONS SECTION
+          3-Column Majestic Layout With Symmetrical Left & Right Festival Flanks
+          ========================================================================= */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-[88rem] 2xl:max-w-[94rem] mx-auto relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#38081a] via-[#24052e] to-[#0a1e36] border-2 border-amber-400/60 text-amber-200 mb-3 shadow-lg">
+            <HelpCircle className="w-4 h-4 text-amber-400" />
+            <span className="text-xs font-black uppercase tracking-wider">Inquiries & Clarifications</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-black text-white">
+          <h2 className="text-3xl sm:text-5xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-amber-300 uppercase tracking-tight drop-shadow-md">
             Frequently Asked Questions
           </h2>
+          <p className="text-xs sm:text-sm text-gray-300 mt-2 font-medium max-w-2xl mx-auto">
+            Everything You Need To Know About Contingent Eligibility, 4-Pillar Scoring Rubrics, Master Timelines, And Festival Operations.
+          </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = activeFaq === index;
-            return (
-              <div
-                key={index}
-                className="rounded-2xl bg-gradient-to-r from-[#290514]/90 via-[#1e0422]/90 to-[#100318]/90 border-2 border-amber-400/40 overflow-hidden transition-all shadow-lg"
-              >
-                <button
-                  onClick={() => setActiveFaq(isOpen ? null : index)}
-                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm text-white hover:text-amber-300 transition-colors"
-                >
-                  <span>{faq.q}</span>
-                  <ChevronRight
-                    className={`w-4 h-4 text-amber-400 transition-transform duration-200 shrink-0 ${
-                      isOpen ? "rotate-90" : ""
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-5 pb-4 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-3">
-                    {faq.a}
-                  </div>
-                )}
+        {/* 3-Column Festive Layout: Left Decorative Pillar + Center Accordion + Right Decorative Pillar */}
+        <div className="flex flex-col xl:flex-row items-start justify-center gap-8 2xl:gap-12">
+          {/* =========================================================
+              LEFT FLANK: FESTIVAL HELPDESK & RULES PILLAR (Side Elements)
+              ========================================================= */}
+          <div className="hidden xl:flex flex-col gap-5 w-72 2xl:w-80 shrink-0 sticky top-28">
+            {/* Top Ornamental Card: Official Fest Directorate Helpdesk */}
+            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#290515]/95 via-[#1a031e]/98 to-[#0d0112] border-2 border-rose-500/60 shadow-2xl shadow-rose-950/60 text-left relative overflow-hidden group hover:border-rose-400 transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2.5 rounded-xl bg-rose-500/25 border border-rose-400/60 text-rose-300 shadow-lg shadow-rose-500/20">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-serif font-black text-rose-100 uppercase tracking-wider">Rules & Fairplay</h4>
+                  <p className="text-[10px] text-rose-300 font-bold">100% Transparent Scoring</p>
+                </div>
               </div>
-            );
-          })}
+              <p className="text-xs text-rose-200/85 leading-relaxed font-normal">
+                Every competition is evaluated by empanelled jury panels utilizing standardized 4-pillar rubrics (25 pts each = 100 max) sealed in real-time.
+              </p>
+              <div className="mt-4 pt-3 border-t border-rose-500/30 flex items-center justify-between text-[11px] font-bold text-amber-300">
+                <span>Rulebook Sealed</span>
+                <span className="px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-400/40 text-rose-200 text-[10px] font-black">
+                  Verified
+                </span>
+              </div>
+            </div>
+
+            {/* Middle Auspicious Brass Diya & Rajeshwari Arena Showcase */}
+            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#1c040d]/90 to-[#0e0207]/95 border-2 border-amber-500/40 backdrop-blur-md shadow-xl flex flex-col items-center gap-3.5 text-center">
+              <div className="animate-live-flicker">
+                <svg width="40" height="30" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.7)]">
+                  <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+                  <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+                  <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+                  <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+                </svg>
+              </div>
+              <div>
+                <span className="text-xs font-serif font-black tracking-widest text-amber-300 uppercase block">Rajeshwari Arena</span>
+                <span className="text-[10px] text-gray-300 font-medium block mt-0.5">Central Championship Stage</span>
+              </div>
+            </div>
+
+            {/* Direct Rulebook Quick Action */}
+            <button
+              onClick={() => setIsRulebookOpen(true)}
+              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 border-2 border-emerald-400 text-emerald-100 text-xs font-black transition-all shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02]"
+            >
+              <FileText className="w-4 h-4 text-emerald-300" />
+              <span>Full PDF Rulebook</span>
+            </button>
+          </div>
+
+          {/* =========================================================
+              CENTER: ELEVATED FAQ ACCORDION CARDS
+              ========================================================= */}
+          <div className="w-full max-w-3xl 2xl:max-w-4xl space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = activeFaq === index;
+              return (
+                <div
+                  key={index}
+                  className={`rounded-2xl transition-all duration-300 overflow-hidden shadow-xl ${
+                    isOpen
+                      ? "bg-gradient-to-r from-[#33061a]/98 via-[#24042d]/98 to-[#130321]/98 border-2 border-amber-400 shadow-[0_0_30px_rgba(245,184,66,0.22)]"
+                      : "bg-gradient-to-r from-[#290514]/90 via-[#1e0422]/90 to-[#100318]/90 border-2 border-amber-400/40 hover:border-amber-300/70"
+                  }`}
+                >
+                  <button
+                    onClick={() => setActiveFaq(isOpen ? null : index)}
+                    className="w-full px-5 sm:px-6 py-4 sm:py-5 text-left flex items-start sm:items-center justify-between gap-4 font-bold text-sm text-white hover:text-amber-200 transition-colors group"
+                  >
+                    <div className="flex items-start sm:items-center gap-3 min-w-0">
+                      {/* Question Index Badge */}
+                      <span className="w-7 h-7 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-mono font-black flex items-center justify-center shrink-0 shadow-sm">
+                        0{index + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400/90 block mb-0.5">
+                          {faq.category}
+                        </span>
+                        <span className="font-serif font-black text-sm sm:text-base text-white group-hover:text-amber-200 transition-colors leading-snug">
+                          {faq.q}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen
+                        ? "bg-amber-400 border-amber-300 text-black shadow-[0_0_12px_rgba(245,184,66,0.6)]"
+                        : "bg-white/5 border-white/20 text-amber-400 group-hover:border-amber-400"
+                    }`}>
+                      <ChevronRight
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          isOpen ? "rotate-90" : ""
+                        }`}
+                      />
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-5 sm:px-6 pb-5 text-xs sm:text-sm text-rose-100/90 leading-relaxed border-t border-amber-400/25 pt-4 bg-[#14020a]/60">
+                      <p>{faq.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {/* Directorate Direct Inquiries Banner */}
+            <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#240514]/90 via-[#1c0326]/90 to-[#0e162e]/90 border-2 border-amber-400/40 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl text-center sm:text-left">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 shrink-0">
+                  <Sparkles className="w-5 h-5 text-amber-400" />
+                </div>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-serif font-black text-white">Have An Unanswered Query?</h4>
+                  <p className="text-[11px] text-gray-300 mt-0.5">Connect with the official NIMS Student Council Directorate.</p>
+                </div>
+              </div>
+              <a
+                href="https://www.instagram.com/studentcouncilnims/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-600 via-rose-500 to-amber-500 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:scale-105 transition-all shrink-0"
+              >
+                Message On Instagram
+              </a>
+            </div>
+          </div>
+
+          {/* =========================================================
+              RIGHT FLANK: CHAMPIONSHIP SCORING MATRIX (Side Elements)
+              ========================================================= */}
+          <div className="hidden xl:flex flex-col gap-5 w-72 2xl:w-80 shrink-0 sticky top-28">
+            {/* Top Ornamental Card: Trophy Accumulation Rules */}
+            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#2e1d03]/95 via-[#1c1101]/98 to-[#0d0700] border-2 border-amber-400/60 shadow-2xl shadow-amber-950/60 text-left relative overflow-hidden group hover:border-amber-300 transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2.5 rounded-xl bg-amber-500/25 border border-amber-400/60 text-amber-300 shadow-lg shadow-amber-500/20">
+                  <Trophy className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-serif font-black text-amber-100 uppercase tracking-wider">Trophy Standing</h4>
+                  <p className="text-[10px] text-yellow-300 font-bold">Inter-College Race</p>
+                </div>
+              </div>
+              <p className="text-xs text-amber-200/85 leading-relaxed font-normal">
+                Rolling trophy points are awarded per competition: 🥇 40 pts for 1st, 🥈 25 pts for 2nd, and 🥉 15 pts for 3rd. Real-time scores stream to the dashboard.
+              </p>
+              <div className="mt-4 pt-3 border-t border-amber-500/30 flex items-center justify-between text-[11px] font-bold text-amber-300">
+                <span>30+ Institutes</span>
+                <span className="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-200 text-[10px] font-black">
+                  Live Roster
+                </span>
+              </div>
+            </div>
+
+            {/* Middle Auspicious Brass Diya & Festival Dates Showcase */}
+            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#1c0f02]/90 to-[#0e0701]/95 border-2 border-amber-500/40 backdrop-blur-md shadow-xl flex flex-col items-center gap-3.5 text-center">
+              <div className="animate-live-flicker" style={{ animationDelay: "1.4s" }}>
+                <svg width="40" height="30" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_16px_rgba(245,184,66,0.7)]">
+                  <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+                  <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+                  <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+                  <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+                </svg>
+              </div>
+              <div>
+                <span className="text-xs font-serif font-black tracking-widest text-amber-300 uppercase block">18–21 November 2026</span>
+                <span className="text-[10px] text-gray-300 font-medium block mt-0.5">Four Days Of Excellence</span>
+              </div>
+            </div>
+
+            {/* Direct Leaderboard Quick Action */}
+            <a
+              href="#leaderboard"
+              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-purple-800 to-fuchsia-800 hover:from-purple-700 hover:to-fuchsia-700 border-2 border-purple-400 text-purple-100 text-xs font-black transition-all shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02]"
+            >
+              <Trophy className="w-4 h-4 text-yellow-300" />
+              <span>View Leaderboard</span>
+            </a>
+          </div>
         </div>
       </section>
+
+      {/* =========================================================================
+          MAGNIFICENT FESTIVE DIVIDER & PROPER FOOTER SEPARATION
+          Ornate Golden Crest, Flickering Diyas & Glowing Horizon Rail
+          ========================================================================= */}
+      <div className="relative w-full pt-14 pb-8 overflow-hidden select-none z-20">
+        {/* Ambient Horizon Glow Beam */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-24 bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.22)_0%,_rgba(225,29,72,0.12)_45%,_transparent_75%)] blur-2xl pointer-events-none" />
+
+        <div className="max-w-[88rem] 2xl:max-w-[94rem] mx-auto px-4 relative flex items-center justify-center">
+          {/* Left Tapering Glowing Gold Line */}
+          <div className="flex-1 h-0.5 bg-gradient-to-r from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_16px_rgba(245,184,66,0.8)]" />
+
+          {/* Left Decorative Diamond Studs */}
+          <div className="hidden sm:flex items-center gap-2.5 mx-4">
+            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
+            <span className="w-2.5 h-2.5 rotate-45 bg-rose-500 shadow-[0_0_10px_#F43F5E]" />
+            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
+          </div>
+
+          {/* Center Royal Medallion Crest with Flickering Brass Diyas */}
+          <div className="relative px-5 sm:px-8 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#290514] via-[#3d0822] to-[#290514] border-2 border-amber-400 shadow-[0_0_40px_rgba(245,184,66,0.5)] flex items-center gap-3 sm:gap-4 shrink-0">
+            {/* Diya Left */}
+            <div className="animate-live-flicker">
+              <svg width="26" height="20" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_12px_rgba(245,184,66,0.85)]">
+                <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+                <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+                <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+                <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+              </svg>
+            </div>
+            <span className="font-serif font-black text-xs sm:text-sm tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 whitespace-nowrap drop-shadow-md">
+              ✦ ABHIVYAKTI 2026 FESTIVAL DIRECTORATE ✦
+            </span>
+            {/* Diya Right */}
+            <div className="animate-live-flicker" style={{ animationDelay: "1.3s" }}>
+              <svg width="26" height="20" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_12px_rgba(245,184,66,0.85)]">
+                <path d="M22 2C22 2 27 9 27 14C27 17.5 24.5 20 22 20C19.5 20 17 17.5 17 14C17 9 22 2 22 2Z" fill="#FACC15" />
+                <path d="M22 6C22 6 25 10.5 25 14C25 16 23.5 17.5 22 17.5C20.5 17.5 19 16 19 14C19 10.5 22 6 22 6Z" fill="#FEF08A" />
+                <path d="M4 17C7 26 15 31 22 31C29 31 37 26 40 17C33 21 27 22 22 22C17 22 11 21 4 17Z" fill="#881337" />
+                <path d="M8 18C13 22 17 23 22 23C27 23 31 22 36 18C33 24 28 28 22 28C16 28 11 24 8 18Z" fill="#D97706" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Right Decorative Diamond Studs */}
+          <div className="hidden sm:flex items-center gap-2.5 mx-4">
+            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
+            <span className="w-2.5 h-2.5 rotate-45 bg-rose-500 shadow-[0_0_10px_#F43F5E]" />
+            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400 shadow-[0_0_8px_#F5B842]" />
+          </div>
+
+          {/* Right Tapering Glowing Gold Line */}
+          <div className="flex-1 h-0.5 bg-gradient-to-l from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_16px_rgba(245,184,66,0.8)]" />
+        </div>
+      </div>
 
       {/* Global Footer */}
       <Footer />
