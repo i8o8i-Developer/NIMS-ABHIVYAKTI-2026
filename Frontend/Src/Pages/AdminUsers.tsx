@@ -167,10 +167,10 @@ export const AdminUsers: React.FC = () => {
     return matchesSearch && matchesRole;
   });
 
-  const totalStaff = users.length;
-  const superAdminCount = users.filter((u) => u.role === "super_admin").length;
-  const judgeCount = users.filter((u) => u.role === "judge").length;
-  const coordinatorCount = users.filter((u) => u.role === "coordinator").length;
+  const totalStaff = safeUsers.length;
+  const superAdminCount = safeUsers.filter((u) => u.role === "super_admin").length;
+  const judgeCount = safeUsers.filter((u) => u.role === "judge").length;
+  const coordinatorCount = safeUsers.filter((u) => u.role === "coordinator").length;
 
   const getRoleBadge = (r: string) => {
     const styles: Record<string, { label: string; class: string }> = {

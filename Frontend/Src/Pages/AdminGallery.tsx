@@ -172,9 +172,9 @@ export const AdminGallery: React.FC = () => {
     return matchesSearch && matchesCategory && matchesFeatured;
   });
 
-  const totalItems = items.length;
-  const featuredCount = items.filter((i) => i.is_featured).length;
-  const starNightCount = items.filter((i) => i.category === "STAR_NIGHT").length;
+  const totalItems = safeItems.length;
+  const featuredCount = safeItems.filter((i) => i.is_featured).length;
+  const starNightCount = safeItems.filter((i) => i.category === "STAR_NIGHT").length;
 
   return (
     <div className="space-y-6 animate-fade-in text-amber-50">

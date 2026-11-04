@@ -12,7 +12,7 @@ class EventSetting(models.Model):
     edition = models.CharField(max_length=50, default="2026")
     start_date = models.DateTimeField(help_text="Grand Opening Ceremony Date & Time")
     end_date = models.DateTimeField(blank=True, null=True, help_text="Valedictory & Awards Ceremony")
-    date_range_display = models.CharField(max_length=150, default="21–22 November 2026")
+    date_range_display = models.CharField(max_length=150, default="18–21 November 2026")
     venue = models.CharField(max_length=200, default="Rajeshwari Auditorium & Convention Grounds, NIMS University Rajasthan, Jaipur")
     marquee_announcements = models.JSONField(
         default=list,
@@ -40,16 +40,17 @@ class EventSetting(models.Model):
                 "event_name": "NIMS Abhivyakti 2026",
                 "tagline": "Celebrating Cultural Majesty & Excellence",
                 "edition": "2026",
-                "start_date": "2026-11-21T09:00:00+05:30",
-                "end_date": "2026-11-22T20:00:00+05:30",
-                "date_range_display": "21–22 November 2026",
+                "start_date": "2026-11-18T09:00:00+05:30",
+                "end_date": "2026-11-21T21:00:00+05:30",
+                "date_range_display": "18–21 November 2026",
                 "venue": "Rajeshwari Auditorium & NIMS Convention Grounds, Jaipur",
                 "marquee_announcements": [
-                    "NIMS University Cultural Championship 2026",
+                    "NIMS University Cultural Championship 2026 • 18-21 November 2026",
                     "Abhivyakti 2026 Prestigious Championship Rolling Trophy",
-                    "Mega Battle Of The Bands & Rock Concert Prelims Open",
-                    "Star Celebrity Night Announcement Dropping Soon",
-                    "High-Stakes Nukkad Natak & Classical Dance Prelims Active",
+                    "Day 1: Groove-o-Mania & Harmony Hustle Prelims Live",
+                    "Day 2: Couture Upcycling & Visual Arts Arena",
+                    "Day 3: SoloFlix Mono Act & Literature Quiz Finale",
+                    "Day 4: Grand Finale & Couture Clique at Cricket Ground",
                 ],
                 "feature_flags": {
                     "live_leaderboard_active": True,

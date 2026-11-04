@@ -263,24 +263,24 @@ export const AdminCompetitions: React.FC = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         <div className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-lg">
           <p className="text-[11px] font-bold uppercase tracking-wider text-amber-300/80">Total Events</p>
-          <p className="text-2xl sm:text-3xl font-serif font-black text-white mt-1">{competitions.length}</p>
+          <p className="text-2xl sm:text-3xl font-serif font-black text-white mt-1">{safeComps.length}</p>
         </div>
         <div className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-lg">
           <p className="text-[11px] font-bold uppercase tracking-wider text-emerald-300">Live Arenas</p>
           <p className="text-2xl sm:text-3xl font-serif font-black text-emerald-400 mt-1">
-            {competitions.filter((c) => c.status === "ONGOING").length}
+            {safeComps.filter((c) => c.status === "ONGOING").length}
           </p>
         </div>
         <div className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-lg">
           <p className="text-[11px] font-bold uppercase tracking-wider text-purple-300">Judged & Completed</p>
           <p className="text-2xl sm:text-3xl font-serif font-black text-purple-300 mt-1">
-            {competitions.filter((c) => c.status === "COMPLETED").length}
+            {safeComps.filter((c) => c.status === "COMPLETED").length}
           </p>
         </div>
         <div className="p-4 rounded-2xl bg-[#120208]/90 border border-amber-500/25 backdrop-blur-xl shadow-lg">
           <p className="text-[11px] font-bold uppercase tracking-wider text-amber-300">Scheduled Ahead</p>
           <p className="text-2xl sm:text-3xl font-serif font-black text-amber-300 mt-1">
-            {competitions.filter((c) => c.status === "UPCOMING").length}
+            {safeComps.filter((c) => c.status === "UPCOMING").length}
           </p>
         </div>
       </div>

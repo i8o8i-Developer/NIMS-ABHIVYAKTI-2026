@@ -155,8 +155,8 @@ export const AdminColleges: React.FC = () => {
     );
   });
 
-  const totalPointsDistributed = colleges.reduce((sum, c) => sum + (c.total_points || 0), 0);
-  const totalMedals = colleges.reduce(
+  const totalPointsDistributed = safeColleges.reduce((sum, c) => sum + (c.total_points || 0), 0);
+  const totalMedals = safeColleges.reduce(
     (acc, c) => ({
       gold: acc.gold + (c.gold_medals || 0),
       silver: acc.silver + (c.silver_medals || 0),

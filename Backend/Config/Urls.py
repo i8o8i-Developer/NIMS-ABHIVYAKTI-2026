@@ -10,7 +10,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from Apps.Core.models import EventSetting
-from Apps.Accounts.Permissions import IsSuperAdmin
+from Apps.Accounts.Permissions import IsSuperAdmin, IsCoordinatorOrAbove
 
 
 def health_check(request):
@@ -27,7 +27,7 @@ class FestivalSettingsView(APIView):
     def get_permissions(self):
         if self.request.method == "GET":
             return [AllowAny()]
-        return [IsSuperAdmin()]
+        return [IsCoordinatorOrAbove()]
 
     def get(self, request):
         s = EventSetting.get_settings()

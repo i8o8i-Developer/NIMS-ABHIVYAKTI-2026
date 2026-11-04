@@ -206,11 +206,11 @@ export const AdminScores: React.FC = () => {
   });
 
   // KPI Calculations
-  const totalScores = scores.length;
-  const goldCount = scores.filter((s) => s.rank === 1).length;
-  const silverCount = scores.filter((s) => s.rank === 2).length;
-  const bronzeCount = scores.filter((s) => s.rank === 3).length;
-  const totalPointsDistributed = scores.reduce((acc, s) => acc + Number(s.points_awarded || 0), 0);
+  const totalScores = safeScores.length;
+  const goldCount = safeScores.filter((s) => s.rank === 1).length;
+  const silverCount = safeScores.filter((s) => s.rank === 2).length;
+  const bronzeCount = safeScores.filter((s) => s.rank === 3).length;
+  const totalPointsDistributed = safeScores.reduce((acc, s) => acc + Number(s.points_awarded || 0), 0);
 
   const getRankBadge = (r: number | null | undefined) => {
     if (r === 1) {

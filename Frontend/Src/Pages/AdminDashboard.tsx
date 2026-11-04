@@ -54,13 +54,22 @@ export const AdminDashboard: React.FC = () => {
         if (statsRes?.data) {
           setStats(statsRes.data);
         }
-        if (lbRes?.data?.standings) {
-          setLeaderboard(lbRes.data.standings);
+        const lbData = Array.isArray(lbRes?.data?.leaderboard)
+          ? lbRes.data.leaderboard
+          : Array.isArray(lbRes?.data?.standings)
+          ? lbRes.data.standings
+          : Array.isArray(lbRes?.data)
+          ? lbRes.data
+          : [];
+        if (lbData.length > 0) {
+          setLeaderboard(lbData);
         }
-        if (scoresRes?.data) {
-          const sData = scoresRes.data.results || scoresRes.data || [];
-          setRecentScores(sData.slice(0, 5));
-        }
+        const sData = Array.isArray(scoresRes?.data?.results)
+          ? scoresRes.data.results
+          : Array.isArray(scoresRes?.data)
+          ? scoresRes.data
+          : [];
+        setRecentScores(sData.slice(0, 5));
       } catch {
         // Fallback
       } finally {
@@ -106,26 +115,6 @@ export const AdminDashboard: React.FC = () => {
             Real-Time Scoring Oversight, Institutional Championship Standings, And Arena Orchestration.
           </p>
         </div>
-
-        {/* Quick Launchers */}
-        <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
-          <Link
-            to="/admin/scores"
-            className="flex-1 md:flex-none px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 text-black font-serif font-black text-xs sm:text-sm tracking-wide shadow-lg shadow-amber-500/25 transition-all flex items-center justify-center gap-2 active:scale-95"
-          >
-            <Trophy className="w-4 h-4 stroke-[2.5]" />
-            <span>Award Score</span>
-          </Link>
-
-          <Link
-            to="/#leaderboard"
-            target="_blank"
-            className="px-3.5 py-2.5 rounded-2xl bg-white/5 hover:bg-white/10 text-rose-200 hover:text-white border border-white/10 text-xs font-bold transition-colors flex items-center gap-1.5"
-          >
-            <ExternalLink className="w-3.5 h-3.5 text-amber-400" />
-            <span>Public Standings</span>
-          </Link>
-        </div>
       </div>
 
       {/* KPI Metric Cards */}
@@ -143,7 +132,7 @@ export const AdminDashboard: React.FC = () => {
           </div>
           <div className="mt-2 flex items-baseline justify-between">
             <span className="text-2xl sm:text-3xl font-serif font-black text-white">
-              {stats.total_colleges || 12}
+              {stats.colleges_count || stats.total_colleges || 12}
             </span>
             <span className="text-[10px] font-mono font-bold text-amber-400 flex items-center gap-0.5">
               <span>Manage</span>
@@ -168,7 +157,7 @@ export const AdminDashboard: React.FC = () => {
           </div>
           <div className="mt-2 flex items-baseline justify-between">
             <span className="text-2xl sm:text-3xl font-serif font-black text-white">
-              {stats.total_competitions || 15}
+              {stats.competitions_count || stats.total_competitions || 26}
             </span>
             <span className="text-[10px] font-mono font-bold text-emerald-400">
               {stats.completed_competitions || 0} Done
@@ -192,7 +181,7 @@ export const AdminDashboard: React.FC = () => {
           </div>
           <div className="mt-2 flex items-baseline justify-between">
             <span className="text-2xl sm:text-3xl font-serif font-black text-amber-300">
-              {stats.total_scores_recorded || recentScores.length || 1}
+              {stats.scores_count || stats.total_scores_recorded || recentScores.length || 30}
             </span>
             <span className="text-[10px] font-mono font-bold text-amber-400">Verified</span>
           </div>

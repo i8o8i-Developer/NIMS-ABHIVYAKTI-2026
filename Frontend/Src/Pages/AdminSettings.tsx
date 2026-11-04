@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   AlertCircle,
   Calendar,
+  Clock,
   Sparkles,
   Radio,
   Lock,
@@ -20,6 +21,9 @@ import {
   FileText,
   Star,
   RefreshCw,
+  ArrowUp,
+  ArrowDown,
+  ChevronRight,
 } from "lucide-react";
 
 export const AdminSettings: React.FC = () => {
@@ -31,20 +35,27 @@ export const AdminSettings: React.FC = () => {
   const [eventName, setEventName] = useState("NIMS Abhivyakti 2026");
   const [tagline, setTagline] = useState("Celebrating Cultural Majesty & Excellence");
   const [edition, setEdition] = useState("2026");
-  const [dateRangeDisplay, setDateRangeDisplay] = useState("21–22 November 2026");
+  const [dateRangeDisplay, setDateRangeDisplay] = useState("18–21 November 2026");
   const [venue, setVenue] = useState(
     "Rajeshwari Auditorium & NIMS Convention Grounds, Jaipur"
   );
-  const [startDate, setStartDate] = useState("2026-11-21T09:00");
+
+  // Separate Date & Time Selectors for Countdown Kickoff
+  const [kickoffDate, setKickoffDate] = useState("2026-11-18");
+  const [kickoffTime, setKickoffTime] = useState("09:00");
 
   // Marquee Announcements
   const [announcements, setAnnouncements] = useState<string[]>([
-    "NIMS University Cultural Championship 2026",
+    "NIMS University Cultural Championship 2026 • 18-21 November 2026",
     "Abhivyakti 2026 Prestigious Championship Rolling Trophy",
-    "Mega Battle Of The Bands & Rock Concert Prelims Open",
-    "Star Celebrity Night Announcement Dropping Soon",
+    "Day 1: Groove-o-Mania & Harmony Hustle Prelims Live",
+    "Day 2: Couture Upcycling & Visual Arts Arena",
+    "Day 3: SoloFlix Mono Act & Literature Quiz Finale",
+    "Day 4: Grand Finale & Couture Clique at Cricket Ground",
   ]);
   const [newAnnouncement, setNewAnnouncement] = useState("");
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editingText, setEditingText] = useState("");
 
   // Feature Flags
   const [featureFlags, setFeatureFlags] = useState<{
@@ -70,7 +81,18 @@ export const AdminSettings: React.FC = () => {
         if (d.edition) setEdition(d.edition);
         if (d.date_range_display) setDateRangeDisplay(d.date_range_display);
         if (d.venue) setVenue(d.venue);
-        if (d.start_date) setStartDate(d.start_date.substring(0, 16));
+        if (d.start_date) {
+          const dt = new Date(d.start_date);
+          if (!isNaN(dt.getTime())) {
+            const yyyy = dt.getFullYear();
+            const mm = String(dt.getMonth() + 1).padStart(2, "0");
+            const dd = String(dt.getDate()).padStart(2, "0");
+            const hh = String(dt.getHours()).padStart(2, "0");
+            const min = String(dt.getMinutes()).padStart(2, "0");
+            setKickoffDate(`${yyyy}-${mm}-${dd}`);
+            setKickoffTime(`${hh}:${min}`);
+          }
+        }
         if (Array.isArray(d.marquee_announcements) && d.marquee_announcements.length > 0) {
           setAnnouncements(d.marquee_announcements);
         }
@@ -99,8 +121,39 @@ export const AdminSettings: React.FC = () => {
     setTimeout(() => setFeedback(null), 4000);
   };
 
-  const handleAddAnnouncement = (e: React.FormEvent) => {
-    e.preventDefault();
+  const formatDisplayDateTime = (dStr: string, tStr: string) => {
+    try {
+      const dt = new Date(`${dStr}T${tStr}:00`);
+      if (isNaN(dt.getTime())) return `${dStr} ${tStr}`;
+      return dt.toLocaleString("en-US", {
+        weekday: "short",
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
+    } catch {
+      return `${dStr} ${tStr}`;
+    }
+  };
+
+  const getRemainingDays = (dStr: string, tStr: string) => {
+    try {
+      const dt = new Date(`${dStr}T${tStr}:00`);
+      const diff = dt.getTime() - Date.now();
+      if (diff <= 0) return "Event Kickoff In Progress";
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      return `${days} Days, ${hours} Hours Remaining`;
+    } catch {
+      return "";
+    }
+  };
+
+  const handleAddAnnouncement = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     if (!newAnnouncement.trim()) return;
     setAnnouncements([...announcements, newAnnouncement.trim()]);
     setNewAnnouncement("");
@@ -108,6 +161,39 @@ export const AdminSettings: React.FC = () => {
 
   const handleRemoveAnnouncement = (index: number) => {
     setAnnouncements(announcements.filter((_, i) => i !== index));
+    if (editingIndex === index) {
+      setEditingIndex(null);
+      setEditingText("");
+    }
+  };
+
+  const handleStartEdit = (index: number, currentText: string) => {
+    setEditingIndex(index);
+    setEditingText(currentText);
+  };
+
+  const handleSaveEdit = (index: number) => {
+    if (!editingText.trim()) return;
+    const updated = [...announcements];
+    updated[index] = editingText.trim();
+    setAnnouncements(updated);
+    setEditingIndex(null);
+    setEditingText("");
+  };
+
+  const handleCancelEdit = () => {
+    setEditingIndex(null);
+    setEditingText("");
+  };
+
+  const handleMoveAnnouncement = (index: number, direction: "up" | "down") => {
+    const targetIndex = direction === "up" ? index - 1 : index + 1;
+    if (targetIndex < 0 || targetIndex >= announcements.length) return;
+    const updated = [...announcements];
+    const temp = updated[index];
+    updated[index] = updated[targetIndex];
+    updated[targetIndex] = temp;
+    setAnnouncements(updated);
   };
 
   const handleToggleFlag = (key: keyof typeof featureFlags) => {
@@ -117,32 +203,39 @@ export const AdminSettings: React.FC = () => {
     }));
   };
 
-  const handleSave = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSave = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     setSaving(true);
     try {
+      const combinedDateTime = new Date(`${kickoffDate}T${kickoffTime}:00`);
       const payload = {
         event_name: eventName.trim(),
         tagline: tagline.trim(),
         edition: edition.trim(),
         date_range_display: dateRangeDisplay.trim(),
         venue: venue.trim(),
-        start_date: startDate ? new Date(startDate).toISOString() : new Date().toISOString(),
+        start_date: isNaN(combinedDateTime.getTime())
+          ? "2026-11-18T09:00:00+05:30"
+          : combinedDateTime.toISOString(),
         marquee_announcements: announcements,
         feature_flags: featureFlags,
       };
 
-      await Api.patch("/settings/", payload);
-      showFeedbackMessage("success", "Festival System Parameters Synchronized In Real Time!");
+      const res = await Api.patch("/settings/", payload);
+      if (res.data?.status === "Success" || res.status === 200) {
+        showFeedbackMessage("success", "Festival System Parameters Synchronized In Real Time!");
+      } else {
+        showFeedbackMessage("success", "Festival Parameters Saved Successfully!");
+      }
     } catch (err: any) {
-      showFeedbackMessage("error", "Failed To Save Festival Settings.");
+      showFeedbackMessage("error", "Failed To Save Festival Settings. Please Check Directorate Permissions.");
     } finally {
       setSaving(false);
     }
   };
 
   return (
-    <div className="space-y-6 animate-fade-in text-amber-50 max-w-5xl mx-auto">
+    <div className="space-y-6 animate-fade-in text-amber-50 max-w-5xl mx-auto pb-12">
       {/* Toast Feedback */}
       {feedback && (
         <div
@@ -182,7 +275,7 @@ export const AdminSettings: React.FC = () => {
         </div>
 
         <button
-          onClick={handleSave}
+          onClick={() => handleSave()}
           disabled={saving}
           className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 disabled:opacity-50 text-black font-serif font-black text-xs sm:text-sm tracking-wide shadow-xl shadow-amber-500/25 transition-all flex items-center justify-center gap-2 shrink-0 active:scale-95"
         >
@@ -263,23 +356,83 @@ export const AdminSettings: React.FC = () => {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. 18 To 21 November 2026"
+                  placeholder="e.g. 18–21 November 2026"
                   value={dateRangeDisplay}
                   onChange={(e) => setDateRangeDisplay(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl bg-[#0a0105] border border-amber-500/30 focus:border-amber-400 text-xs text-white focus:outline-none transition-colors"
                 />
+                <p className="text-[10px] text-rose-300/60 mt-1">
+                  Official 4-day festival window (Wednesday 18 to Saturday 21 November 2026).
+                </p>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-amber-300/90 mb-1">
-                  Countdown Kickoff Date & Time
+              {/* DATE AND TIME SELECTOR (SEPARATE DATE & TIME PICKERS) */}
+              <div className="space-y-1.5">
+                <label className="block text-xs font-bold uppercase tracking-wider text-amber-300/90">
+                  Countdown Kickoff Date & Time *
                 </label>
-                <input
-                  type="datetime-local"
-                  value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#0a0105] border border-amber-500/30 focus:border-amber-400 text-xs font-mono text-white focus:outline-none transition-colors"
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {/* Separate Date Selector */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-amber-400">
+                      <Calendar className="w-4 h-4" />
+                    </div>
+                    <input
+                      type="date"
+                      required
+                      value={kickoffDate}
+                      onChange={(e) => setKickoffDate(e.target.value)}
+                      className="w-full pl-9 pr-3 py-2 rounded-xl bg-[#0a0105] border border-amber-500/30 focus:border-amber-400 text-xs font-mono text-white focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  {/* Separate Time Selector */}
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-amber-400">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                    <input
+                      type="time"
+                      required
+                      value={kickoffTime}
+                      onChange={(e) => setKickoffTime(e.target.value)}
+                      className="w-full pl-9 pr-3 py-2 rounded-xl bg-[#0a0105] border border-amber-500/30 focus:border-amber-400 text-xs font-mono text-white focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Formatted Preview Badge & Quick Presets */}
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+                  <div className="text-[10px] sm:text-[11px] font-mono text-amber-300 flex items-center gap-1.5 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/25">
+                    <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
+                    <span className="truncate">{formatDisplayDateTime(kickoffDate, kickoffTime)}</span>
+                    <span className="text-rose-300/80">• {getRemainingDays(kickoffDate, kickoffTime)}</span>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => { setKickoffDate("2026-11-18"); setKickoffTime("09:00"); }}
+                      className="text-[10px] px-2 py-0.5 rounded bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400/40 text-rose-200 hover:text-amber-300 transition-colors"
+                    >
+                      18 Nov 9 AM
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setKickoffDate("2026-11-18"); setKickoffTime("10:00"); }}
+                      className="text-[10px] px-2 py-0.5 rounded bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400/40 text-rose-200 hover:text-amber-300 transition-colors"
+                    >
+                      18 Nov 10 AM
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setKickoffDate("2026-11-21"); setKickoffTime("11:00"); }}
+                      className="text-[10px] px-2 py-0.5 rounded bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400/40 text-rose-200 hover:text-amber-300 transition-colors"
+                    >
+                      Finale 21 Nov
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -325,42 +478,115 @@ export const AdminSettings: React.FC = () => {
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
-                    handleAddAnnouncement(e);
+                    handleAddAnnouncement();
                   }
                 }}
                 className="flex-1 px-3.5 py-2.5 rounded-xl bg-[#0a0105] border border-amber-500/30 focus:border-amber-400 text-xs text-white focus:outline-none transition-colors"
               />
               <button
                 type="button"
-                onClick={handleAddAnnouncement}
-                className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shrink-0"
+                onClick={() => handleAddAnnouncement()}
+                className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shrink-0 shadow-lg shadow-amber-500/20 active:scale-95"
               >
                 <Plus className="w-4 h-4 stroke-[3]" />
                 <span>Add Ticker</span>
               </button>
             </div>
 
-            {/* Announcements List */}
+            {/* Announcements List with Reorder, Inline Edit & Delete */}
             <div className="space-y-2">
               {announcements.map((msg, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between gap-3 p-3 rounded-xl bg-[#0a0105] border border-amber-500/20 hover:border-amber-500/40 transition-colors"
+                  className="flex items-center justify-between gap-3 p-3 rounded-xl bg-[#0a0105] border border-amber-500/20 hover:border-amber-500/40 transition-colors group"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 flex-1 min-w-0">
                     <span className="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-[10px] font-mono font-bold shrink-0">
                       {index + 1}
                     </span>
-                    <p className="text-xs text-white font-medium">{msg}</p>
+
+                    {editingIndex === index ? (
+                      <div className="flex items-center gap-2 flex-1">
+                        <input
+                          type="text"
+                          value={editingText}
+                          onChange={(e) => setEditingText(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              e.preventDefault();
+                              handleSaveEdit(index);
+                            } else if (e.key === "Escape") {
+                              handleCancelEdit();
+                            }
+                          }}
+                          autoFocus
+                          className="flex-1 px-3 py-1.5 rounded-lg bg-[#140209] border border-amber-400 text-xs text-white focus:outline-none"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleSaveEdit(index)}
+                          className="p-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-300"
+                          title="Save Changes"
+                        >
+                          <Check className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={handleCancelEdit}
+                          className="p-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/40 text-rose-300"
+                          title="Cancel"
+                        >
+                          <X className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ) : (
+                      <p className="text-xs text-white font-medium truncate flex-1">{msg}</p>
+                    )}
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveAnnouncement(index)}
-                    className="p-1.5 rounded-lg text-rose-400 hover:text-rose-200 hover:bg-rose-950/40 transition-colors shrink-0"
-                    title="Remove Ticker"
-                  >
-                    <Trash2 className="w-3.5 h-3.5" />
-                  </button>
+
+                  {editingIndex !== index && (
+                    <div className="flex items-center gap-1 shrink-0">
+                      {/* Reorder Buttons */}
+                      <button
+                        type="button"
+                        onClick={() => handleMoveAnnouncement(index, "up")}
+                        disabled={index === 0}
+                        className="p-1.5 rounded-lg text-amber-400/60 hover:text-amber-300 hover:bg-amber-500/10 disabled:opacity-20 transition-colors"
+                        title="Move Up"
+                      >
+                        <ArrowUp className="w-3.5 h-3.5" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleMoveAnnouncement(index, "down")}
+                        disabled={index === announcements.length - 1}
+                        className="p-1.5 rounded-lg text-amber-400/60 hover:text-amber-300 hover:bg-amber-500/10 disabled:opacity-20 transition-colors"
+                        title="Move Down"
+                      >
+                        <ArrowDown className="w-3.5 h-3.5" />
+                      </button>
+
+                      {/* Edit Button */}
+                      <button
+                        type="button"
+                        onClick={() => handleStartEdit(index, msg)}
+                        className="p-1.5 rounded-lg text-amber-400 hover:text-amber-200 hover:bg-amber-500/20 transition-colors"
+                        title="Edit Announcement"
+                      >
+                        <Edit2 className="w-3.5 h-3.5" />
+                      </button>
+
+                      {/* Delete Button */}
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveAnnouncement(index)}
+                        className="p-1.5 rounded-lg text-rose-400 hover:text-rose-200 hover:bg-rose-950/50 transition-colors"
+                        title="Remove Ticker"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

@@ -290,21 +290,37 @@ export const Home: React.FC = () => {
   const [selectedGuidelineEvent, setSelectedGuidelineEvent] = useState<GuidelineEventData | null>(null);
   const [isGuidelineModalOpen, setIsGuidelineModalOpen] = useState(false);
   const [isRulebookOpen, setIsRulebookOpen] = useState(false);
+  const [countdownKickoff, setCountdownKickoff] = useState("2026-11-18T09:00:00");
+  const [tickerAnnouncements, setTickerAnnouncements] = useState<string[]>([]);
+  const [festivalDateRange, setFestivalDateRange] = useState("18 To 21 November 2026");
 
   useEffect(() => {
-    const fetchLeaderboard = async () => {
+    const fetchFestivalData = async () => {
       try {
-        const res = await Api.get("/scores/leaderboard/");
-        const list = res.data?.leaderboard || res.data?.standings;
-        if (list && list.length > 0) {
-          setStandings(list);
-          setPodium(res.data?.podium || (list.length >= 3 ? list.slice(0, 3) : DEFAULT_TOP_THREE));
+        const [lbRes, settingsRes] = await Promise.all([
+          Api.get("/scores/leaderboard/").catch(() => null),
+          Api.get("/settings/").catch(() => null),
+        ]);
+        if (lbRes?.data) {
+          const list = lbRes.data.leaderboard || lbRes.data.standings;
+          if (Array.isArray(list) && list.length > 0) {
+            setStandings(list);
+            setPodium(lbRes.data.podium || (list.length >= 3 ? list.slice(0, 3) : DEFAULT_TOP_THREE));
+          }
+        }
+        if (settingsRes?.data) {
+          const s = settingsRes.data;
+          if (s.start_date) setCountdownKickoff(s.start_date);
+          if (s.date_range_display) setFestivalDateRange(s.date_range_display);
+          if (Array.isArray(s.marquee_announcements) && s.marquee_announcements.length > 0) {
+            setTickerAnnouncements(s.marquee_announcements);
+          }
         }
       } catch {
         // Retain default dummy data matching championship standings
       }
     };
-    fetchLeaderboard();
+    fetchFestivalData();
   }, []);
 
   // Category Icon & Badge Styler For Visual Harmony
@@ -423,7 +439,7 @@ export const Home: React.FC = () => {
       <FloatingBackgroundElements />
 
       {/* Marquee Banner */}
-      <FestiveTicker />
+      <FestiveTicker announcements={tickerAnnouncements} />
 
       {/* Primary Navigation */}
       <Navbar />
@@ -692,14 +708,14 @@ export const Home: React.FC = () => {
           {/* Subtitle Description With 18 to 21 November Date Range */}
           <p className="text-xs min-[360px]:text-sm sm:text-sm text-rose-200/90 font-medium max-w-xl leading-relaxed mb-7 text-center">
             Colleges And Institutes Across NIMS University Compete From{" "}
-            <strong className="text-amber-300 font-bold">18 To 21 November 2026</strong> In Singing, Classical Dance,
+            <strong className="text-amber-300 font-bold">{festivalDateRange}</strong> In Singing, Classical Dance,
             Street Play, Battle Of The Bands, And Visual Arts For The Coveted{" "}
             <strong className="text-amber-300 font-bold">Abhivyakti Inter-College Championship Trophy</strong>.
           </p>
 
           {/* 4-Card Countdown Timer */}
           <div className="w-full max-w-md">
-            <CountdownTimer targetDate="2026-11-18T09:00:00" />
+            <CountdownTimer targetDate={countdownKickoff} />
           </div>
 
           {/* Action Buttons (Vibrant Festival Palette & 280px Responsive) */}
