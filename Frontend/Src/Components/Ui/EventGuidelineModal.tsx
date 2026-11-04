@@ -4,7 +4,6 @@ import {
   ShieldCheck,
   Award,
   BookOpen,
-  Printer,
   Scale,
   Sparkles,
   AlertTriangle,
@@ -205,21 +204,11 @@ export const EventGuidelineModal: React.FC<EventGuidelineModalProps> = ({
           </div>
         </div>
 
-        {/* Modal Footer - Realtime Responsive View (No Download Button) */}
-        <div className="p-2.5 sm:p-4 bg-gradient-to-r from-[#240410] via-[#1a031e] to-[#0c0112] border-t-2 border-amber-400/50 flex flex-col min-[440px]:flex-row items-center justify-between gap-2 shrink-0">
-          <div className="flex items-center gap-2 w-full min-[440px]:w-auto">
-            <button
-              onClick={() => window.print()}
-              className="w-full min-[440px]:w-auto px-3.5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-purple-800 to-fuchsia-700 text-white text-[11px] sm:text-xs font-black transition-all flex items-center justify-center gap-1.5 border border-purple-300 shadow-md hover:scale-105"
-            >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Print Rule Sheet</span>
-            </button>
-          </div>
-
+        {/* Modal Footer - Clean Responsive Single-Action Dismiss */}
+        <div className="p-3 sm:p-4 bg-gradient-to-r from-[#240410] via-[#1a031e] to-[#0c0112] border-t-2 border-amber-400/50 flex items-center justify-end gap-3 shrink-0">
           <button
             onClick={onClose}
-            className="w-full min-[440px]:w-auto px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black text-[11px] sm:text-xs font-black uppercase tracking-wider hover:scale-105 transition-transform shadow-lg shadow-amber-500/25 border-2 border-yellow-200 text-center"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500 text-black text-xs font-black uppercase tracking-wider hover:scale-105 transition-transform shadow-lg shadow-amber-500/25 border-2 border-yellow-200 text-center"
           >
             Acknowledge & Close
           </button>

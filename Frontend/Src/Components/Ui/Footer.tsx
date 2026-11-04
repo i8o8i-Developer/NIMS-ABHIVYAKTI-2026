@@ -20,12 +20,15 @@ export const Footer: React.FC = () => {
 
       {/* =========================================================================
           TOP ORNAMENTAL BANNER: ABHIVYAKTI 2026 FESTIVAL DIRECTORATE CREST
-          Universal 280px Responsiveness With Dynamic Text & Diya Scaling
+          Symmetrical 360-Degree Radial Glow & Zero Half-Glow Clipping
           ========================================================================= */}
-      <div className="relative w-full pb-7 sm:pb-10 overflow-hidden z-20 px-2 sm:px-4">
+      <div className="relative w-full py-6 sm:py-8 z-20 px-2 sm:px-4">
+        {/* Centered Symmetrical Ambient Glow Halo (Equal Upward & Downward Diffusion) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-20 bg-[radial-gradient(ellipse_at_center,_rgba(245,184,66,0.20)_0%,_rgba(225,29,72,0.08)_45%,_transparent_75%)] blur-xl pointer-events-none" />
+
         <div className="max-w-[88rem] 2xl:max-w-[94rem] mx-auto relative flex items-center justify-center">
           {/* Left Tapering Glowing Gold Line */}
-          <div className="flex-1 h-0.5 bg-gradient-to-r from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
+          <div className="flex-1 h-0.5 bg-gradient-to-r from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_10px_rgba(245,184,66,0.5)]" />
 
           {/* Left Decorative Diamond Studs */}
           <div className="hidden sm:flex items-center gap-2.5 mx-3 lg:mx-4">
@@ -35,7 +38,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Center Royal Directorate Pill With Flickering Brass Diyas */}
-          <div className="relative px-3 min-[340px]:px-4 sm:px-8 py-1.5 sm:py-2.5 rounded-full bg-gradient-to-r from-[#220412] via-[#2f061a] to-[#220412] border border-amber-400/80 shadow-[0_0_35px_rgba(245,184,66,0.4)] flex items-center gap-2 sm:gap-3.5 shrink-0 max-w-full">
+          <div className="relative px-3 min-[340px]:px-4 sm:px-8 py-1.5 sm:py-2.5 rounded-full bg-gradient-to-r from-[#220412] via-[#2f061a] to-[#220412] border border-amber-400/80 shadow-[0_0_24px_rgba(245,184,66,0.35)] flex items-center gap-2 sm:gap-3.5 shrink-0 max-w-full">
             {/* Diya Left */}
             <div className="animate-live-flicker shrink-0">
               <svg width="20" height="15" viewBox="0 0 44 34" fill="none" className="drop-shadow-[0_0_8px_rgba(245,184,66,0.9)] sm:w-6 sm:h-4.5">
@@ -69,7 +72,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Right Tapering Glowing Gold Line */}
-          <div className="flex-1 h-0.5 bg-gradient-to-l from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_14px_rgba(245,184,66,0.8)]" />
+          <div className="flex-1 h-0.5 bg-gradient-to-l from-transparent via-amber-500/70 via-yellow-400 to-amber-300 shadow-[0_0_10px_rgba(245,184,66,0.5)]" />
         </div>
       </div>
 
